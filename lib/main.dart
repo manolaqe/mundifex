@@ -13,6 +13,7 @@ import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
 import 'presentation/home_page.dart';
+import 'presentation/signin.dart';
 import 'reducer/reducer.dart';
 
 Future<void> main() async {
@@ -50,10 +51,10 @@ class ScrollableApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const HomePage(),
+        home: const SignInPage(),
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
-          // '/loginUser': (BuildContext context) => const LoginUserPage(),
+          '/signIn': (BuildContext context) => const SignInPage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },
