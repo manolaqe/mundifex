@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "953080812028",
+    "project_id": "mundifex-4ea8d",
+    "storage_bucket": "mundifex-4ea8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953080812028:android:8994c91f0f78a6ae19a279",
+        "android_client_info": {
+          "package_name": "com.manolaqe.mundifex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEZyke3UxW8AlThBryqhoc3tU1zfQmGB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,43 +1,61 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:http/http.dart';
+import 'package:redux/redux.dart';
+import 'package:redux_epics/redux_epics.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'epics/app_epics.dart';
+import 'firebase_options.dart';
+import 'models/app_state.dart';
+import 'presentation/home_page.dart';
+import 'reducer/reducer.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final Client client = Client();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseStorage storage = FirebaseStorage.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  // final MoviesApi api = MoviesApi(client, firestore);
+  // final AuthApi authApi = AuthApi(auth: auth, storage: storage, firestore: firestore);
+  final AppEpics appEpic = AppEpics();
+
+  final Store<AppState> store = Store<AppState>(
+    reducer,
+    initialState: const AppState(),
+    middleware: <Middleware<AppState>>[
+      EpicMiddleware<AppState>(appEpic.call).call,
+    ],
+  );
+  // store.dispatch(const GetCurrentUser());
+
+  runApp(ScrollableApp(store: store));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ScrollableApp extends StatelessWidget {
+  const ScrollableApp({super.key, required this.store});
+
+  final Store<AppState> store;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Mundifex',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrangeAccent),
-        useMaterial3: true,
+    return StoreProvider<AppState>(
+      store: store,
+      child: MaterialApp(
+        home: const HomePage(),
+        routes: <String, WidgetBuilder>{
+          // '/createUser': (BuildContext context) => const CreateUserPage(),
+          // '/loginUser': (BuildContext context) => const LoginUserPage(),
+          // '/profile': (BuildContext context) => const ProfilePage(),
+          // '/movie': (BuildContext context) => const MoviePage(),
+        },
       ),
-      home: const MyHomePage(title: 'Mundifex'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: const Center(),
     );
   }
 }
