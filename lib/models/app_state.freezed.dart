@@ -20,13 +20,23 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppState {
+  AppUser? get user => throw _privateConstructorUsedError;
+  Map<String, AppUser> get users => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AppStateCopyWith<AppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
+  $Res call({AppUser? user, Map<String, AppUser> users});
+
+  $AppUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -38,13 +48,50 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? users = null,
+  }) {
+    return _then(_value.copyWith(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as Map<String, AppUser>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppUserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $AppUserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$AppState$ImplCopyWith<$Res> {
+abstract class _$$AppState$ImplCopyWith<$Res>
+    implements $AppStateCopyWith<$Res> {
   factory _$$AppState$ImplCopyWith(
           _$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
       __$$AppState$ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AppUser? user, Map<String, AppUser> users});
+
+  @override
+  $AppUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -54,30 +101,71 @@ class __$$AppState$ImplCopyWithImpl<$Res>
   __$$AppState$ImplCopyWithImpl(
       _$AppState$Impl _value, $Res Function(_$AppState$Impl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? users = null,
+  }) {
+    return _then(_$AppState$Impl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as Map<String, AppUser>,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AppState$Impl implements AppState$ {
-  const _$AppState$Impl();
+  const _$AppState$Impl(
+      {this.user, final Map<String, AppUser> users = const <String, AppUser>{}})
+      : _users = users;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppState$ImplFromJson(json);
 
   @override
+  final AppUser? user;
+  final Map<String, AppUser> _users;
+  @override
+  @JsonKey()
+  Map<String, AppUser> get users {
+    if (_users is EqualUnmodifiableMapView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_users);
+  }
+
+  @override
   String toString() {
-    return 'AppState()';
+    return 'AppState(user: $user, users: $users)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppState$Impl);
+        (other.runtimeType == runtimeType &&
+            other is _$AppState$Impl &&
+            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, user, const DeepCollectionEquality().hash(_users));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
+      __$$AppState$ImplCopyWithImpl<_$AppState$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -88,8 +176,19 @@ class _$AppState$Impl implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$() = _$AppState$Impl;
+  const factory AppState$(
+      {final AppUser? user,
+      final Map<String, AppUser> users}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
+
+  @override
+  AppUser? get user;
+  @override
+  Map<String, AppUser> get users;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

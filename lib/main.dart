@@ -8,6 +8,7 @@ import 'package:http/http.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
+import 'api/authentication_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
@@ -22,7 +23,9 @@ Future<void> main() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final AppEpics appEpic = AppEpics();
+  //final MoviesApi api = MoviesApi(client, firestore);
+  final AuthenticationApi authApi = AuthenticationApi(auth: auth, storage: storage, firestore: firestore);
+  final AppEpics appEpic = AppEpics(authApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
