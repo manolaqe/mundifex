@@ -22,8 +22,6 @@ Future<void> main() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  // final MoviesApi api = MoviesApi(client, firestore);
-  // final AuthApi authApi = AuthApi(auth: auth, storage: storage, firestore: firestore);
   final AppEpics appEpic = AppEpics();
 
   final Store<AppState> store = Store<AppState>(
@@ -48,6 +46,7 @@ class ScrollableApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: const HomePage(),
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
