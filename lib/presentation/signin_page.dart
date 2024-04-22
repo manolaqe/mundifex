@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../actions/app_action.dart';
 import '../actions/signin_email_password.dart';
 import 'extension.dart';
-
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -50,9 +53,6 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login user'),
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -60,10 +60,46 @@ class _SignInPageState extends State<SignInPage> {
             key: formKey,
             child: Column(
               children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Image.asset('assets/google_icon.png', width: 27, height: 27),
+                      const SizedBox(width: 160, child: Text(textAlign: TextAlign.center, 'Continue with Google')),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Icon(
+                        FontAwesomeIcons.facebook,
+                        color: Color.fromARGB(255, 8, 102, 255),
+                      ),
+                      SizedBox(width: 160, child: Text(textAlign: TextAlign.center, 'Continue with Facebook')),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Icon(
+                        FontAwesomeIcons.apple,
+                        color: Colors.white,
+                      ),
+                      SizedBox(width: 160, child: Text(textAlign: TextAlign.center, 'Continue with Apple')),
+                    ],
+                  ),
+                ),
                 TextFormField(
                   controller: email,
                   decoration: const InputDecoration(
-                    hintText: 'email',
+                    label: Text('Email'),
                   ),
                   validator: (String? value) {
                     if (value == null || value.isEmpty || !value.contains('@')) {
@@ -77,7 +113,7 @@ class _SignInPageState extends State<SignInPage> {
                   controller: password,
                   obscureText: true,
                   decoration: const InputDecoration(
-                    hintText: 'password',
+                    label: Text('Password'),
                   ),
                   validator: (String? value) {
                     if (value == null || value.length < 6) {
