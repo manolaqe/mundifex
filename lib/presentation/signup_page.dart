@@ -6,14 +6,14 @@ import '../actions/app_action.dart';
 import '../actions/signin_email_password.dart';
 import 'extension.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
@@ -54,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('Sign in to Mundifex', style: TextStyle(fontSize: 35)),
+        title: const Text('Sign up to Mundifex', style: TextStyle(fontSize: 35)),
         toolbarHeight: 150.00,
       ),
       body: SingleChildScrollView(
@@ -66,55 +66,6 @@ class _SignInPageState extends State<SignInPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Image.asset('assets/google_icon.png', width: 27, height: 27),
-                        const SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Continue with Google', style: TextStyle(fontSize: 20))),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.facebook,
-                          color: Color.fromARGB(255, 8, 102, 255),
-                          size: 27,
-                        ),
-                        SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Continue with Facebook', style: TextStyle(fontSize: 20))),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.apple,
-                          color: Colors.white,
-                          size: 27,
-                        ),
-                        SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Continue with Apple', style: TextStyle(fontSize: 20))),
-                      ],
-                    ),
-                  ),
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: email,
@@ -156,29 +107,67 @@ class _SignInPageState extends State<SignInPage> {
                         ));
                       }
                     },
-                    child: const Text('Sign in', style: TextStyle(fontSize: 15)),
+                    child: const Text('Sign up', style: TextStyle(fontSize: 15)),
                   ),
-                  const SizedBox(height: 20),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/forgot_password');
-                    },
-                    child: const Text(
-                      'Forgot your password?',
-                      style: TextStyle(decoration: TextDecoration.underline, fontSize: 15),
+                  const Divider(
+                    height: 50,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Image.asset('assets/google_icon.png', width: 27, height: 27),
+                        const SizedBox(
+                            width: 250,
+                            child: Text(
+                                textAlign: TextAlign.center, 'Sign up with Google', style: TextStyle(fontSize: 20))),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 30),
-                  const Text(
-                    "Don't have an account?",
-                    style: TextStyle(fontSize: 15),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.facebook,
+                          color: Color.fromARGB(255, 8, 102, 255),
+                          size: 27,
+                        ),
+                        SizedBox(
+                            width: 250,
+                            child: Text(
+                                textAlign: TextAlign.center, 'Sign up with Facebook', style: TextStyle(fontSize: 20))),
+                      ],
+                    ),
                   ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.apple,
+                          color: Colors.white,
+                          size: 27,
+                        ),
+                        SizedBox(
+                            width: 250,
+                            child: Text(
+                                textAlign: TextAlign.center, 'Sign up with Apple', style: TextStyle(fontSize: 20))),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 40),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/signUp');
+                      Navigator.pushReplacementNamed(context, '/signIn');
                     },
                     child: const Text(
-                      'Sign Up for Mundifex',
+                      'Already have an account? Sign in.',
                       style: TextStyle(decoration: TextDecoration.underline, fontSize: 15),
                     ),
                   ),

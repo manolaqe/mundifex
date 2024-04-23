@@ -14,6 +14,7 @@ import 'firebase_options.dart';
 import 'models/app_state.dart';
 import 'presentation/home_page.dart';
 import 'presentation/signin_page.dart';
+import 'presentation/signup_page.dart';
 import 'reducer/reducer.dart';
 
 Future<void> main() async {
@@ -56,6 +57,7 @@ class ScrollableApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
           '/signIn': (BuildContext context) => const SignInPage(),
+          '/signUp': (BuildContext context) => const SignUpPage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },
