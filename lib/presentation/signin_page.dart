@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../actions/app_action.dart';
 import '../actions/signin_email_password.dart';
+import '../actions/signin_facebook.dart';
+import '../actions/signin_google.dart';
 import 'extension.dart';
 
 class SignInPage extends StatefulWidget {
@@ -19,7 +21,7 @@ class _SignInPageState extends State<SignInPage> {
   final TextEditingController password = TextEditingController();
 
   void _onResult(AppAction action) {
-    if (action is SignInEmailPasswordSuccessful) {
+    if (action is SignInEmailPasswordSuccessful || action is SignInGoogleSuccessful) {
       Navigator.pop(context);
     } else if (action is SignInEmailPasswordError) {
       final Object error = action.error;
@@ -44,6 +46,42 @@ class _SignInPageState extends State<SignInPage> {
           },
         );
       }
+    } else if (action is SignInGoogleError) {
+      final Object error = action.error;
+      if (error is FirebaseAuthException && error.code == 'INVALID_LOGIN_CREDENTIALS') {
+        showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return const AlertDialog(
+              title: Text('Login error'),
+              content: Text('Account not found or incorrect password.'),
+            );
+          },
+        );
+      } else if (action is SignInFacebookError) {
+        final Object error = action.error;
+        if (error is FirebaseAuthException && error.code == 'INVALID_LOGIN_CREDENTIALS') {
+          showDialog<void>(
+            context: context,
+            builder: (BuildContext context) {
+              return const AlertDialog(
+                title: Text('Login error'),
+                content: Text('Account not found or incorrect password.'),
+              );
+            },
+          );
+        }
+      } else {
+        showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Login user error'),
+              content: Text('${action.error}'),
+            );
+          },
+        );
+      }
     }
   }
 
@@ -54,8 +92,7 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('Sign in to Mundifex', style: TextStyle(fontSize: 35)),
-        toolbarHeight: 150.00,
+        title: const Text('Sign in to Mundifex', style: TextStyle(fontSize: 25)),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -67,21 +104,39 @@ class _SignInPageState extends State<SignInPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.dispatch(
+                        SignInGoogle(
+                          result: _onResult,
+                        ),
+                      );
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Image.asset('assets/google_icon.png', width: 27, height: 27),
                         const SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Continue with Google', style: TextStyle(fontSize: 20))),
+                          width: 250,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Continue with Google',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.dispatch(
+                        SignInFacebook(
+                          result: _onResult,
+                        ),
+                      );
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
@@ -91,9 +146,15 @@ class _SignInPageState extends State<SignInPage> {
                           size: 27,
                         ),
                         SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Continue with Facebook', style: TextStyle(fontSize: 20))),
+                          width: 250,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Continue with Facebook',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -161,7 +222,7 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/forgot_password');
+                      Navigator.pushNamed(context, '/forgot_password');
                     },
                     child: const Text(
                       'Forgot your password?',
@@ -175,7 +236,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/signUp');
+                      Navigator.pushNamed(context, '/sign_up');
                     },
                     child: const Text(
                       'Sign Up for Mundifex',

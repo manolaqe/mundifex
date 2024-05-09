@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
           builder: (BuildContext context) {
             return AlertDialog(
               title: const Text('Login user error'),
-              content: Text('${action.error}'),
+              content: Text('${action.stackTrace}'),
             );
           },
         );
@@ -54,8 +54,12 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('Sign up to Mundifex', style: TextStyle(fontSize: 35)),
-        toolbarHeight: 150.00,
+        title: const Text(
+          'Sign up to Mundifex',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -84,9 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     controller: password,
                     obscureText: true,
                     decoration: const InputDecoration(
-                      label: Text(
-                        'Password',
-                      ),
+                      label: Text('Password'),
                     ),
                     validator: (String? value) {
                       if (value == null || value.length < 6) {
@@ -96,18 +98,27 @@ class _SignUpPageState extends State<SignUpPage> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        context.dispatch(SignInEmailPassword(
-                          email: email.text,
-                          password: password.text,
-                          result: _onResult,
-                        ));
+                        context.dispatch(
+                          SignInEmailPassword(
+                            email: email.text,
+                            password: password.text,
+                            result: _onResult,
+                          ),
+                        );
                       }
                     },
-                    child: const Text('Sign up', style: TextStyle(fontSize: 15)),
+                    child: const Text(
+                      'Sign up',
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
                   ),
                   const Divider(
                     height: 50,
@@ -117,15 +128,27 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Image.asset('assets/google_icon.png', width: 27, height: 27),
+                        Image.asset(
+                          'assets/google_icon.png',
+                          width: 27,
+                          height: 27,
+                        ),
                         const SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Sign up with Google', style: TextStyle(fontSize: 20))),
+                          width: 250,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Sign up with Google',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   ElevatedButton(
                     onPressed: () {},
                     child: const Row(
@@ -137,13 +160,21 @@ class _SignUpPageState extends State<SignUpPage> {
                           size: 27,
                         ),
                         SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Sign up with Facebook', style: TextStyle(fontSize: 20))),
+                          width: 250,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Sign up with Facebook',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   ElevatedButton(
                     onPressed: () {},
                     child: const Row(
@@ -155,20 +186,34 @@ class _SignUpPageState extends State<SignUpPage> {
                           size: 27,
                         ),
                         SizedBox(
-                            width: 250,
-                            child: Text(
-                                textAlign: TextAlign.center, 'Sign up with Apple', style: TextStyle(fontSize: 20))),
+                          width: 250,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Sign up with Apple',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(
+                    height: 40,
+                  ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/signIn');
+                      Navigator.pushNamed(
+                        context,
+                        '/sign_in',
+                      );
                     },
                     child: const Text(
                       'Already have an account? Sign in.',
-                      style: TextStyle(decoration: TextDecoration.underline, fontSize: 15),
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 ],

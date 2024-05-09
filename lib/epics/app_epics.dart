@@ -7,6 +7,8 @@ import '../actions/get_current_user.dart';
 import '../actions/get_users.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
+import '../actions/signin_facebook.dart';
+import '../actions/signin_google.dart';
 import '../api/authentication_api.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
@@ -20,6 +22,8 @@ class AppEpics extends EpicClass<AppState> {
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, SignInEmailPasswordStart>(_signInEmailPassword).call,
+      TypedEpic<AppState, SignInGoogleStart>(_signInGoogle).call,
+      TypedEpic<AppState, SignInFacebookStart>(_signInFacebook).call,
       TypedEpic<AppState, SignOutStart>(_signOutStart).call,
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUserStart).call,
       TypedEpic<AppState, GetUsersStart>(_getUsersStart).call,
@@ -72,9 +76,32 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.createUserWithEmailAndPassword(email: action.email, password: action.password))
+          .asyncMap(
+              (_) => authenticationApi.createUserWithEmailAndPassword(email: action.email, password: action.password))
           .map((AppUser user) => CreateUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _signInGoogle(Stream<SignInGoogleStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((SignInGoogleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authenticationApi.signInWithGoogle())
+          .map((AppUser user) => SignInGoogle.successful(user))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInGoogle.error(error, stackTrace))
+          .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _signInFacebook(Stream<SignInFacebookStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((SignInFacebookStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => authenticationApi.signInWithFacebook())
+          .map((AppUser user) => SignInFacebook.successful(user))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInFacebook.error(error, stackTrace))
           .doOnData(action.result);
     });
   }

@@ -8,6 +8,7 @@ import 'package:http/http.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
+import 'actions/get_current_user.dart';
 import 'api/authentication_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
@@ -36,7 +37,7 @@ Future<void> main() async {
       EpicMiddleware<AppState>(appEpic.call).call,
     ],
   );
-  // store.dispatch(const GetCurrentUser());
+  store.dispatch(const GetCurrentUser());
 
   runApp(ScrollableApp(store: store));
 }
@@ -53,11 +54,12 @@ class ScrollableApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.dark(useMaterial3: true),
         debugShowCheckedModeBanner: false,
-        home: const SignInPage(),
+        home: const HomePage(),
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
-          '/signIn': (BuildContext context) => const SignInPage(),
-          '/signUp': (BuildContext context) => const SignUpPage(),
+          '/sign_in': (BuildContext context) => const SignInPage(),
+          '/sign_up': (BuildContext context) => const SignUpPage(),
+          '/forgot_password': (BuildContext context) => const HomePage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },

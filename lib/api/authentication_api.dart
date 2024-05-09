@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../models/app_user.dart';
 
@@ -36,6 +37,18 @@ class AuthenticationApi {
 
   Future<AppUser> signInWithEmailAndPassword({required String email, required String password}) async {
     await _auth.signInWithEmailAndPassword(email: email, password: password);
+    return _extractUser();
+  }
+
+  Future<AppUser> signInWithGoogle() async {
+    final GoogleAuthProvider provider = GoogleAuthProvider();
+    await _auth.signInWithProvider(provider);
+    return _extractUser();
+  }
+
+  Future<AppUser> signInWithFacebook() async {
+    final FacebookAuthProvider provider = FacebookAuthProvider();
+    await _auth.signInWithProvider(provider);
     return _extractUser();
   }
 
