@@ -4,6 +4,7 @@ import 'package:redux/redux.dart';
 
 import '../actions/create_user.dart';
 import '../actions/get_current_user.dart';
+import '../actions/get_location.dart';
 import '../actions/get_users.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
@@ -21,6 +22,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, SignInGoogleSuccessful>(_signInGoogleSuccessful).call,
     TypedReducer<AppState, SignInFacebookSuccessful>(_signInFacebookSuccessful).call,
     TypedReducer<AppState, GetUsersSuccessful>(_getUsersSuccessful).call,
+    TypedReducer<AppState, GetLocationStart>(_getLocationStart).call,
+    TypedReducer<AppState, GetLocationSuccessful>(_getLocationSuccessful).call,
+    TypedReducer<AppState, GetLocationError>(_getLocationError).call,
   ])(state, action);
 }
 
@@ -55,4 +59,16 @@ AppState _signInGoogleSuccessful(AppState state, SignInGoogleSuccessful action) 
 
 AppState _signInFacebookSuccessful(AppState state, SignInFacebookSuccessful action) {
   return state.copyWith(user: action.user);
+}
+
+AppState _getLocationStart(AppState state, GetLocationStart action) {
+  return state.copyWith();
+}
+
+AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
+  return state.copyWith(locationData: action.locationData);
+}
+
+AppState _getLocationError(AppState state, GetLocationError action) {
+  return state.copyWith();
 }

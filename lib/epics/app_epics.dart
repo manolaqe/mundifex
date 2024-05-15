@@ -4,23 +4,28 @@ import 'package:rxdart/transformers.dart';
 import '../actions/app_action.dart';
 import '../actions/create_user.dart';
 import '../actions/get_current_user.dart';
+import '../actions/get_location.dart';
 import '../actions/get_users.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
 import '../actions/signin_google.dart';
 import '../api/authentication_api.dart';
+import '../api/location_api.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
+import '../models/location_data.dart';
 
 class AppEpics extends EpicClass<AppState> {
-  AppEpics(this.authenticationApi);
+  AppEpics(this.authenticationApi, this.locationApi);
 
   final AuthenticationApi authenticationApi;
+  final LocationApi locationApi;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, GetLocationStart>(_getLocationStart).call,
       TypedEpic<AppState, SignInEmailPasswordStart>(_signInEmailPassword).call,
       TypedEpic<AppState, SignInGoogleStart>(_signInGoogle).call,
       TypedEpic<AppState, SignInFacebookStart>(_signInFacebook).call,
@@ -103,6 +108,15 @@ class AppEpics extends EpicClass<AppState> {
           .map((AppUser user) => SignInFacebook.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInFacebook.error(error, stackTrace))
           .doOnData(action.result);
+    });
+  }
+
+  Stream<AppAction> _getLocationStart(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetLocationStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => locationApi.getLocation())
+          .map((LocationData? locationData) => GetLocation.successful(locationData!))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
     });
   }
 }

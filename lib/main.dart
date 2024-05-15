@@ -5,11 +5,14 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
+import 'package:location/location.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'actions/get_current_user.dart';
+import 'actions/get_location.dart';
 import 'api/authentication_api.dart';
+import 'api/location_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
@@ -28,7 +31,9 @@ Future<void> main() async {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
   //final MoviesApi api = MoviesApi(client, firestore);
   final AuthenticationApi authApi = AuthenticationApi(auth: auth, storage: storage, firestore: firestore);
-  final AppEpics appEpic = AppEpics(authApi);
+  final Location location = Location();
+  final LocationApi locationApi = LocationApi(location: location);
+  final AppEpics appEpic = AppEpics(authApi, locationApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -37,6 +42,8 @@ Future<void> main() async {
       EpicMiddleware<AppState>(appEpic.call).call,
     ],
   );
+
+  store.dispatch(const GetLocation());
   store.dispatch(const GetCurrentUser());
 
   runApp(ScrollableApp(store: store));

@@ -22,6 +22,11 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
   Map<String, AppUser> get users => throw _privateConstructorUsedError;
+  LocationData? get locationData => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get airQualityData =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get airTrafficData =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +39,15 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AppUser? user, Map<String, AppUser> users});
+  $Res call(
+      {AppUser? user,
+      Map<String, AppUser> users,
+      LocationData? locationData,
+      Map<String, dynamic>? airQualityData,
+      Map<String, dynamic>? airTrafficData});
 
   $AppUserCopyWith<$Res>? get user;
+  $LocationDataCopyWith<$Res>? get locationData;
 }
 
 /// @nodoc
@@ -54,6 +65,9 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   $Res call({
     Object? user = freezed,
     Object? users = null,
+    Object? locationData = freezed,
+    Object? airQualityData = freezed,
+    Object? airTrafficData = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -64,6 +78,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
               as Map<String, AppUser>,
+      locationData: freezed == locationData
+          ? _value.locationData
+          : locationData // ignore: cast_nullable_to_non_nullable
+              as LocationData?,
+      airQualityData: freezed == airQualityData
+          ? _value.airQualityData
+          : airQualityData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      airTrafficData: freezed == airTrafficData
+          ? _value.airTrafficData
+          : airTrafficData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -78,6 +104,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationDataCopyWith<$Res>? get locationData {
+    if (_value.locationData == null) {
+      return null;
+    }
+
+    return $LocationDataCopyWith<$Res>(_value.locationData!, (value) {
+      return _then(_value.copyWith(locationData: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -88,10 +126,17 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser? user, Map<String, AppUser> users});
+  $Res call(
+      {AppUser? user,
+      Map<String, AppUser> users,
+      LocationData? locationData,
+      Map<String, dynamic>? airQualityData,
+      Map<String, dynamic>? airTrafficData});
 
   @override
   $AppUserCopyWith<$Res>? get user;
+  @override
+  $LocationDataCopyWith<$Res>? get locationData;
 }
 
 /// @nodoc
@@ -107,6 +152,9 @@ class __$$AppState$ImplCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
     Object? users = null,
+    Object? locationData = freezed,
+    Object? airQualityData = freezed,
+    Object? airTrafficData = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -117,6 +165,18 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
               as Map<String, AppUser>,
+      locationData: freezed == locationData
+          ? _value.locationData
+          : locationData // ignore: cast_nullable_to_non_nullable
+              as LocationData?,
+      airQualityData: freezed == airQualityData
+          ? _value._airQualityData
+          : airQualityData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      airTrafficData: freezed == airTrafficData
+          ? _value._airTrafficData
+          : airTrafficData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -125,8 +185,14 @@ class __$$AppState$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppState$Impl implements AppState$ {
   const _$AppState$Impl(
-      {this.user, final Map<String, AppUser> users = const <String, AppUser>{}})
-      : _users = users;
+      {this.user,
+      final Map<String, AppUser> users = const <String, AppUser>{},
+      this.locationData,
+      final Map<String, dynamic>? airQualityData,
+      final Map<String, dynamic>? airTrafficData})
+      : _users = users,
+        _airQualityData = airQualityData,
+        _airTrafficData = airTrafficData;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppState$ImplFromJson(json);
@@ -143,8 +209,30 @@ class _$AppState$Impl implements AppState$ {
   }
 
   @override
+  final LocationData? locationData;
+  final Map<String, dynamic>? _airQualityData;
+  @override
+  Map<String, dynamic>? get airQualityData {
+    final value = _airQualityData;
+    if (value == null) return null;
+    if (_airQualityData is EqualUnmodifiableMapView) return _airQualityData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  final Map<String, dynamic>? _airTrafficData;
+  @override
+  Map<String, dynamic>? get airTrafficData {
+    final value = _airTrafficData;
+    if (value == null) return null;
+    if (_airTrafficData is EqualUnmodifiableMapView) return _airTrafficData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
   String toString() {
-    return 'AppState(user: $user, users: $users)';
+    return 'AppState(user: $user, users: $users, locationData: $locationData, airQualityData: $airQualityData, airTrafficData: $airTrafficData)';
   }
 
   @override
@@ -153,13 +241,24 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other._users, _users) &&
+            (identical(other.locationData, locationData) ||
+                other.locationData == locationData) &&
+            const DeepCollectionEquality()
+                .equals(other._airQualityData, _airQualityData) &&
+            const DeepCollectionEquality()
+                .equals(other._airTrafficData, _airTrafficData));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, user, const DeepCollectionEquality().hash(_users));
+      runtimeType,
+      user,
+      const DeepCollectionEquality().hash(_users),
+      locationData,
+      const DeepCollectionEquality().hash(_airQualityData),
+      const DeepCollectionEquality().hash(_airTrafficData));
 
   @JsonKey(ignore: true)
   @override
@@ -178,7 +277,10 @@ class _$AppState$Impl implements AppState$ {
 abstract class AppState$ implements AppState {
   const factory AppState$(
       {final AppUser? user,
-      final Map<String, AppUser> users}) = _$AppState$Impl;
+      final Map<String, AppUser> users,
+      final LocationData? locationData,
+      final Map<String, dynamic>? airQualityData,
+      final Map<String, dynamic>? airTrafficData}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -187,6 +289,12 @@ abstract class AppState$ implements AppState {
   AppUser? get user;
   @override
   Map<String, AppUser> get users;
+  @override
+  LocationData? get locationData;
+  @override
+  Map<String, dynamic>? get airQualityData;
+  @override
+  Map<String, dynamic>? get airTrafficData;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

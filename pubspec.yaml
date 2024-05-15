@@ -48,6 +48,11 @@ dependencies:
   rxdart: ^0.27.7
   font_awesome_flutter: ^10.7.0
   google_sign_in: ^6.2.1
+  location:
+    git:
+      url: https://github.com/781flyingdutchman/flutterlocation.git
+      ref: V4
+      path: packages/location
 
 
 
