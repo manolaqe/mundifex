@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../actions/app_action.dart';
 import '../actions/signin_email_password.dart';
-import 'extension.dart';
+import 'extensions.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

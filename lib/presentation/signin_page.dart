@@ -6,7 +6,7 @@ import '../actions/app_action.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
 import '../actions/signin_google.dart';
-import 'extension.dart';
+import 'extensions.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});

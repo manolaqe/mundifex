@@ -25,6 +25,7 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ? null
           : CurrentWeather.fromJson(
               json['weatherData'] as Map<String, dynamic>),
+      address: json['address'] as String?,
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -36,4 +37,5 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'airQualityData': instance.airQualityData,
       'airTrafficData': instance.airTrafficData,
       'weatherData': instance.weatherData,
+      'address': instance.address,
     };

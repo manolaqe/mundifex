@@ -3,6 +3,7 @@ import 'package:rxdart/transformers.dart';
 
 import '../actions/app_action.dart';
 import '../actions/create_user.dart';
+import '../actions/get_address.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
@@ -12,6 +13,7 @@ import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
 import '../actions/signin_google.dart';
 import '../api/authentication_api.dart';
+import '../api/geocoding_api.dart';
 import '../api/location_api.dart';
 import '../api/open_weather_api.dart';
 import '../models/app_state.dart';
@@ -20,15 +22,16 @@ import '../models/current_weather.dart';
 import '../models/location_data.dart';
 
 class AppEpics extends EpicClass<AppState> {
-  AppEpics(this.authenticationApi, this.locationApi, this.openWeatherApi);
+  AppEpics(this.authenticationApi, this.locationApi, this.openWeatherApi, this.geocodingApi);
 
   final AuthenticationApi authenticationApi;
   final LocationApi locationApi;
   final OpenWeatherApi openWeatherApi;
-
+  final GeocodingApi geocodingApi;
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, GetAddressStart>(_getAddressStart).call,
       TypedEpic<AppState, GetLocationStart>(_getLocationStart).call,
       TypedEpic<AppState, GetWeatherStart>(_getWeatherStart).call,
       TypedEpic<AppState, SignInEmailPasswordStart>(_signInEmailPassword).call,
@@ -123,6 +126,7 @@ class AppEpics extends EpicClass<AppState> {
       return <AppAction>[
         GetLocation.successful(location),
         const GetWeatherStart(),
+        const GetAddressStart(),
       ];
     }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
   }
@@ -135,6 +139,16 @@ class AppEpics extends EpicClass<AppState> {
               (_) => openWeatherApi.getCurrentWeather(locationData: store.state.locationData!, imperialUnits: false))
           .map((CurrentWeather weather) => GetWeather.successful(weather))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetWeather.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getAddressStart(Stream<GetAddressStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetAddressStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => geocodingApi.getAddress(store.state.locationData!))
+          .map((String address) => GetAddress.successful(address))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAddress.error(error, stackTrace));
     });
   }
 }

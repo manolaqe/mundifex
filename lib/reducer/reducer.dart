@@ -1,6 +1,7 @@
 import 'package:redux/redux.dart';
 
 import '../actions/create_user.dart';
+import '../actions/get_address.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
@@ -27,6 +28,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetWeatherStart>(_getWeatherStart).call,
     TypedReducer<AppState, GetWeatherSuccessful>(_getWeatherSuccessful).call,
     TypedReducer<AppState, GetWeatherError>(_getWeatherError).call,
+    TypedReducer<AppState, GetAddressStart>(_getAddressStart).call,
+    TypedReducer<AppState, GetAddressSuccessful>(_getAddressSuccessfu).call,
+    TypedReducer<AppState, GetAddressError>(_getAddressError).call,
   ])(state, action);
 }
 
@@ -85,4 +89,16 @@ AppState _getWeatherSuccessful(AppState state, GetWeatherSuccessful action) {
 
 AppState _getWeatherError(AppState state, GetWeatherError action) {
   return state.copyWith(isLoading: false);
+}
+
+AppState _getAddressStart(AppState state, GetAddressStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getAddressSuccessfu(AppState state, GetAddressSuccessful action) {
+  return state.copyWith(isLoading: false, address: action.address);
+}
+
+AppState _getAddressError(AppState state, GetAddressError action) {
+  return state.copyWith(isLoading: false, address: '');
 }

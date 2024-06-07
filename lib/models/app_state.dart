@@ -16,6 +16,7 @@ class AppState with _$AppState {
     Map<String, dynamic>? airQualityData,
     Map<String, dynamic>? airTrafficData,
     CurrentWeather? weatherData,
+    String? address,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

@@ -11,6 +11,7 @@ import 'package:redux_epics/redux_epics.dart';
 
 import 'actions/get_location.dart';
 import 'api/authentication_api.dart';
+import 'api/geocoding_api.dart';
 import 'api/location_api.dart';
 import 'api/open_weather_api.dart';
 import 'epics/app_epics.dart';
@@ -29,12 +30,12 @@ Future<void> main() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  //final MoviesApi api = MoviesApi(client, firestore);
   final AuthenticationApi authApi = AuthenticationApi(auth: auth, storage: storage, firestore: firestore);
   final Location location = Location();
   final LocationApi locationApi = LocationApi(location: location);
   final OpenWeatherApi openWeatherApi = OpenWeatherApi(client, '2ede6351d981312c95d45e1b5c51849e');
-  final AppEpics appEpic = AppEpics(authApi, locationApi, openWeatherApi);
+  final GeocodingApi geocodingApi = GeocodingApi('AIzaSyC0O4BZ4uG0sWqoW5_rfPXEoSQLecXsuVg');
+  final AppEpics appEpic = AppEpics(authApi, locationApi, openWeatherApi, geocodingApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,

@@ -29,6 +29,7 @@ mixin _$AppState {
   Map<String, dynamic>? get airTrafficData =>
       throw _privateConstructorUsedError;
   CurrentWeather? get weatherData => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +49,8 @@ abstract class $AppStateCopyWith<$Res> {
       bool isLoading,
       Map<String, dynamic>? airQualityData,
       Map<String, dynamic>? airTrafficData,
-      CurrentWeather? weatherData});
+      CurrentWeather? weatherData,
+      String? address});
 
   $AppUserCopyWith<$Res>? get user;
   $LocationDataCopyWith<$Res>? get locationData;
@@ -75,6 +77,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? airQualityData = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
+    Object? address = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -105,6 +108,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.weatherData
           : weatherData // ignore: cast_nullable_to_non_nullable
               as CurrentWeather?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -160,7 +167,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       bool isLoading,
       Map<String, dynamic>? airQualityData,
       Map<String, dynamic>? airTrafficData,
-      CurrentWeather? weatherData});
+      CurrentWeather? weatherData,
+      String? address});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -188,6 +196,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? airQualityData = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
+    Object? address = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -218,6 +227,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.weatherData
           : weatherData // ignore: cast_nullable_to_non_nullable
               as CurrentWeather?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -232,7 +245,8 @@ class _$AppState$Impl implements AppState$ {
       this.isLoading = false,
       final Map<String, dynamic>? airQualityData,
       final Map<String, dynamic>? airTrafficData,
-      this.weatherData})
+      this.weatherData,
+      this.address})
       : _users = users,
         _airQualityData = airQualityData,
         _airTrafficData = airTrafficData;
@@ -278,10 +292,12 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   final CurrentWeather? weatherData;
+  @override
+  final String? address;
 
   @override
   String toString() {
-    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airQualityData: $airQualityData, airTrafficData: $airTrafficData, weatherData: $weatherData)';
+    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airQualityData: $airQualityData, airTrafficData: $airTrafficData, weatherData: $weatherData, address: $address)';
   }
 
   @override
@@ -300,7 +316,8 @@ class _$AppState$Impl implements AppState$ {
             const DeepCollectionEquality()
                 .equals(other._airTrafficData, _airTrafficData) &&
             (identical(other.weatherData, weatherData) ||
-                other.weatherData == weatherData));
+                other.weatherData == weatherData) &&
+            (identical(other.address, address) || other.address == address));
   }
 
   @JsonKey(ignore: true)
@@ -313,7 +330,8 @@ class _$AppState$Impl implements AppState$ {
       isLoading,
       const DeepCollectionEquality().hash(_airQualityData),
       const DeepCollectionEquality().hash(_airTrafficData),
-      weatherData);
+      weatherData,
+      address);
 
   @JsonKey(ignore: true)
   @override
@@ -337,7 +355,8 @@ abstract class AppState$ implements AppState {
       final bool isLoading,
       final Map<String, dynamic>? airQualityData,
       final Map<String, dynamic>? airTrafficData,
-      final CurrentWeather? weatherData}) = _$AppState$Impl;
+      final CurrentWeather? weatherData,
+      final String? address}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -356,6 +375,8 @@ abstract class AppState$ implements AppState {
   Map<String, dynamic>? get airTrafficData;
   @override
   CurrentWeather? get weatherData;
+  @override
+  String? get address;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
