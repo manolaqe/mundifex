@@ -11,8 +11,10 @@ import 'package:redux_epics/redux_epics.dart';
 
 import 'actions/get_current_user.dart';
 import 'actions/get_location.dart';
+import 'actions/get_weather.dart';
 import 'api/authentication_api.dart';
 import 'api/location_api.dart';
+import 'api/open_weather_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
@@ -33,7 +35,8 @@ Future<void> main() async {
   final AuthenticationApi authApi = AuthenticationApi(auth: auth, storage: storage, firestore: firestore);
   final Location location = Location();
   final LocationApi locationApi = LocationApi(location: location);
-  final AppEpics appEpic = AppEpics(authApi, locationApi);
+  final OpenWeatherApi openWeatherApi = OpenWeatherApi(client, '2ede6351d981312c95d45e1b5c51849e');
+  final AppEpics appEpic = AppEpics(authApi, locationApi, openWeatherApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -44,7 +47,6 @@ Future<void> main() async {
   );
 
   store.dispatch(const GetLocation());
-  store.dispatch(const GetCurrentUser());
 
   runApp(ScrollableApp(store: store));
 }
@@ -61,7 +63,7 @@ class ScrollableApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.dark(useMaterial3: true),
         debugShowCheckedModeBanner: false,
-        home: const HomePage(),
+        home: HomePage(),
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
           '/sign_in': (BuildContext context) => const SignInPage(),
@@ -74,3 +76,10 @@ class ScrollableApp extends StatelessWidget {
     );
   }
 }
+
+// model
+// api
+// actions
+// epic
+// reducer
+// presentation

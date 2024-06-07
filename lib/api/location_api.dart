@@ -13,6 +13,7 @@ class LocationApi {
     }
 
     final LocationData rawLocationData = await _location.getLocation();
+
     final location_model.LocationData locationData = location_model.LocationData(
       lat: rawLocationData.latitude!,
       lon: rawLocationData.longitude!,

@@ -6,6 +6,7 @@ import '../actions/create_user.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
+import '../actions/get_weather.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
@@ -25,6 +26,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetLocationStart>(_getLocationStart).call,
     TypedReducer<AppState, GetLocationSuccessful>(_getLocationSuccessful).call,
     TypedReducer<AppState, GetLocationError>(_getLocationError).call,
+    TypedReducer<AppState, GetWeatherStart>(_getWeatherStart).call,
+    TypedReducer<AppState, GetWeatherSuccessful>(_getWeatherSuccessful).call,
+    TypedReducer<AppState, GetWeatherError>(_getWeatherError).call,
   ])(state, action);
 }
 
@@ -62,13 +66,25 @@ AppState _signInFacebookSuccessful(AppState state, SignInFacebookSuccessful acti
 }
 
 AppState _getLocationStart(AppState state, GetLocationStart action) {
-  return state.copyWith();
+  return state.copyWith(isLoading: true);
 }
 
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
-  return state.copyWith(locationData: action.locationData);
+  return state.copyWith(locationData: action.locationData, isLoading: false);
 }
 
 AppState _getLocationError(AppState state, GetLocationError action) {
-  return state.copyWith();
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getWeatherStart(AppState state, GetWeatherStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getWeatherSuccessful(AppState state, GetWeatherSuccessful action) {
+  return state.copyWith(weatherData: action.currentWeather, isLoading: false);
+}
+
+AppState _getWeatherError(AppState state, GetWeatherError action) {
+  return state.copyWith(isLoading: false);
 }

@@ -6,26 +6,31 @@ import '../actions/create_user.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
+import '../actions/get_weather.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
 import '../actions/signin_google.dart';
 import '../api/authentication_api.dart';
 import '../api/location_api.dart';
+import '../api/open_weather_api.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
+import '../models/current_weather.dart';
 import '../models/location_data.dart';
 
 class AppEpics extends EpicClass<AppState> {
-  AppEpics(this.authenticationApi, this.locationApi);
+  AppEpics(this.authenticationApi, this.locationApi, this.openWeatherApi);
 
   final AuthenticationApi authenticationApi;
   final LocationApi locationApi;
+  final OpenWeatherApi openWeatherApi;
 
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, GetLocationStart>(_getLocationStart).call,
+      TypedEpic<AppState, GetWeatherStart>(_getWeatherStart).call,
       TypedEpic<AppState, SignInEmailPasswordStart>(_signInEmailPassword).call,
       TypedEpic<AppState, SignInGoogleStart>(_signInGoogle).call,
       TypedEpic<AppState, SignInFacebookStart>(_signInFacebook).call,
@@ -112,11 +117,24 @@ class AppEpics extends EpicClass<AppState> {
   }
 
   Stream<AppAction> _getLocationStart(Stream<GetLocationStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((GetLocationStart action) {
+    return actions //
+        .asyncMap((GetLocationStart event) => locationApi.getLocation())
+        .expand((LocationData location) {
+      return <AppAction>[
+        GetLocation.successful(location),
+        const GetWeatherStart(),
+      ];
+    }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
+  }
+
+  Stream<AppAction> _getWeatherStart(Stream<GetWeatherStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetWeatherStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => locationApi.getLocation())
-          .map((LocationData? locationData) => GetLocation.successful(locationData!))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
+          .asyncMap(
+              (_) => openWeatherApi.getCurrentWeather(locationData: store.state.locationData!, imperialUnits: false))
+          .map((CurrentWeather weather) => GetWeather.successful(weather))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetWeather.error(error, stackTrace));
     });
   }
 }

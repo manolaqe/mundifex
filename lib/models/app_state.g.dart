@@ -18,8 +18,13 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       locationData: json['locationData'] == null
           ? null
           : LocationData.fromJson(json['locationData'] as Map<String, dynamic>),
+      isLoading: json['isLoading'] as bool? ?? false,
       airQualityData: json['airQualityData'] as Map<String, dynamic>?,
       airTrafficData: json['airTrafficData'] as Map<String, dynamic>?,
+      weatherData: json['weatherData'] == null
+          ? null
+          : CurrentWeather.fromJson(
+              json['weatherData'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -27,6 +32,8 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'user': instance.user,
       'users': instance.users,
       'locationData': instance.locationData,
+      'isLoading': instance.isLoading,
       'airQualityData': instance.airQualityData,
       'airTrafficData': instance.airTrafficData,
+      'weatherData': instance.weatherData,
     };
