@@ -24,8 +24,7 @@ mixin _$AppState {
   Map<String, AppUser> get users => throw _privateConstructorUsedError;
   LocationData? get locationData => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get airQualityData =>
-      throw _privateConstructorUsedError;
+  AirPollutionData? get airPollutionData => throw _privateConstructorUsedError;
   Map<String, dynamic>? get airTrafficData =>
       throw _privateConstructorUsedError;
   CurrentWeather? get weatherData => throw _privateConstructorUsedError;
@@ -47,13 +46,14 @@ abstract class $AppStateCopyWith<$Res> {
       Map<String, AppUser> users,
       LocationData? locationData,
       bool isLoading,
-      Map<String, dynamic>? airQualityData,
+      AirPollutionData? airPollutionData,
       Map<String, dynamic>? airTrafficData,
       CurrentWeather? weatherData,
       String? address});
 
   $AppUserCopyWith<$Res>? get user;
   $LocationDataCopyWith<$Res>? get locationData;
+  $AirPollutionDataCopyWith<$Res>? get airPollutionData;
   $CurrentWeatherCopyWith<$Res>? get weatherData;
 }
 
@@ -74,7 +74,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? users = null,
     Object? locationData = freezed,
     Object? isLoading = null,
-    Object? airQualityData = freezed,
+    Object? airPollutionData = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
     Object? address = freezed,
@@ -96,10 +96,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      airQualityData: freezed == airQualityData
-          ? _value.airQualityData
-          : airQualityData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+      airPollutionData: freezed == airPollutionData
+          ? _value.airPollutionData
+          : airPollutionData // ignore: cast_nullable_to_non_nullable
+              as AirPollutionData?,
       airTrafficData: freezed == airTrafficData
           ? _value.airTrafficData
           : airTrafficData // ignore: cast_nullable_to_non_nullable
@@ -141,6 +141,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 
   @override
   @pragma('vm:prefer-inline')
+  $AirPollutionDataCopyWith<$Res>? get airPollutionData {
+    if (_value.airPollutionData == null) {
+      return null;
+    }
+
+    return $AirPollutionDataCopyWith<$Res>(_value.airPollutionData!, (value) {
+      return _then(_value.copyWith(airPollutionData: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $CurrentWeatherCopyWith<$Res>? get weatherData {
     if (_value.weatherData == null) {
       return null;
@@ -165,7 +177,7 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       Map<String, AppUser> users,
       LocationData? locationData,
       bool isLoading,
-      Map<String, dynamic>? airQualityData,
+      AirPollutionData? airPollutionData,
       Map<String, dynamic>? airTrafficData,
       CurrentWeather? weatherData,
       String? address});
@@ -174,6 +186,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
   $AppUserCopyWith<$Res>? get user;
   @override
   $LocationDataCopyWith<$Res>? get locationData;
+  @override
+  $AirPollutionDataCopyWith<$Res>? get airPollutionData;
   @override
   $CurrentWeatherCopyWith<$Res>? get weatherData;
 }
@@ -193,7 +207,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? users = null,
     Object? locationData = freezed,
     Object? isLoading = null,
-    Object? airQualityData = freezed,
+    Object? airPollutionData = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
     Object? address = freezed,
@@ -215,10 +229,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      airQualityData: freezed == airQualityData
-          ? _value._airQualityData
-          : airQualityData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+      airPollutionData: freezed == airPollutionData
+          ? _value.airPollutionData
+          : airPollutionData // ignore: cast_nullable_to_non_nullable
+              as AirPollutionData?,
       airTrafficData: freezed == airTrafficData
           ? _value._airTrafficData
           : airTrafficData // ignore: cast_nullable_to_non_nullable
@@ -243,12 +257,11 @@ class _$AppState$Impl implements AppState$ {
       final Map<String, AppUser> users = const <String, AppUser>{},
       this.locationData,
       this.isLoading = false,
-      final Map<String, dynamic>? airQualityData,
+      this.airPollutionData,
       final Map<String, dynamic>? airTrafficData,
       this.weatherData,
       this.address})
       : _users = users,
-        _airQualityData = airQualityData,
         _airTrafficData = airTrafficData;
 
   factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
@@ -270,16 +283,8 @@ class _$AppState$Impl implements AppState$ {
   @override
   @JsonKey()
   final bool isLoading;
-  final Map<String, dynamic>? _airQualityData;
   @override
-  Map<String, dynamic>? get airQualityData {
-    final value = _airQualityData;
-    if (value == null) return null;
-    if (_airQualityData is EqualUnmodifiableMapView) return _airQualityData;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  final AirPollutionData? airPollutionData;
   final Map<String, dynamic>? _airTrafficData;
   @override
   Map<String, dynamic>? get airTrafficData {
@@ -297,7 +302,7 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airQualityData: $airQualityData, airTrafficData: $airTrafficData, weatherData: $weatherData, address: $address)';
+    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, address: $address)';
   }
 
   @override
@@ -311,8 +316,8 @@ class _$AppState$Impl implements AppState$ {
                 other.locationData == locationData) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            const DeepCollectionEquality()
-                .equals(other._airQualityData, _airQualityData) &&
+            (identical(other.airPollutionData, airPollutionData) ||
+                other.airPollutionData == airPollutionData) &&
             const DeepCollectionEquality()
                 .equals(other._airTrafficData, _airTrafficData) &&
             (identical(other.weatherData, weatherData) ||
@@ -328,7 +333,7 @@ class _$AppState$Impl implements AppState$ {
       const DeepCollectionEquality().hash(_users),
       locationData,
       isLoading,
-      const DeepCollectionEquality().hash(_airQualityData),
+      airPollutionData,
       const DeepCollectionEquality().hash(_airTrafficData),
       weatherData,
       address);
@@ -353,7 +358,7 @@ abstract class AppState$ implements AppState {
       final Map<String, AppUser> users,
       final LocationData? locationData,
       final bool isLoading,
-      final Map<String, dynamic>? airQualityData,
+      final AirPollutionData? airPollutionData,
       final Map<String, dynamic>? airTrafficData,
       final CurrentWeather? weatherData,
       final String? address}) = _$AppState$Impl;
@@ -370,7 +375,7 @@ abstract class AppState$ implements AppState {
   @override
   bool get isLoading;
   @override
-  Map<String, dynamic>? get airQualityData;
+  AirPollutionData? get airPollutionData;
   @override
   Map<String, dynamic>? get airTrafficData;
   @override

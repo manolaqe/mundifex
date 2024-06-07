@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../models/air_pollution_data.dart';
 import '../models/app_state.dart';
 import '../models/current_weather.dart';
 import '../models/location_data.dart';
 import 'containers/address_container.dart';
+import 'containers/air_pollution_container.dart';
 import 'containers/is_loading_container.dart';
 import 'containers/location_container.dart';
 import 'containers/weather_container.dart';
@@ -52,25 +54,43 @@ class _HomePageState extends State<HomePage> {
                           child: CircularProgressIndicator(),
                         );
                       }
-                      return Scaffold(
-                        appBar: AppBar(
-                          title: Text('Mundifex'),
-                        ),
-                        body: Column(
-                          children: <Widget>[
-                            Expanded(
-                              child: CustomScrollView(
-                                slivers: <Widget>[
-                                  SliverToBoxAdapter(
-                                      child: InfoCard(
-                                          locationData: locationData, currentWeather: weatherData, address: address)),
-                                  SliverToBoxAdapter(child: Text(weatherData.main.feelsLike.toString())),
-                                  // InfoCard(locationData: locationData!, currentWeather: weatherData!)
-                                ],
-                              ),
+                      return AirPollutionContainer(
+                        builder: (BuildContext context, AirPollutionData? airPollutionData) {
+                          if (airPollutionData == null) {
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                          return Scaffold(
+                            appBar: AppBar(
+                              title: Text('Mundifex'),
                             ),
-                          ],
-                        ),
+                            body: Column(
+                              children: <Widget>[
+                                Expanded(
+                                  child: CustomScrollView(
+                                    slivers: <Widget>[
+                                      SliverToBoxAdapter(
+                                        child: InfoCard(
+                                          locationData: locationData,
+                                          currentWeather: weatherData,
+                                          address: address,
+                                          airPollutionData: airPollutionData,
+                                        ),
+                                      ),
+                                      SliverToBoxAdapter(
+                                        child: Text(
+                                          weatherData.main.feelsLike.toString(),
+                                        ),
+                                      ),
+                                      // InfoCard(locationData: locationData!, currentWeather: weatherData!)
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       );
                     },
                   );

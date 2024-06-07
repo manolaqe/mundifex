@@ -2,6 +2,7 @@ import 'package:redux/redux.dart';
 
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
+import '../actions/get_air_pollution.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
@@ -31,6 +32,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetAddressStart>(_getAddressStart).call,
     TypedReducer<AppState, GetAddressSuccessful>(_getAddressSuccessfu).call,
     TypedReducer<AppState, GetAddressError>(_getAddressError).call,
+    TypedReducer<AppState, GetAirPollutionStart>(_getAirPollutionStart).call,
+    TypedReducer<AppState, GetAirPollutionSuccessful>(_getAirPollutionSuccessful).call,
+    TypedReducer<AppState, GetAirPollutionError>(_getAirPollutionError).call,
   ])(state, action);
 }
 
@@ -101,4 +105,16 @@ AppState _getAddressSuccessfu(AppState state, GetAddressSuccessful action) {
 
 AppState _getAddressError(AppState state, GetAddressError action) {
   return state.copyWith(isLoading: false, address: '');
+}
+
+AppState _getAirPollutionStart(AppState state, GetAirPollutionStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getAirPollutionSuccessful(AppState state, GetAirPollutionSuccessful action) {
+  return state.copyWith(isLoading: false, airPollutionData: action.airPollutionData);
+}
+
+AppState _getAirPollutionError(AppState state, GetAirPollutionError action) {
+  return state.copyWith(isLoading: false);
 }
