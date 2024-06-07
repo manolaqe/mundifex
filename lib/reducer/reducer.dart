@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:redux/redux.dart';
 
 import '../actions/create_user.dart';

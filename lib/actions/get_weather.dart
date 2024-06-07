@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../actions/app_action.dart';
 import '../models/current_weather.dart';
-import '../models/location_data.dart';
 
 part 'get_weather.freezed.dart';
 

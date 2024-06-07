@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../actions/get_weather.dart';
 import '../models/app_state.dart';
 import '../models/current_weather.dart';
 import 'containers/is_loading_container.dart';
@@ -43,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(weatherData!.coord.toString()),
+                      Text(weatherData.coord.toString()),
                     ],
                   ),
                 ),

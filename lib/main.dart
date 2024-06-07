@@ -9,9 +9,7 @@ import 'package:location/location.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
-import 'actions/get_current_user.dart';
 import 'actions/get_location.dart';
-import 'actions/get_weather.dart';
 import 'api/authentication_api.dart';
 import 'api/location_api.dart';
 import 'api/open_weather_api.dart';
