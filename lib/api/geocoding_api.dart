@@ -12,7 +12,7 @@ class GeocodingApi {
     final String url =
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=${_locationData.lat},${_locationData.lon}&key=${apiKey}';
 
-    final response = await http.get(Uri.parse(url));
+    final http.Response response = await http.get(Uri.parse(url));
 
     if (response.statusCode != 200) {
       throw Exception('Failed to load data');
