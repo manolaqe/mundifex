@@ -28,7 +28,16 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ? null
           : CurrentWeather.fromJson(
               json['weatherData'] as Map<String, dynamic>),
-      address: json['address'] as String?,
+      addressMap: (json['addressMap'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
+      flowSegmentData: json['flowSegmentData'] == null
+          ? null
+          : FlowSegmentData.fromJson(
+              json['flowSegmentData'] as Map<String, dynamic>),
+      waterQualityData: (json['waterQualityData'] as List<dynamic>?)
+          ?.map((e) => WaterQualityData.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -40,5 +49,7 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'airPollutionData': instance.airPollutionData,
       'airTrafficData': instance.airTrafficData,
       'weatherData': instance.weatherData,
-      'address': instance.address,
+      'addressMap': instance.addressMap,
+      'flowSegmentData': instance.flowSegmentData,
+      'waterQualityData': instance.waterQualityData,
     };

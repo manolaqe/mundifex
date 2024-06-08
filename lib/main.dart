@@ -10,10 +10,13 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'actions/get_location.dart';
+import 'actions/get_water_quality.dart';
+import 'api/apa_nova_api.dart';
 import 'api/authentication_api.dart';
 import 'api/geocoding_api.dart';
 import 'api/location_api.dart';
 import 'api/open_weather_api.dart';
+import 'api/tomtom_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
@@ -35,7 +38,9 @@ Future<void> main() async {
   final LocationApi locationApi = LocationApi(location: location);
   final OpenWeatherApi openWeatherApi = OpenWeatherApi(client, '2ede6351d981312c95d45e1b5c51849e');
   final GeocodingApi geocodingApi = GeocodingApi('AIzaSyC0O4BZ4uG0sWqoW5_rfPXEoSQLecXsuVg');
-  final AppEpics appEpic = AppEpics(authApi, locationApi, openWeatherApi, geocodingApi);
+  final TomtomApi tomtomApi = TomtomApi('0Sdv7McYR5LpIwUUlxksC2JRfqWINBCX');
+  final ApaNovaApi apaNovaApi = ApaNovaApi();
+  final AppEpics appEpic = AppEpics(authApi, locationApi, openWeatherApi, geocodingApi, tomtomApi, apaNovaApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -46,6 +51,7 @@ Future<void> main() async {
   );
 
   store.dispatch(const GetLocation());
+  store.dispatch(const GetWaterQuality());
 
   runApp(ScrollableApp(store: store));
 }

@@ -1,44 +1,50 @@
 import 'package:flutter/material.dart';
-
+import 'dart:math';
 import '../models/air_pollution_data.dart';
 import '../models/current_weather.dart';
+import '../models/flow_segment_data.dart';
 import '../models/location_data.dart';
+import '../models/water_quality_data.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard(
       {super.key,
       required this.locationData,
       required this.currentWeather,
-      required this.address,
-      required this.airPollutionData});
+      required this.addressMap,
+      required this.airPollutionData,
+      required this.flowSegmentData,
+      required this.waterQualityData});
 
   final LocationData locationData;
   final CurrentWeather currentWeather;
-  final String address;
+  final Map<String, String> addressMap;
   final AirPollutionData airPollutionData;
+  final FlowSegmentData flowSegmentData;
+  final List<WaterQualityData> waterQualityData;
 
   int computeAQI(AirPollutionData airPollutionData) {
-    double pm25 = airPollutionData.list[0].components.pm2_5;
-    double pm10 = airPollutionData.list[0].components.pm10;
-    double no2 = airPollutionData.list[0].components.no2;
-    double o3 = airPollutionData.list[0].components.o3;
-    double so2 = airPollutionData.list[0].components.so2;
-    double co = airPollutionData.list[0].components.co;
+    final double pm25 = airPollutionData.list[0].components.pm2_5;
+    final double pm10 = airPollutionData.list[0].components.pm10;
+    final double no2 = airPollutionData.list[0].components.no2;
+    final double o3 = airPollutionData.list[0].components.o3;
+    final double so2 = airPollutionData.list[0].components.so2;
+    final double co = airPollutionData.list[0].components.co;
 
     double aqi = 0;
 
     if (pm25 > 0) {
-      aqi = _calculateComponentAQI(pm25, "pm25");
+      aqi = _calculateComponentAQI(pm25, 'pm25');
     } else if (pm10 > 0) {
-      aqi = _calculateComponentAQI(pm10, "pm10");
+      aqi = _calculateComponentAQI(pm10, 'pm10');
     } else if (no2 > 0) {
-      aqi = _calculateComponentAQI(no2, "no2");
+      aqi = _calculateComponentAQI(no2, 'no2');
     } else if (o3 > 0) {
-      aqi = _calculateComponentAQI(o3, "o3");
+      aqi = _calculateComponentAQI(o3, 'o3');
     } else if (so2 > 0) {
-      aqi = _calculateComponentAQI(so2, "so2");
+      aqi = _calculateComponentAQI(so2, 'so2');
     } else if (co > 0) {
-      aqi = _calculateComponentAQI(co, "co");
+      aqi = _calculateComponentAQI(co, 'co');
     }
 
     return aqi.round();
@@ -47,7 +53,7 @@ class InfoCard extends StatelessWidget {
   double _calculateComponentAQI(double value, String component) {
     double aqi = 0;
 
-    if (component == "pm25") {
+    if (component == 'pm25') {
       if (value <= 12) {
         aqi = _linearInterpolation(value, 0, 12, 0, 50);
       } else if (value <= 35.4) {
@@ -63,7 +69,7 @@ class InfoCard extends StatelessWidget {
       } else if (value <= 500.4) {
         aqi = _linearInterpolation(value, 350.5, 500.4, 401, 500);
       }
-    } else if (component == "pm10") {
+    } else if (component == 'pm10') {
       if (value <= 54) {
         aqi = _linearInterpolation(value, 0, 54, 0, 50);
       } else if (value <= 154) {
@@ -79,7 +85,7 @@ class InfoCard extends StatelessWidget {
       } else if (value <= 604) {
         aqi = _linearInterpolation(value, 505, 604, 401, 500);
       }
-    } else if (component == "no2") {
+    } else if (component == 'no2') {
       if (value <= 53) {
         aqi = _linearInterpolation(value, 0, 53, 0, 50);
       } else if (value <= 100) {
@@ -95,7 +101,7 @@ class InfoCard extends StatelessWidget {
       } else if (value <= 2049) {
         aqi = _linearInterpolation(value, 1650, 2049, 401, 500);
       }
-    } else if (component == "o3") {
+    } else if (component == 'o3') {
       if (value <= 70) {
         aqi = _linearInterpolation(value, 0, 70, 0, 50);
       } else if (value <= 120) {
@@ -111,7 +117,7 @@ class InfoCard extends StatelessWidget {
       } else if (value <= 360) {
         aqi = _linearInterpolation(value, 301, 360, 401, 500);
       }
-    } else if (component == "so2") {
+    } else if (component == 'so2') {
       if (value <= 35) {
         aqi = _linearInterpolation(value, 0, 35, 0, 50);
       } else if (value <= 75) {
@@ -127,7 +133,7 @@ class InfoCard extends StatelessWidget {
       } else if (value <= 1004) {
         aqi = _linearInterpolation(value, 805, 1004, 401, 500);
       }
-    } else if (component == "co") {
+    } else if (component == 'co') {
       if (value <= 4.4) {
         aqi = _linearInterpolation(value, 0, 4.4, 0, 50);
       } else if (value <= 9.4) {
@@ -152,6 +158,51 @@ class InfoCard extends StatelessWidget {
     return ((y1 - y0) / (x1 - x0)) * (x - x0) + y0;
   }
 
+  Color _getAirQualityColor(int aqi) {
+    switch (aqi) {
+      case 1:
+        return Colors.green;
+      case 2:
+        return Colors.yellow;
+      case 3:
+        return Colors.orange;
+      case 4:
+        return Colors.red;
+      case 5:
+        return Colors.purple;
+      default:
+        return Colors.blue;
+    }
+  }
+
+  Color _getPM2_5Color(int value) {
+    if (value < 10) {
+      return Colors.green;
+    } else if (value >= 10 && value < 25) {
+      return Colors.yellow;
+    } else if (value >= 25 && value < 50) {
+      return Colors.orange;
+    } else if (value >= 50 && value < 75) {
+      return Colors.red;
+    } else {
+      return Colors.purple;
+    }
+  }
+
+  Color _getPM10Color(int value) {
+    if (value < 20) {
+      return Colors.green;
+    } else if (value >= 20 && value < 50) {
+      return Colors.yellow;
+    } else if (value >= 50 && value < 100) {
+      return Colors.orange;
+    } else if (value >= 100 && value < 200) {
+      return Colors.red;
+    } else {
+      return Colors.purple;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -160,36 +211,196 @@ class InfoCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
-          children: [
+          children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Icon(
                   Icons.location_on_outlined,
                   size: 30,
-                  color: Colors.white,
+                  color: Colors.blue,
                 ),
-                Text(address),
+                Text(
+                  addressMap['address'] ?? '',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
-              children: [
+              children: <Widget>[
                 Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'AQI',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      computeAQI(airPollutionData).toString(),
-                      style: TextStyle(fontSize: 24),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'AQI',
+                        style: TextStyle(fontSize: 16, color: _getAirQualityColor(airPollutionData.list[0].main.aqi)),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        computeAQI(airPollutionData).toString(),
+                        style: TextStyle(fontSize: 24, color: _getAirQualityColor(airPollutionData.list[0].main.aqi)),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('PM2.5 (μg/m3)',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
+                          )),
+                      const SizedBox(height: 8),
+                      Text(airPollutionData.list[0].components.pm2_5.round().toString(),
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
+                          )),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'PM10 (μg/m3)',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(airPollutionData.list[0].components.pm10.round().toString(),
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
+                          )),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        'Clor',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text('',
+                          // waterQualityData
+                          //     .firstWhere((WaterQualityData record) => record.sector == addressMap['sector'])
+                          //     .clor
+                          //     .toString(),
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
+                          )),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Image.asset('assets/${currentWeather.weather[0].icon}.png', width: 30, height: 30),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              ' ${currentWeather.main.temp.round()}°C',
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
-                ))
+                ),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Transform.rotate(
+                          angle: (currentWeather.wind.deg - 90) * pi / 180,
+                          child: const Icon(
+                            Icons.navigation_outlined,
+                            size: 30,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            const SizedBox(width: 8),
+                            Text(
+                              ' ${currentWeather.wind.speed} m/s',
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        const Icon(
+                          Icons.water_drop_sharp,
+                          size: 30,
+                          color: Colors.blue,
+                        ),
+                        Text(
+                          ' ${currentWeather.main.humidity}%',
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        const Icon(
+                          Icons.arrow_downward_outlined,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          ' ${currentWeather.main.pressure} hPa',
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.traffic_outlined,
+                    size: 30,
+                    color:
+                        flowSegmentData.currentSpeed < 0.5 * flowSegmentData.freeFlowSpeed ? Colors.red : Colors.green),
+                Text(
+                  ' (Actual:${flowSegmentData.currentSpeed} Ideal:${flowSegmentData.freeFlowSpeed})',
+                  style: const TextStyle(fontSize: 17),
+                ),
               ],
             )
           ],

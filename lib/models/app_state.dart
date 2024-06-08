@@ -3,6 +3,8 @@ import './location_data.dart';
 import 'air_pollution_data.dart';
 import 'app_user.dart';
 import 'current_weather.dart';
+import 'flow_segment_data.dart';
+import 'water_quality_data.dart';
 
 part 'app_state.freezed.dart';
 part 'app_state.g.dart';
@@ -17,7 +19,9 @@ class AppState with _$AppState {
     AirPollutionData? airPollutionData,
     Map<String, dynamic>? airTrafficData,
     CurrentWeather? weatherData,
-    String? address,
+    Map<String, String>? addressMap,
+    FlowSegmentData? flowSegmentData,
+    List<WaterQualityData>? waterQualityData,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

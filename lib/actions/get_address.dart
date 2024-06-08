@@ -8,7 +8,7 @@ part 'get_address.freezed.dart';
 class GetAddress with _$GetAddress implements AppAction {
   const factory GetAddress() = GetAddressStart;
 
-  const factory GetAddress.successful(String address) = GetAddressSuccessful;
+  const factory GetAddress.successful(Map<String, String> addressMap) = GetAddressSuccessful;
 
   @Implements<ErrorAction>()
   const factory GetAddress.error(Object error, StackTrace stackTrace) = GetAddressError;

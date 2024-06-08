@@ -19,21 +19,21 @@ mixin _$GetAddress {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String address) successful,
+    required TResult Function(Map<String, String> addressMap) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String address)? successful,
+    TResult? Function(Map<String, String> addressMap)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String address)? successful,
+    TResult Function(Map<String, String> addressMap)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$GetAddressStartImpl implements GetAddressStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String address) successful,
+    required TResult Function(Map<String, String> addressMap) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -129,7 +129,7 @@ class _$GetAddressStartImpl implements GetAddressStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String address)? successful,
+    TResult? Function(Map<String, String> addressMap)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return $default?.call();
@@ -139,7 +139,7 @@ class _$GetAddressStartImpl implements GetAddressStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String address)? successful,
+    TResult Function(Map<String, String> addressMap)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -194,7 +194,7 @@ abstract class _$$GetAddressSuccessfulImplCopyWith<$Res> {
           $Res Function(_$GetAddressSuccessfulImpl) then) =
       __$$GetAddressSuccessfulImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String address});
+  $Res call({Map<String, String> addressMap});
 }
 
 /// @nodoc
@@ -208,13 +208,13 @@ class __$$GetAddressSuccessfulImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = null,
+    Object? addressMap = null,
   }) {
     return _then(_$GetAddressSuccessfulImpl(
-      null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == addressMap
+          ? _value._addressMap
+          : addressMap // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -222,14 +222,20 @@ class __$$GetAddressSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
-  const _$GetAddressSuccessfulImpl(this.address);
+  const _$GetAddressSuccessfulImpl(final Map<String, String> addressMap)
+      : _addressMap = addressMap;
 
+  final Map<String, String> _addressMap;
   @override
-  final String address;
+  Map<String, String> get addressMap {
+    if (_addressMap is EqualUnmodifiableMapView) return _addressMap;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_addressMap);
+  }
 
   @override
   String toString() {
-    return 'GetAddress.successful(address: $address)';
+    return 'GetAddress.successful(addressMap: $addressMap)';
   }
 
   @override
@@ -237,11 +243,13 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAddressSuccessfulImpl &&
-            (identical(other.address, address) || other.address == address));
+            const DeepCollectionEquality()
+                .equals(other._addressMap, _addressMap));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, address);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_addressMap));
 
   @JsonKey(ignore: true)
   @override
@@ -255,32 +263,32 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String address) successful,
+    required TResult Function(Map<String, String> addressMap) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return successful(address);
+    return successful(addressMap);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String address)? successful,
+    TResult? Function(Map<String, String> addressMap)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return successful?.call(address);
+    return successful?.call(addressMap);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String address)? successful,
+    TResult Function(Map<String, String> addressMap)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(address);
+      return successful(addressMap);
     }
     return orElse();
   }
@@ -321,10 +329,10 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
 }
 
 abstract class GetAddressSuccessful implements GetAddress {
-  const factory GetAddressSuccessful(final String address) =
+  const factory GetAddressSuccessful(final Map<String, String> addressMap) =
       _$GetAddressSuccessfulImpl;
 
-  String get address;
+  Map<String, String> get addressMap;
   @JsonKey(ignore: true)
   _$$GetAddressSuccessfulImplCopyWith<_$GetAddressSuccessfulImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -403,7 +411,7 @@ class _$GetAddressErrorImpl implements GetAddressError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String address) successful,
+    required TResult Function(Map<String, String> addressMap) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -413,7 +421,7 @@ class _$GetAddressErrorImpl implements GetAddressError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String address)? successful,
+    TResult? Function(Map<String, String> addressMap)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return error?.call(this.error, stackTrace);
@@ -423,7 +431,7 @@ class _$GetAddressErrorImpl implements GetAddressError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String address)? successful,
+    TResult Function(Map<String, String> addressMap)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {

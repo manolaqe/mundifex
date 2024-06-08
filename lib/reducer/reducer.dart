@@ -4,8 +4,10 @@ import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
 import '../actions/get_current_user.dart';
+import '../actions/get_flow_segment_data.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
+import '../actions/get_water_quality.dart';
 import '../actions/get_weather.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
@@ -35,6 +37,12 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetAirPollutionStart>(_getAirPollutionStart).call,
     TypedReducer<AppState, GetAirPollutionSuccessful>(_getAirPollutionSuccessful).call,
     TypedReducer<AppState, GetAirPollutionError>(_getAirPollutionError).call,
+    TypedReducer<AppState, GetFlowSegmentDataStart>(_getFlowSegmentDataStart).call,
+    TypedReducer<AppState, GetFlowSegmentDataSuccessful>(_getFlowSegmentDataSuccessful).call,
+    TypedReducer<AppState, GetFlowSegmentDataError>(_getFlowSegmentDataError).call,
+    TypedReducer<AppState, GetWaterQualityStart>(_getWaterQualityStart).call,
+    TypedReducer<AppState, GetWaterQualitySuccessful>(_getWaterQualitySuccessful).call,
+    TypedReducer<AppState, GetWaterQualityError>(_getWaterQualityError).call,
   ])(state, action);
 }
 
@@ -100,11 +108,11 @@ AppState _getAddressStart(AppState state, GetAddressStart action) {
 }
 
 AppState _getAddressSuccessfu(AppState state, GetAddressSuccessful action) {
-  return state.copyWith(isLoading: false, address: action.address);
+  return state.copyWith(isLoading: false, addressMap: action.addressMap);
 }
 
 AppState _getAddressError(AppState state, GetAddressError action) {
-  return state.copyWith(isLoading: false, address: '');
+  return state.copyWith(isLoading: false, addressMap: <String, String>{});
 }
 
 AppState _getAirPollutionStart(AppState state, GetAirPollutionStart action) {
@@ -116,5 +124,29 @@ AppState _getAirPollutionSuccessful(AppState state, GetAirPollutionSuccessful ac
 }
 
 AppState _getAirPollutionError(AppState state, GetAirPollutionError action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getFlowSegmentDataStart(AppState state, GetFlowSegmentDataStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getFlowSegmentDataSuccessful(AppState state, GetFlowSegmentDataSuccessful action) {
+  return state.copyWith(isLoading: false, flowSegmentData: action.flowSegmentData);
+}
+
+AppState _getFlowSegmentDataError(AppState state, GetFlowSegmentDataError action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getWaterQualityStart(AppState state, GetWaterQualityStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getWaterQualitySuccessful(AppState state, GetWaterQualitySuccessful action) {
+  return state.copyWith(isLoading: false, waterQualityData: action.waterQualityData);
+}
+
+AppState _getWaterQualityError(AppState state, GetWaterQualityError action) {
   return state.copyWith(isLoading: false);
 }
