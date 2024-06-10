@@ -5,6 +5,7 @@ import 'air_pollution_data.dart';
 import 'app_user.dart';
 import 'current_weather.dart';
 import 'flow_segment_data.dart';
+import 'forecast_weather.dart';
 import 'water_quality_data.dart';
 
 part 'app_state.freezed.dart';
@@ -23,6 +24,7 @@ class AppState with _$AppState {
     AddressData? addressData,
     FlowSegmentData? flowSegmentData,
     List<WaterQualityData>? waterQualityData,
+    ForecastWeather? forecastWeather,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

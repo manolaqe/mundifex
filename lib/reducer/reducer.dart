@@ -5,6 +5,7 @@ import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_flow_segment_data.dart';
+import '../actions/get_forecast_weather.dart';
 import '../actions/get_location.dart';
 import '../actions/get_users.dart';
 import '../actions/get_water_quality.dart';
@@ -43,6 +44,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetWaterQualityStart>(_getWaterQualityStart).call,
     TypedReducer<AppState, GetWaterQualitySuccessful>(_getWaterQualitySuccessful).call,
     TypedReducer<AppState, GetWaterQualityError>(_getWaterQualityError).call,
+    TypedReducer<AppState, GetForecastWeatherStart>(_getForecastWeatherStart).call,
+    TypedReducer<AppState, GetForecastWeatherSuccessful>(_getForecastWeatherSuccessful).call,
+    TypedReducer<AppState, GetForecastWeatherError>(_getForecastWeatherError).call,
   ])(state, action);
 }
 
@@ -148,5 +152,17 @@ AppState _getWaterQualitySuccessful(AppState state, GetWaterQualitySuccessful ac
 }
 
 AppState _getWaterQualityError(AppState state, GetWaterQualityError action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getForecastWeatherStart(AppState state, GetForecastWeatherStart action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getForecastWeatherSuccessful(AppState state, GetForecastWeatherSuccessful action) {
+  return state.copyWith(forecastWeather: action.forecastWeather, isLoading: false);
+}
+
+AppState _getForecastWeatherError(AppState state, GetForecastWeatherError action) {
   return state.copyWith(isLoading: false);
 }

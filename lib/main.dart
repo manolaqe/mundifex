@@ -20,6 +20,7 @@ import 'api/tomtom_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
+import 'presentation/forecast_page.dart';
 import 'presentation/home_page.dart';
 import 'presentation/signin_page.dart';
 import 'presentation/signup_page.dart';
@@ -74,6 +75,7 @@ class ScrollableApp extends StatelessWidget {
           '/sign_in': (BuildContext context) => const SignInPage(),
           '/sign_up': (BuildContext context) => const SignUpPage(),
           '/forgot_password': (BuildContext context) => const HomePage(),
+          '/forecast_page': (BuildContext context) => const ForecastPage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },

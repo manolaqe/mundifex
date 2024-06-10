@@ -32,6 +32,7 @@ mixin _$AppState {
   FlowSegmentData? get flowSegmentData => throw _privateConstructorUsedError;
   List<WaterQualityData>? get waterQualityData =>
       throw _privateConstructorUsedError;
+  ForecastWeather? get forecastWeather => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +55,8 @@ abstract class $AppStateCopyWith<$Res> {
       CurrentWeather? weatherData,
       AddressData? addressData,
       FlowSegmentData? flowSegmentData,
-      List<WaterQualityData>? waterQualityData});
+      List<WaterQualityData>? waterQualityData,
+      ForecastWeather? forecastWeather});
 
   $AppUserCopyWith<$Res>? get user;
   $LocationDataCopyWith<$Res>? get locationData;
@@ -62,6 +64,7 @@ abstract class $AppStateCopyWith<$Res> {
   $CurrentWeatherCopyWith<$Res>? get weatherData;
   $AddressDataCopyWith<$Res>? get addressData;
   $FlowSegmentDataCopyWith<$Res>? get flowSegmentData;
+  $ForecastWeatherCopyWith<$Res>? get forecastWeather;
 }
 
 /// @nodoc
@@ -87,6 +90,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? addressData = freezed,
     Object? flowSegmentData = freezed,
     Object? waterQualityData = freezed,
+    Object? forecastWeather = freezed,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
@@ -129,6 +133,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.waterQualityData
           : waterQualityData // ignore: cast_nullable_to_non_nullable
               as List<WaterQualityData>?,
+      forecastWeather: freezed == forecastWeather
+          ? _value.forecastWeather
+          : forecastWeather // ignore: cast_nullable_to_non_nullable
+              as ForecastWeather?,
     ) as $Val);
   }
 
@@ -203,6 +211,18 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return _then(_value.copyWith(flowSegmentData: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ForecastWeatherCopyWith<$Res>? get forecastWeather {
+    if (_value.forecastWeather == null) {
+      return null;
+    }
+
+    return $ForecastWeatherCopyWith<$Res>(_value.forecastWeather!, (value) {
+      return _then(_value.copyWith(forecastWeather: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -223,7 +243,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       CurrentWeather? weatherData,
       AddressData? addressData,
       FlowSegmentData? flowSegmentData,
-      List<WaterQualityData>? waterQualityData});
+      List<WaterQualityData>? waterQualityData,
+      ForecastWeather? forecastWeather});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -237,6 +258,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
   $AddressDataCopyWith<$Res>? get addressData;
   @override
   $FlowSegmentDataCopyWith<$Res>? get flowSegmentData;
+  @override
+  $ForecastWeatherCopyWith<$Res>? get forecastWeather;
 }
 
 /// @nodoc
@@ -260,6 +283,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? addressData = freezed,
     Object? flowSegmentData = freezed,
     Object? waterQualityData = freezed,
+    Object? forecastWeather = freezed,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
@@ -302,6 +326,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value._waterQualityData
           : waterQualityData // ignore: cast_nullable_to_non_nullable
               as List<WaterQualityData>?,
+      forecastWeather: freezed == forecastWeather
+          ? _value.forecastWeather
+          : forecastWeather // ignore: cast_nullable_to_non_nullable
+              as ForecastWeather?,
     ));
   }
 }
@@ -319,7 +347,8 @@ class _$AppState$Impl implements AppState$ {
       this.weatherData,
       this.addressData,
       this.flowSegmentData,
-      final List<WaterQualityData>? waterQualityData})
+      final List<WaterQualityData>? waterQualityData,
+      this.forecastWeather})
       : _users = users,
         _airTrafficData = airTrafficData,
         _waterQualityData = waterQualityData;
@@ -373,8 +402,11 @@ class _$AppState$Impl implements AppState$ {
   }
 
   @override
+  final ForecastWeather? forecastWeather;
+
+  @override
   String toString() {
-    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData)';
+    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData, forecastWeather: $forecastWeather)';
   }
 
   @override
@@ -399,7 +431,9 @@ class _$AppState$Impl implements AppState$ {
             (identical(other.flowSegmentData, flowSegmentData) ||
                 other.flowSegmentData == flowSegmentData) &&
             const DeepCollectionEquality()
-                .equals(other._waterQualityData, _waterQualityData));
+                .equals(other._waterQualityData, _waterQualityData) &&
+            (identical(other.forecastWeather, forecastWeather) ||
+                other.forecastWeather == forecastWeather));
   }
 
   @JsonKey(ignore: true)
@@ -415,7 +449,8 @@ class _$AppState$Impl implements AppState$ {
       weatherData,
       addressData,
       flowSegmentData,
-      const DeepCollectionEquality().hash(_waterQualityData));
+      const DeepCollectionEquality().hash(_waterQualityData),
+      forecastWeather);
 
   @JsonKey(ignore: true)
   @override
@@ -442,7 +477,8 @@ abstract class AppState$ implements AppState {
       final CurrentWeather? weatherData,
       final AddressData? addressData,
       final FlowSegmentData? flowSegmentData,
-      final List<WaterQualityData>? waterQualityData}) = _$AppState$Impl;
+      final List<WaterQualityData>? waterQualityData,
+      final ForecastWeather? forecastWeather}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -467,6 +503,8 @@ abstract class AppState$ implements AppState {
   FlowSegmentData? get flowSegmentData;
   @override
   List<WaterQualityData>? get waterQualityData;
+  @override
+  ForecastWeather? get forecastWeather;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>

@@ -1,7 +1,9 @@
 // ignore_for_file: avoid_dynamic_calls
 
 import 'dart:convert';
+import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
 import '../models/air_pollution_data.dart';
@@ -36,7 +38,7 @@ class OpenWeatherApi {
     return CurrentWeather.fromJson(json);
   }
 
-  Future<ForecastWeather> getWeatherForecast(
+  Future<ForecastWeather> getForecastWeather(
       {required LocationData locationData, required bool imperialUnits, int cnt = 40}) async {
     final Uri uri = Uri.parse('$_baseUrl/forecast');
 

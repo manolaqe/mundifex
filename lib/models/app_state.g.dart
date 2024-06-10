@@ -38,6 +38,10 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       waterQualityData: (json['waterQualityData'] as List<dynamic>?)
           ?.map((e) => WaterQualityData.fromJson(e as Map<String, dynamic>))
           .toList(),
+      forecastWeather: json['forecastWeather'] == null
+          ? null
+          : ForecastWeather.fromJson(
+              json['forecastWeather'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
@@ -52,4 +56,5 @@ Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
       'addressData': instance.addressData,
       'flowSegmentData': instance.flowSegmentData,
       'waterQualityData': instance.waterQualityData,
+      'forecastWeather': instance.forecastWeather,
     };

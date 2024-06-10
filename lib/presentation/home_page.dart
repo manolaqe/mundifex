@@ -10,9 +10,9 @@ import '../models/location_data.dart';
 import '../models/water_quality_data.dart';
 import 'containers/address_container.dart';
 import 'containers/air_pollution_container.dart';
+import 'containers/flow_segment_data_container.dart';
 import 'containers/is_loading_container.dart';
 import 'containers/location_container.dart';
-import 'containers/flow_segment_data_container.dart';
 import 'containers/water_quality_container.dart';
 import 'containers/weather_container.dart';
 import 'extensions.dart';
@@ -26,11 +26,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return WeatherContainer(
@@ -92,13 +87,18 @@ class _HomePageState extends State<HomePage> {
                                           child: CustomScrollView(
                                             slivers: <Widget>[
                                               SliverToBoxAdapter(
-                                                child: InfoCard(
-                                                  locationData: locationData,
-                                                  currentWeather: weatherData,
-                                                  addressData: addressData,
-                                                  airPollutionData: airPollutionData,
-                                                  flowSegmentData: flowSegmentData,
-                                                  waterQualityData: waterQualityData,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.pushNamed(context, '/forecast_page');
+                                                  },
+                                                  child: InfoCard(
+                                                    locationData: locationData,
+                                                    currentWeather: weatherData,
+                                                    addressData: addressData,
+                                                    airPollutionData: airPollutionData,
+                                                    flowSegmentData: flowSegmentData,
+                                                    waterQualityData: waterQualityData,
+                                                  ),
                                                 ),
                                               ),
                                               SliverToBoxAdapter(
@@ -106,7 +106,6 @@ class _HomePageState extends State<HomePage> {
                                                   weatherData.main.feelsLike.toString(),
                                                 ),
                                               ),
-                                              // InfoCard(locationData: locationData!, currentWeather: weatherData!)
                                             ],
                                           ),
                                         ),
