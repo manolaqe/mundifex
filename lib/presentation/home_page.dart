@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../actions/get_location.dart';
+import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
 import '../models/app_state.dart';
 import '../models/current_weather.dart';
@@ -54,8 +55,8 @@ class _HomePageState extends State<HomePage> {
                     );
                   }
                   return AddressContainer(
-                    builder: (BuildContext context, Map<String, String>? addressMap) {
-                      if (addressMap == null) {
+                    builder: (BuildContext context, AddressData? addressData) {
+                      if (addressData == null) {
                         return const Center(
                           child: CircularProgressIndicator(),
                         );
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                                                 child: InfoCard(
                                                   locationData: locationData,
                                                   currentWeather: weatherData,
-                                                  addressMap: addressMap,
+                                                  addressData: addressData,
                                                   airPollutionData: airPollutionData,
                                                   flowSegmentData: flowSegmentData,
                                                   waterQualityData: waterQualityData,

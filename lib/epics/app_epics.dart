@@ -21,6 +21,7 @@ import '../api/geocoding_api.dart';
 import '../api/location_api.dart';
 import '../api/open_weather_api.dart';
 import '../api/tomtom_api.dart';
+import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
@@ -164,7 +165,7 @@ class AppEpics extends EpicClass<AppState> {
         .flatMap((GetAddressStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => geocodingApi.getAddress(store.state.locationData!))
-          .map((Map<String, String> addressMap) => GetAddress.successful(addressMap))
+          .map((AddressData addressMap) => GetAddress.successful(addressMap))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAddress.error(error, stackTrace));
     });
   }

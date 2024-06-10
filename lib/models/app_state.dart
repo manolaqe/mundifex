@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import './location_data.dart';
+import 'address_data.dart';
 import 'air_pollution_data.dart';
 import 'app_user.dart';
 import 'current_weather.dart';
@@ -19,7 +20,7 @@ class AppState with _$AppState {
     AirPollutionData? airPollutionData,
     Map<String, dynamic>? airTrafficData,
     CurrentWeather? weatherData,
-    Map<String, String>? addressMap,
+    AddressData? addressData,
     FlowSegmentData? flowSegmentData,
     List<WaterQualityData>? waterQualityData,
   }) = AppState$;

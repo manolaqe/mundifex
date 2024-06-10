@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import '../models/address_component.dart';
+import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
 import '../models/current_weather.dart';
 import '../models/flow_segment_data.dart';
@@ -11,14 +13,14 @@ class InfoCard extends StatelessWidget {
       {super.key,
       required this.locationData,
       required this.currentWeather,
-      required this.addressMap,
+      required this.addressData,
       required this.airPollutionData,
       required this.flowSegmentData,
       required this.waterQualityData});
 
   final LocationData locationData;
   final CurrentWeather currentWeather;
-  final Map<String, String> addressMap;
+  final AddressData addressData;
   final AirPollutionData airPollutionData;
   final FlowSegmentData flowSegmentData;
   final List<WaterQualityData> waterQualityData;
@@ -203,6 +205,48 @@ class InfoCard extends StatelessWidget {
     }
   }
 
+  Color _getPHColor(double value) {
+    if (value < 6.5) {
+      return Colors.red;
+    } else if (value >= 6.5 && value < 8.5) {
+      return Colors.green;
+    } else {
+      return Colors.red;
+    }
+  }
+
+  Color _getChlorineColor(double value) {
+    if (value < 0.5) {
+      return Colors.green;
+    } else if (value >= 0.5 && value < 1) {
+      return Colors.yellow;
+    } else if (value >= 1 && value < 1.5) {
+      return Colors.orange;
+    } else if (value >= 1.5 && value < 2) {
+      return Colors.red;
+    } else {
+      return Colors.purple;
+    }
+  }
+
+  WaterQualityData _getWaterQualityData(List<WaterQualityData> waterQualityData, AddressData addresData) {
+    String sector = '';
+
+    final List<AddressComponent> addressComponents = addresData.results[0].addressComponents;
+
+    for (AddressComponent addressComponent in addressComponents) {
+      if (addressComponent.types.contains('sublocality_level_1')) {
+        final String nameContainingSector = addressComponent.longName;
+        final List<String> nameParts = nameContainingSector.split(' ');
+
+        sector = 'sector ${nameParts.last}';
+        break;
+      }
+    }
+
+    return waterQualityData.firstWhere((WaterQualityData record) => record.sector == sector);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -221,87 +265,111 @@ class InfoCard extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 Text(
-                  addressMap['address'] ?? '',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  addressData.results[0].formattedAddress,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             const SizedBox(height: 16),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'AQI',
-                        style: TextStyle(fontSize: 16, color: _getAirQualityColor(airPollutionData.list[0].main.aqi)),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        computeAQI(airPollutionData).toString(),
-                        style: TextStyle(fontSize: 24, color: _getAirQualityColor(airPollutionData.list[0].main.aqi)),
-                      ),
-                    ],
-                  ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'AQI',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getAirQualityColor(airPollutionData.list[0].main.aqi),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      computeAQI(airPollutionData).toString(),
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getAirQualityColor(airPollutionData.list[0].main.aqi),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      Text('PM2.5 (μg/m3)',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
-                          )),
-                      const SizedBox(height: 8),
-                      Text(airPollutionData.list[0].components.pm2_5.round().toString(),
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
-                          )),
-                    ],
-                  ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'PM2.5',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${airPollutionData.list[0].components.pm2_5.round()} μg/m3',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getPM2_5Color(airPollutionData.list[0].components.pm2_5.round()),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'PM10 (μg/m3)',
-                        style: TextStyle(
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'PM10',
+                      style: TextStyle(
                           fontSize: 16,
                           color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(airPollutionData.list[0].components.pm10.round().toString(),
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
-                          )),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'Clor',
-                        style: TextStyle(
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${airPollutionData.list[0].components.pm10.round()} μg/m3',
+                      style: TextStyle(
                           fontSize: 16,
                           color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text('',
-                          // waterQualityData
-                          //     .firstWhere((WaterQualityData record) => record.sector == addressMap['sector'])
-                          //     .clor
-                          //     .toString(),
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: _getPM10Color(airPollutionData.list[0].components.pm10.round()),
-                          )),
-                    ],
-                  ),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'Chlorine',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color:
+                              _getChlorineColor(double.parse(_getWaterQualityData(waterQualityData, addressData).clor)),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${_getWaterQualityData(waterQualityData, addressData).clor} mg/L',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color:
+                              _getChlorineColor(double.parse(_getWaterQualityData(waterQualityData, addressData).clor)),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'PH',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getPHColor(double.parse(_getWaterQualityData(waterQualityData, addressData).ph)),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      _getWaterQualityData(waterQualityData, addressData).ph,
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: _getPHColor(double.parse(_getWaterQualityData(waterQualityData, addressData).ph)),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -313,7 +381,11 @@ class InfoCard extends StatelessWidget {
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        Image.asset('assets/${currentWeather.weather[0].icon}.png', width: 30, height: 30),
+                        Image.asset(
+                          'assets/${currentWeather.weather[0].icon}.png',
+                          width: 30,
+                          height: 30,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -392,13 +464,13 @@ class InfoCard extends StatelessWidget {
             const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Icon(Icons.traffic_outlined,
                     size: 30,
                     color:
                         flowSegmentData.currentSpeed < 0.5 * flowSegmentData.freeFlowSpeed ? Colors.red : Colors.green),
                 Text(
-                  ' (Actual:${flowSegmentData.currentSpeed} Ideal:${flowSegmentData.freeFlowSpeed})',
+                  ' (Actual:${flowSegmentData.currentSpeed.round()} Ideal:${flowSegmentData.freeFlowSpeed.round()})',
                   style: const TextStyle(fontSize: 17),
                 ),
               ],

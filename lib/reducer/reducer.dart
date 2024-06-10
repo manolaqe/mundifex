@@ -108,11 +108,11 @@ AppState _getAddressStart(AppState state, GetAddressStart action) {
 }
 
 AppState _getAddressSuccessfu(AppState state, GetAddressSuccessful action) {
-  return state.copyWith(isLoading: false, addressMap: action.addressMap);
+  return state.copyWith(isLoading: false, addressData: action.addressData);
 }
 
 AppState _getAddressError(AppState state, GetAddressError action) {
-  return state.copyWith(isLoading: false, addressMap: <String, String>{});
+  return state.copyWith(isLoading: false);
 }
 
 AppState _getAirPollutionStart(AppState state, GetAirPollutionStart action) {
