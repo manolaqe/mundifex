@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
+
+import 'package:flutter/material.dart';
+
 import '../models/address_component.dart';
 import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
@@ -234,7 +236,7 @@ class InfoCard extends StatelessWidget {
 
     final List<AddressComponent> addressComponents = addresData.results[0].addressComponents;
 
-    for (AddressComponent addressComponent in addressComponents) {
+    for (final AddressComponent addressComponent in addressComponents) {
       if (addressComponent.types.contains('sublocality_level_1')) {
         final String nameContainingSector = addressComponent.longName;
         final List<String> nameParts = nameContainingSector.split(' ');
