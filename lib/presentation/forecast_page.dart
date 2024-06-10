@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../actions/get_location.dart';
-import '../api/open_weather_api.dart';
 import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
 import '../models/app_state.dart';
 import '../models/current_weather.dart';
 import '../models/flow_segment_data.dart';
-import '../models/forecast_element.dart';
 import '../models/forecast_weather.dart';
 import '../models/location_data.dart';
 import '../models/water_quality_data.dart';
@@ -31,23 +28,6 @@ class ForecastPage extends StatelessWidget {
   const ForecastPage({super.key});
 
   final Color backgroundColor = const Color.fromARGB(255, 84, 152, 225);
-
-  Color _getAirQualityColor(int aqi) {
-    switch (aqi) {
-      case 1:
-        return Colors.green;
-      case 2:
-        return Colors.yellow;
-      case 3:
-        return Colors.orange;
-      case 4:
-        return Colors.red;
-      case 5:
-        return Colors.purple;
-      default:
-        return Colors.blue;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +180,7 @@ class ForecastPage extends StatelessWidget {
                                                       value: airPollutionData.list[0].main.aqi / 5,
                                                       backgroundColor: Colors.white,
                                                       valueColor: AlwaysStoppedAnimation<Color>(
-                                                        _getAirQualityColor(airPollutionData.list[0].main.aqi),
+                                                        Utils.getAirQualityColor(airPollutionData.list[0].main.aqi),
                                                       ),
                                                     ),
                                                     const SizedBox(height: 10),

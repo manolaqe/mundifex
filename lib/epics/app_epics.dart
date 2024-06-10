@@ -9,6 +9,7 @@ import '../actions/get_current_user.dart';
 import '../actions/get_flow_segment_data.dart';
 import '../actions/get_forecast_weather.dart';
 import '../actions/get_location.dart';
+import '../actions/get_posts.dart';
 import '../actions/get_users.dart';
 import '../actions/get_water_quality.dart';
 import '../actions/get_weather.dart';
@@ -17,7 +18,7 @@ import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
 import '../actions/signin_google.dart';
 import '../api/apa_nova_api.dart';
-import '../api/authentication_api.dart';
+import '../api/firebase_api.dart';
 import '../api/geocoding_api.dart';
 import '../api/location_api.dart';
 import '../api/open_weather_api.dart';
@@ -30,13 +31,13 @@ import '../models/current_weather.dart';
 import '../models/flow_segment_data.dart';
 import '../models/forecast_weather.dart';
 import '../models/location_data.dart';
+import '../models/post.dart';
 import '../models/water_quality_data.dart';
 
 class AppEpics extends EpicClass<AppState> {
-  AppEpics(this.authenticationApi, this.locationApi, this.openWeatherApi, this.geocodingApi, this.tomtomApi,
-      this.apaNovaApi);
+  AppEpics(this.firebaseApi, this.locationApi, this.openWeatherApi, this.geocodingApi, this.tomtomApi, this.apaNovaApi);
 
-  final AuthenticationApi authenticationApi;
+  final FirebaseApi firebaseApi;
   final LocationApi locationApi;
   final OpenWeatherApi openWeatherApi;
   final GeocodingApi geocodingApi;
@@ -46,6 +47,7 @@ class AppEpics extends EpicClass<AppState> {
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, GetPostsStart>(_getPostsStart).call,
       TypedEpic<AppState, GetForecastWeatherStart>(_getWeatherForecastStart).call,
       TypedEpic<AppState, GetWaterQualityStart>(_getWaterQualityStart).call,
       TypedEpic<AppState, GetFlowSegmentDataStart>(_getFlowSegmentDataStart).call,
@@ -67,7 +69,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((SignInEmailPasswordStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.signInWithEmailAndPassword(email: action.email, password: action.password))
+          .asyncMap((_) => firebaseApi.signInWithEmailAndPassword(email: action.email, password: action.password))
           .map((AppUser user) => SignInEmailPassword.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInEmailPassword.error(error, stackTrace))
           .doOnData(action.result);
@@ -78,7 +80,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((GetCurrentUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.getCurrentUser())
+          .asyncMap((_) => firebaseApi.getCurrentUser())
           .map((AppUser? user) => GetCurrentUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetCurrentUser.error(error, stackTrace));
     });
@@ -88,7 +90,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((SignOutStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.signOut())
+          .asyncMap((_) => firebaseApi.signOut())
           .map((_) => const SignOut.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignOut.error(error, stackTrace));
     });
@@ -98,7 +100,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((GetUsersStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.getUsers(action.uids))
+          .asyncMap((_) => firebaseApi.getUsers(action.uids))
           .map((List<AppUser> users) => GetUsers.successful(users))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetUsers.error(error, stackTrace));
     });
@@ -108,8 +110,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
-          .asyncMap(
-              (_) => authenticationApi.createUserWithEmailAndPassword(email: action.email, password: action.password))
+          .asyncMap((_) => firebaseApi.createUserWithEmailAndPassword(email: action.email, password: action.password))
           .map((AppUser user) => CreateUser.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
           .doOnData(action.result);
@@ -120,7 +121,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((SignInGoogleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.signInWithGoogle())
+          .asyncMap((_) => firebaseApi.signInWithGoogle())
           .map((AppUser user) => SignInGoogle.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInGoogle.error(error, stackTrace))
           .doOnData(action.result);
@@ -131,7 +132,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((SignInFacebookStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => authenticationApi.signInWithFacebook())
+          .asyncMap((_) => firebaseApi.signInWithFacebook())
           .map((AppUser user) => SignInFacebook.successful(user))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignInFacebook.error(error, stackTrace))
           .doOnData(action.result);
@@ -148,7 +149,8 @@ class AppEpics extends EpicClass<AppState> {
         const GetAddressStart(),
         const GetAirPollutionStart(),
         const GetFlowSegmentDataStart(),
-        const GetForecastWeatherStart()
+        const GetForecastWeatherStart(),
+        const GetPostsStart(),
       ];
     }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
   }
@@ -212,6 +214,16 @@ class AppEpics extends EpicClass<AppState> {
               (_) => openWeatherApi.getForecastWeather(locationData: store.state.locationData!, imperialUnits: false))
           .map((ForecastWeather forecastWeather) => GetForecastWeather.successful(forecastWeather))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetForecastWeather.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getPostsStart(Stream<GetPostsStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetPostsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.getPosts(locationData: store.state.locationData!))
+          .map((List<Post> posts) => GetPosts.successful(posts))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetPosts.error(error, stackTrace));
     });
   }
 }

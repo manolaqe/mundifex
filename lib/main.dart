@@ -12,7 +12,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'actions/get_location.dart';
 import 'actions/get_water_quality.dart';
 import 'api/apa_nova_api.dart';
-import 'api/authentication_api.dart';
+import 'api/firebase_api.dart';
 import 'api/geocoding_api.dart';
 import 'api/location_api.dart';
 import 'api/open_weather_api.dart';
@@ -34,7 +34,7 @@ Future<void> main() async {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final AuthenticationApi authApi = AuthenticationApi(auth: auth, storage: storage, firestore: firestore);
+  final FirebaseApi authApi = FirebaseApi(auth: auth, storage: storage, firestore: firestore);
   final Location location = Location();
   final LocationApi locationApi = LocationApi(location: location);
   final OpenWeatherApi openWeatherApi = OpenWeatherApi(client, '2ede6351d981312c95d45e1b5c51849e');

@@ -1,13 +1,16 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/app_user.dart';
+import '../models/location_data.dart';
+import '../models/post.dart';
 
-class AuthenticationApi {
-  const AuthenticationApi({
+class FirebaseApi {
+  const FirebaseApi({
     required FirebaseAuth auth,
     required FirebaseStorage storage,
     required FirebaseFirestore firestore,
@@ -101,5 +104,45 @@ class AuthenticationApi {
     return snapshot.docs
         .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
         .toList();
+  }
+
+  Future<List<Post>> getPosts({required LocationData locationData}) async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('posts').get();
+
+    print(snapshot.docs);
+    return snapshot.docs
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Post.fromJson(doc.data()))
+        .where((Post post) => isLocationInRadius(post.location, locationData, 2000))
+        .toList();
+  }
+
+  bool isLocationInRadius(LocationData location1, LocationData location2, double radius) {
+    final double lat1 = location1.lat;
+    final double lon1 = location1.lon;
+    final double lat2 = location2.lat;
+    final double lon2 = location2.lon;
+
+    final double distance = calculateDistance(lat1, lon1, lat2, lon2);
+
+    return distance <= radius;
+  }
+
+  double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+    const double earthRadius = 6371000; // Earth's radius in meters
+
+    final double dLat = _toRadians(lat2 - lat1);
+    final double dLon = _toRadians(lon2 - lon1);
+
+    final double a =
+        sin(dLat / 2) * sin(dLat / 2) + cos(_toRadians(lat1)) * cos(_toRadians(lat2)) * sin(dLon / 2) * sin(dLon / 2);
+    final double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+
+    final double distance = earthRadius * c;
+
+    return distance;
+  }
+
+  double _toRadians(double degrees) {
+    return degrees * pi / 180;
   }
 }
