@@ -3,16 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../actions/add_dislike.dart';
+import '../actions/add_like.dart';
+import '../actions/get_posts.dart';
+import '../actions/remove_dislike.dart';
+import '../actions/remove_like.dart';
 import '../actions/set.dart';
 import '../models/app_user.dart';
 import '../models/post.dart';
 import 'extensions.dart';
 
 class PostsWidget extends StatelessWidget {
-  const PostsWidget({super.key, required this.posts, required this.users});
+  const PostsWidget({super.key, required this.posts, required this.users, required this.user});
 
   final List<Post> posts;
   final Map<String, AppUser> users;
+  final AppUser? user;
 
   @override
   Widget build(BuildContext context) {
@@ -115,17 +121,25 @@ class PostsWidget extends StatelessWidget {
                                 backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
                                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                             onPressed: () {
-                              // setState(() {
-                              //   if (!hasVoted) {
-                              //     widget.userPost.likes++;
-                              //     hasVoted = true;
-                              //   } else {
-                              //     widget.userPost.likes--;
-                              //     hasVoted = false;
-                              //   }
-                              // });
+                              {
+                                if (user == null) {
+                                  Navigator.pushNamed(context, '/sign_in');
+                                } else {
+                                  if (!post.likes.contains(user!.userId) && !post.dislikes.contains(user!.userId)) {
+                                    context
+                                      ..dispatch(AddLike(selectedPostId: post.id))
+                                      ..dispatch(const GetPosts());
+                                  } else {
+                                    context
+                                      ..dispatch(RemoveLike(selectedPostId: post.id))
+                                      ..dispatch(const GetPosts());
+                                  }
+                                }
+                              }
                             },
-                            icon: const Icon(Icons.thumb_up_alt_outlined),
+                            icon: user != null && post.likes.contains(user!.userId)
+                                ? const Icon(Icons.thumb_up)
+                                : const Icon(Icons.thumb_up_alt_outlined),
                             label: Text(' ${post.likes.length}')),
                       ],
                     ),
@@ -134,17 +148,25 @@ class PostsWidget extends StatelessWidget {
                             backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
                             foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                         onPressed: () {
-                          // setState(() {
-                          //   if (!hasVoted) {
-                          //     widget.userPost.dislikes++;
-                          //     hasVoted = true;
-                          //   } else {
-                          //     widget.userPost.dislikes--;
-                          //     hasVoted = false;
-                          //   }
-                          // });
+                          {
+                            if (user == null) {
+                              Navigator.pushNamed(context, '/sign_in');
+                            } else {
+                              if (!post.dislikes.contains(user!.userId) && !post.likes.contains(user!.userId)) {
+                                context
+                                  ..dispatch(AddDislike(selectedPostId: post.id))
+                                  ..dispatch(const GetPosts());
+                              } else {
+                                context
+                                  ..dispatch(RemoveDislike(selectedPostId: post.id))
+                                  ..dispatch(const GetPosts());
+                              }
+                            }
+                          }
                         },
-                        icon: const Icon(Icons.thumb_down_alt_outlined),
+                        icon: user != null && post.dislikes.contains(user!.userId)
+                            ? const Icon(Icons.thumb_down)
+                            : const Icon(Icons.thumb_down_alt_outlined),
                         label: Text(' ${post.dislikes.length}')),
                     ElevatedButton.icon(
                         style: ButtonStyle(

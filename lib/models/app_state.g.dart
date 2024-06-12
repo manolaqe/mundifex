@@ -12,7 +12,7 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AppUser.fromJson(json['user'] as Map<String, dynamic>),
       selectedPostId: json['selectedPostId'] as String?,
-      users: (json['users'] as Map<String, dynamic>?)?.map(
+      users: (json['users'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, AppUser.fromJson(e as Map<String, dynamic>)),
       ),
       locationData: json['locationData'] == null

@@ -17,7 +17,7 @@ class AppState with _$AppState {
   const factory AppState({
     AppUser? user,
     String? selectedPostId,
-    Map<String, AppUser>? users,
+    required Map<String, AppUser> users,
     LocationData? locationData,
     @Default(false) bool isLoading,
     AirPollutionData? airPollutionData,

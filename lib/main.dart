@@ -49,7 +49,7 @@ Future<void> main() async {
 
   final Store<AppState> store = Store<AppState>(
     reducer,
-    initialState: AppState(posts: []),
+    initialState: AppState(posts: [], users: {}),
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(appEpic.call).call,
     ],

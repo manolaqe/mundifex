@@ -139,6 +139,58 @@ class FirebaseApi {
     return comment;
   }
 
+  Future<Post> addLike({
+    required String postId,
+    required String userId,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc(postId);
+
+    await ref.update(<Object, Object?>{
+      'likes': FieldValue.arrayUnion([userId])
+    });
+
+    return Post.fromJson((await ref.get()).data()!);
+  }
+
+  Future<Post> addDislike({
+    required String postId,
+    required String userId,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc(postId);
+
+    await ref.update(<Object, Object?>{
+      'dislikes': FieldValue.arrayUnion([userId])
+    });
+
+    return Post.fromJson((await ref.get()).data()!);
+  }
+
+  Future<Post> removeLike({
+    required String postId,
+    required String userId,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc(postId);
+
+    await ref.update(<Object, Object?>{
+      'likes': FieldValue.arrayRemove([userId])
+    });
+
+    return Post.fromJson((await ref.get()).data()!);
+  }
+
+  Future<Post> removeDislike({
+    required String postId,
+    required String userId,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc(postId);
+
+    await ref.update(<Object, Object?>{
+      'dislikes': FieldValue.arrayRemove([userId])
+    });
+
+    return Post.fromJson((await ref.get()).data()!);
+  }
+
   Future<List<Post>> getPosts({required LocationData locationData}) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('posts').get();
 

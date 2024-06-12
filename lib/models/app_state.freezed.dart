@@ -22,7 +22,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
   String? get selectedPostId => throw _privateConstructorUsedError;
-  Map<String, AppUser>? get users => throw _privateConstructorUsedError;
+  Map<String, AppUser> get users => throw _privateConstructorUsedError;
   LocationData? get locationData => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   AirPollutionData? get airPollutionData => throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ abstract class $AppStateCopyWith<$Res> {
   $Res call(
       {AppUser? user,
       String? selectedPostId,
-      Map<String, AppUser>? users,
+      Map<String, AppUser> users,
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
@@ -86,7 +86,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   $Res call({
     Object? user = freezed,
     Object? selectedPostId = freezed,
-    Object? users = freezed,
+    Object? users = null,
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
@@ -107,10 +107,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.selectedPostId
           : selectedPostId // ignore: cast_nullable_to_non_nullable
               as String?,
-      users: freezed == users
+      users: null == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Map<String, AppUser>?,
+              as Map<String, AppUser>,
       locationData: freezed == locationData
           ? _value.locationData
           : locationData // ignore: cast_nullable_to_non_nullable
@@ -250,7 +250,7 @@ abstract class _$$AppState$ImplCopyWith<$Res>
   $Res call(
       {AppUser? user,
       String? selectedPostId,
-      Map<String, AppUser>? users,
+      Map<String, AppUser> users,
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
@@ -291,7 +291,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
     Object? selectedPostId = freezed,
-    Object? users = freezed,
+    Object? users = null,
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
@@ -312,10 +312,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.selectedPostId
           : selectedPostId // ignore: cast_nullable_to_non_nullable
               as String?,
-      users: freezed == users
+      users: null == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
-              as Map<String, AppUser>?,
+              as Map<String, AppUser>,
       locationData: freezed == locationData
           ? _value.locationData
           : locationData // ignore: cast_nullable_to_non_nullable
@@ -366,7 +366,7 @@ class _$AppState$Impl implements AppState$ {
   const _$AppState$Impl(
       {this.user,
       this.selectedPostId,
-      final Map<String, AppUser>? users,
+      required final Map<String, AppUser> users,
       this.locationData,
       this.isLoading = false,
       this.airPollutionData,
@@ -389,14 +389,12 @@ class _$AppState$Impl implements AppState$ {
   final AppUser? user;
   @override
   final String? selectedPostId;
-  final Map<String, AppUser>? _users;
+  final Map<String, AppUser> _users;
   @override
-  Map<String, AppUser>? get users {
-    final value = _users;
-    if (value == null) return null;
+  Map<String, AppUser> get users {
     if (_users is EqualUnmodifiableMapView) return _users;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableMapView(_users);
   }
 
   @override
@@ -514,7 +512,7 @@ abstract class AppState$ implements AppState {
   const factory AppState$(
       {final AppUser? user,
       final String? selectedPostId,
-      final Map<String, AppUser>? users,
+      required final Map<String, AppUser> users,
       final LocationData? locationData,
       final bool isLoading,
       final AirPollutionData? airPollutionData,
@@ -534,7 +532,7 @@ abstract class AppState$ implements AppState {
   @override
   String? get selectedPostId;
   @override
-  Map<String, AppUser>? get users;
+  Map<String, AppUser> get users;
   @override
   LocationData? get locationData;
   @override

@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 
+import '../actions/add_dislike.dart';
+import '../actions/add_like.dart';
 import '../actions/app_action.dart';
 import '../actions/create_comment.dart';
 import '../actions/create_user.dart';
@@ -15,6 +17,8 @@ import '../actions/get_posts.dart';
 import '../actions/get_users.dart';
 import '../actions/get_water_quality.dart';
 import '../actions/get_weather.dart';
+import '../actions/remove_dislike.dart';
+import '../actions/remove_like.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
@@ -66,6 +70,10 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetUsersStart>(_getUsersStart).call,
       TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
       TypedEpic<AppState, CreateCommentStart>(_createCommentStart).call,
+      TypedEpic<AppState, AddLikeStart>(_addLikeStart).call,
+      TypedEpic<AppState, AddDislikeStart>(_addDislikeStart).call,
+      TypedEpic<AppState, RemoveLikeStart>(_removeLikeStart).call,
+      TypedEpic<AppState, RemoveDislikeStart>(_removeDislikeStart).call,
     ])(actions, store);
   }
 
@@ -101,12 +109,16 @@ class AppEpics extends EpicClass<AppState> {
   }
 
   Stream<AppAction> _getUsersStart(Stream<GetUsersStart> actions, EpicStore<AppState> store) {
-    return actions //
-        .flatMap((GetUsersStart action) {
-      return Stream<void>.value(null)
-          .asyncMap((_) => firebaseApi.getUsers())
-          .map((List<AppUser> users) => GetUsers.successful(users))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetUsers.error(error, stackTrace));
+    return actions.whereType<GetUsersStart>().switchMap((GetUsersStart action) {
+      return FirebaseFirestore.instance
+          .collection('users')
+          .snapshots()
+          .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
+        final List<AppUser> users = snapshot.docs
+            .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
+            .toList();
+        return GetUsers.successful(users);
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetUsers.error(error, stackTrace));
     });
   }
 
@@ -242,6 +254,46 @@ class AppEpics extends EpicClass<AppState> {
               postId: store.state.selectedPostId!, userId: store.state.user!.userId, value: action.value))
           .map((Comment comment) => CreateComment.successful(comment))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateComment.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _addLikeStart(Stream<AddLikeStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddLikeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.addLike(postId: action.selectedPostId, userId: store.state.user!.userId))
+          .map((Post post) => AddLike.successful(post))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddLike.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _addDislikeStart(Stream<AddDislikeStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((AddDislikeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.addDislike(postId: action.selectedPostId, userId: store.state.user!.userId))
+          .map((Post post) => AddDislike.successful(post))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => AddDislike.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _removeDislikeStart(Stream<RemoveDislikeStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((RemoveDislikeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.removeDislike(postId: action.selectedPostId, userId: store.state.user!.userId))
+          .map((Post post) => RemoveDislike.successful(post))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => RemoveDislike.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _removeLikeStart(Stream<RemoveLikeStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((RemoveLikeStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.removeLike(postId: action.selectedPostId, userId: store.state.user!.userId))
+          .map((Post post) => RemoveLike.successful(post))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => RemoveLike.error(error, stackTrace));
     });
   }
 }
