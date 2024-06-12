@@ -24,8 +24,10 @@ import 'models/app_state.dart';
 import 'models/app_user.dart';
 import 'models/post.dart';
 import 'presentation/comments_page.dart';
+import 'presentation/create_post_page.dart';
 import 'presentation/forecast_page.dart';
 import 'presentation/home_page.dart';
+import 'presentation/profile_page.dart';
 import 'presentation/signin_page.dart';
 import 'presentation/signup_page.dart';
 import 'reducer/reducer.dart';
@@ -82,6 +84,8 @@ class ScrollableApp extends StatelessWidget {
           '/forgot_password': (BuildContext context) => const HomePage(),
           '/forecast_page': (BuildContext context) => const ForecastPage(),
           '/comments': (BuildContext context) => const CommentsPage(),
+          '/create_post': (BuildContext context) => const CreatePostPage(),
+          '/profile': (BuildContext context) => const ProfilePage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },

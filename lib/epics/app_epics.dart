@@ -6,6 +6,7 @@ import '../actions/add_dislike.dart';
 import '../actions/add_like.dart';
 import '../actions/app_action.dart';
 import '../actions/create_comment.dart';
+import '../actions/create_post.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
@@ -74,6 +75,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, AddDislikeStart>(_addDislikeStart).call,
       TypedEpic<AppState, RemoveLikeStart>(_removeLikeStart).call,
       TypedEpic<AppState, RemoveDislikeStart>(_removeDislikeStart).call,
+      TypedEpic<AppState, CreatePostStart>(_createPostStart).call,
     ])(actions, store);
   }
 
@@ -254,6 +256,20 @@ class AppEpics extends EpicClass<AppState> {
               postId: store.state.selectedPostId!, userId: store.state.user!.userId, value: action.value))
           .map((Comment comment) => CreateComment.successful(comment))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateComment.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _createPostStart(Stream<CreatePostStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((CreatePostStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firebaseApi.createPost(
+              images: action.photoUrls,
+              description: action.description,
+              userId: store.state.user!.userId,
+              location: store.state.locationData!))
+          .map((Post post) => CreatePost.successful(post))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => CreatePost.error(error, stackTrace));
     });
   }
 

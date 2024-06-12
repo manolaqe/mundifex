@@ -26,6 +26,7 @@ import 'containers/weather_container.dart';
 import 'extensions.dart';
 import 'info_card.dart';
 import 'posts_widget.dart';
+import 'user_avatar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -110,6 +111,31 @@ class _HomePageState extends State<HomePage> {
                                           return Scaffold(
                                             appBar: AppBar(
                                               title: const Text('Mundifex'),
+                                              actions: <Widget>[
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    if (user == null) {
+                                                      Navigator.pushNamed(context, '/sign_in');
+                                                    } else {
+                                                      Navigator.pushNamed(context, '/profile');
+                                                    }
+                                                  },
+                                                  child: const Padding(
+                                                      padding: EdgeInsets.all(10),
+                                                      child: UserAvatar(
+                                                        radius: 20,
+                                                      )),
+                                                )
+                                              ],
+                                            ),
+                                            floatingActionButton: FloatingActionButton(
+                                              onPressed: () {
+                                                Navigator.pushNamed(
+                                                  context,
+                                                  '/create_post',
+                                                );
+                                              },
+                                              child: const Icon(Icons.add),
                                             ),
                                             body: Column(
                                               children: <Widget>[

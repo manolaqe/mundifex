@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../models/app_user.dart';
 import '../models/comment.dart';
@@ -189,6 +190,46 @@ class FirebaseApi {
     });
 
     return Post.fromJson((await ref.get()).data()!);
+  }
+
+  Future<Post> createPost({
+    required String userId,
+    required String description,
+    required LocationData location,
+    required List<XFile> images,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> docRef = _firestore.collection('posts').doc();
+
+    final List<String> urls = [];
+    for (final XFile image in images) {
+      final String fileName = '${DateTime.now().millisecondsSinceEpoch}_${image.path.split('/').last}';
+
+      final Reference ref = _storage.ref('posts/${docRef.id}/$fileName');
+      await ref.putFile(File(image.path));
+      final String url = await ref.getDownloadURL();
+      urls.add(url);
+    }
+
+    await docRef.set({
+      'id': docRef.id,
+      'userId': userId,
+      'description': description,
+      'location': location.toJson(),
+      'photoUrls': urls,
+      'likes': <String>[],
+      'dislikes': <String>[],
+      'comments': <Map<String, dynamic>>[],
+    });
+
+    final Post post = Post(
+      id: docRef.id,
+      userId: userId,
+      description: description,
+      location: location,
+      photoUrls: urls,
+    );
+
+    return post;
   }
 
   Future<List<Post>> getPosts({required LocationData locationData}) async {

@@ -110,6 +110,9 @@ class PostsWidget extends StatelessWidget {
                   child: Text('No photos available'),
                 ),
               Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(post.description, style: const TextStyle(fontSize: 20))),
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
