@@ -1,6 +1,5 @@
 import 'package:redux/redux.dart';
 
-import '../actions/create_comment.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';

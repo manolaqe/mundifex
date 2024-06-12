@@ -21,7 +21,7 @@ import 'api/tomtom_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
-import 'models/location_data.dart' as models;
+import 'models/app_user.dart';
 import 'models/post.dart';
 import 'presentation/comments_page.dart';
 import 'presentation/forecast_page.dart';
@@ -49,7 +49,7 @@ Future<void> main() async {
 
   final Store<AppState> store = Store<AppState>(
     reducer,
-    initialState: AppState(posts: [], users: {}),
+    initialState: const AppState(posts: <Post>[], users: <String, AppUser>{}),
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(appEpic.call).call,
     ],

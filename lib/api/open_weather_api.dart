@@ -1,9 +1,5 @@
-// ignore_for_file: avoid_dynamic_calls
-
 import 'dart:convert';
-import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
 import '../models/air_pollution_data.dart';

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../models/post.dart';
 import 'app_action.dart';
 
 part 'set.freezed.dart';

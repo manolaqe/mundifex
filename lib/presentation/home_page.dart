@@ -20,7 +20,6 @@ import 'containers/app_user_container.dart';
 import 'containers/flow_segment_data_container.dart';
 import 'containers/is_loading_container.dart';
 import 'containers/location_container.dart';
-import 'containers/posts_container.dart';
 import 'containers/users_container.dart';
 import 'containers/water_quality_container.dart';
 import 'containers/weather_container.dart';
