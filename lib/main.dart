@@ -10,6 +10,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'actions/get_location.dart';
+import 'actions/get_users.dart';
 import 'actions/get_water_quality.dart';
 import 'api/apa_nova_api.dart';
 import 'api/firebase_api.dart';
@@ -20,6 +21,9 @@ import 'api/tomtom_api.dart';
 import 'epics/app_epics.dart';
 import 'firebase_options.dart';
 import 'models/app_state.dart';
+import 'models/location_data.dart' as models;
+import 'models/post.dart';
+import 'presentation/comments_page.dart';
 import 'presentation/forecast_page.dart';
 import 'presentation/home_page.dart';
 import 'presentation/signin_page.dart';
@@ -45,12 +49,13 @@ Future<void> main() async {
 
   final Store<AppState> store = Store<AppState>(
     reducer,
-    initialState: const AppState(),
+    initialState: AppState(posts: []),
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(appEpic.call).call,
     ],
   );
 
+  store.dispatch(const GetUsers());
   store.dispatch(const GetLocation());
   store.dispatch(const GetWaterQuality());
 
@@ -69,13 +74,14 @@ class ScrollableApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData.dark(useMaterial3: true),
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: const HomePage(),
         routes: <String, WidgetBuilder>{
           // '/createUser': (BuildContext context) => const CreateUserPage(),
           '/sign_in': (BuildContext context) => const SignInPage(),
           '/sign_up': (BuildContext context) => const SignUpPage(),
           '/forgot_password': (BuildContext context) => const HomePage(),
           '/forecast_page': (BuildContext context) => const ForecastPage(),
+          '/comments': (BuildContext context) => const CommentsPage(),
           // '/profile': (BuildContext context) => const ProfilePage(),
           // '/movie': (BuildContext context) => const MoviePage(),
         },

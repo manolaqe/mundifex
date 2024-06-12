@@ -1,5 +1,6 @@
 import 'package:redux/redux.dart';
 
+import '../actions/create_comment.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
@@ -7,9 +8,11 @@ import '../actions/get_current_user.dart';
 import '../actions/get_flow_segment_data.dart';
 import '../actions/get_forecast_weather.dart';
 import '../actions/get_location.dart';
+import '../actions/get_posts.dart';
 import '../actions/get_users.dart';
 import '../actions/get_water_quality.dart';
 import '../actions/get_weather.dart';
+import '../actions/set.dart';
 import '../actions/sign_out.dart';
 import '../actions/signin_email_password.dart';
 import '../actions/signin_facebook.dart';
@@ -47,6 +50,10 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetForecastWeatherStart>(_getForecastWeatherStart).call,
     TypedReducer<AppState, GetForecastWeatherSuccessful>(_getForecastWeatherSuccessful).call,
     TypedReducer<AppState, GetForecastWeatherError>(_getForecastWeatherError).call,
+    TypedReducer<AppState, GetPostsStart>(_getPostsStart).call,
+    TypedReducer<AppState, GetPostsSuccessful>(_getPostsSuccessful).call,
+    TypedReducer<AppState, GetPostsError>(_getPostsError).call,
+    TypedReducer<AppState, SetSelectedPost>(_setSelectedPost).call,
   ])(state, action);
 }
 
@@ -69,7 +76,6 @@ AppState _signInEmailPasswordSuccessful(AppState state, SignInEmailPasswordSucce
 AppState _getUsersSuccessful(AppState state, GetUsersSuccessful action) {
   return state.copyWith(
     users: <String, AppUser>{
-      ...state.users,
       for (final AppUser user in action.users) user.userId: user,
     },
   );
@@ -165,4 +171,20 @@ AppState _getForecastWeatherSuccessful(AppState state, GetForecastWeatherSuccess
 
 AppState _getForecastWeatherError(AppState state, GetForecastWeatherError action) {
   return state.copyWith(isLoading: false);
+}
+
+AppState _getPostsStart(AppState state, GetPostsStart action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getPostsSuccessful(AppState state, GetPostsSuccessful action) {
+  return state.copyWith(isLoading: true, posts: action.posts);
+}
+
+AppState _getPostsError(AppState state, GetPostsError action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _setSelectedPost(AppState state, SetSelectedPost action) {
+  return state.copyWith(selectedPostId: action.id);
 }

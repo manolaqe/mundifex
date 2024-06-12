@@ -23,7 +23,7 @@ mixin _$AppUser {
   String get userId => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
-  String? get photoUrl => throw _privateConstructorUsedError;
+  String get photoUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,8 +35,7 @@ abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
       _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
-  $Res call(
-      {String userId, String email, String displayName, String? photoUrl});
+  $Res call({String userId, String email, String displayName, String photoUrl});
 }
 
 /// @nodoc
@@ -55,7 +54,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? userId = null,
     Object? email = null,
     Object? displayName = null,
-    Object? photoUrl = freezed,
+    Object? photoUrl = null,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
@@ -70,10 +69,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      photoUrl: freezed == photoUrl
+      photoUrl: null == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -85,8 +84,7 @@ abstract class _$$AppUser$ImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       __$$AppUser$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String userId, String email, String displayName, String? photoUrl});
+  $Res call({String userId, String email, String displayName, String photoUrl});
 }
 
 /// @nodoc
@@ -103,7 +101,7 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
     Object? userId = null,
     Object? email = null,
     Object? displayName = null,
-    Object? photoUrl = freezed,
+    Object? photoUrl = null,
   }) {
     return _then(_$AppUser$Impl(
       userId: null == userId
@@ -118,10 +116,10 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      photoUrl: freezed == photoUrl
+      photoUrl: null == photoUrl
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -130,22 +128,26 @@ class __$$AppUser$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppUser$Impl implements AppUser$ {
   const _$AppUser$Impl(
-      {required this.userId,
-      required this.email,
-      required this.displayName,
-      this.photoUrl});
+      {this.userId = '',
+      this.email = '',
+      this.displayName = '',
+      this.photoUrl = ''});
 
   factory _$AppUser$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AppUser$ImplFromJson(json);
 
   @override
+  @JsonKey()
   final String userId;
   @override
+  @JsonKey()
   final String email;
   @override
+  @JsonKey()
   final String displayName;
   @override
-  final String? photoUrl;
+  @JsonKey()
+  final String photoUrl;
 
   @override
   String toString() {
@@ -186,10 +188,10 @@ class _$AppUser$Impl implements AppUser$ {
 
 abstract class AppUser$ implements AppUser {
   const factory AppUser$(
-      {required final String userId,
-      required final String email,
-      required final String displayName,
-      final String? photoUrl}) = _$AppUser$Impl;
+      {final String userId,
+      final String email,
+      final String displayName,
+      final String photoUrl}) = _$AppUser$Impl;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) =
       _$AppUser$Impl.fromJson;
@@ -201,7 +203,7 @@ abstract class AppUser$ implements AppUser {
   @override
   String get displayName;
   @override
-  String? get photoUrl;
+  String get photoUrl;
   @override
   @JsonKey(ignore: true)
   _$$AppUser$ImplCopyWith<_$AppUser$Impl> get copyWith =>

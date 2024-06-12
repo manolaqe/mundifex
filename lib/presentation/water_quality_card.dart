@@ -17,7 +17,7 @@ class WaterQualityCard extends StatelessWidget {
         0.5,
       ),
       elevation: 2,
-      color: const Color.fromARGB(255, 84, 152, 225).withAlpha(150),
+      color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
       margin: const EdgeInsets.all(10.0),
       child: Padding(
         padding: const EdgeInsets.all(15),

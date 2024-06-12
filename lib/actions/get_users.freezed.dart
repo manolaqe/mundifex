@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$GetUsers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> uids) $default, {
+    TResult Function() $default, {
     required TResult Function(List<AppUser> users) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String> uids)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<AppUser> users)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String> uids)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<AppUser> users)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -84,8 +84,6 @@ abstract class _$$GetUsersStartImplCopyWith<$Res> {
   factory _$$GetUsersStartImplCopyWith(
           _$GetUsersStartImpl value, $Res Function(_$GetUsersStartImpl) then) =
       __$$GetUsersStartImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<String> uids});
 }
 
 /// @nodoc
@@ -95,87 +93,57 @@ class __$$GetUsersStartImplCopyWithImpl<$Res>
   __$$GetUsersStartImplCopyWithImpl(
       _$GetUsersStartImpl _value, $Res Function(_$GetUsersStartImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uids = null,
-  }) {
-    return _then(_$GetUsersStartImpl(
-      null == uids
-          ? _value._uids
-          : uids // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$GetUsersStartImpl implements GetUsersStart {
-  const _$GetUsersStartImpl(final List<String> uids) : _uids = uids;
-
-  final List<String> _uids;
-  @override
-  List<String> get uids {
-    if (_uids is EqualUnmodifiableListView) return _uids;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_uids);
-  }
+  const _$GetUsersStartImpl();
 
   @override
   String toString() {
-    return 'GetUsers(uids: $uids)';
+    return 'GetUsers()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetUsersStartImpl &&
-            const DeepCollectionEquality().equals(other._uids, _uids));
+        (other.runtimeType == runtimeType && other is _$GetUsersStartImpl);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_uids));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetUsersStartImplCopyWith<_$GetUsersStartImpl> get copyWith =>
-      __$$GetUsersStartImplCopyWithImpl<_$GetUsersStartImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> uids) $default, {
+    TResult Function() $default, {
     required TResult Function(List<AppUser> users) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(uids);
+    return $default();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String> uids)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<AppUser> users)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(uids);
+    return $default?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String> uids)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<AppUser> users)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(uids);
+      return $default();
     }
     return orElse();
   }
@@ -216,12 +184,7 @@ class _$GetUsersStartImpl implements GetUsersStart {
 }
 
 abstract class GetUsersStart implements GetUsers {
-  const factory GetUsersStart(final List<String> uids) = _$GetUsersStartImpl;
-
-  List<String> get uids;
-  @JsonKey(ignore: true)
-  _$$GetUsersStartImplCopyWith<_$GetUsersStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory GetUsersStart() = _$GetUsersStartImpl;
 }
 
 /// @nodoc
@@ -295,7 +258,7 @@ class _$GetUsersSuccessfulImpl implements GetUsersSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> uids) $default, {
+    TResult Function() $default, {
     required TResult Function(List<AppUser> users) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -305,7 +268,7 @@ class _$GetUsersSuccessfulImpl implements GetUsersSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String> uids)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<AppUser> users)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -315,7 +278,7 @@ class _$GetUsersSuccessfulImpl implements GetUsersSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String> uids)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<AppUser> users)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -442,7 +405,7 @@ class _$GetUsersErrorImpl implements GetUsersError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<String> uids) $default, {
+    TResult Function() $default, {
     required TResult Function(List<AppUser> users) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -452,7 +415,7 @@ class _$GetUsersErrorImpl implements GetUsersError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<String> uids)? $default, {
+    TResult? Function()? $default, {
     TResult? Function(List<AppUser> users)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -462,7 +425,7 @@ class _$GetUsersErrorImpl implements GetUsersError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<String> uids)? $default, {
+    TResult Function()? $default, {
     TResult Function(List<AppUser> users)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),

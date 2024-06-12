@@ -27,8 +27,6 @@ import 'water_quality_card.dart';
 class ForecastPage extends StatelessWidget {
   const ForecastPage({super.key});
 
-  final Color backgroundColor = const Color.fromARGB(255, 84, 152, 225);
-
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -90,7 +88,7 @@ class ForecastPage extends StatelessWidget {
                                       backgroundColor: Colors.transparent,
                                       title: const Text('Forecast'),
                                     ),
-                                    backgroundColor: backgroundColor,
+                                    backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
                                     body: SingleChildScrollView(
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -99,11 +97,12 @@ class ForecastPage extends StatelessWidget {
                                             begin: Alignment.topLeft,
                                             end: Alignment.bottomLeft,
                                             colors: <Color>[
-                                              backgroundColor,
-                                              backgroundColor
-                                                  .withRed(backgroundColor.red + 40)
-                                                  .withGreen(backgroundColor.green + 20)
-                                                  .withBlue(backgroundColor.blue - 10),
+                                              ThemeData.dark().scaffoldBackgroundColor,
+                                              ThemeData.dark()
+                                                  .scaffoldBackgroundColor
+                                                  .withRed(ThemeData.dark().scaffoldBackgroundColor.red + 40)
+                                                  .withGreen(ThemeData.dark().scaffoldBackgroundColor.green + 20)
+                                                  .withBlue(ThemeData.dark().scaffoldBackgroundColor.blue - 10),
                                             ],
                                           ),
                                         ),
@@ -143,7 +142,7 @@ class ForecastPage extends StatelessWidget {
                                                 0.5,
                                               ),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(15),
@@ -166,7 +165,7 @@ class ForecastPage extends StatelessWidget {
                                                 0.5,
                                               ),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(15),
@@ -224,7 +223,7 @@ class ForecastPage extends StatelessWidget {
                                                 0.5,
                                               ),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(15),
@@ -288,7 +287,7 @@ class ForecastPage extends StatelessWidget {
                                                 0.5,
                                               ),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(15),
@@ -312,7 +311,7 @@ class ForecastPage extends StatelessWidget {
                                             Card(
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(20),
@@ -328,7 +327,7 @@ class ForecastPage extends StatelessWidget {
                                             Card(
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(20),
@@ -344,7 +343,7 @@ class ForecastPage extends StatelessWidget {
                                             Card(
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(20),
@@ -360,7 +359,7 @@ class ForecastPage extends StatelessWidget {
                                             Card(
                                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                                               elevation: 2,
-                                              color: backgroundColor.withAlpha(150),
+                                              color: ThemeData.dark().scaffoldBackgroundColor.withAlpha(150),
                                               margin: const EdgeInsets.all(10.0),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(20),

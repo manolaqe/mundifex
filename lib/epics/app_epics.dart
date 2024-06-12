@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 
 import '../actions/app_action.dart';
+import '../actions/create_comment.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
@@ -27,6 +29,7 @@ import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
+import '../models/comment.dart';
 import '../models/current_weather.dart';
 import '../models/flow_segment_data.dart';
 import '../models/forecast_weather.dart';
@@ -62,6 +65,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUserStart).call,
       TypedEpic<AppState, GetUsersStart>(_getUsersStart).call,
       TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
+      TypedEpic<AppState, CreateCommentStart>(_createCommentStart).call,
     ])(actions, store);
   }
 
@@ -100,7 +104,7 @@ class AppEpics extends EpicClass<AppState> {
     return actions //
         .flatMap((GetUsersStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => firebaseApi.getUsers(action.uids))
+          .asyncMap((_) => firebaseApi.getUsers())
           .map((List<AppUser> users) => GetUsers.successful(users))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetUsers.error(error, stackTrace));
     });
@@ -218,12 +222,26 @@ class AppEpics extends EpicClass<AppState> {
   }
 
   Stream<AppAction> _getPostsStart(Stream<GetPostsStart> actions, EpicStore<AppState> store) {
+    return actions.whereType<GetPostsStart>().switchMap((GetPostsStart action) {
+      return FirebaseFirestore.instance
+          .collection('posts')
+          .snapshots()
+          .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
+        final List<Post> posts =
+            snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Post.fromJson(doc.data())).toList();
+        return GetPosts.successful(posts);
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetPosts.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _createCommentStart(Stream<CreateCommentStart> actions, EpicStore<AppState> store) {
     return actions //
-        .flatMap((GetPostsStart action) {
+        .flatMap((CreateCommentStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => firebaseApi.getPosts(locationData: store.state.locationData!))
-          .map((List<Post> posts) => GetPosts.successful(posts))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetPosts.error(error, stackTrace));
+          .asyncMap((_) => firebaseApi.createComment(
+              postId: store.state.selectedPostId!, userId: store.state.user!.userId, value: action.value))
+          .map((Comment comment) => CreateComment.successful(comment))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateComment.error(error, stackTrace));
     });
   }
 }

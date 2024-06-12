@@ -7,7 +7,7 @@ part 'get_users.freezed.dart';
 
 @freezed
 class GetUsers with _$GetUsers implements AppAction {
-  const factory GetUsers(List<String> uids) = GetUsersStart;
+  const factory GetUsers() = GetUsersStart;
 
   const factory GetUsers.successful(List<AppUser> users) = GetUsersSuccessful;
 

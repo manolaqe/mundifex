@@ -16,7 +16,8 @@ part 'app_state.g.dart';
 class AppState with _$AppState {
   const factory AppState({
     AppUser? user,
-    @Default(<String, AppUser>{}) Map<String, AppUser> users,
+    String? selectedPostId,
+    Map<String, AppUser>? users,
     LocationData? locationData,
     @Default(false) bool isLoading,
     AirPollutionData? airPollutionData,
@@ -26,7 +27,7 @@ class AppState with _$AppState {
     FlowSegmentData? flowSegmentData,
     List<WaterQualityData>? waterQualityData,
     ForecastWeather? forecastWeather,
-    List<Post>? posts,
+    required List<Post> posts,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

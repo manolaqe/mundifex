@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/app_user.dart';
+import '../models/comment.dart';
 import '../models/location_data.dart';
 import '../models/post.dart';
 
@@ -88,7 +89,7 @@ class FirebaseApi {
         userId: user.uid,
         email: email,
         displayName: user.displayName ?? displayName,
-        photoUrl: user.photoURL,
+        photoUrl: user.photoURL!,
       );
 
       await ref.set(appUser.toJson());
@@ -97,7 +98,7 @@ class FirebaseApi {
     return appUser;
   }
 
-  Future<List<AppUser>> getUsers(List<String> uids) async {
+  Future<List<AppUser>> getUsersByUids(List<String> uids) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot =
         await _firestore.collection('users').where('uid', whereIn: uids).get();
 
@@ -106,10 +107,41 @@ class FirebaseApi {
         .toList();
   }
 
+  Future<List<AppUser>> getUsers() async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('users').get();
+
+    return snapshot.docs
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => AppUser.fromJson(doc.data()))
+        .toList();
+  }
+
+  Future<Comment> createComment({
+    required String postId,
+    required String userId,
+    required String value,
+  }) async {
+    final DocumentReference<Map<String, dynamic>> ref = _firestore.collection('posts').doc(postId);
+
+    final Comment comment = Comment(
+      value: value,
+      userId: userId,
+    );
+
+    await ref.update(<Object, Object?>{
+      'comments': FieldValue.arrayUnion([
+        {
+          'value': value,
+          'userId': userId,
+        }
+      ])
+    });
+
+    return comment;
+  }
+
   Future<List<Post>> getPosts({required LocationData locationData}) async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('posts').get();
 
-    print(snapshot.docs);
     return snapshot.docs
         .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Post.fromJson(doc.data()))
         .where((Post post) => isLocationInRadius(post.location, locationData, 2000))

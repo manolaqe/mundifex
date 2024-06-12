@@ -11,10 +11,10 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
       user: json['user'] == null
           ? null
           : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      selectedPostId: json['selectedPostId'] as String?,
       users: (json['users'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k, AppUser.fromJson(e as Map<String, dynamic>)),
-          ) ??
-          const <String, AppUser>{},
+        (k, e) => MapEntry(k, AppUser.fromJson(e as Map<String, dynamic>)),
+      ),
       locationData: json['locationData'] == null
           ? null
           : LocationData.fromJson(json['locationData'] as Map<String, dynamic>),
@@ -42,14 +42,15 @@ _$AppState$Impl _$$AppState$ImplFromJson(Map<String, dynamic> json) =>
           ? null
           : ForecastWeather.fromJson(
               json['forecastWeather'] as Map<String, dynamic>),
-      posts: (json['posts'] as List<dynamic>?)
-          ?.map((e) => Post.fromJson(e as Map<String, dynamic>))
+      posts: (json['posts'] as List<dynamic>)
+          .map((e) => Post.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$AppState$ImplToJson(_$AppState$Impl instance) =>
     <String, dynamic>{
       'user': instance.user,
+      'selectedPostId': instance.selectedPostId,
       'users': instance.users,
       'locationData': instance.locationData,
       'isLoading': instance.isLoading,

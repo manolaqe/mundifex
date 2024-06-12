@@ -21,7 +21,8 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
-  Map<String, AppUser> get users => throw _privateConstructorUsedError;
+  String? get selectedPostId => throw _privateConstructorUsedError;
+  Map<String, AppUser>? get users => throw _privateConstructorUsedError;
   LocationData? get locationData => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   AirPollutionData? get airPollutionData => throw _privateConstructorUsedError;
@@ -33,7 +34,7 @@ mixin _$AppState {
   List<WaterQualityData>? get waterQualityData =>
       throw _privateConstructorUsedError;
   ForecastWeather? get forecastWeather => throw _privateConstructorUsedError;
-  List<Post>? get posts => throw _privateConstructorUsedError;
+  List<Post> get posts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +49,8 @@ abstract class $AppStateCopyWith<$Res> {
   @useResult
   $Res call(
       {AppUser? user,
-      Map<String, AppUser> users,
+      String? selectedPostId,
+      Map<String, AppUser>? users,
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
@@ -58,7 +60,7 @@ abstract class $AppStateCopyWith<$Res> {
       FlowSegmentData? flowSegmentData,
       List<WaterQualityData>? waterQualityData,
       ForecastWeather? forecastWeather,
-      List<Post>? posts});
+      List<Post> posts});
 
   $AppUserCopyWith<$Res>? get user;
   $LocationDataCopyWith<$Res>? get locationData;
@@ -83,7 +85,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @override
   $Res call({
     Object? user = freezed,
-    Object? users = null,
+    Object? selectedPostId = freezed,
+    Object? users = freezed,
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
@@ -93,17 +96,21 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? flowSegmentData = freezed,
     Object? waterQualityData = freezed,
     Object? forecastWeather = freezed,
-    Object? posts = freezed,
+    Object? posts = null,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
-      users: null == users
+      selectedPostId: freezed == selectedPostId
+          ? _value.selectedPostId
+          : selectedPostId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Map<String, AppUser>,
+              as Map<String, AppUser>?,
       locationData: freezed == locationData
           ? _value.locationData
           : locationData // ignore: cast_nullable_to_non_nullable
@@ -140,10 +147,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.forecastWeather
           : forecastWeather // ignore: cast_nullable_to_non_nullable
               as ForecastWeather?,
-      posts: freezed == posts
+      posts: null == posts
           ? _value.posts
           : posts // ignore: cast_nullable_to_non_nullable
-              as List<Post>?,
+              as List<Post>,
     ) as $Val);
   }
 
@@ -242,7 +249,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
   @useResult
   $Res call(
       {AppUser? user,
-      Map<String, AppUser> users,
+      String? selectedPostId,
+      Map<String, AppUser>? users,
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
@@ -252,7 +260,7 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       FlowSegmentData? flowSegmentData,
       List<WaterQualityData>? waterQualityData,
       ForecastWeather? forecastWeather,
-      List<Post>? posts});
+      List<Post> posts});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -282,7 +290,8 @@ class __$$AppState$ImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
-    Object? users = null,
+    Object? selectedPostId = freezed,
+    Object? users = freezed,
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
@@ -292,17 +301,21 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? flowSegmentData = freezed,
     Object? waterQualityData = freezed,
     Object? forecastWeather = freezed,
-    Object? posts = freezed,
+    Object? posts = null,
   }) {
     return _then(_$AppState$Impl(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
-      users: null == users
+      selectedPostId: freezed == selectedPostId
+          ? _value.selectedPostId
+          : selectedPostId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      users: freezed == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
-              as Map<String, AppUser>,
+              as Map<String, AppUser>?,
       locationData: freezed == locationData
           ? _value.locationData
           : locationData // ignore: cast_nullable_to_non_nullable
@@ -339,10 +352,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.forecastWeather
           : forecastWeather // ignore: cast_nullable_to_non_nullable
               as ForecastWeather?,
-      posts: freezed == posts
+      posts: null == posts
           ? _value._posts
           : posts // ignore: cast_nullable_to_non_nullable
-              as List<Post>?,
+              as List<Post>,
     ));
   }
 }
@@ -352,7 +365,8 @@ class __$$AppState$ImplCopyWithImpl<$Res>
 class _$AppState$Impl implements AppState$ {
   const _$AppState$Impl(
       {this.user,
-      final Map<String, AppUser> users = const <String, AppUser>{},
+      this.selectedPostId,
+      final Map<String, AppUser>? users,
       this.locationData,
       this.isLoading = false,
       this.airPollutionData,
@@ -362,7 +376,7 @@ class _$AppState$Impl implements AppState$ {
       this.flowSegmentData,
       final List<WaterQualityData>? waterQualityData,
       this.forecastWeather,
-      final List<Post>? posts})
+      required final List<Post> posts})
       : _users = users,
         _airTrafficData = airTrafficData,
         _waterQualityData = waterQualityData,
@@ -373,13 +387,16 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   final AppUser? user;
-  final Map<String, AppUser> _users;
   @override
-  @JsonKey()
-  Map<String, AppUser> get users {
+  final String? selectedPostId;
+  final Map<String, AppUser>? _users;
+  @override
+  Map<String, AppUser>? get users {
+    final value = _users;
+    if (value == null) return null;
     if (_users is EqualUnmodifiableMapView) return _users;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_users);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
@@ -418,19 +435,17 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   final ForecastWeather? forecastWeather;
-  final List<Post>? _posts;
+  final List<Post> _posts;
   @override
-  List<Post>? get posts {
-    final value = _posts;
-    if (value == null) return null;
+  List<Post> get posts {
     if (_posts is EqualUnmodifiableListView) return _posts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_posts);
   }
 
   @override
   String toString() {
-    return 'AppState(user: $user, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData, forecastWeather: $forecastWeather, posts: $posts)';
+    return 'AppState(user: $user, selectedPostId: $selectedPostId, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData, forecastWeather: $forecastWeather, posts: $posts)';
   }
 
   @override
@@ -439,6 +454,8 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
+            (identical(other.selectedPostId, selectedPostId) ||
+                other.selectedPostId == selectedPostId) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
             (identical(other.locationData, locationData) ||
                 other.locationData == locationData) &&
@@ -466,6 +483,7 @@ class _$AppState$Impl implements AppState$ {
   int get hashCode => Object.hash(
       runtimeType,
       user,
+      selectedPostId,
       const DeepCollectionEquality().hash(_users),
       locationData,
       isLoading,
@@ -495,7 +513,8 @@ class _$AppState$Impl implements AppState$ {
 abstract class AppState$ implements AppState {
   const factory AppState$(
       {final AppUser? user,
-      final Map<String, AppUser> users,
+      final String? selectedPostId,
+      final Map<String, AppUser>? users,
       final LocationData? locationData,
       final bool isLoading,
       final AirPollutionData? airPollutionData,
@@ -505,7 +524,7 @@ abstract class AppState$ implements AppState {
       final FlowSegmentData? flowSegmentData,
       final List<WaterQualityData>? waterQualityData,
       final ForecastWeather? forecastWeather,
-      final List<Post>? posts}) = _$AppState$Impl;
+      required final List<Post> posts}) = _$AppState$Impl;
 
   factory AppState$.fromJson(Map<String, dynamic> json) =
       _$AppState$Impl.fromJson;
@@ -513,7 +532,9 @@ abstract class AppState$ implements AppState {
   @override
   AppUser? get user;
   @override
-  Map<String, AppUser> get users;
+  String? get selectedPostId;
+  @override
+  Map<String, AppUser>? get users;
   @override
   LocationData? get locationData;
   @override
@@ -533,7 +554,7 @@ abstract class AppState$ implements AppState {
   @override
   ForecastWeather? get forecastWeather;
   @override
-  List<Post>? get posts;
+  List<Post> get posts;
   @override
   @JsonKey(ignore: true)
   _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
