@@ -21,17 +21,20 @@ class CurvedLinePainter extends CustomPainter {
     final double center = size.width / 2;
     final double sweepAngle = pi * progress;
 
+    print(progress);
     // Draw background arc
     canvas.drawArc(Rect.fromCircle(center: Offset(center, radius), radius: radius), pi, pi, false, paint);
 
     // Draw progress arc
-    canvas.drawArc(
-      Rect.fromCircle(center: Offset(center, radius), radius: radius),
-      pi,
-      sweepAngle,
-      false,
-      progressPaint,
-    );
+    if (progress > 0) {
+      canvas.drawArc(
+        Rect.fromCircle(center: Offset(center, radius), radius: radius),
+        pi,
+        sweepAngle,
+        false,
+        progressPaint,
+      );
+    }
   }
 
   @override

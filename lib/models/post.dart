@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'comment.dart';
@@ -17,6 +18,9 @@ class Post with _$Post {
     @Default(<String>[]) List<String> likes,
     @Default(<String>[]) List<String> dislikes,
     @Default(<String>[]) List<String> photoUrls,
+    @Default(0.0) double airPerception,
+    @Default(0.0) double cleanPerception,
+    @Default(0.0) double noisePerception,
   }) = Post$;
 
   factory Post.fromJson(Map<dynamic, dynamic> json) => _$PostFromJson(Map<String, dynamic>.from(json));

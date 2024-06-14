@@ -1,8 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../models/address_component.dart';
 import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
+import '../models/location_data.dart';
+import '../models/post.dart';
 import '../models/water_quality_data.dart';
 
 class Utils {
@@ -14,41 +18,28 @@ class Utils {
     final double so2 = airPollutionData.list[0].components.so2;
     final double co = airPollutionData.list[0].components.co;
 
-    double aqi = 0;
+    List<double> aqiValues = [];
 
     if (pm25 > 0) {
-      aqi = _calculateComponentAQI(pm25, 'pm25');
-    } else if (pm10 > 0) {
-      aqi = _calculateComponentAQI(pm10, 'pm10');
-    } else if (no2 > 0) {
-      aqi = _calculateComponentAQI(no2, 'no2');
-    } else if (o3 > 0) {
-      aqi = _calculateComponentAQI(o3, 'o3');
-    } else if (so2 > 0) {
-      aqi = _calculateComponentAQI(so2, 'so2');
-    } else if (co > 0) {
-      aqi = _calculateComponentAQI(co, 'co');
+      aqiValues.add(_calculateComponentAQI(pm25, 'pm25'));
+    }
+    if (pm10 > 0) {
+      aqiValues.add(_calculateComponentAQI(pm10, 'pm10'));
+    }
+    if (no2 > 0) {
+      aqiValues.add(_calculateComponentAQI(no2, 'no2'));
+    }
+    if (o3 > 0) {
+      aqiValues.add(_calculateComponentAQI(o3, 'o3'));
+    }
+    if (so2 > 0) {
+      aqiValues.add(_calculateComponentAQI(so2, 'so2'));
+    }
+    if (co > 0) {
+      aqiValues.add(_calculateComponentAQI(co, 'co'));
     }
 
-    return aqi.round();
-  }
-
-  static WaterQualityData getWaterQualityData(List<WaterQualityData> waterQualityData, AddressData addresData) {
-    String sector = '';
-
-    final List<AddressComponent> addressComponents = addresData.results[0].addressComponents;
-
-    for (final AddressComponent addressComponent in addressComponents) {
-      if (addressComponent.types.contains('sublocality_level_1')) {
-        final String nameContainingSector = addressComponent.longName;
-        final List<String> nameParts = nameContainingSector.split(' ');
-
-        sector = 'sector ${nameParts.last}';
-        break;
-      }
-    }
-
-    return waterQualityData.firstWhere((WaterQualityData record) => record.sector == sector);
+    return aqiValues.isNotEmpty ? aqiValues.reduce((a, b) => a > b ? a : b).round() : 0;
   }
 
   static double _calculateComponentAQI(double value, String component) {
@@ -176,6 +167,24 @@ class Utils {
     }
   }
 
+  static WaterQualityData getWaterQualityData(List<WaterQualityData> waterQualityData, AddressData addresData) {
+    String sector = '';
+
+    final List<AddressComponent> addressComponents = addresData.results[0].addressComponents;
+
+    for (final AddressComponent addressComponent in addressComponents) {
+      if (addressComponent.types.contains('sublocality_level_1')) {
+        final String nameContainingSector = addressComponent.longName;
+        final List<String> nameParts = nameContainingSector.split(' ');
+
+        sector = 'sector ${nameParts.last}';
+        break;
+      }
+    }
+
+    return waterQualityData.firstWhere((WaterQualityData record) => record.sector == sector);
+  }
+
   static Color getPM2_5Color(int value) {
     if (value < 10) {
       return Colors.green;
@@ -226,5 +235,77 @@ class Utils {
     } else {
       return Colors.red;
     }
+  }
+
+  static bool isLocationInRadius(LocationData location1, LocationData location2, double radius) {
+    final double lat1 = location1.lat;
+    final double lon1 = location1.lon;
+    final double lat2 = location2.lat;
+    final double lon2 = location2.lon;
+
+    final double distance = calculateDistance(lat1, lon1, lat2, lon2);
+
+    return distance <= radius;
+  }
+
+  static double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+    const double earthRadius = 6371000; // Earth's radius in meters
+
+    final double dLat = _toRadians(lat2 - lat1);
+    final double dLon = _toRadians(lon2 - lon1);
+
+    final double a =
+        sin(dLat / 2) * sin(dLat / 2) + cos(_toRadians(lat1)) * cos(_toRadians(lat2)) * sin(dLon / 2) * sin(dLon / 2);
+    final double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+
+    final double distance = earthRadius * c;
+
+    return distance;
+  }
+
+  static double _toRadians(double degrees) {
+    return degrees * pi / 180;
+  }
+
+  static double computeAirPerception(List<Post> posts) {
+    double airPerception = 0.0;
+    double counter = 0.0;
+
+    for (final Post post in posts) {
+      if (post.airPerception != 0.0) {
+        counter++;
+        airPerception += post.airPerception;
+      }
+    }
+
+    return airPerception / counter;
+  }
+
+  static double computeCleanPerception(List<Post> posts) {
+    double cleanPerception = 0.0;
+    double counter = 0.0;
+
+    for (final Post post in posts) {
+      if (post.cleanPerception != 0.0) {
+        counter++;
+        cleanPerception += post.cleanPerception;
+      }
+    }
+
+    return cleanPerception / counter;
+  }
+
+  static double computeNoisePerception(List<Post> posts) {
+    double noisePerception = 0.0;
+    double counter = 0.0;
+
+    for (final Post post in posts) {
+      if (post.noisePerception != 0.0) {
+        counter++;
+        noisePerception += post.noisePerception;
+      }
+    }
+
+    return noisePerception / counter;
   }
 }

@@ -8,7 +8,13 @@ part 'create_post.freezed.dart';
 
 @freezed
 class CreatePost with _$CreatePost implements AppAction {
-  const factory CreatePost(List<XFile> photoUrls, String description) = CreatePostStart;
+  const factory CreatePost(
+    List<XFile> photoUrls,
+    String description,
+    double airSliderValue,
+    double cleanSliderValue,
+    double noiseSliderValue,
+  ) = CreatePostStart;
 
   const factory CreatePost.successful(Post post) = CreatePostSuccessful;
 

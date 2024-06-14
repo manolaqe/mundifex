@@ -46,6 +46,7 @@ class InfoCard extends StatelessWidget {
                 ),
                 Text(
                   addressData.results[0].formattedAddress,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -251,10 +252,16 @@ class InfoCard extends StatelessWidget {
                     size: 30,
                     color:
                         flowSegmentData.currentSpeed < 0.5 * flowSegmentData.freeFlowSpeed ? Colors.red : Colors.green),
-                Text(
-                  ' (Actual:${flowSegmentData.currentSpeed.round()} Ideal:${flowSegmentData.freeFlowSpeed.round()})',
-                  style: const TextStyle(fontSize: 17),
-                ),
+                if (flowSegmentData.currentSpeed < 0.3 * flowSegmentData.freeFlowSpeed)
+                  Text(
+                    ' (Actual:${flowSegmentData.currentSpeed.round()} Ideal:${flowSegmentData.freeFlowSpeed.round()}) - Heavy Traffic',
+                    style: const TextStyle(fontSize: 17),
+                  ),
+                if (flowSegmentData.currentSpeed > 0.7 * flowSegmentData.freeFlowSpeed)
+                  Text(
+                    ' (Actual:${flowSegmentData.currentSpeed.round()} Ideal:${flowSegmentData.freeFlowSpeed.round()}) - Light Traffic',
+                    style: const TextStyle(fontSize: 17),
+                  )
               ],
             )
           ],

@@ -86,7 +86,8 @@ class ForecastPage extends StatelessWidget {
                                   return Scaffold(
                                     appBar: AppBar(
                                       backgroundColor: Colors.transparent,
-                                      title: const Text('Forecast'),
+                                      title: Text(addressData.results.first.formattedAddress,
+                                          style: const TextStyle(fontSize: 16)),
                                     ),
                                     backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
                                     body: SingleChildScrollView(
@@ -231,17 +232,15 @@ class ForecastPage extends StatelessWidget {
                                                   children: <Widget>[
                                                     CustomPaint(
                                                       painter: CurvedLinePainter(
-                                                        progress: (DateTime.now()
-                                                                    .difference(DateTime.fromMillisecondsSinceEpoch(
-                                                                        forecastWeatherData.city.sunrise * 1000))
-                                                                    .inHours /
-                                                                (DateTime.fromMillisecondsSinceEpoch(
-                                                                        forecastWeatherData.city.sunset * 1000)
-                                                                    .difference(DateTime.fromMillisecondsSinceEpoch(
-                                                                        forecastWeatherData.city.sunrise * 1000))
-                                                                    .inHours)) /
-                                                            2,
-                                                      ),
+                                                          progress: DateTime.now()
+                                                                  .difference(DateTime.fromMillisecondsSinceEpoch(
+                                                                      forecastWeatherData.city.sunrise * 1000))
+                                                                  .inHours /
+                                                              (DateTime.fromMillisecondsSinceEpoch(
+                                                                      forecastWeatherData.city.sunset * 1000)
+                                                                  .difference(DateTime.fromMillisecondsSinceEpoch(
+                                                                      forecastWeatherData.city.sunrise * 1000))
+                                                                  .inHours)),
                                                       size: const Size(400, 100),
                                                     ),
                                                     const Divider(color: Colors.white, thickness: 2),

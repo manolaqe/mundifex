@@ -28,6 +28,9 @@ mixin _$Post {
   List<String> get likes => throw _privateConstructorUsedError;
   List<String> get dislikes => throw _privateConstructorUsedError;
   List<String> get photoUrls => throw _privateConstructorUsedError;
+  double get airPerception => throw _privateConstructorUsedError;
+  double get cleanPerception => throw _privateConstructorUsedError;
+  double get noisePerception => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +50,10 @@ abstract class $PostCopyWith<$Res> {
       List<Comment> comments,
       List<String> likes,
       List<String> dislikes,
-      List<String> photoUrls});
+      List<String> photoUrls,
+      double airPerception,
+      double cleanPerception,
+      double noisePerception});
 
   $LocationDataCopyWith<$Res> get location;
 }
@@ -73,6 +79,9 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? likes = null,
     Object? dislikes = null,
     Object? photoUrls = null,
+    Object? airPerception = null,
+    Object? cleanPerception = null,
+    Object? noisePerception = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -107,6 +116,18 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
           ? _value.photoUrls
           : photoUrls // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      airPerception: null == airPerception
+          ? _value.airPerception
+          : airPerception // ignore: cast_nullable_to_non_nullable
+              as double,
+      cleanPerception: null == cleanPerception
+          ? _value.cleanPerception
+          : cleanPerception // ignore: cast_nullable_to_non_nullable
+              as double,
+      noisePerception: null == noisePerception
+          ? _value.noisePerception
+          : noisePerception // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 
@@ -134,7 +155,10 @@ abstract class _$$Post$ImplCopyWith<$Res> implements $PostCopyWith<$Res> {
       List<Comment> comments,
       List<String> likes,
       List<String> dislikes,
-      List<String> photoUrls});
+      List<String> photoUrls,
+      double airPerception,
+      double cleanPerception,
+      double noisePerception});
 
   @override
   $LocationDataCopyWith<$Res> get location;
@@ -159,6 +183,9 @@ class __$$Post$ImplCopyWithImpl<$Res>
     Object? likes = null,
     Object? dislikes = null,
     Object? photoUrls = null,
+    Object? airPerception = null,
+    Object? cleanPerception = null,
+    Object? noisePerception = null,
   }) {
     return _then(_$Post$Impl(
       id: null == id
@@ -193,6 +220,18 @@ class __$$Post$ImplCopyWithImpl<$Res>
           ? _value._photoUrls
           : photoUrls // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      airPerception: null == airPerception
+          ? _value.airPerception
+          : airPerception // ignore: cast_nullable_to_non_nullable
+              as double,
+      cleanPerception: null == cleanPerception
+          ? _value.cleanPerception
+          : cleanPerception // ignore: cast_nullable_to_non_nullable
+              as double,
+      noisePerception: null == noisePerception
+          ? _value.noisePerception
+          : noisePerception // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -208,7 +247,10 @@ class _$Post$Impl implements Post$ {
       final List<Comment> comments = const <Comment>[],
       final List<String> likes = const <String>[],
       final List<String> dislikes = const <String>[],
-      final List<String> photoUrls = const <String>[]})
+      final List<String> photoUrls = const <String>[],
+      this.airPerception = 0.0,
+      this.cleanPerception = 0.0,
+      this.noisePerception = 0.0})
       : _comments = comments,
         _likes = likes,
         _dislikes = dislikes,
@@ -265,8 +307,18 @@ class _$Post$Impl implements Post$ {
   }
 
   @override
+  @JsonKey()
+  final double airPerception;
+  @override
+  @JsonKey()
+  final double cleanPerception;
+  @override
+  @JsonKey()
+  final double noisePerception;
+
+  @override
   String toString() {
-    return 'Post(id: $id, userId: $userId, location: $location, description: $description, comments: $comments, likes: $likes, dislikes: $dislikes, photoUrls: $photoUrls)';
+    return 'Post(id: $id, userId: $userId, location: $location, description: $description, comments: $comments, likes: $likes, dislikes: $dislikes, photoUrls: $photoUrls, airPerception: $airPerception, cleanPerception: $cleanPerception, noisePerception: $noisePerception)';
   }
 
   @override
@@ -284,7 +336,13 @@ class _$Post$Impl implements Post$ {
             const DeepCollectionEquality().equals(other._likes, _likes) &&
             const DeepCollectionEquality().equals(other._dislikes, _dislikes) &&
             const DeepCollectionEquality()
-                .equals(other._photoUrls, _photoUrls));
+                .equals(other._photoUrls, _photoUrls) &&
+            (identical(other.airPerception, airPerception) ||
+                other.airPerception == airPerception) &&
+            (identical(other.cleanPerception, cleanPerception) ||
+                other.cleanPerception == cleanPerception) &&
+            (identical(other.noisePerception, noisePerception) ||
+                other.noisePerception == noisePerception));
   }
 
   @JsonKey(ignore: true)
@@ -298,7 +356,10 @@ class _$Post$Impl implements Post$ {
       const DeepCollectionEquality().hash(_comments),
       const DeepCollectionEquality().hash(_likes),
       const DeepCollectionEquality().hash(_dislikes),
-      const DeepCollectionEquality().hash(_photoUrls));
+      const DeepCollectionEquality().hash(_photoUrls),
+      airPerception,
+      cleanPerception,
+      noisePerception);
 
   @JsonKey(ignore: true)
   @override
@@ -323,7 +384,10 @@ abstract class Post$ implements Post {
       final List<Comment> comments,
       final List<String> likes,
       final List<String> dislikes,
-      final List<String> photoUrls}) = _$Post$Impl;
+      final List<String> photoUrls,
+      final double airPerception,
+      final double cleanPerception,
+      final double noisePerception}) = _$Post$Impl;
 
   factory Post$.fromJson(Map<String, dynamic> json) = _$Post$Impl.fromJson;
 
@@ -343,6 +407,12 @@ abstract class Post$ implements Post {
   List<String> get dislikes;
   @override
   List<String> get photoUrls;
+  @override
+  double get airPerception;
+  @override
+  double get cleanPerception;
+  @override
+  double get noisePerception;
   @override
   @JsonKey(ignore: true)
   _$$Post$ImplCopyWith<_$Post$Impl> get copyWith =>

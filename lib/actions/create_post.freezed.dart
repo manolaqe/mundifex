@@ -18,21 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CreatePost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description) $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)
+        $default, {
     required TResult Function(Post post) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<XFile> photoUrls, String description)? $default, {
+    TResult? Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult? Function(Post post)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description)? $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult Function(Post post)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -86,7 +104,12 @@ abstract class _$$CreatePostStartImplCopyWith<$Res> {
           $Res Function(_$CreatePostStartImpl) then) =
       __$$CreatePostStartImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<XFile> photoUrls, String description});
+  $Res call(
+      {List<XFile> photoUrls,
+      String description,
+      double airSliderValue,
+      double cleanSliderValue,
+      double noiseSliderValue});
 }
 
 /// @nodoc
@@ -102,6 +125,9 @@ class __$$CreatePostStartImplCopyWithImpl<$Res>
   $Res call({
     Object? photoUrls = null,
     Object? description = null,
+    Object? airSliderValue = null,
+    Object? cleanSliderValue = null,
+    Object? noiseSliderValue = null,
   }) {
     return _then(_$CreatePostStartImpl(
       null == photoUrls
@@ -112,6 +138,18 @@ class __$$CreatePostStartImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      null == airSliderValue
+          ? _value.airSliderValue
+          : airSliderValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == cleanSliderValue
+          ? _value.cleanSliderValue
+          : cleanSliderValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == noiseSliderValue
+          ? _value.noiseSliderValue
+          : noiseSliderValue // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -119,7 +157,8 @@ class __$$CreatePostStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreatePostStartImpl implements CreatePostStart {
-  const _$CreatePostStartImpl(final List<XFile> photoUrls, this.description)
+  const _$CreatePostStartImpl(final List<XFile> photoUrls, this.description,
+      this.airSliderValue, this.cleanSliderValue, this.noiseSliderValue)
       : _photoUrls = photoUrls;
 
   final List<XFile> _photoUrls;
@@ -132,10 +171,16 @@ class _$CreatePostStartImpl implements CreatePostStart {
 
   @override
   final String description;
+  @override
+  final double airSliderValue;
+  @override
+  final double cleanSliderValue;
+  @override
+  final double noiseSliderValue;
 
   @override
   String toString() {
-    return 'CreatePost(photoUrls: $photoUrls, description: $description)';
+    return 'CreatePost(photoUrls: $photoUrls, description: $description, airSliderValue: $airSliderValue, cleanSliderValue: $cleanSliderValue, noiseSliderValue: $noiseSliderValue)';
   }
 
   @override
@@ -146,12 +191,23 @@ class _$CreatePostStartImpl implements CreatePostStart {
             const DeepCollectionEquality()
                 .equals(other._photoUrls, _photoUrls) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.airSliderValue, airSliderValue) ||
+                other.airSliderValue == airSliderValue) &&
+            (identical(other.cleanSliderValue, cleanSliderValue) ||
+                other.cleanSliderValue == cleanSliderValue) &&
+            (identical(other.noiseSliderValue, noiseSliderValue) ||
+                other.noiseSliderValue == noiseSliderValue));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_photoUrls), description);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_photoUrls),
+      description,
+      airSliderValue,
+      cleanSliderValue,
+      noiseSliderValue);
 
   @JsonKey(ignore: true)
   @override
@@ -163,33 +219,54 @@ class _$CreatePostStartImpl implements CreatePostStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description) $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)
+        $default, {
     required TResult Function(Post post) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
-    return $default(photoUrls, description);
+    return $default(photoUrls, description, airSliderValue, cleanSliderValue,
+        noiseSliderValue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<XFile> photoUrls, String description)? $default, {
+    TResult? Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult? Function(Post post)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
-    return $default?.call(photoUrls, description);
+    return $default?.call(photoUrls, description, airSliderValue,
+        cleanSliderValue, noiseSliderValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description)? $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult Function(Post post)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(photoUrls, description);
+      return $default(photoUrls, description, airSliderValue, cleanSliderValue,
+          noiseSliderValue);
     }
     return orElse();
   }
@@ -231,11 +308,17 @@ class _$CreatePostStartImpl implements CreatePostStart {
 
 abstract class CreatePostStart implements CreatePost {
   const factory CreatePostStart(
-          final List<XFile> photoUrls, final String description) =
-      _$CreatePostStartImpl;
+      final List<XFile> photoUrls,
+      final String description,
+      final double airSliderValue,
+      final double cleanSliderValue,
+      final double noiseSliderValue) = _$CreatePostStartImpl;
 
   List<XFile> get photoUrls;
   String get description;
+  double get airSliderValue;
+  double get cleanSliderValue;
+  double get noiseSliderValue;
   @JsonKey(ignore: true)
   _$$CreatePostStartImplCopyWith<_$CreatePostStartImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -317,7 +400,13 @@ class _$CreatePostSuccessfulImpl implements CreatePostSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description) $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)
+        $default, {
     required TResult Function(Post post) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -327,7 +416,13 @@ class _$CreatePostSuccessfulImpl implements CreatePostSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<XFile> photoUrls, String description)? $default, {
+    TResult? Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult? Function(Post post)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -337,7 +432,13 @@ class _$CreatePostSuccessfulImpl implements CreatePostSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description)? $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult Function(Post post)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -465,7 +566,13 @@ class _$CreatePostErrorImpl implements CreatePostError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description) $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)
+        $default, {
     required TResult Function(Post post) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -475,7 +582,13 @@ class _$CreatePostErrorImpl implements CreatePostError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<XFile> photoUrls, String description)? $default, {
+    TResult? Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult? Function(Post post)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -485,7 +598,13 @@ class _$CreatePostErrorImpl implements CreatePostError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<XFile> photoUrls, String description)? $default, {
+    TResult Function(
+            List<XFile> photoUrls,
+            String description,
+            double airSliderValue,
+            double cleanSliderValue,
+            double noiseSliderValue)?
+        $default, {
     TResult Function(Post post)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),

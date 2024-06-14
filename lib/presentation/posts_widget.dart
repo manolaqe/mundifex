@@ -104,10 +104,6 @@ class PostsWidget extends StatelessWidget {
                     viewportFraction: 1.0,
                     enlargeFactor: 0.8,
                   ),
-                )
-              else
-                const Center(
-                  child: Text('No photos available'),
                 ),
               Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -115,72 +111,75 @@ class PostsWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        ElevatedButton.icon(
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
-                            onPressed: () {
-                              {
-                                if (user == null) {
-                                  Navigator.pushNamed(context, '/sign_in');
+                        IconButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+                          onPressed: () {
+                            {
+                              if (user == null) {
+                                Navigator.pushNamed(context, '/sign_in');
+                              } else {
+                                if (!post.likes.contains(user!.userId) && !post.dislikes.contains(user!.userId)) {
+                                  context
+                                    ..dispatch(AddLike(selectedPostId: post.id))
+                                    ..dispatch(const GetPosts());
                                 } else {
-                                  if (!post.likes.contains(user!.userId) && !post.dislikes.contains(user!.userId)) {
-                                    context
-                                      ..dispatch(AddLike(selectedPostId: post.id))
-                                      ..dispatch(const GetPosts());
-                                  } else {
-                                    context
-                                      ..dispatch(RemoveLike(selectedPostId: post.id))
-                                      ..dispatch(const GetPosts());
-                                  }
+                                  context
+                                    ..dispatch(RemoveLike(selectedPostId: post.id))
+                                    ..dispatch(const GetPosts());
                                 }
                               }
-                            },
-                            icon: user != null && post.likes.contains(user!.userId)
-                                ? const Icon(Icons.thumb_up)
-                                : const Icon(Icons.thumb_up_alt_outlined),
-                            label: Text(' ${post.likes.length}')),
+                            }
+                          },
+                          icon: user != null && post.likes.contains(user!.userId)
+                              ? const Icon(Icons.thumb_up)
+                              : const Icon(Icons.thumb_up_alt_outlined),
+                        ),
+                        Text('${post.likes.length} likes '),
                       ],
                     ),
-                    ElevatedButton.icon(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
-                        onPressed: () {
-                          {
-                            if (user == null) {
-                              Navigator.pushNamed(context, '/sign_in');
+                    IconButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+                      onPressed: () {
+                        {
+                          if (user == null) {
+                            Navigator.pushNamed(context, '/sign_in');
+                          } else {
+                            if (!post.dislikes.contains(user!.userId) && !post.likes.contains(user!.userId)) {
+                              context
+                                ..dispatch(AddDislike(selectedPostId: post.id))
+                                ..dispatch(const GetPosts());
                             } else {
-                              if (!post.dislikes.contains(user!.userId) && !post.likes.contains(user!.userId)) {
-                                context
-                                  ..dispatch(AddDislike(selectedPostId: post.id))
-                                  ..dispatch(const GetPosts());
-                              } else {
-                                context
-                                  ..dispatch(RemoveDislike(selectedPostId: post.id))
-                                  ..dispatch(const GetPosts());
-                              }
+                              context
+                                ..dispatch(RemoveDislike(selectedPostId: post.id))
+                                ..dispatch(const GetPosts());
                             }
                           }
-                        },
-                        icon: user != null && post.dislikes.contains(user!.userId)
-                            ? const Icon(Icons.thumb_down)
-                            : const Icon(Icons.thumb_down_alt_outlined),
-                        label: Text(' ${post.dislikes.length}')),
-                    ElevatedButton.icon(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                            foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
-                        onPressed: () {
-                          context.dispatch(SetSelectedPost(post.id));
-                          Navigator.pushNamed(context, '/comments');
-                        },
-                        icon: const Icon(Icons.comment_outlined),
-                        label: const Text(''))
+                        }
+                      },
+                      icon: user != null && post.dislikes.contains(user!.userId)
+                          ? const Icon(Icons.thumb_down)
+                          : const Icon(Icons.thumb_down_alt_outlined),
+                    ),
+                    Text('${post.likes.length} dislikes '),
+                    IconButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+                      onPressed: () {
+                        context.dispatch(SetSelectedPost(post.id));
+                        Navigator.pushNamed(context, '/comments');
+                      },
+                      icon: const Icon(Icons.comment_outlined),
+                    ),
+                    Text('${post.likes.length} comments'),
                   ],
                 ),
               ),

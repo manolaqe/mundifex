@@ -27,6 +27,7 @@ import 'extensions.dart';
 import 'info_card.dart';
 import 'posts_widget.dart';
 import 'user_avatar.dart';
+import 'users_perception.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
     return RefreshIndicator(onRefresh: () async {
       context.store.dispatch(const GetLocation());
       context.store.dispatch(const GetUsers());
+      context.store.dispatch(const GetPosts());
       await context.store.onChange.firstWhere((AppState state) => !state.isLoading);
     }, child: WeatherContainer(builder: (BuildContext context, CurrentWeather? weatherData) {
       return LocationContainer(
@@ -87,91 +89,89 @@ class _HomePageState extends State<HomePage> {
                                     child: CircularProgressIndicator(),
                                   );
                                 }
-                                return UsersContainer(builder: (BuildContext context, Map<String, AppUser>? users) {
-                                  if (users == null) {
-                                    return const Center(
-                                      child: CircularProgressIndicator(),
-                                    );
-                                  }
-                                  return AppUserContainer(builder: (BuildContext context, AppUser? user) {
-                                    return UsersContainer(builder: (BuildContext context, Map<String, AppUser>? users) {
-                                      if (users == null) {
-                                        return const Center(
-                                          child: CircularProgressIndicator(),
-                                        );
-                                      }
-                                      return IsLoadingContainer(
-                                        builder: (BuildContext context, bool isLoading) {
-                                          if (weatherData == null) {
-                                            return const Center(
-                                              child: CircularProgressIndicator(),
-                                            );
-                                          }
+                                return AppUserContainer(builder: (BuildContext context, AppUser? user) {
+                                  return UsersContainer(builder: (BuildContext context, Map<String, AppUser>? users) {
+                                    if (users == null) {
+                                      return const Center(
+                                        child: CircularProgressIndicator(),
+                                      );
+                                    }
+                                    return IsLoadingContainer(
+                                      builder: (BuildContext context, bool isLoading) {
+                                        if (weatherData == null) {
+                                          return const Center(
+                                            child: CircularProgressIndicator(),
+                                          );
+                                        }
 
-                                          return Scaffold(
-                                            appBar: AppBar(
-                                              title: const Text('Mundifex'),
-                                              actions: <Widget>[
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    if (user == null) {
-                                                      Navigator.pushNamed(context, '/sign_in');
-                                                    } else {
-                                                      Navigator.pushNamed(context, '/profile');
-                                                    }
-                                                  },
-                                                  child: const Padding(
-                                                      padding: EdgeInsets.all(10),
-                                                      child: UserAvatar(
-                                                        radius: 20,
-                                                      )),
-                                                )
-                                              ],
-                                            ),
-                                            floatingActionButton: FloatingActionButton(
-                                              onPressed: () {
-                                                Navigator.pushNamed(
-                                                  context,
-                                                  '/create_post',
-                                                );
-                                              },
-                                              child: const Icon(Icons.add),
-                                            ),
-                                            body: Column(
-                                              children: <Widget>[
-                                                Expanded(
-                                                  child: CustomScrollView(
-                                                    slivers: <Widget>[
-                                                      SliverToBoxAdapter(
-                                                        child: GestureDetector(
-                                                          onTap: () {
-                                                            Navigator.pushNamed(
-                                                              context,
-                                                              '/forecast_page',
-                                                            );
-                                                          },
-                                                          child: InfoCard(
-                                                            locationData: locationData,
-                                                            currentWeather: weatherData,
-                                                            addressData: addressData,
-                                                            airPollutionData: airPollutionData,
-                                                            flowSegmentData: flowSegmentData,
-                                                            waterQualityData: waterQualityData,
-                                                          ),
+                                        return Scaffold(
+                                          appBar: AppBar(
+                                            title: const Text('Mundifex'),
+                                            actions: <Widget>[
+                                              GestureDetector(
+                                                onTap: () {
+                                                  if (user == null) {
+                                                    Navigator.pushNamed(context, '/sign_in');
+                                                  } else {
+                                                    Navigator.pushNamed(context, '/profile');
+                                                  }
+                                                },
+                                                child: const Padding(
+                                                    padding: EdgeInsets.all(10),
+                                                    child: UserAvatar(
+                                                      radius: 20,
+                                                    )),
+                                              )
+                                            ],
+                                          ),
+                                          floatingActionButton: FloatingActionButton(
+                                            onPressed: () {
+                                              Navigator.pushNamed(
+                                                context,
+                                                '/create_post',
+                                              );
+                                            },
+                                            child: const Icon(Icons.add),
+                                          ),
+                                          body: Column(
+                                            children: <Widget>[
+                                              Expanded(
+                                                child: CustomScrollView(
+                                                  slivers: <Widget>[
+                                                    SliverToBoxAdapter(
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          Navigator.pushNamed(
+                                                            context,
+                                                            '/forecast_page',
+                                                          );
+                                                        },
+                                                        child: InfoCard(
+                                                          locationData: locationData,
+                                                          currentWeather: weatherData,
+                                                          addressData: addressData,
+                                                          airPollutionData: airPollutionData,
+                                                          flowSegmentData: flowSegmentData,
+                                                          waterQualityData: waterQualityData,
                                                         ),
                                                       ),
-                                                      SliverToBoxAdapter(
-                                                        child: PostsWidget(posts: posts, users: users, user: user),
+                                                    ),
+                                                    SliverToBoxAdapter(
+                                                      child: UsersPerception(
+                                                        posts: posts,
                                                       ),
-                                                    ],
-                                                  ),
+                                                    ),
+                                                    SliverToBoxAdapter(
+                                                      child: PostsWidget(posts: posts, users: users, user: user),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    });
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
                                   });
                                 });
                               });

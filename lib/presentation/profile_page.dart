@@ -27,8 +27,9 @@ class ProfilePage extends StatelessWidget {
             title: const Text('User profile'),
           ),
           body: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
                   onTap: () async {
@@ -41,17 +42,17 @@ class ProfilePage extends StatelessWidget {
                       // context.dispatch(ChangePicture(file.path));
                     }
                   },
-                  child: const UserAvatar(radius: 128),
+                  child: const UserAvatar(radius: 100),
                 ),
                 const SizedBox(height: 32),
                 Text(
                   user.displayName,
-                  style: const TextStyle(fontSize: 64.0),
+                  style: const TextStyle(fontSize: 24.0),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   user.email,
-                  style: const TextStyle(fontSize: 32.0),
+                  style: const TextStyle(fontSize: 20.0),
                 ),
                 const SizedBox(height: 32),
                 TextButton(

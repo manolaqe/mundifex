@@ -267,7 +267,10 @@ class AppEpics extends EpicClass<AppState> {
               images: action.photoUrls,
               description: action.description,
               userId: store.state.user!.userId,
-              location: store.state.locationData!))
+              location: store.state.locationData!,
+              airSliderValue: action.airSliderValue,
+              cleanSliderValue: action.cleanSliderValue,
+              noiseSliderValue: action.noiseSliderValue))
           .map((Post post) => CreatePost.successful(post))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreatePost.error(error, stackTrace));
     });

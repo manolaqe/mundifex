@@ -26,6 +26,9 @@ _$Post$Impl _$$Post$ImplFromJson(Map<String, dynamic> json) => _$Post$Impl(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
+      airPerception: (json['airPerception'] as num?)?.toDouble() ?? 0.0,
+      cleanPerception: (json['cleanPerception'] as num?)?.toDouble() ?? 0.0,
+      noisePerception: (json['noisePerception'] as num?)?.toDouble() ?? 0.0,
     );
 
 Map<String, dynamic> _$$Post$ImplToJson(_$Post$Impl instance) =>
@@ -38,4 +41,7 @@ Map<String, dynamic> _$$Post$ImplToJson(_$Post$Impl instance) =>
       'likes': instance.likes,
       'dislikes': instance.dislikes,
       'photoUrls': instance.photoUrls,
+      'airPerception': instance.airPerception,
+      'cleanPerception': instance.cleanPerception,
+      'noisePerception': instance.noisePerception,
     };
