@@ -115,9 +115,6 @@ class PostsWidget extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         IconButton(
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                           onPressed: () {
                             {
                               if (user == null) {
@@ -143,9 +140,6 @@ class PostsWidget extends StatelessWidget {
                       ],
                     ),
                     IconButton(
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                       onPressed: () {
                         {
                           if (user == null) {
@@ -169,9 +163,6 @@ class PostsWidget extends StatelessWidget {
                     ),
                     Text('${post.likes.length} dislikes '),
                     IconButton(
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
                       onPressed: () {
                         context.dispatch(SetSelectedPost(post.id));
                         Navigator.pushNamed(context, '/comments');
