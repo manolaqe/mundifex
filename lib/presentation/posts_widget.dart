@@ -12,7 +12,6 @@ import '../actions/set.dart';
 import '../models/app_user.dart';
 import '../models/post.dart';
 import 'extensions.dart';
-import 'utils.dart';
 
 class PostsWidget extends StatelessWidget {
   const PostsWidget({super.key, required this.posts, required this.users, required this.user});
