@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../models/air_pollution_data.dart';
 import '../models/air_pollution_data_forecast.dart';
 import 'app_action.dart';
 

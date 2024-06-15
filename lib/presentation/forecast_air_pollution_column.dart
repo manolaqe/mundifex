@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/air_pollution_data_forecast.dart';
-import '../models/forecast_weather.dart';
 import 'utils.dart';
 
 class ForecastAirPollutionColumn extends StatelessWidget {
