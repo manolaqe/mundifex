@@ -12,6 +12,7 @@ import '../actions/set.dart';
 import '../models/app_user.dart';
 import '../models/post.dart';
 import 'extensions.dart';
+import 'utils.dart';
 
 class PostsWidget extends StatelessWidget {
   const PostsWidget({super.key, required this.posts, required this.users, required this.user});
@@ -77,6 +78,110 @@ class PostsWidget extends StatelessWidget {
                   ],
                 ),
               ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          height: 5,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: LayoutBuilder(
+                            builder: (BuildContext context, BoxConstraints constraints) {
+                              return Container(
+                                width: constraints.maxWidth * post.airPerception,
+                                height: 5,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: <Color>[Colors.red, Colors.yellow, Colors.green],
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: LinearProgressIndicator(
+                          minHeight: 5,
+                          borderRadius: BorderRadius.circular(10),
+                          value: post.cleanPerception,
+                          backgroundColor: Colors.grey,
+                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              'Clean',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            Text(
+                              'Dirty',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: LinearProgressIndicator(
+                          minHeight: 5,
+                          borderRadius: BorderRadius.circular(10),
+                          value: post.noisePerception,
+                          backgroundColor: Colors.grey,
+                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              'Quiet',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            Text(
+                              'Loud',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               if (post.photoUrls.isNotEmpty)
                 CarouselSlider.builder(
                   itemCount: post.photoUrls.length,
@@ -105,9 +210,10 @@ class PostsWidget extends StatelessWidget {
                     enlargeFactor: 0.8,
                   ),
                 ),
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(post.description, style: const TextStyle(fontSize: 20))),
+              if (post.description.isNotEmpty)
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(post.description, style: const TextStyle(fontSize: 16))),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -161,7 +267,7 @@ class PostsWidget extends StatelessWidget {
                           ? const Icon(Icons.thumb_down)
                           : const Icon(Icons.thumb_down_alt_outlined),
                     ),
-                    Text('${post.likes.length} dislikes '),
+                    Text('${post.dislikes.length} dislikes '),
                     IconButton(
                       onPressed: () {
                         context.dispatch(SetSelectedPost(post.id));
@@ -169,7 +275,7 @@ class PostsWidget extends StatelessWidget {
                       },
                       icon: const Icon(Icons.comment_outlined),
                     ),
-                    Text('${post.likes.length} comments'),
+                    Text('${post.comments.length} comments'),
                   ],
                 ),
               ),
