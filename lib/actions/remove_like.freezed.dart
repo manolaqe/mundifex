@@ -64,14 +64,12 @@ mixin _$RemoveLike {
 
 /// @nodoc
 abstract class $RemoveLikeCopyWith<$Res> {
-  factory $RemoveLikeCopyWith(
-          RemoveLike value, $Res Function(RemoveLike) then) =
+  factory $RemoveLikeCopyWith(RemoveLike value, $Res Function(RemoveLike) then) =
       _$RemoveLikeCopyWithImpl<$Res, RemoveLike>;
 }
 
 /// @nodoc
-class _$RemoveLikeCopyWithImpl<$Res, $Val extends RemoveLike>
-    implements $RemoveLikeCopyWith<$Res> {
+class _$RemoveLikeCopyWithImpl<$Res, $Val extends RemoveLike> implements $RemoveLikeCopyWith<$Res> {
   _$RemoveLikeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,19 +80,16 @@ class _$RemoveLikeCopyWithImpl<$Res, $Val extends RemoveLike>
 
 /// @nodoc
 abstract class _$$RemoveLikeStartImplCopyWith<$Res> {
-  factory _$$RemoveLikeStartImplCopyWith(_$RemoveLikeStartImpl value,
-          $Res Function(_$RemoveLikeStartImpl) then) =
+  factory _$$RemoveLikeStartImplCopyWith(_$RemoveLikeStartImpl value, $Res Function(_$RemoveLikeStartImpl) then) =
       __$$RemoveLikeStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String selectedPostId});
 }
 
 /// @nodoc
-class __$$RemoveLikeStartImplCopyWithImpl<$Res>
-    extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeStartImpl>
+class __$$RemoveLikeStartImplCopyWithImpl<$Res> extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeStartImpl>
     implements _$$RemoveLikeStartImplCopyWith<$Res> {
-  __$$RemoveLikeStartImplCopyWithImpl(
-      _$RemoveLikeStartImpl _value, $Res Function(_$RemoveLikeStartImpl) _then)
+  __$$RemoveLikeStartImplCopyWithImpl(_$RemoveLikeStartImpl _value, $Res Function(_$RemoveLikeStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,8 +124,7 @@ class _$RemoveLikeStartImpl implements RemoveLikeStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RemoveLikeStartImpl &&
-            (identical(other.selectedPostId, selectedPostId) ||
-                other.selectedPostId == selectedPostId));
+            (identical(other.selectedPostId, selectedPostId) || other.selectedPostId == selectedPostId));
   }
 
   @override
@@ -140,8 +134,7 @@ class _$RemoveLikeStartImpl implements RemoveLikeStart {
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveLikeStartImplCopyWith<_$RemoveLikeStartImpl> get copyWith =>
-      __$$RemoveLikeStartImplCopyWithImpl<_$RemoveLikeStartImpl>(
-          this, _$identity);
+      __$$RemoveLikeStartImplCopyWithImpl<_$RemoveLikeStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -213,19 +206,17 @@ class _$RemoveLikeStartImpl implements RemoveLikeStart {
 }
 
 abstract class RemoveLikeStart implements RemoveLike {
-  const factory RemoveLikeStart({required final String selectedPostId}) =
-      _$RemoveLikeStartImpl;
+  const factory RemoveLikeStart({required final String selectedPostId}) = _$RemoveLikeStartImpl;
 
   String get selectedPostId;
   @JsonKey(ignore: true)
-  _$$RemoveLikeStartImplCopyWith<_$RemoveLikeStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveLikeStartImplCopyWith<_$RemoveLikeStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveLikeSuccessfulImplCopyWith<$Res> {
-  factory _$$RemoveLikeSuccessfulImplCopyWith(_$RemoveLikeSuccessfulImpl value,
-          $Res Function(_$RemoveLikeSuccessfulImpl) then) =
+  factory _$$RemoveLikeSuccessfulImplCopyWith(
+          _$RemoveLikeSuccessfulImpl value, $Res Function(_$RemoveLikeSuccessfulImpl) then) =
       __$$RemoveLikeSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Post post});
@@ -234,11 +225,10 @@ abstract class _$$RemoveLikeSuccessfulImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$RemoveLikeSuccessfulImplCopyWithImpl<$Res>
-    extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeSuccessfulImpl>
+class __$$RemoveLikeSuccessfulImplCopyWithImpl<$Res> extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeSuccessfulImpl>
     implements _$$RemoveLikeSuccessfulImplCopyWith<$Res> {
-  __$$RemoveLikeSuccessfulImplCopyWithImpl(_$RemoveLikeSuccessfulImpl _value,
-      $Res Function(_$RemoveLikeSuccessfulImpl) _then)
+  __$$RemoveLikeSuccessfulImplCopyWithImpl(
+      _$RemoveLikeSuccessfulImpl _value, $Res Function(_$RemoveLikeSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -290,10 +280,8 @@ class _$RemoveLikeSuccessfulImpl implements RemoveLikeSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveLikeSuccessfulImplCopyWith<_$RemoveLikeSuccessfulImpl>
-      get copyWith =>
-          __$$RemoveLikeSuccessfulImplCopyWithImpl<_$RemoveLikeSuccessfulImpl>(
-              this, _$identity);
+  _$$RemoveLikeSuccessfulImplCopyWith<_$RemoveLikeSuccessfulImpl> get copyWith =>
+      __$$RemoveLikeSuccessfulImplCopyWithImpl<_$RemoveLikeSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,30 +353,25 @@ class _$RemoveLikeSuccessfulImpl implements RemoveLikeSuccessful {
 }
 
 abstract class RemoveLikeSuccessful implements RemoveLike {
-  const factory RemoveLikeSuccessful(final Post post) =
-      _$RemoveLikeSuccessfulImpl;
+  const factory RemoveLikeSuccessful(final Post post) = _$RemoveLikeSuccessfulImpl;
 
   Post get post;
   @JsonKey(ignore: true)
-  _$$RemoveLikeSuccessfulImplCopyWith<_$RemoveLikeSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$RemoveLikeSuccessfulImplCopyWith<_$RemoveLikeSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RemoveLikeErrorImplCopyWith<$Res> {
-  factory _$$RemoveLikeErrorImplCopyWith(_$RemoveLikeErrorImpl value,
-          $Res Function(_$RemoveLikeErrorImpl) then) =
+  factory _$$RemoveLikeErrorImplCopyWith(_$RemoveLikeErrorImpl value, $Res Function(_$RemoveLikeErrorImpl) then) =
       __$$RemoveLikeErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$RemoveLikeErrorImplCopyWithImpl<$Res>
-    extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeErrorImpl>
+class __$$RemoveLikeErrorImplCopyWithImpl<$Res> extends _$RemoveLikeCopyWithImpl<$Res, _$RemoveLikeErrorImpl>
     implements _$$RemoveLikeErrorImplCopyWith<$Res> {
-  __$$RemoveLikeErrorImplCopyWithImpl(
-      _$RemoveLikeErrorImpl _value, $Res Function(_$RemoveLikeErrorImpl) _then)
+  __$$RemoveLikeErrorImplCopyWithImpl(_$RemoveLikeErrorImpl _value, $Res Function(_$RemoveLikeErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,20 +411,17 @@ class _$RemoveLikeErrorImpl implements RemoveLikeError {
         (other.runtimeType == runtimeType &&
             other is _$RemoveLikeErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveLikeErrorImplCopyWith<_$RemoveLikeErrorImpl> get copyWith =>
-      __$$RemoveLikeErrorImplCopyWithImpl<_$RemoveLikeErrorImpl>(
-          this, _$identity);
+      __$$RemoveLikeErrorImplCopyWithImpl<_$RemoveLikeErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -513,12 +493,10 @@ class _$RemoveLikeErrorImpl implements RemoveLikeError {
 }
 
 abstract class RemoveLikeError implements RemoveLike, ErrorAction {
-  const factory RemoveLikeError(
-      final Object error, final StackTrace stackTrace) = _$RemoveLikeErrorImpl;
+  const factory RemoveLikeError(final Object error, final StackTrace stackTrace) = _$RemoveLikeErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$RemoveLikeErrorImplCopyWith<_$RemoveLikeErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveLikeErrorImplCopyWith<_$RemoveLikeErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

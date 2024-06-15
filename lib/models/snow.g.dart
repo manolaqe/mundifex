@@ -11,8 +11,7 @@ _$Snow$Impl _$$Snow$ImplFromJson(Map<String, dynamic> json) => _$Snow$Impl(
       the3H: (json['3h'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$Snow$ImplToJson(_$Snow$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Snow$ImplToJson(_$Snow$Impl instance) => <String, dynamic>{
       '1h': instance.the1H,
       '3h': instance.the3H,
     };

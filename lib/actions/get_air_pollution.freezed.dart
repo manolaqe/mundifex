@@ -64,14 +64,12 @@ mixin _$GetAirPollution {
 
 /// @nodoc
 abstract class $GetAirPollutionCopyWith<$Res> {
-  factory $GetAirPollutionCopyWith(
-          GetAirPollution value, $Res Function(GetAirPollution) then) =
+  factory $GetAirPollutionCopyWith(GetAirPollution value, $Res Function(GetAirPollution) then) =
       _$GetAirPollutionCopyWithImpl<$Res, GetAirPollution>;
 }
 
 /// @nodoc
-class _$GetAirPollutionCopyWithImpl<$Res, $Val extends GetAirPollution>
-    implements $GetAirPollutionCopyWith<$Res> {
+class _$GetAirPollutionCopyWithImpl<$Res, $Val extends GetAirPollution> implements $GetAirPollutionCopyWith<$Res> {
   _$GetAirPollutionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$GetAirPollutionCopyWithImpl<$Res, $Val extends GetAirPollution>
 
 /// @nodoc
 abstract class _$$GetAirPollutionStartImplCopyWith<$Res> {
-  factory _$$GetAirPollutionStartImplCopyWith(_$GetAirPollutionStartImpl value,
-          $Res Function(_$GetAirPollutionStartImpl) then) =
+  factory _$$GetAirPollutionStartImplCopyWith(
+          _$GetAirPollutionStartImpl value, $Res Function(_$GetAirPollutionStartImpl) then) =
       __$$GetAirPollutionStartImplCopyWithImpl<$Res>;
 }
 
@@ -91,8 +89,8 @@ abstract class _$$GetAirPollutionStartImplCopyWith<$Res> {
 class __$$GetAirPollutionStartImplCopyWithImpl<$Res>
     extends _$GetAirPollutionCopyWithImpl<$Res, _$GetAirPollutionStartImpl>
     implements _$$GetAirPollutionStartImplCopyWith<$Res> {
-  __$$GetAirPollutionStartImplCopyWithImpl(_$GetAirPollutionStartImpl _value,
-      $Res Function(_$GetAirPollutionStartImpl) _then)
+  __$$GetAirPollutionStartImplCopyWithImpl(
+      _$GetAirPollutionStartImpl _value, $Res Function(_$GetAirPollutionStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,9 +106,7 @@ class _$GetAirPollutionStartImpl implements GetAirPollutionStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAirPollutionStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetAirPollutionStartImpl);
   }
 
   @override
@@ -192,8 +188,7 @@ abstract class GetAirPollutionStart implements GetAirPollution {
 /// @nodoc
 abstract class _$$GetAirPollutionSuccessfulImplCopyWith<$Res> {
   factory _$$GetAirPollutionSuccessfulImplCopyWith(
-          _$GetAirPollutionSuccessfulImpl value,
-          $Res Function(_$GetAirPollutionSuccessfulImpl) then) =
+          _$GetAirPollutionSuccessfulImpl value, $Res Function(_$GetAirPollutionSuccessfulImpl) then) =
       __$$GetAirPollutionSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AirPollutionData airPollutionData});
@@ -206,8 +201,7 @@ class __$$GetAirPollutionSuccessfulImplCopyWithImpl<$Res>
     extends _$GetAirPollutionCopyWithImpl<$Res, _$GetAirPollutionSuccessfulImpl>
     implements _$$GetAirPollutionSuccessfulImplCopyWith<$Res> {
   __$$GetAirPollutionSuccessfulImplCopyWithImpl(
-      _$GetAirPollutionSuccessfulImpl _value,
-      $Res Function(_$GetAirPollutionSuccessfulImpl) _then)
+      _$GetAirPollutionSuccessfulImpl _value, $Res Function(_$GetAirPollutionSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -250,8 +244,7 @@ class _$GetAirPollutionSuccessfulImpl implements GetAirPollutionSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAirPollutionSuccessfulImpl &&
-            (identical(other.airPollutionData, airPollutionData) ||
-                other.airPollutionData == airPollutionData));
+            (identical(other.airPollutionData, airPollutionData) || other.airPollutionData == airPollutionData));
   }
 
   @override
@@ -260,9 +253,8 @@ class _$GetAirPollutionSuccessfulImpl implements GetAirPollutionSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAirPollutionSuccessfulImplCopyWith<_$GetAirPollutionSuccessfulImpl>
-      get copyWith => __$$GetAirPollutionSuccessfulImplCopyWithImpl<
-          _$GetAirPollutionSuccessfulImpl>(this, _$identity);
+  _$$GetAirPollutionSuccessfulImplCopyWith<_$GetAirPollutionSuccessfulImpl> get copyWith =>
+      __$$GetAirPollutionSuccessfulImplCopyWithImpl<_$GetAirPollutionSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -334,20 +326,18 @@ class _$GetAirPollutionSuccessfulImpl implements GetAirPollutionSuccessful {
 }
 
 abstract class GetAirPollutionSuccessful implements GetAirPollution {
-  const factory GetAirPollutionSuccessful(
-          final AirPollutionData airPollutionData) =
-      _$GetAirPollutionSuccessfulImpl;
+  const factory GetAirPollutionSuccessful(final AirPollutionData airPollutionData) = _$GetAirPollutionSuccessfulImpl;
 
   AirPollutionData get airPollutionData;
   @JsonKey(ignore: true)
-  _$$GetAirPollutionSuccessfulImplCopyWith<_$GetAirPollutionSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAirPollutionSuccessfulImplCopyWith<_$GetAirPollutionSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetAirPollutionErrorImplCopyWith<$Res> {
-  factory _$$GetAirPollutionErrorImplCopyWith(_$GetAirPollutionErrorImpl value,
-          $Res Function(_$GetAirPollutionErrorImpl) then) =
+  factory _$$GetAirPollutionErrorImplCopyWith(
+          _$GetAirPollutionErrorImpl value, $Res Function(_$GetAirPollutionErrorImpl) then) =
       __$$GetAirPollutionErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -357,8 +347,8 @@ abstract class _$$GetAirPollutionErrorImplCopyWith<$Res> {
 class __$$GetAirPollutionErrorImplCopyWithImpl<$Res>
     extends _$GetAirPollutionCopyWithImpl<$Res, _$GetAirPollutionErrorImpl>
     implements _$$GetAirPollutionErrorImplCopyWith<$Res> {
-  __$$GetAirPollutionErrorImplCopyWithImpl(_$GetAirPollutionErrorImpl _value,
-      $Res Function(_$GetAirPollutionErrorImpl) _then)
+  __$$GetAirPollutionErrorImplCopyWithImpl(
+      _$GetAirPollutionErrorImpl _value, $Res Function(_$GetAirPollutionErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -398,21 +388,17 @@ class _$GetAirPollutionErrorImpl implements GetAirPollutionError {
         (other.runtimeType == runtimeType &&
             other is _$GetAirPollutionErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAirPollutionErrorImplCopyWith<_$GetAirPollutionErrorImpl>
-      get copyWith =>
-          __$$GetAirPollutionErrorImplCopyWithImpl<_$GetAirPollutionErrorImpl>(
-              this, _$identity);
+  _$$GetAirPollutionErrorImplCopyWith<_$GetAirPollutionErrorImpl> get copyWith =>
+      __$$GetAirPollutionErrorImplCopyWithImpl<_$GetAirPollutionErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -484,13 +470,10 @@ class _$GetAirPollutionErrorImpl implements GetAirPollutionError {
 }
 
 abstract class GetAirPollutionError implements GetAirPollution, ErrorAction {
-  const factory GetAirPollutionError(
-          final Object error, final StackTrace stackTrace) =
-      _$GetAirPollutionErrorImpl;
+  const factory GetAirPollutionError(final Object error, final StackTrace stackTrace) = _$GetAirPollutionErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetAirPollutionErrorImplCopyWith<_$GetAirPollutionErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAirPollutionErrorImplCopyWith<_$GetAirPollutionErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

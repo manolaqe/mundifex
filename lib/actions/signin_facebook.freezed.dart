@@ -64,14 +64,12 @@ mixin _$SignInFacebook {
 
 /// @nodoc
 abstract class $SignInFacebookCopyWith<$Res> {
-  factory $SignInFacebookCopyWith(
-          SignInFacebook value, $Res Function(SignInFacebook) then) =
+  factory $SignInFacebookCopyWith(SignInFacebook value, $Res Function(SignInFacebook) then) =
       _$SignInFacebookCopyWithImpl<$Res, SignInFacebook>;
 }
 
 /// @nodoc
-class _$SignInFacebookCopyWithImpl<$Res, $Val extends SignInFacebook>
-    implements $SignInFacebookCopyWith<$Res> {
+class _$SignInFacebookCopyWithImpl<$Res, $Val extends SignInFacebook> implements $SignInFacebookCopyWith<$Res> {
   _$SignInFacebookCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,8 +80,8 @@ class _$SignInFacebookCopyWithImpl<$Res, $Val extends SignInFacebook>
 
 /// @nodoc
 abstract class _$$SignInFacebookStartImplCopyWith<$Res> {
-  factory _$$SignInFacebookStartImplCopyWith(_$SignInFacebookStartImpl value,
-          $Res Function(_$SignInFacebookStartImpl) then) =
+  factory _$$SignInFacebookStartImplCopyWith(
+          _$SignInFacebookStartImpl value, $Res Function(_$SignInFacebookStartImpl) then) =
       __$$SignInFacebookStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ActionResult result});
@@ -93,8 +91,8 @@ abstract class _$$SignInFacebookStartImplCopyWith<$Res> {
 class __$$SignInFacebookStartImplCopyWithImpl<$Res>
     extends _$SignInFacebookCopyWithImpl<$Res, _$SignInFacebookStartImpl>
     implements _$$SignInFacebookStartImplCopyWith<$Res> {
-  __$$SignInFacebookStartImplCopyWithImpl(_$SignInFacebookStartImpl _value,
-      $Res Function(_$SignInFacebookStartImpl) _then)
+  __$$SignInFacebookStartImplCopyWithImpl(
+      _$SignInFacebookStartImpl _value, $Res Function(_$SignInFacebookStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,8 +137,7 @@ class _$SignInFacebookStartImpl implements SignInFacebookStart {
   @override
   @pragma('vm:prefer-inline')
   _$$SignInFacebookStartImplCopyWith<_$SignInFacebookStartImpl> get copyWith =>
-      __$$SignInFacebookStartImplCopyWithImpl<_$SignInFacebookStartImpl>(
-          this, _$identity);
+      __$$SignInFacebookStartImplCopyWithImpl<_$SignInFacebookStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,20 +209,17 @@ class _$SignInFacebookStartImpl implements SignInFacebookStart {
 }
 
 abstract class SignInFacebookStart implements SignInFacebook {
-  const factory SignInFacebookStart({required final ActionResult result}) =
-      _$SignInFacebookStartImpl;
+  const factory SignInFacebookStart({required final ActionResult result}) = _$SignInFacebookStartImpl;
 
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$SignInFacebookStartImplCopyWith<_$SignInFacebookStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInFacebookStartImplCopyWith<_$SignInFacebookStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInFacebookSuccessfulImplCopyWith<$Res> {
   factory _$$SignInFacebookSuccessfulImplCopyWith(
-          _$SignInFacebookSuccessfulImpl value,
-          $Res Function(_$SignInFacebookSuccessfulImpl) then) =
+          _$SignInFacebookSuccessfulImpl value, $Res Function(_$SignInFacebookSuccessfulImpl) then) =
       __$$SignInFacebookSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
@@ -238,8 +232,7 @@ class __$$SignInFacebookSuccessfulImplCopyWithImpl<$Res>
     extends _$SignInFacebookCopyWithImpl<$Res, _$SignInFacebookSuccessfulImpl>
     implements _$$SignInFacebookSuccessfulImplCopyWith<$Res> {
   __$$SignInFacebookSuccessfulImplCopyWithImpl(
-      _$SignInFacebookSuccessfulImpl _value,
-      $Res Function(_$SignInFacebookSuccessfulImpl) _then)
+      _$SignInFacebookSuccessfulImpl _value, $Res Function(_$SignInFacebookSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -291,9 +284,8 @@ class _$SignInFacebookSuccessfulImpl implements SignInFacebookSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInFacebookSuccessfulImplCopyWith<_$SignInFacebookSuccessfulImpl>
-      get copyWith => __$$SignInFacebookSuccessfulImplCopyWithImpl<
-          _$SignInFacebookSuccessfulImpl>(this, _$identity);
+  _$$SignInFacebookSuccessfulImplCopyWith<_$SignInFacebookSuccessfulImpl> get copyWith =>
+      __$$SignInFacebookSuccessfulImplCopyWithImpl<_$SignInFacebookSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,19 +357,18 @@ class _$SignInFacebookSuccessfulImpl implements SignInFacebookSuccessful {
 }
 
 abstract class SignInFacebookSuccessful implements SignInFacebook {
-  const factory SignInFacebookSuccessful(final AppUser user) =
-      _$SignInFacebookSuccessfulImpl;
+  const factory SignInFacebookSuccessful(final AppUser user) = _$SignInFacebookSuccessfulImpl;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$SignInFacebookSuccessfulImplCopyWith<_$SignInFacebookSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SignInFacebookSuccessfulImplCopyWith<_$SignInFacebookSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInFacebookErrorImplCopyWith<$Res> {
-  factory _$$SignInFacebookErrorImplCopyWith(_$SignInFacebookErrorImpl value,
-          $Res Function(_$SignInFacebookErrorImpl) then) =
+  factory _$$SignInFacebookErrorImplCopyWith(
+          _$SignInFacebookErrorImpl value, $Res Function(_$SignInFacebookErrorImpl) then) =
       __$$SignInFacebookErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -387,8 +378,8 @@ abstract class _$$SignInFacebookErrorImplCopyWith<$Res> {
 class __$$SignInFacebookErrorImplCopyWithImpl<$Res>
     extends _$SignInFacebookCopyWithImpl<$Res, _$SignInFacebookErrorImpl>
     implements _$$SignInFacebookErrorImplCopyWith<$Res> {
-  __$$SignInFacebookErrorImplCopyWithImpl(_$SignInFacebookErrorImpl _value,
-      $Res Function(_$SignInFacebookErrorImpl) _then)
+  __$$SignInFacebookErrorImplCopyWithImpl(
+      _$SignInFacebookErrorImpl _value, $Res Function(_$SignInFacebookErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,20 +419,17 @@ class _$SignInFacebookErrorImpl implements SignInFacebookError {
         (other.runtimeType == runtimeType &&
             other is _$SignInFacebookErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SignInFacebookErrorImplCopyWith<_$SignInFacebookErrorImpl> get copyWith =>
-      __$$SignInFacebookErrorImplCopyWithImpl<_$SignInFacebookErrorImpl>(
-          this, _$identity);
+      __$$SignInFacebookErrorImplCopyWithImpl<_$SignInFacebookErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -513,13 +501,10 @@ class _$SignInFacebookErrorImpl implements SignInFacebookError {
 }
 
 abstract class SignInFacebookError implements SignInFacebook, ErrorAction {
-  const factory SignInFacebookError(
-          final Object error, final StackTrace stackTrace) =
-      _$SignInFacebookErrorImpl;
+  const factory SignInFacebookError(final Object error, final StackTrace stackTrace) = _$SignInFacebookErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$SignInFacebookErrorImplCopyWith<_$SignInFacebookErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInFacebookErrorImplCopyWith<_$SignInFacebookErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

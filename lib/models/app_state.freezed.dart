@@ -26,28 +26,23 @@ mixin _$AppState {
   LocationData? get locationData => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   AirPollutionData? get airPollutionData => throw _privateConstructorUsedError;
-  AirPollutionDataForecast? get airPollutionDataForecast =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get airTrafficData =>
-      throw _privateConstructorUsedError;
+  AirPollutionDataForecast? get airPollutionDataForecast => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get airTrafficData => throw _privateConstructorUsedError;
   CurrentWeather? get weatherData => throw _privateConstructorUsedError;
   AddressData? get addressData => throw _privateConstructorUsedError;
   FlowSegmentData? get flowSegmentData => throw _privateConstructorUsedError;
-  List<WaterQualityData>? get waterQualityData =>
-      throw _privateConstructorUsedError;
+  List<WaterQualityData>? get waterQualityData => throw _privateConstructorUsedError;
   ForecastWeather? get forecastWeather => throw _privateConstructorUsedError;
   List<Post> get posts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AppStateCopyWith<AppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
   $Res call(
       {AppUser? user,
@@ -76,8 +71,7 @@ abstract class $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
-    implements $AppStateCopyWith<$Res> {
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCopyWith<$Res> {
   _$AppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -206,8 +200,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return null;
     }
 
-    return $AirPollutionDataForecastCopyWith<$Res>(
-        _value.airPollutionDataForecast!, (value) {
+    return $AirPollutionDataForecastCopyWith<$Res>(_value.airPollutionDataForecast!, (value) {
       return _then(_value.copyWith(airPollutionDataForecast: value) as $Val);
     });
   }
@@ -262,10 +255,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 }
 
 /// @nodoc
-abstract class _$$AppState$ImplCopyWith<$Res>
-    implements $AppStateCopyWith<$Res> {
-  factory _$$AppState$ImplCopyWith(
-          _$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
+abstract class _$$AppState$ImplCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$ImplCopyWith(_$AppState$Impl value, $Res Function(_$AppState$Impl) then) =
       __$$AppState$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -304,12 +295,9 @@ abstract class _$$AppState$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AppState$ImplCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
+class __$$AppState$ImplCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$AppState$Impl>
     implements _$$AppState$ImplCopyWith<$Res> {
-  __$$AppState$ImplCopyWithImpl(
-      _$AppState$Impl _value, $Res Function(_$AppState$Impl) _then)
-      : super(_value, _then);
+  __$$AppState$ImplCopyWithImpl(_$AppState$Impl _value, $Res Function(_$AppState$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -413,8 +401,7 @@ class _$AppState$Impl implements AppState$ {
         _waterQualityData = waterQualityData,
         _posts = posts;
 
-  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AppState$ImplFromJson(json);
+  factory _$AppState$Impl.fromJson(Map<String, dynamic> json) => _$$AppState$ImplFromJson(json);
 
   @override
   final AppUser? user;
@@ -458,8 +445,7 @@ class _$AppState$Impl implements AppState$ {
   List<WaterQualityData>? get waterQualityData {
     final value = _waterQualityData;
     if (value == null) return null;
-    if (_waterQualityData is EqualUnmodifiableListView)
-      return _waterQualityData;
+    if (_waterQualityData is EqualUnmodifiableListView) return _waterQualityData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -485,30 +471,19 @@ class _$AppState$Impl implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$Impl &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.selectedPostId, selectedPostId) ||
-                other.selectedPostId == selectedPostId) &&
+            (identical(other.selectedPostId, selectedPostId) || other.selectedPostId == selectedPostId) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
-            (identical(other.locationData, locationData) ||
-                other.locationData == locationData) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.airPollutionData, airPollutionData) ||
-                other.airPollutionData == airPollutionData) &&
-            (identical(
-                    other.airPollutionDataForecast, airPollutionDataForecast) ||
+            (identical(other.locationData, locationData) || other.locationData == locationData) &&
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
+            (identical(other.airPollutionData, airPollutionData) || other.airPollutionData == airPollutionData) &&
+            (identical(other.airPollutionDataForecast, airPollutionDataForecast) ||
                 other.airPollutionDataForecast == airPollutionDataForecast) &&
-            const DeepCollectionEquality()
-                .equals(other._airTrafficData, _airTrafficData) &&
-            (identical(other.weatherData, weatherData) ||
-                other.weatherData == weatherData) &&
-            (identical(other.addressData, addressData) ||
-                other.addressData == addressData) &&
-            (identical(other.flowSegmentData, flowSegmentData) ||
-                other.flowSegmentData == flowSegmentData) &&
-            const DeepCollectionEquality()
-                .equals(other._waterQualityData, _waterQualityData) &&
-            (identical(other.forecastWeather, forecastWeather) ||
-                other.forecastWeather == forecastWeather) &&
+            const DeepCollectionEquality().equals(other._airTrafficData, _airTrafficData) &&
+            (identical(other.weatherData, weatherData) || other.weatherData == weatherData) &&
+            (identical(other.addressData, addressData) || other.addressData == addressData) &&
+            (identical(other.flowSegmentData, flowSegmentData) || other.flowSegmentData == flowSegmentData) &&
+            const DeepCollectionEquality().equals(other._waterQualityData, _waterQualityData) &&
+            (identical(other.forecastWeather, forecastWeather) || other.forecastWeather == forecastWeather) &&
             const DeepCollectionEquality().equals(other._posts, _posts));
   }
 
@@ -562,8 +537,7 @@ abstract class AppState$ implements AppState {
       final ForecastWeather? forecastWeather,
       required final List<Post> posts}) = _$AppState$Impl;
 
-  factory AppState$.fromJson(Map<String, dynamic> json) =
-      _$AppState$Impl.fromJson;
+  factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$Impl.fromJson;
 
   @override
   AppUser? get user;
@@ -595,6 +569,5 @@ abstract class AppState$ implements AppState {
   List<Post> get posts;
   @override
   @JsonKey(ignore: true)
-  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AppState$ImplCopyWith<_$AppState$Impl> get copyWith => throw _privateConstructorUsedError;
 }

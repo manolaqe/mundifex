@@ -25,22 +25,19 @@ mixin _$LocationData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LocationDataCopyWith<LocationData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LocationDataCopyWith<LocationData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocationDataCopyWith<$Res> {
-  factory $LocationDataCopyWith(
-          LocationData value, $Res Function(LocationData) then) =
+  factory $LocationDataCopyWith(LocationData value, $Res Function(LocationData) then) =
       _$LocationDataCopyWithImpl<$Res, LocationData>;
   @useResult
   $Res call({double lat, double lon});
 }
 
 /// @nodoc
-class _$LocationDataCopyWithImpl<$Res, $Val extends LocationData>
-    implements $LocationDataCopyWith<$Res> {
+class _$LocationDataCopyWithImpl<$Res, $Val extends LocationData> implements $LocationDataCopyWith<$Res> {
   _$LocationDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -68,10 +65,8 @@ class _$LocationDataCopyWithImpl<$Res, $Val extends LocationData>
 }
 
 /// @nodoc
-abstract class _$$LocationData$ImplCopyWith<$Res>
-    implements $LocationDataCopyWith<$Res> {
-  factory _$$LocationData$ImplCopyWith(
-          _$LocationData$Impl value, $Res Function(_$LocationData$Impl) then) =
+abstract class _$$LocationData$ImplCopyWith<$Res> implements $LocationDataCopyWith<$Res> {
+  factory _$$LocationData$ImplCopyWith(_$LocationData$Impl value, $Res Function(_$LocationData$Impl) then) =
       __$$LocationData$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -79,11 +74,9 @@ abstract class _$$LocationData$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LocationData$ImplCopyWithImpl<$Res>
-    extends _$LocationDataCopyWithImpl<$Res, _$LocationData$Impl>
+class __$$LocationData$ImplCopyWithImpl<$Res> extends _$LocationDataCopyWithImpl<$Res, _$LocationData$Impl>
     implements _$$LocationData$ImplCopyWith<$Res> {
-  __$$LocationData$ImplCopyWithImpl(
-      _$LocationData$Impl _value, $Res Function(_$LocationData$Impl) _then)
+  __$$LocationData$ImplCopyWithImpl(_$LocationData$Impl _value, $Res Function(_$LocationData$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,8 +103,7 @@ class __$$LocationData$ImplCopyWithImpl<$Res>
 class _$LocationData$Impl implements LocationData$ {
   const _$LocationData$Impl({required this.lat, required this.lon});
 
-  factory _$LocationData$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$LocationData$ImplFromJson(json);
+  factory _$LocationData$Impl.fromJson(Map<String, dynamic> json) => _$$LocationData$ImplFromJson(json);
 
   @override
   final double lat;
@@ -151,12 +143,9 @@ class _$LocationData$Impl implements LocationData$ {
 }
 
 abstract class LocationData$ implements LocationData {
-  const factory LocationData$(
-      {required final double lat,
-      required final double lon}) = _$LocationData$Impl;
+  const factory LocationData$({required final double lat, required final double lon}) = _$LocationData$Impl;
 
-  factory LocationData$.fromJson(Map<String, dynamic> json) =
-      _$LocationData$Impl.fromJson;
+  factory LocationData$.fromJson(Map<String, dynamic> json) = _$LocationData$Impl.fromJson;
 
   @override
   double get lat;
@@ -164,6 +153,5 @@ abstract class LocationData$ implements LocationData {
   double get lon;
   @override
   @JsonKey(ignore: true)
-  _$$LocationData$ImplCopyWith<_$LocationData$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocationData$ImplCopyWith<_$LocationData$Impl> get copyWith => throw _privateConstructorUsedError;
 }

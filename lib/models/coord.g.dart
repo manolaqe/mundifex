@@ -11,8 +11,7 @@ _$Coord$Impl _$$Coord$ImplFromJson(Map<String, dynamic> json) => _$Coord$Impl(
       lat: (json['lat'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$Coord$ImplToJson(_$Coord$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Coord$ImplToJson(_$Coord$Impl instance) => <String, dynamic>{
       'lon': instance.lon,
       'lat': instance.lat,
     };

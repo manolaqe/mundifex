@@ -28,25 +28,20 @@ mixin _$AddressComponent {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressComponentCopyWith<AddressComponent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressComponentCopyWith<AddressComponent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressComponentCopyWith<$Res> {
-  factory $AddressComponentCopyWith(
-          AddressComponent value, $Res Function(AddressComponent) then) =
+  factory $AddressComponentCopyWith(AddressComponent value, $Res Function(AddressComponent) then) =
       _$AddressComponentCopyWithImpl<$Res, AddressComponent>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'long_name') String longName,
-      @JsonKey(name: 'short_name') String shortName,
-      List<String> types});
+      {@JsonKey(name: 'long_name') String longName, @JsonKey(name: 'short_name') String shortName, List<String> types});
 }
 
 /// @nodoc
-class _$AddressComponentCopyWithImpl<$Res, $Val extends AddressComponent>
-    implements $AddressComponentCopyWith<$Res> {
+class _$AddressComponentCopyWithImpl<$Res, $Val extends AddressComponent> implements $AddressComponentCopyWith<$Res> {
   _$AddressComponentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -79,25 +74,19 @@ class _$AddressComponentCopyWithImpl<$Res, $Val extends AddressComponent>
 }
 
 /// @nodoc
-abstract class _$$AddressComponent$ImplCopyWith<$Res>
-    implements $AddressComponentCopyWith<$Res> {
-  factory _$$AddressComponent$ImplCopyWith(_$AddressComponent$Impl value,
-          $Res Function(_$AddressComponent$Impl) then) =
+abstract class _$$AddressComponent$ImplCopyWith<$Res> implements $AddressComponentCopyWith<$Res> {
+  factory _$$AddressComponent$ImplCopyWith(_$AddressComponent$Impl value, $Res Function(_$AddressComponent$Impl) then) =
       __$$AddressComponent$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'long_name') String longName,
-      @JsonKey(name: 'short_name') String shortName,
-      List<String> types});
+      {@JsonKey(name: 'long_name') String longName, @JsonKey(name: 'short_name') String shortName, List<String> types});
 }
 
 /// @nodoc
-class __$$AddressComponent$ImplCopyWithImpl<$Res>
-    extends _$AddressComponentCopyWithImpl<$Res, _$AddressComponent$Impl>
+class __$$AddressComponent$ImplCopyWithImpl<$Res> extends _$AddressComponentCopyWithImpl<$Res, _$AddressComponent$Impl>
     implements _$$AddressComponent$ImplCopyWith<$Res> {
-  __$$AddressComponent$ImplCopyWithImpl(_$AddressComponent$Impl _value,
-      $Res Function(_$AddressComponent$Impl) _then)
+  __$$AddressComponent$ImplCopyWithImpl(_$AddressComponent$Impl _value, $Res Function(_$AddressComponent$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,8 +122,7 @@ class _$AddressComponent$Impl implements AddressComponent$ {
       final List<String> types = const <String>[]})
       : _types = types;
 
-  factory _$AddressComponent$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AddressComponent$ImplFromJson(json);
+  factory _$AddressComponent$Impl.fromJson(Map<String, dynamic> json) => _$$AddressComponent$ImplFromJson(json);
 
   @override
   @JsonKey(name: 'long_name')
@@ -161,24 +149,20 @@ class _$AddressComponent$Impl implements AddressComponent$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddressComponent$Impl &&
-            (identical(other.longName, longName) ||
-                other.longName == longName) &&
-            (identical(other.shortName, shortName) ||
-                other.shortName == shortName) &&
+            (identical(other.longName, longName) || other.longName == longName) &&
+            (identical(other.shortName, shortName) || other.shortName == shortName) &&
             const DeepCollectionEquality().equals(other._types, _types));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, longName, shortName,
-      const DeepCollectionEquality().hash(_types));
+  int get hashCode => Object.hash(runtimeType, longName, shortName, const DeepCollectionEquality().hash(_types));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddressComponent$ImplCopyWith<_$AddressComponent$Impl> get copyWith =>
-      __$$AddressComponent$ImplCopyWithImpl<_$AddressComponent$Impl>(
-          this, _$identity);
+      __$$AddressComponent$ImplCopyWithImpl<_$AddressComponent$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -194,8 +178,7 @@ abstract class AddressComponent$ implements AddressComponent {
       @JsonKey(name: 'short_name') final String shortName,
       final List<String> types}) = _$AddressComponent$Impl;
 
-  factory AddressComponent$.fromJson(Map<String, dynamic> json) =
-      _$AddressComponent$Impl.fromJson;
+  factory AddressComponent$.fromJson(Map<String, dynamic> json) = _$AddressComponent$Impl.fromJson;
 
   @override
   @JsonKey(name: 'long_name')
@@ -207,6 +190,5 @@ abstract class AddressComponent$ implements AddressComponent {
   List<String> get types;
   @override
   @JsonKey(ignore: true)
-  _$$AddressComponent$ImplCopyWith<_$AddressComponent$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddressComponent$ImplCopyWith<_$AddressComponent$Impl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -39,8 +39,7 @@ mixin _$Post {
 
 /// @nodoc
 abstract class $PostCopyWith<$Res> {
-  factory $PostCopyWith(Post value, $Res Function(Post) then) =
-      _$PostCopyWithImpl<$Res, Post>;
+  factory $PostCopyWith(Post value, $Res Function(Post) then) = _$PostCopyWithImpl<$Res, Post>;
   @useResult
   $Res call(
       {String id,
@@ -59,8 +58,7 @@ abstract class $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostCopyWithImpl<$Res, $Val extends Post>
-    implements $PostCopyWith<$Res> {
+class _$PostCopyWithImpl<$Res, $Val extends Post> implements $PostCopyWith<$Res> {
   _$PostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -142,9 +140,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
 
 /// @nodoc
 abstract class _$$Post$ImplCopyWith<$Res> implements $PostCopyWith<$Res> {
-  factory _$$Post$ImplCopyWith(
-          _$Post$Impl value, $Res Function(_$Post$Impl) then) =
-      __$$Post$ImplCopyWithImpl<$Res>;
+  factory _$$Post$ImplCopyWith(_$Post$Impl value, $Res Function(_$Post$Impl) then) = __$$Post$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -165,12 +161,9 @@ abstract class _$$Post$ImplCopyWith<$Res> implements $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Post$ImplCopyWithImpl<$Res>
-    extends _$PostCopyWithImpl<$Res, _$Post$Impl>
+class __$$Post$ImplCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$Post$Impl>
     implements _$$Post$ImplCopyWith<$Res> {
-  __$$Post$ImplCopyWithImpl(
-      _$Post$Impl _value, $Res Function(_$Post$Impl) _then)
-      : super(_value, _then);
+  __$$Post$ImplCopyWithImpl(_$Post$Impl _value, $Res Function(_$Post$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -256,8 +249,7 @@ class _$Post$Impl implements Post$ {
         _dislikes = dislikes,
         _photoUrls = photoUrls;
 
-  factory _$Post$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Post$ImplFromJson(json);
+  factory _$Post$Impl.fromJson(Map<String, dynamic> json) => _$$Post$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -328,21 +320,15 @@ class _$Post$Impl implements Post$ {
             other is _$Post$Impl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.location, location) || other.location == location) &&
+            (identical(other.description, description) || other.description == description) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
             const DeepCollectionEquality().equals(other._likes, _likes) &&
             const DeepCollectionEquality().equals(other._dislikes, _dislikes) &&
-            const DeepCollectionEquality()
-                .equals(other._photoUrls, _photoUrls) &&
-            (identical(other.airPerception, airPerception) ||
-                other.airPerception == airPerception) &&
-            (identical(other.cleanPerception, cleanPerception) ||
-                other.cleanPerception == cleanPerception) &&
-            (identical(other.noisePerception, noisePerception) ||
-                other.noisePerception == noisePerception));
+            const DeepCollectionEquality().equals(other._photoUrls, _photoUrls) &&
+            (identical(other.airPerception, airPerception) || other.airPerception == airPerception) &&
+            (identical(other.cleanPerception, cleanPerception) || other.cleanPerception == cleanPerception) &&
+            (identical(other.noisePerception, noisePerception) || other.noisePerception == noisePerception));
   }
 
   @JsonKey(ignore: true)
@@ -364,8 +350,7 @@ class _$Post$Impl implements Post$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Post$ImplCopyWith<_$Post$Impl> get copyWith =>
-      __$$Post$ImplCopyWithImpl<_$Post$Impl>(this, _$identity);
+  _$$Post$ImplCopyWith<_$Post$Impl> get copyWith => __$$Post$ImplCopyWithImpl<_$Post$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -415,6 +400,5 @@ abstract class Post$ implements Post {
   double get noisePerception;
   @override
   @JsonKey(ignore: true)
-  _$$Post$ImplCopyWith<_$Post$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Post$ImplCopyWith<_$Post$Impl> get copyWith => throw _privateConstructorUsedError;
 }

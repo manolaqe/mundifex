@@ -19,8 +19,7 @@ mixin _$GetWaterQuality {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<WaterQualityData> waterQualityData)
-        successful,
+    required TResult Function(List<WaterQualityData> waterQualityData) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,14 +64,12 @@ mixin _$GetWaterQuality {
 
 /// @nodoc
 abstract class $GetWaterQualityCopyWith<$Res> {
-  factory $GetWaterQualityCopyWith(
-          GetWaterQuality value, $Res Function(GetWaterQuality) then) =
+  factory $GetWaterQualityCopyWith(GetWaterQuality value, $Res Function(GetWaterQuality) then) =
       _$GetWaterQualityCopyWithImpl<$Res, GetWaterQuality>;
 }
 
 /// @nodoc
-class _$GetWaterQualityCopyWithImpl<$Res, $Val extends GetWaterQuality>
-    implements $GetWaterQualityCopyWith<$Res> {
+class _$GetWaterQualityCopyWithImpl<$Res, $Val extends GetWaterQuality> implements $GetWaterQualityCopyWith<$Res> {
   _$GetWaterQualityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -83,8 +80,8 @@ class _$GetWaterQualityCopyWithImpl<$Res, $Val extends GetWaterQuality>
 
 /// @nodoc
 abstract class _$$GetWaterQualityStartImplCopyWith<$Res> {
-  factory _$$GetWaterQualityStartImplCopyWith(_$GetWaterQualityStartImpl value,
-          $Res Function(_$GetWaterQualityStartImpl) then) =
+  factory _$$GetWaterQualityStartImplCopyWith(
+          _$GetWaterQualityStartImpl value, $Res Function(_$GetWaterQualityStartImpl) then) =
       __$$GetWaterQualityStartImplCopyWithImpl<$Res>;
 }
 
@@ -92,8 +89,8 @@ abstract class _$$GetWaterQualityStartImplCopyWith<$Res> {
 class __$$GetWaterQualityStartImplCopyWithImpl<$Res>
     extends _$GetWaterQualityCopyWithImpl<$Res, _$GetWaterQualityStartImpl>
     implements _$$GetWaterQualityStartImplCopyWith<$Res> {
-  __$$GetWaterQualityStartImplCopyWithImpl(_$GetWaterQualityStartImpl _value,
-      $Res Function(_$GetWaterQualityStartImpl) _then)
+  __$$GetWaterQualityStartImplCopyWithImpl(
+      _$GetWaterQualityStartImpl _value, $Res Function(_$GetWaterQualityStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -109,9 +106,7 @@ class _$GetWaterQualityStartImpl implements GetWaterQualityStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetWaterQualityStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetWaterQualityStartImpl);
   }
 
   @override
@@ -121,8 +116,7 @@ class _$GetWaterQualityStartImpl implements GetWaterQualityStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<WaterQualityData> waterQualityData)
-        successful,
+    required TResult Function(List<WaterQualityData> waterQualityData) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -194,8 +188,7 @@ abstract class GetWaterQualityStart implements GetWaterQuality {
 /// @nodoc
 abstract class _$$GetWaterQualitySuccessfulImplCopyWith<$Res> {
   factory _$$GetWaterQualitySuccessfulImplCopyWith(
-          _$GetWaterQualitySuccessfulImpl value,
-          $Res Function(_$GetWaterQualitySuccessfulImpl) then) =
+          _$GetWaterQualitySuccessfulImpl value, $Res Function(_$GetWaterQualitySuccessfulImpl) then) =
       __$$GetWaterQualitySuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<WaterQualityData> waterQualityData});
@@ -206,8 +199,7 @@ class __$$GetWaterQualitySuccessfulImplCopyWithImpl<$Res>
     extends _$GetWaterQualityCopyWithImpl<$Res, _$GetWaterQualitySuccessfulImpl>
     implements _$$GetWaterQualitySuccessfulImplCopyWith<$Res> {
   __$$GetWaterQualitySuccessfulImplCopyWithImpl(
-      _$GetWaterQualitySuccessfulImpl _value,
-      $Res Function(_$GetWaterQualitySuccessfulImpl) _then)
+      _$GetWaterQualitySuccessfulImpl _value, $Res Function(_$GetWaterQualitySuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -227,15 +219,13 @@ class __$$GetWaterQualitySuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetWaterQualitySuccessfulImpl implements GetWaterQualitySuccessful {
-  const _$GetWaterQualitySuccessfulImpl(
-      final List<WaterQualityData> waterQualityData)
+  const _$GetWaterQualitySuccessfulImpl(final List<WaterQualityData> waterQualityData)
       : _waterQualityData = waterQualityData;
 
   final List<WaterQualityData> _waterQualityData;
   @override
   List<WaterQualityData> get waterQualityData {
-    if (_waterQualityData is EqualUnmodifiableListView)
-      return _waterQualityData;
+    if (_waterQualityData is EqualUnmodifiableListView) return _waterQualityData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_waterQualityData);
   }
@@ -250,27 +240,23 @@ class _$GetWaterQualitySuccessfulImpl implements GetWaterQualitySuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetWaterQualitySuccessfulImpl &&
-            const DeepCollectionEquality()
-                .equals(other._waterQualityData, _waterQualityData));
+            const DeepCollectionEquality().equals(other._waterQualityData, _waterQualityData));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_waterQualityData));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_waterQualityData));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetWaterQualitySuccessfulImplCopyWith<_$GetWaterQualitySuccessfulImpl>
-      get copyWith => __$$GetWaterQualitySuccessfulImplCopyWithImpl<
-          _$GetWaterQualitySuccessfulImpl>(this, _$identity);
+  _$$GetWaterQualitySuccessfulImplCopyWith<_$GetWaterQualitySuccessfulImpl> get copyWith =>
+      __$$GetWaterQualitySuccessfulImplCopyWithImpl<_$GetWaterQualitySuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<WaterQualityData> waterQualityData)
-        successful,
+    required TResult Function(List<WaterQualityData> waterQualityData) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return successful(waterQualityData);
@@ -336,20 +322,19 @@ class _$GetWaterQualitySuccessfulImpl implements GetWaterQualitySuccessful {
 }
 
 abstract class GetWaterQualitySuccessful implements GetWaterQuality {
-  const factory GetWaterQualitySuccessful(
-          final List<WaterQualityData> waterQualityData) =
+  const factory GetWaterQualitySuccessful(final List<WaterQualityData> waterQualityData) =
       _$GetWaterQualitySuccessfulImpl;
 
   List<WaterQualityData> get waterQualityData;
   @JsonKey(ignore: true)
-  _$$GetWaterQualitySuccessfulImplCopyWith<_$GetWaterQualitySuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetWaterQualitySuccessfulImplCopyWith<_$GetWaterQualitySuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetWaterQualityErrorImplCopyWith<$Res> {
-  factory _$$GetWaterQualityErrorImplCopyWith(_$GetWaterQualityErrorImpl value,
-          $Res Function(_$GetWaterQualityErrorImpl) then) =
+  factory _$$GetWaterQualityErrorImplCopyWith(
+          _$GetWaterQualityErrorImpl value, $Res Function(_$GetWaterQualityErrorImpl) then) =
       __$$GetWaterQualityErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -359,8 +344,8 @@ abstract class _$$GetWaterQualityErrorImplCopyWith<$Res> {
 class __$$GetWaterQualityErrorImplCopyWithImpl<$Res>
     extends _$GetWaterQualityCopyWithImpl<$Res, _$GetWaterQualityErrorImpl>
     implements _$$GetWaterQualityErrorImplCopyWith<$Res> {
-  __$$GetWaterQualityErrorImplCopyWithImpl(_$GetWaterQualityErrorImpl _value,
-      $Res Function(_$GetWaterQualityErrorImpl) _then)
+  __$$GetWaterQualityErrorImplCopyWithImpl(
+      _$GetWaterQualityErrorImpl _value, $Res Function(_$GetWaterQualityErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -400,28 +385,23 @@ class _$GetWaterQualityErrorImpl implements GetWaterQualityError {
         (other.runtimeType == runtimeType &&
             other is _$GetWaterQualityErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetWaterQualityErrorImplCopyWith<_$GetWaterQualityErrorImpl>
-      get copyWith =>
-          __$$GetWaterQualityErrorImplCopyWithImpl<_$GetWaterQualityErrorImpl>(
-              this, _$identity);
+  _$$GetWaterQualityErrorImplCopyWith<_$GetWaterQualityErrorImpl> get copyWith =>
+      __$$GetWaterQualityErrorImplCopyWithImpl<_$GetWaterQualityErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(List<WaterQualityData> waterQualityData)
-        successful,
+    required TResult Function(List<WaterQualityData> waterQualityData) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -487,13 +467,10 @@ class _$GetWaterQualityErrorImpl implements GetWaterQualityError {
 }
 
 abstract class GetWaterQualityError implements GetWaterQuality, ErrorAction {
-  const factory GetWaterQualityError(
-          final Object error, final StackTrace stackTrace) =
-      _$GetWaterQualityErrorImpl;
+  const factory GetWaterQualityError(final Object error, final StackTrace stackTrace) = _$GetWaterQualityErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetWaterQualityErrorImplCopyWith<_$GetWaterQualityErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetWaterQualityErrorImplCopyWith<_$GetWaterQualityErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

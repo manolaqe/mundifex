@@ -29,15 +29,13 @@ mixin _$Clouds {
 
 /// @nodoc
 abstract class $CloudsCopyWith<$Res> {
-  factory $CloudsCopyWith(Clouds value, $Res Function(Clouds) then) =
-      _$CloudsCopyWithImpl<$Res, Clouds>;
+  factory $CloudsCopyWith(Clouds value, $Res Function(Clouds) then) = _$CloudsCopyWithImpl<$Res, Clouds>;
   @useResult
   $Res call({int all});
 }
 
 /// @nodoc
-class _$CloudsCopyWithImpl<$Res, $Val extends Clouds>
-    implements $CloudsCopyWith<$Res> {
+class _$CloudsCopyWithImpl<$Res, $Val extends Clouds> implements $CloudsCopyWith<$Res> {
   _$CloudsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -61,8 +59,7 @@ class _$CloudsCopyWithImpl<$Res, $Val extends Clouds>
 
 /// @nodoc
 abstract class _$$Clouds$ImplCopyWith<$Res> implements $CloudsCopyWith<$Res> {
-  factory _$$Clouds$ImplCopyWith(
-          _$Clouds$Impl value, $Res Function(_$Clouds$Impl) then) =
+  factory _$$Clouds$ImplCopyWith(_$Clouds$Impl value, $Res Function(_$Clouds$Impl) then) =
       __$$Clouds$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -70,12 +67,9 @@ abstract class _$$Clouds$ImplCopyWith<$Res> implements $CloudsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Clouds$ImplCopyWithImpl<$Res>
-    extends _$CloudsCopyWithImpl<$Res, _$Clouds$Impl>
+class __$$Clouds$ImplCopyWithImpl<$Res> extends _$CloudsCopyWithImpl<$Res, _$Clouds$Impl>
     implements _$$Clouds$ImplCopyWith<$Res> {
-  __$$Clouds$ImplCopyWithImpl(
-      _$Clouds$Impl _value, $Res Function(_$Clouds$Impl) _then)
-      : super(_value, _then);
+  __$$Clouds$ImplCopyWithImpl(_$Clouds$Impl _value, $Res Function(_$Clouds$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -96,8 +90,7 @@ class __$$Clouds$ImplCopyWithImpl<$Res>
 class _$Clouds$Impl implements Clouds$ {
   const _$Clouds$Impl({this.all = 0});
 
-  factory _$Clouds$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Clouds$ImplFromJson(json);
+  factory _$Clouds$Impl.fromJson(Map<String, dynamic> json) => _$$Clouds$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -111,9 +104,7 @@ class _$Clouds$Impl implements Clouds$ {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Clouds$Impl &&
-            (identical(other.all, all) || other.all == all));
+        (other.runtimeType == runtimeType && other is _$Clouds$Impl && (identical(other.all, all) || other.all == all));
   }
 
   @JsonKey(ignore: true)
@@ -123,8 +114,7 @@ class _$Clouds$Impl implements Clouds$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Clouds$ImplCopyWith<_$Clouds$Impl> get copyWith =>
-      __$$Clouds$ImplCopyWithImpl<_$Clouds$Impl>(this, _$identity);
+  _$$Clouds$ImplCopyWith<_$Clouds$Impl> get copyWith => __$$Clouds$ImplCopyWithImpl<_$Clouds$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -143,6 +133,5 @@ abstract class Clouds$ implements Clouds {
   int get all;
   @override
   @JsonKey(ignore: true)
-  _$$Clouds$ImplCopyWith<_$Clouds$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Clouds$ImplCopyWith<_$Clouds$Impl> get copyWith => throw _privateConstructorUsedError;
 }

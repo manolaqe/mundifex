@@ -6,9 +6,7 @@ part of 'flow_segment_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FlowSegmentData$Impl _$$FlowSegmentData$ImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FlowSegmentData$Impl(
+_$FlowSegmentData$Impl _$$FlowSegmentData$ImplFromJson(Map<String, dynamic> json) => _$FlowSegmentData$Impl(
       frc: json['frc'] as String? ?? '',
       currentSpeed: (json['currentSpeed'] as num?)?.toDouble() ?? 0,
       freeFlowSpeed: (json['freeFlowSpeed'] as num?)?.toDouble() ?? 0,
@@ -18,9 +16,7 @@ _$FlowSegmentData$Impl _$$FlowSegmentData$ImplFromJson(
       roadClosure: json['roadClosure'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$FlowSegmentData$ImplToJson(
-        _$FlowSegmentData$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$FlowSegmentData$ImplToJson(_$FlowSegmentData$Impl instance) => <String, dynamic>{
       'frc': instance.frc,
       'currentSpeed': instance.currentSpeed,
       'freeFlowSpeed': instance.freeFlowSpeed,

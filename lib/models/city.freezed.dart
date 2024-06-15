@@ -36,25 +36,15 @@ mixin _$City {
 
 /// @nodoc
 abstract class $CityCopyWith<$Res> {
-  factory $CityCopyWith(City value, $Res Function(City) then) =
-      _$CityCopyWithImpl<$Res, City>;
+  factory $CityCopyWith(City value, $Res Function(City) then) = _$CityCopyWithImpl<$Res, City>;
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      Coord coord,
-      String country,
-      int population,
-      int timezone,
-      int sunrise,
-      int sunset});
+  $Res call({int id, String name, Coord coord, String country, int population, int timezone, int sunrise, int sunset});
 
   $CoordCopyWith<$Res> get coord;
 }
 
 /// @nodoc
-class _$CityCopyWithImpl<$Res, $Val extends City>
-    implements $CityCopyWith<$Res> {
+class _$CityCopyWithImpl<$Res, $Val extends City> implements $CityCopyWith<$Res> {
   _$CityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -121,32 +111,19 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
 
 /// @nodoc
 abstract class _$$City$ImplCopyWith<$Res> implements $CityCopyWith<$Res> {
-  factory _$$City$ImplCopyWith(
-          _$City$Impl value, $Res Function(_$City$Impl) then) =
-      __$$City$ImplCopyWithImpl<$Res>;
+  factory _$$City$ImplCopyWith(_$City$Impl value, $Res Function(_$City$Impl) then) = __$$City$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String name,
-      Coord coord,
-      String country,
-      int population,
-      int timezone,
-      int sunrise,
-      int sunset});
+  $Res call({int id, String name, Coord coord, String country, int population, int timezone, int sunrise, int sunset});
 
   @override
   $CoordCopyWith<$Res> get coord;
 }
 
 /// @nodoc
-class __$$City$ImplCopyWithImpl<$Res>
-    extends _$CityCopyWithImpl<$Res, _$City$Impl>
+class __$$City$ImplCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$City$Impl>
     implements _$$City$ImplCopyWith<$Res> {
-  __$$City$ImplCopyWithImpl(
-      _$City$Impl _value, $Res Function(_$City$Impl) _then)
-      : super(_value, _then);
+  __$$City$ImplCopyWithImpl(_$City$Impl _value, $Res Function(_$City$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -210,8 +187,7 @@ class _$City$Impl implements City$ {
       this.sunrise = 0,
       this.sunset = 0});
 
-  factory _$City$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$City$ImplFromJson(json);
+  factory _$City$Impl.fromJson(Map<String, dynamic> json) => _$$City$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -251,24 +227,20 @@ class _$City$Impl implements City$ {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.coord, coord) || other.coord == coord) &&
             (identical(other.country, country) || other.country == country) &&
-            (identical(other.population, population) ||
-                other.population == population) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
+            (identical(other.population, population) || other.population == population) &&
+            (identical(other.timezone, timezone) || other.timezone == timezone) &&
             (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
             (identical(other.sunset, sunset) || other.sunset == sunset));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, coord, country,
-      population, timezone, sunrise, sunset);
+  int get hashCode => Object.hash(runtimeType, id, name, coord, country, population, timezone, sunrise, sunset);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$City$ImplCopyWith<_$City$Impl> get copyWith =>
-      __$$City$ImplCopyWithImpl<_$City$Impl>(this, _$identity);
+  _$$City$ImplCopyWith<_$City$Impl> get copyWith => __$$City$ImplCopyWithImpl<_$City$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -309,6 +281,5 @@ abstract class City$ implements City {
   int get sunset;
   @override
   @JsonKey(ignore: true)
-  _$$City$ImplCopyWith<_$City$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$City$ImplCopyWith<_$City$Impl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -64,14 +64,12 @@ mixin _$SignInGoogle {
 
 /// @nodoc
 abstract class $SignInGoogleCopyWith<$Res> {
-  factory $SignInGoogleCopyWith(
-          SignInGoogle value, $Res Function(SignInGoogle) then) =
+  factory $SignInGoogleCopyWith(SignInGoogle value, $Res Function(SignInGoogle) then) =
       _$SignInGoogleCopyWithImpl<$Res, SignInGoogle>;
 }
 
 /// @nodoc
-class _$SignInGoogleCopyWithImpl<$Res, $Val extends SignInGoogle>
-    implements $SignInGoogleCopyWith<$Res> {
+class _$SignInGoogleCopyWithImpl<$Res, $Val extends SignInGoogle> implements $SignInGoogleCopyWith<$Res> {
   _$SignInGoogleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,19 +80,16 @@ class _$SignInGoogleCopyWithImpl<$Res, $Val extends SignInGoogle>
 
 /// @nodoc
 abstract class _$$SignInGoogleStartImplCopyWith<$Res> {
-  factory _$$SignInGoogleStartImplCopyWith(_$SignInGoogleStartImpl value,
-          $Res Function(_$SignInGoogleStartImpl) then) =
+  factory _$$SignInGoogleStartImplCopyWith(_$SignInGoogleStartImpl value, $Res Function(_$SignInGoogleStartImpl) then) =
       __$$SignInGoogleStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ActionResult result});
 }
 
 /// @nodoc
-class __$$SignInGoogleStartImplCopyWithImpl<$Res>
-    extends _$SignInGoogleCopyWithImpl<$Res, _$SignInGoogleStartImpl>
+class __$$SignInGoogleStartImplCopyWithImpl<$Res> extends _$SignInGoogleCopyWithImpl<$Res, _$SignInGoogleStartImpl>
     implements _$$SignInGoogleStartImplCopyWith<$Res> {
-  __$$SignInGoogleStartImplCopyWithImpl(_$SignInGoogleStartImpl _value,
-      $Res Function(_$SignInGoogleStartImpl) _then)
+  __$$SignInGoogleStartImplCopyWithImpl(_$SignInGoogleStartImpl _value, $Res Function(_$SignInGoogleStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,8 +134,7 @@ class _$SignInGoogleStartImpl implements SignInGoogleStart {
   @override
   @pragma('vm:prefer-inline')
   _$$SignInGoogleStartImplCopyWith<_$SignInGoogleStartImpl> get copyWith =>
-      __$$SignInGoogleStartImplCopyWithImpl<_$SignInGoogleStartImpl>(
-          this, _$identity);
+      __$$SignInGoogleStartImplCopyWithImpl<_$SignInGoogleStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,20 +206,17 @@ class _$SignInGoogleStartImpl implements SignInGoogleStart {
 }
 
 abstract class SignInGoogleStart implements SignInGoogle {
-  const factory SignInGoogleStart({required final ActionResult result}) =
-      _$SignInGoogleStartImpl;
+  const factory SignInGoogleStart({required final ActionResult result}) = _$SignInGoogleStartImpl;
 
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$SignInGoogleStartImplCopyWith<_$SignInGoogleStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInGoogleStartImplCopyWith<_$SignInGoogleStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInGoogleSuccessfulImplCopyWith<$Res> {
   factory _$$SignInGoogleSuccessfulImplCopyWith(
-          _$SignInGoogleSuccessfulImpl value,
-          $Res Function(_$SignInGoogleSuccessfulImpl) then) =
+          _$SignInGoogleSuccessfulImpl value, $Res Function(_$SignInGoogleSuccessfulImpl) then) =
       __$$SignInGoogleSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
@@ -238,8 +229,7 @@ class __$$SignInGoogleSuccessfulImplCopyWithImpl<$Res>
     extends _$SignInGoogleCopyWithImpl<$Res, _$SignInGoogleSuccessfulImpl>
     implements _$$SignInGoogleSuccessfulImplCopyWith<$Res> {
   __$$SignInGoogleSuccessfulImplCopyWithImpl(
-      _$SignInGoogleSuccessfulImpl _value,
-      $Res Function(_$SignInGoogleSuccessfulImpl) _then)
+      _$SignInGoogleSuccessfulImpl _value, $Res Function(_$SignInGoogleSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -291,9 +281,8 @@ class _$SignInGoogleSuccessfulImpl implements SignInGoogleSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInGoogleSuccessfulImplCopyWith<_$SignInGoogleSuccessfulImpl>
-      get copyWith => __$$SignInGoogleSuccessfulImplCopyWithImpl<
-          _$SignInGoogleSuccessfulImpl>(this, _$identity);
+  _$$SignInGoogleSuccessfulImplCopyWith<_$SignInGoogleSuccessfulImpl> get copyWith =>
+      __$$SignInGoogleSuccessfulImplCopyWithImpl<_$SignInGoogleSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,30 +354,26 @@ class _$SignInGoogleSuccessfulImpl implements SignInGoogleSuccessful {
 }
 
 abstract class SignInGoogleSuccessful implements SignInGoogle {
-  const factory SignInGoogleSuccessful(final AppUser user) =
-      _$SignInGoogleSuccessfulImpl;
+  const factory SignInGoogleSuccessful(final AppUser user) = _$SignInGoogleSuccessfulImpl;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$SignInGoogleSuccessfulImplCopyWith<_$SignInGoogleSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SignInGoogleSuccessfulImplCopyWith<_$SignInGoogleSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInGoogleErrorImplCopyWith<$Res> {
-  factory _$$SignInGoogleErrorImplCopyWith(_$SignInGoogleErrorImpl value,
-          $Res Function(_$SignInGoogleErrorImpl) then) =
+  factory _$$SignInGoogleErrorImplCopyWith(_$SignInGoogleErrorImpl value, $Res Function(_$SignInGoogleErrorImpl) then) =
       __$$SignInGoogleErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$SignInGoogleErrorImplCopyWithImpl<$Res>
-    extends _$SignInGoogleCopyWithImpl<$Res, _$SignInGoogleErrorImpl>
+class __$$SignInGoogleErrorImplCopyWithImpl<$Res> extends _$SignInGoogleCopyWithImpl<$Res, _$SignInGoogleErrorImpl>
     implements _$$SignInGoogleErrorImplCopyWith<$Res> {
-  __$$SignInGoogleErrorImplCopyWithImpl(_$SignInGoogleErrorImpl _value,
-      $Res Function(_$SignInGoogleErrorImpl) _then)
+  __$$SignInGoogleErrorImplCopyWithImpl(_$SignInGoogleErrorImpl _value, $Res Function(_$SignInGoogleErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,20 +413,17 @@ class _$SignInGoogleErrorImpl implements SignInGoogleError {
         (other.runtimeType == runtimeType &&
             other is _$SignInGoogleErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SignInGoogleErrorImplCopyWith<_$SignInGoogleErrorImpl> get copyWith =>
-      __$$SignInGoogleErrorImplCopyWithImpl<_$SignInGoogleErrorImpl>(
-          this, _$identity);
+      __$$SignInGoogleErrorImplCopyWithImpl<_$SignInGoogleErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -513,13 +495,10 @@ class _$SignInGoogleErrorImpl implements SignInGoogleError {
 }
 
 abstract class SignInGoogleError implements SignInGoogle, ErrorAction {
-  const factory SignInGoogleError(
-          final Object error, final StackTrace stackTrace) =
-      _$SignInGoogleErrorImpl;
+  const factory SignInGoogleError(final Object error, final StackTrace stackTrace) = _$SignInGoogleErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$SignInGoogleErrorImplCopyWith<_$SignInGoogleErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInGoogleErrorImplCopyWith<_$SignInGoogleErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

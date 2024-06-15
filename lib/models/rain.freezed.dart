@@ -32,16 +32,13 @@ mixin _$Rain {
 
 /// @nodoc
 abstract class $RainCopyWith<$Res> {
-  factory $RainCopyWith(Rain value, $Res Function(Rain) then) =
-      _$RainCopyWithImpl<$Res, Rain>;
+  factory $RainCopyWith(Rain value, $Res Function(Rain) then) = _$RainCopyWithImpl<$Res, Rain>;
   @useResult
-  $Res call(
-      {@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
+  $Res call({@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
 }
 
 /// @nodoc
-class _$RainCopyWithImpl<$Res, $Val extends Rain>
-    implements $RainCopyWith<$Res> {
+class _$RainCopyWithImpl<$Res, $Val extends Rain> implements $RainCopyWith<$Res> {
   _$RainCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -70,22 +67,16 @@ class _$RainCopyWithImpl<$Res, $Val extends Rain>
 
 /// @nodoc
 abstract class _$$Rain$ImplCopyWith<$Res> implements $RainCopyWith<$Res> {
-  factory _$$Rain$ImplCopyWith(
-          _$Rain$Impl value, $Res Function(_$Rain$Impl) then) =
-      __$$Rain$ImplCopyWithImpl<$Res>;
+  factory _$$Rain$ImplCopyWith(_$Rain$Impl value, $Res Function(_$Rain$Impl) then) = __$$Rain$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
+  $Res call({@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
 }
 
 /// @nodoc
-class __$$Rain$ImplCopyWithImpl<$Res>
-    extends _$RainCopyWithImpl<$Res, _$Rain$Impl>
+class __$$Rain$ImplCopyWithImpl<$Res> extends _$RainCopyWithImpl<$Res, _$Rain$Impl>
     implements _$$Rain$ImplCopyWith<$Res> {
-  __$$Rain$ImplCopyWithImpl(
-      _$Rain$Impl _value, $Res Function(_$Rain$Impl) _then)
-      : super(_value, _then);
+  __$$Rain$ImplCopyWithImpl(_$Rain$Impl _value, $Res Function(_$Rain$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -109,12 +100,9 @@ class __$$Rain$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$Rain$Impl implements Rain$ {
-  const _$Rain$Impl(
-      {@JsonKey(name: '1h') this.the1H = 0,
-      @JsonKey(name: '3h') this.the3H = 0});
+  const _$Rain$Impl({@JsonKey(name: '1h') this.the1H = 0, @JsonKey(name: '3h') this.the3H = 0});
 
-  factory _$Rain$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Rain$ImplFromJson(json);
+  factory _$Rain$Impl.fromJson(Map<String, dynamic> json) => _$$Rain$ImplFromJson(json);
 
   @override
   @JsonKey(name: '1h')
@@ -144,8 +132,7 @@ class _$Rain$Impl implements Rain$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Rain$ImplCopyWith<_$Rain$Impl> get copyWith =>
-      __$$Rain$ImplCopyWithImpl<_$Rain$Impl>(this, _$identity);
+  _$$Rain$ImplCopyWith<_$Rain$Impl> get copyWith => __$$Rain$ImplCopyWithImpl<_$Rain$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -156,9 +143,7 @@ class _$Rain$Impl implements Rain$ {
 }
 
 abstract class Rain$ implements Rain {
-  const factory Rain$(
-      {@JsonKey(name: '1h') final double the1H,
-      @JsonKey(name: '3h') final double the3H}) = _$Rain$Impl;
+  const factory Rain$({@JsonKey(name: '1h') final double the1H, @JsonKey(name: '3h') final double the3H}) = _$Rain$Impl;
 
   factory Rain$.fromJson(Map<String, dynamic> json) = _$Rain$Impl.fromJson;
 
@@ -170,6 +155,5 @@ abstract class Rain$ implements Rain {
   double get the3H;
   @override
   @JsonKey(ignore: true)
-  _$$Rain$ImplCopyWith<_$Rain$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Rain$ImplCopyWith<_$Rain$Impl> get copyWith => throw _privateConstructorUsedError;
 }

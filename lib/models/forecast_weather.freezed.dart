@@ -28,29 +28,21 @@ mixin _$ForecastWeather {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ForecastWeatherCopyWith<ForecastWeather> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ForecastWeatherCopyWith<ForecastWeather> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ForecastWeatherCopyWith<$Res> {
-  factory $ForecastWeatherCopyWith(
-          ForecastWeather value, $Res Function(ForecastWeather) then) =
+  factory $ForecastWeatherCopyWith(ForecastWeather value, $Res Function(ForecastWeather) then) =
       _$ForecastWeatherCopyWithImpl<$Res, ForecastWeather>;
   @useResult
-  $Res call(
-      {String cod,
-      int message,
-      int cnt,
-      List<ForecastElement> list,
-      City city});
+  $Res call({String cod, int message, int cnt, List<ForecastElement> list, City city});
 
   $CityCopyWith<$Res> get city;
 }
 
 /// @nodoc
-class _$ForecastWeatherCopyWithImpl<$Res, $Val extends ForecastWeather>
-    implements $ForecastWeatherCopyWith<$Res> {
+class _$ForecastWeatherCopyWithImpl<$Res, $Val extends ForecastWeather> implements $ForecastWeatherCopyWith<$Res> {
   _$ForecastWeatherCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -101,30 +93,21 @@ class _$ForecastWeatherCopyWithImpl<$Res, $Val extends ForecastWeather>
 }
 
 /// @nodoc
-abstract class _$$ForecastWeather$ImplCopyWith<$Res>
-    implements $ForecastWeatherCopyWith<$Res> {
-  factory _$$ForecastWeather$ImplCopyWith(_$ForecastWeather$Impl value,
-          $Res Function(_$ForecastWeather$Impl) then) =
+abstract class _$$ForecastWeather$ImplCopyWith<$Res> implements $ForecastWeatherCopyWith<$Res> {
+  factory _$$ForecastWeather$ImplCopyWith(_$ForecastWeather$Impl value, $Res Function(_$ForecastWeather$Impl) then) =
       __$$ForecastWeather$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String cod,
-      int message,
-      int cnt,
-      List<ForecastElement> list,
-      City city});
+  $Res call({String cod, int message, int cnt, List<ForecastElement> list, City city});
 
   @override
   $CityCopyWith<$Res> get city;
 }
 
 /// @nodoc
-class __$$ForecastWeather$ImplCopyWithImpl<$Res>
-    extends _$ForecastWeatherCopyWithImpl<$Res, _$ForecastWeather$Impl>
+class __$$ForecastWeather$ImplCopyWithImpl<$Res> extends _$ForecastWeatherCopyWithImpl<$Res, _$ForecastWeather$Impl>
     implements _$$ForecastWeather$ImplCopyWith<$Res> {
-  __$$ForecastWeather$ImplCopyWithImpl(_$ForecastWeather$Impl _value,
-      $Res Function(_$ForecastWeather$Impl) _then)
+  __$$ForecastWeather$ImplCopyWithImpl(_$ForecastWeather$Impl _value, $Res Function(_$ForecastWeather$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -172,8 +155,7 @@ class _$ForecastWeather$Impl implements ForecastWeather$ {
       required this.city})
       : _list = list;
 
-  factory _$ForecastWeather$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$ForecastWeather$ImplFromJson(json);
+  factory _$ForecastWeather$Impl.fromJson(Map<String, dynamic> json) => _$$ForecastWeather$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -215,15 +197,13 @@ class _$ForecastWeather$Impl implements ForecastWeather$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, cod, message, cnt,
-      const DeepCollectionEquality().hash(_list), city);
+  int get hashCode => Object.hash(runtimeType, cod, message, cnt, const DeepCollectionEquality().hash(_list), city);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ForecastWeather$ImplCopyWith<_$ForecastWeather$Impl> get copyWith =>
-      __$$ForecastWeather$ImplCopyWithImpl<_$ForecastWeather$Impl>(
-          this, _$identity);
+      __$$ForecastWeather$ImplCopyWithImpl<_$ForecastWeather$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -241,8 +221,7 @@ abstract class ForecastWeather$ implements ForecastWeather {
       final List<ForecastElement> list,
       required final City city}) = _$ForecastWeather$Impl;
 
-  factory ForecastWeather$.fromJson(Map<String, dynamic> json) =
-      _$ForecastWeather$Impl.fromJson;
+  factory ForecastWeather$.fromJson(Map<String, dynamic> json) = _$ForecastWeather$Impl.fromJson;
 
   @override
   String get cod;
@@ -256,6 +235,5 @@ abstract class ForecastWeather$ implements ForecastWeather {
   City get city;
   @override
   @JsonKey(ignore: true)
-  _$$ForecastWeather$ImplCopyWith<_$ForecastWeather$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ForecastWeather$ImplCopyWith<_$ForecastWeather$Impl> get copyWith => throw _privateConstructorUsedError;
 }

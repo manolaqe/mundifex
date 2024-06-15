@@ -27,27 +27,21 @@ mixin _$Geometry {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeometryCopyWith<Geometry> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeometryCopyWith<Geometry> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeometryCopyWith<$Res> {
-  factory $GeometryCopyWith(Geometry value, $Res Function(Geometry) then) =
-      _$GeometryCopyWithImpl<$Res, Geometry>;
+  factory $GeometryCopyWith(Geometry value, $Res Function(Geometry) then) = _$GeometryCopyWithImpl<$Res, Geometry>;
   @useResult
-  $Res call(
-      {AddressCoordinates location,
-      @JsonKey(name: 'location_type') String locationType,
-      Viewport viewport});
+  $Res call({AddressCoordinates location, @JsonKey(name: 'location_type') String locationType, Viewport viewport});
 
   $AddressCoordinatesCopyWith<$Res> get location;
   $ViewportCopyWith<$Res> get viewport;
 }
 
 /// @nodoc
-class _$GeometryCopyWithImpl<$Res, $Val extends Geometry>
-    implements $GeometryCopyWith<$Res> {
+class _$GeometryCopyWithImpl<$Res, $Val extends Geometry> implements $GeometryCopyWith<$Res> {
   _$GeometryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -96,17 +90,12 @@ class _$GeometryCopyWithImpl<$Res, $Val extends Geometry>
 }
 
 /// @nodoc
-abstract class _$$Geometry$ImplCopyWith<$Res>
-    implements $GeometryCopyWith<$Res> {
-  factory _$$Geometry$ImplCopyWith(
-          _$Geometry$Impl value, $Res Function(_$Geometry$Impl) then) =
+abstract class _$$Geometry$ImplCopyWith<$Res> implements $GeometryCopyWith<$Res> {
+  factory _$$Geometry$ImplCopyWith(_$Geometry$Impl value, $Res Function(_$Geometry$Impl) then) =
       __$$Geometry$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {AddressCoordinates location,
-      @JsonKey(name: 'location_type') String locationType,
-      Viewport viewport});
+  $Res call({AddressCoordinates location, @JsonKey(name: 'location_type') String locationType, Viewport viewport});
 
   @override
   $AddressCoordinatesCopyWith<$Res> get location;
@@ -115,12 +104,9 @@ abstract class _$$Geometry$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$Geometry$ImplCopyWithImpl<$Res>
-    extends _$GeometryCopyWithImpl<$Res, _$Geometry$Impl>
+class __$$Geometry$ImplCopyWithImpl<$Res> extends _$GeometryCopyWithImpl<$Res, _$Geometry$Impl>
     implements _$$Geometry$ImplCopyWith<$Res> {
-  __$$Geometry$ImplCopyWithImpl(
-      _$Geometry$Impl _value, $Res Function(_$Geometry$Impl) _then)
-      : super(_value, _then);
+  __$$Geometry$ImplCopyWithImpl(_$Geometry$Impl _value, $Res Function(_$Geometry$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -150,12 +136,9 @@ class __$$Geometry$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$Geometry$Impl implements Geometry$ {
   const _$Geometry$Impl(
-      {required this.location,
-      @JsonKey(name: 'location_type') this.locationType = '',
-      required this.viewport});
+      {required this.location, @JsonKey(name: 'location_type') this.locationType = '', required this.viewport});
 
-  factory _$Geometry$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Geometry$ImplFromJson(json);
+  factory _$Geometry$Impl.fromJson(Map<String, dynamic> json) => _$$Geometry$ImplFromJson(json);
 
   @override
   final AddressCoordinates location;
@@ -175,18 +158,14 @@ class _$Geometry$Impl implements Geometry$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Geometry$Impl &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.locationType, locationType) ||
-                other.locationType == locationType) &&
-            (identical(other.viewport, viewport) ||
-                other.viewport == viewport));
+            (identical(other.location, location) || other.location == location) &&
+            (identical(other.locationType, locationType) || other.locationType == locationType) &&
+            (identical(other.viewport, viewport) || other.viewport == viewport));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, location, locationType, viewport);
+  int get hashCode => Object.hash(runtimeType, location, locationType, viewport);
 
   @JsonKey(ignore: true)
   @override
@@ -208,8 +187,7 @@ abstract class Geometry$ implements Geometry {
       @JsonKey(name: 'location_type') final String locationType,
       required final Viewport viewport}) = _$Geometry$Impl;
 
-  factory Geometry$.fromJson(Map<String, dynamic> json) =
-      _$Geometry$Impl.fromJson;
+  factory Geometry$.fromJson(Map<String, dynamic> json) = _$Geometry$Impl.fromJson;
 
   @override
   AddressCoordinates get location;
@@ -220,6 +198,5 @@ abstract class Geometry$ implements Geometry {
   Viewport get viewport;
   @override
   @JsonKey(ignore: true)
-  _$$Geometry$ImplCopyWith<_$Geometry$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Geometry$ImplCopyWith<_$Geometry$Impl> get copyWith => throw _privateConstructorUsedError;
 }

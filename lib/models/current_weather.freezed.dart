@@ -36,14 +36,12 @@ mixin _$CurrentWeather {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CurrentWeatherCopyWith<CurrentWeather> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CurrentWeatherCopyWith<CurrentWeather> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CurrentWeatherCopyWith<$Res> {
-  factory $CurrentWeatherCopyWith(
-          CurrentWeather value, $Res Function(CurrentWeather) then) =
+  factory $CurrentWeatherCopyWith(CurrentWeather value, $Res Function(CurrentWeather) then) =
       _$CurrentWeatherCopyWithImpl<$Res, CurrentWeather>;
   @useResult
   $Res call(
@@ -71,8 +69,7 @@ abstract class $CurrentWeatherCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CurrentWeatherCopyWithImpl<$Res, $Val extends CurrentWeather>
-    implements $CurrentWeatherCopyWith<$Res> {
+class _$CurrentWeatherCopyWithImpl<$Res, $Val extends CurrentWeather> implements $CurrentWeatherCopyWith<$Res> {
   _$CurrentWeatherCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -219,10 +216,8 @@ class _$CurrentWeatherCopyWithImpl<$Res, $Val extends CurrentWeather>
 }
 
 /// @nodoc
-abstract class _$$CurrentWeather$ImplCopyWith<$Res>
-    implements $CurrentWeatherCopyWith<$Res> {
-  factory _$$CurrentWeather$ImplCopyWith(_$CurrentWeather$Impl value,
-          $Res Function(_$CurrentWeather$Impl) then) =
+abstract class _$$CurrentWeather$ImplCopyWith<$Res> implements $CurrentWeatherCopyWith<$Res> {
+  factory _$$CurrentWeather$ImplCopyWith(_$CurrentWeather$Impl value, $Res Function(_$CurrentWeather$Impl) then) =
       __$$CurrentWeather$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -258,11 +253,9 @@ abstract class _$$CurrentWeather$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CurrentWeather$ImplCopyWithImpl<$Res>
-    extends _$CurrentWeatherCopyWithImpl<$Res, _$CurrentWeather$Impl>
+class __$$CurrentWeather$ImplCopyWithImpl<$Res> extends _$CurrentWeatherCopyWithImpl<$Res, _$CurrentWeather$Impl>
     implements _$$CurrentWeather$ImplCopyWith<$Res> {
-  __$$CurrentWeather$ImplCopyWithImpl(
-      _$CurrentWeather$Impl _value, $Res Function(_$CurrentWeather$Impl) _then)
+  __$$CurrentWeather$ImplCopyWithImpl(_$CurrentWeather$Impl _value, $Res Function(_$CurrentWeather$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -358,8 +351,7 @@ class _$CurrentWeather$Impl implements CurrentWeather$ {
       this.name = ''})
       : _weather = weather;
 
-  factory _$CurrentWeather$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrentWeather$ImplFromJson(json);
+  factory _$CurrentWeather$Impl.fromJson(Map<String, dynamic> json) => _$$CurrentWeather$ImplFromJson(json);
 
   @override
   final Coord coord;
@@ -413,44 +405,28 @@ class _$CurrentWeather$Impl implements CurrentWeather$ {
             (identical(other.coord, coord) || other.coord == coord) &&
             const DeepCollectionEquality().equals(other._weather, _weather) &&
             (identical(other.main, main) || other.main == main) &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility) &&
+            (identical(other.visibility, visibility) || other.visibility == visibility) &&
             (identical(other.wind, wind) || other.wind == wind) &&
             (identical(other.rain, rain) || other.rain == rain) &&
             (identical(other.snow, snow) || other.snow == snow) &&
             (identical(other.clouds, clouds) || other.clouds == clouds) &&
             (identical(other.dt, dt) || other.dt == dt) &&
             (identical(other.sys, sys) || other.sys == sys) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
+            (identical(other.timezone, timezone) || other.timezone == timezone) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      coord,
-      const DeepCollectionEquality().hash(_weather),
-      main,
-      visibility,
-      wind,
-      rain,
-      snow,
-      clouds,
-      dt,
-      sys,
-      timezone,
-      id,
-      name);
+  int get hashCode => Object.hash(runtimeType, coord, const DeepCollectionEquality().hash(_weather), main, visibility,
+      wind, rain, snow, clouds, dt, sys, timezone, id, name);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CurrentWeather$ImplCopyWith<_$CurrentWeather$Impl> get copyWith =>
-      __$$CurrentWeather$ImplCopyWithImpl<_$CurrentWeather$Impl>(
-          this, _$identity);
+      __$$CurrentWeather$ImplCopyWithImpl<_$CurrentWeather$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -476,8 +452,7 @@ abstract class CurrentWeather$ implements CurrentWeather {
       final int id,
       final String name}) = _$CurrentWeather$Impl;
 
-  factory CurrentWeather$.fromJson(Map<String, dynamic> json) =
-      _$CurrentWeather$Impl.fromJson;
+  factory CurrentWeather$.fromJson(Map<String, dynamic> json) = _$CurrentWeather$Impl.fromJson;
 
   @override
   Coord get coord;
@@ -507,6 +482,5 @@ abstract class CurrentWeather$ implements CurrentWeather {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$CurrentWeather$ImplCopyWith<_$CurrentWeather$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CurrentWeather$ImplCopyWith<_$CurrentWeather$Impl> get copyWith => throw _privateConstructorUsedError;
 }

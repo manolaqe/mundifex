@@ -64,13 +64,11 @@ mixin _$AddLike {
 
 /// @nodoc
 abstract class $AddLikeCopyWith<$Res> {
-  factory $AddLikeCopyWith(AddLike value, $Res Function(AddLike) then) =
-      _$AddLikeCopyWithImpl<$Res, AddLike>;
+  factory $AddLikeCopyWith(AddLike value, $Res Function(AddLike) then) = _$AddLikeCopyWithImpl<$Res, AddLike>;
 }
 
 /// @nodoc
-class _$AddLikeCopyWithImpl<$Res, $Val extends AddLike>
-    implements $AddLikeCopyWith<$Res> {
+class _$AddLikeCopyWithImpl<$Res, $Val extends AddLike> implements $AddLikeCopyWith<$Res> {
   _$AddLikeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -81,19 +79,16 @@ class _$AddLikeCopyWithImpl<$Res, $Val extends AddLike>
 
 /// @nodoc
 abstract class _$$AddLikeStartImplCopyWith<$Res> {
-  factory _$$AddLikeStartImplCopyWith(
-          _$AddLikeStartImpl value, $Res Function(_$AddLikeStartImpl) then) =
+  factory _$$AddLikeStartImplCopyWith(_$AddLikeStartImpl value, $Res Function(_$AddLikeStartImpl) then) =
       __$$AddLikeStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String selectedPostId});
 }
 
 /// @nodoc
-class __$$AddLikeStartImplCopyWithImpl<$Res>
-    extends _$AddLikeCopyWithImpl<$Res, _$AddLikeStartImpl>
+class __$$AddLikeStartImplCopyWithImpl<$Res> extends _$AddLikeCopyWithImpl<$Res, _$AddLikeStartImpl>
     implements _$$AddLikeStartImplCopyWith<$Res> {
-  __$$AddLikeStartImplCopyWithImpl(
-      _$AddLikeStartImpl _value, $Res Function(_$AddLikeStartImpl) _then)
+  __$$AddLikeStartImplCopyWithImpl(_$AddLikeStartImpl _value, $Res Function(_$AddLikeStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,8 +123,7 @@ class _$AddLikeStartImpl implements AddLikeStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddLikeStartImpl &&
-            (identical(other.selectedPostId, selectedPostId) ||
-                other.selectedPostId == selectedPostId));
+            (identical(other.selectedPostId, selectedPostId) || other.selectedPostId == selectedPostId));
   }
 
   @override
@@ -211,19 +205,16 @@ class _$AddLikeStartImpl implements AddLikeStart {
 }
 
 abstract class AddLikeStart implements AddLike {
-  const factory AddLikeStart({required final String selectedPostId}) =
-      _$AddLikeStartImpl;
+  const factory AddLikeStart({required final String selectedPostId}) = _$AddLikeStartImpl;
 
   String get selectedPostId;
   @JsonKey(ignore: true)
-  _$$AddLikeStartImplCopyWith<_$AddLikeStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddLikeStartImplCopyWith<_$AddLikeStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddLikeSuccessfulImplCopyWith<$Res> {
-  factory _$$AddLikeSuccessfulImplCopyWith(_$AddLikeSuccessfulImpl value,
-          $Res Function(_$AddLikeSuccessfulImpl) then) =
+  factory _$$AddLikeSuccessfulImplCopyWith(_$AddLikeSuccessfulImpl value, $Res Function(_$AddLikeSuccessfulImpl) then) =
       __$$AddLikeSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Post post});
@@ -232,11 +223,9 @@ abstract class _$$AddLikeSuccessfulImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AddLikeSuccessfulImplCopyWithImpl<$Res>
-    extends _$AddLikeCopyWithImpl<$Res, _$AddLikeSuccessfulImpl>
+class __$$AddLikeSuccessfulImplCopyWithImpl<$Res> extends _$AddLikeCopyWithImpl<$Res, _$AddLikeSuccessfulImpl>
     implements _$$AddLikeSuccessfulImplCopyWith<$Res> {
-  __$$AddLikeSuccessfulImplCopyWithImpl(_$AddLikeSuccessfulImpl _value,
-      $Res Function(_$AddLikeSuccessfulImpl) _then)
+  __$$AddLikeSuccessfulImplCopyWithImpl(_$AddLikeSuccessfulImpl _value, $Res Function(_$AddLikeSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -289,8 +278,7 @@ class _$AddLikeSuccessfulImpl implements AddLikeSuccessful {
   @override
   @pragma('vm:prefer-inline')
   _$$AddLikeSuccessfulImplCopyWith<_$AddLikeSuccessfulImpl> get copyWith =>
-      __$$AddLikeSuccessfulImplCopyWithImpl<_$AddLikeSuccessfulImpl>(
-          this, _$identity);
+      __$$AddLikeSuccessfulImplCopyWithImpl<_$AddLikeSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -366,25 +354,21 @@ abstract class AddLikeSuccessful implements AddLike {
 
   Post get post;
   @JsonKey(ignore: true)
-  _$$AddLikeSuccessfulImplCopyWith<_$AddLikeSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddLikeSuccessfulImplCopyWith<_$AddLikeSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddLikeErrorImplCopyWith<$Res> {
-  factory _$$AddLikeErrorImplCopyWith(
-          _$AddLikeErrorImpl value, $Res Function(_$AddLikeErrorImpl) then) =
+  factory _$$AddLikeErrorImplCopyWith(_$AddLikeErrorImpl value, $Res Function(_$AddLikeErrorImpl) then) =
       __$$AddLikeErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddLikeErrorImplCopyWithImpl<$Res>
-    extends _$AddLikeCopyWithImpl<$Res, _$AddLikeErrorImpl>
+class __$$AddLikeErrorImplCopyWithImpl<$Res> extends _$AddLikeCopyWithImpl<$Res, _$AddLikeErrorImpl>
     implements _$$AddLikeErrorImplCopyWith<$Res> {
-  __$$AddLikeErrorImplCopyWithImpl(
-      _$AddLikeErrorImpl _value, $Res Function(_$AddLikeErrorImpl) _then)
+  __$$AddLikeErrorImplCopyWithImpl(_$AddLikeErrorImpl _value, $Res Function(_$AddLikeErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -424,13 +408,11 @@ class _$AddLikeErrorImpl implements AddLikeError {
         (other.runtimeType == runtimeType &&
             other is _$AddLikeErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -508,12 +490,10 @@ class _$AddLikeErrorImpl implements AddLikeError {
 }
 
 abstract class AddLikeError implements AddLike, ErrorAction {
-  const factory AddLikeError(final Object error, final StackTrace stackTrace) =
-      _$AddLikeErrorImpl;
+  const factory AddLikeError(final Object error, final StackTrace stackTrace) = _$AddLikeErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddLikeErrorImplCopyWith<_$AddLikeErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddLikeErrorImplCopyWith<_$AddLikeErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

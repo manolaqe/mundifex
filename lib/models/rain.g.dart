@@ -11,8 +11,7 @@ _$Rain$Impl _$$Rain$ImplFromJson(Map<String, dynamic> json) => _$Rain$Impl(
       the3H: (json['3h'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$Rain$ImplToJson(_$Rain$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Rain$ImplToJson(_$Rain$Impl instance) => <String, dynamic>{
       '1h': instance.the1H,
       '3h': instance.the3H,
     };

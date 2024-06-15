@@ -7,13 +7,11 @@ part 'signin_email_password.freezed.dart';
 
 @freezed
 class SignInEmailPassword with _$SignInEmailPassword implements AppAction {
-  const factory SignInEmailPassword(
-    {
+  const factory SignInEmailPassword({
     required String email,
     required String password,
     required ActionResult result,
-    }
-  ) = SignInEmailPasswordStart;
+  }) = SignInEmailPasswordStart;
 
   const factory SignInEmailPassword.successful(AppUser user) = SignInEmailPasswordSuccessful;
 

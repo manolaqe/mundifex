@@ -30,15 +30,13 @@ mixin _$Coord {
 
 /// @nodoc
 abstract class $CoordCopyWith<$Res> {
-  factory $CoordCopyWith(Coord value, $Res Function(Coord) then) =
-      _$CoordCopyWithImpl<$Res, Coord>;
+  factory $CoordCopyWith(Coord value, $Res Function(Coord) then) = _$CoordCopyWithImpl<$Res, Coord>;
   @useResult
   $Res call({double lon, double lat});
 }
 
 /// @nodoc
-class _$CoordCopyWithImpl<$Res, $Val extends Coord>
-    implements $CoordCopyWith<$Res> {
+class _$CoordCopyWithImpl<$Res, $Val extends Coord> implements $CoordCopyWith<$Res> {
   _$CoordCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -67,8 +65,7 @@ class _$CoordCopyWithImpl<$Res, $Val extends Coord>
 
 /// @nodoc
 abstract class _$$Coord$ImplCopyWith<$Res> implements $CoordCopyWith<$Res> {
-  factory _$$Coord$ImplCopyWith(
-          _$Coord$Impl value, $Res Function(_$Coord$Impl) then) =
+  factory _$$Coord$ImplCopyWith(_$Coord$Impl value, $Res Function(_$Coord$Impl) then) =
       __$$Coord$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -76,12 +73,9 @@ abstract class _$$Coord$ImplCopyWith<$Res> implements $CoordCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Coord$ImplCopyWithImpl<$Res>
-    extends _$CoordCopyWithImpl<$Res, _$Coord$Impl>
+class __$$Coord$ImplCopyWithImpl<$Res> extends _$CoordCopyWithImpl<$Res, _$Coord$Impl>
     implements _$$Coord$ImplCopyWith<$Res> {
-  __$$Coord$ImplCopyWithImpl(
-      _$Coord$Impl _value, $Res Function(_$Coord$Impl) _then)
-      : super(_value, _then);
+  __$$Coord$ImplCopyWithImpl(_$Coord$Impl _value, $Res Function(_$Coord$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -107,8 +101,7 @@ class __$$Coord$ImplCopyWithImpl<$Res>
 class _$Coord$Impl implements Coord$ {
   const _$Coord$Impl({this.lon = 0, this.lat = 0});
 
-  factory _$Coord$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Coord$ImplFromJson(json);
+  factory _$Coord$Impl.fromJson(Map<String, dynamic> json) => _$$Coord$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -138,8 +131,7 @@ class _$Coord$Impl implements Coord$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Coord$ImplCopyWith<_$Coord$Impl> get copyWith =>
-      __$$Coord$ImplCopyWithImpl<_$Coord$Impl>(this, _$identity);
+  _$$Coord$ImplCopyWith<_$Coord$Impl> get copyWith => __$$Coord$ImplCopyWithImpl<_$Coord$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -160,6 +152,5 @@ abstract class Coord$ implements Coord {
   double get lat;
   @override
   @JsonKey(ignore: true)
-  _$$Coord$ImplCopyWith<_$Coord$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Coord$ImplCopyWith<_$Coord$Impl> get copyWith => throw _privateConstructorUsedError;
 }

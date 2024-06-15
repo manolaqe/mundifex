@@ -64,13 +64,11 @@ mixin _$GetUsers {
 
 /// @nodoc
 abstract class $GetUsersCopyWith<$Res> {
-  factory $GetUsersCopyWith(GetUsers value, $Res Function(GetUsers) then) =
-      _$GetUsersCopyWithImpl<$Res, GetUsers>;
+  factory $GetUsersCopyWith(GetUsers value, $Res Function(GetUsers) then) = _$GetUsersCopyWithImpl<$Res, GetUsers>;
 }
 
 /// @nodoc
-class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers>
-    implements $GetUsersCopyWith<$Res> {
+class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers> implements $GetUsersCopyWith<$Res> {
   _$GetUsersCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -81,17 +79,14 @@ class _$GetUsersCopyWithImpl<$Res, $Val extends GetUsers>
 
 /// @nodoc
 abstract class _$$GetUsersStartImplCopyWith<$Res> {
-  factory _$$GetUsersStartImplCopyWith(
-          _$GetUsersStartImpl value, $Res Function(_$GetUsersStartImpl) then) =
+  factory _$$GetUsersStartImplCopyWith(_$GetUsersStartImpl value, $Res Function(_$GetUsersStartImpl) then) =
       __$$GetUsersStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUsersStartImplCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersStartImpl>
+class __$$GetUsersStartImplCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersStartImpl>
     implements _$$GetUsersStartImplCopyWith<$Res> {
-  __$$GetUsersStartImplCopyWithImpl(
-      _$GetUsersStartImpl _value, $Res Function(_$GetUsersStartImpl) _then)
+  __$$GetUsersStartImplCopyWithImpl(_$GetUsersStartImpl _value, $Res Function(_$GetUsersStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -107,8 +102,7 @@ class _$GetUsersStartImpl implements GetUsersStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUsersStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetUsersStartImpl);
   }
 
   @override
@@ -189,19 +183,17 @@ abstract class GetUsersStart implements GetUsers {
 
 /// @nodoc
 abstract class _$$GetUsersSuccessfulImplCopyWith<$Res> {
-  factory _$$GetUsersSuccessfulImplCopyWith(_$GetUsersSuccessfulImpl value,
-          $Res Function(_$GetUsersSuccessfulImpl) then) =
+  factory _$$GetUsersSuccessfulImplCopyWith(
+          _$GetUsersSuccessfulImpl value, $Res Function(_$GetUsersSuccessfulImpl) then) =
       __$$GetUsersSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AppUser> users});
 }
 
 /// @nodoc
-class __$$GetUsersSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersSuccessfulImpl>
+class __$$GetUsersSuccessfulImplCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersSuccessfulImpl>
     implements _$$GetUsersSuccessfulImplCopyWith<$Res> {
-  __$$GetUsersSuccessfulImplCopyWithImpl(_$GetUsersSuccessfulImpl _value,
-      $Res Function(_$GetUsersSuccessfulImpl) _then)
+  __$$GetUsersSuccessfulImplCopyWithImpl(_$GetUsersSuccessfulImpl _value, $Res Function(_$GetUsersSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -245,15 +237,13 @@ class _$GetUsersSuccessfulImpl implements GetUsersSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetUsersSuccessfulImplCopyWith<_$GetUsersSuccessfulImpl> get copyWith =>
-      __$$GetUsersSuccessfulImplCopyWithImpl<_$GetUsersSuccessfulImpl>(
-          this, _$identity);
+      __$$GetUsersSuccessfulImplCopyWithImpl<_$GetUsersSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -325,30 +315,25 @@ class _$GetUsersSuccessfulImpl implements GetUsersSuccessful {
 }
 
 abstract class GetUsersSuccessful implements GetUsers {
-  const factory GetUsersSuccessful(final List<AppUser> users) =
-      _$GetUsersSuccessfulImpl;
+  const factory GetUsersSuccessful(final List<AppUser> users) = _$GetUsersSuccessfulImpl;
 
   List<AppUser> get users;
   @JsonKey(ignore: true)
-  _$$GetUsersSuccessfulImplCopyWith<_$GetUsersSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetUsersSuccessfulImplCopyWith<_$GetUsersSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetUsersErrorImplCopyWith<$Res> {
-  factory _$$GetUsersErrorImplCopyWith(
-          _$GetUsersErrorImpl value, $Res Function(_$GetUsersErrorImpl) then) =
+  factory _$$GetUsersErrorImplCopyWith(_$GetUsersErrorImpl value, $Res Function(_$GetUsersErrorImpl) then) =
       __$$GetUsersErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetUsersErrorImplCopyWithImpl<$Res>
-    extends _$GetUsersCopyWithImpl<$Res, _$GetUsersErrorImpl>
+class __$$GetUsersErrorImplCopyWithImpl<$Res> extends _$GetUsersCopyWithImpl<$Res, _$GetUsersErrorImpl>
     implements _$$GetUsersErrorImplCopyWith<$Res> {
-  __$$GetUsersErrorImplCopyWithImpl(
-      _$GetUsersErrorImpl _value, $Res Function(_$GetUsersErrorImpl) _then)
+  __$$GetUsersErrorImplCopyWithImpl(_$GetUsersErrorImpl _value, $Res Function(_$GetUsersErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -388,13 +373,11 @@ class _$GetUsersErrorImpl implements GetUsersError {
         (other.runtimeType == runtimeType &&
             other is _$GetUsersErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -472,12 +455,10 @@ class _$GetUsersErrorImpl implements GetUsersError {
 }
 
 abstract class GetUsersError implements GetUsers, ErrorAction {
-  const factory GetUsersError(final Object error, final StackTrace stackTrace) =
-      _$GetUsersErrorImpl;
+  const factory GetUsersError(final Object error, final StackTrace stackTrace) = _$GetUsersErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetUsersErrorImplCopyWith<_$GetUsersErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetUsersErrorImplCopyWith<_$GetUsersErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

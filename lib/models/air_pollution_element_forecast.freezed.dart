@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-AirPollutionElementForecast _$AirPollutionElementForecastFromJson(
-    Map<String, dynamic> json) {
+AirPollutionElementForecast _$AirPollutionElementForecastFromJson(Map<String, dynamic> json) {
   return AirPollutionElementForecast$.fromJson(json);
 }
 
@@ -27,17 +26,14 @@ mixin _$AirPollutionElementForecast {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AirPollutionElementForecastCopyWith<AirPollutionElementForecast>
-      get copyWith => throw _privateConstructorUsedError;
+  $AirPollutionElementForecastCopyWith<AirPollutionElementForecast> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AirPollutionElementForecastCopyWith<$Res> {
   factory $AirPollutionElementForecastCopyWith(
-          AirPollutionElementForecast value,
-          $Res Function(AirPollutionElementForecast) then) =
-      _$AirPollutionElementForecastCopyWithImpl<$Res,
-          AirPollutionElementForecast>;
+          AirPollutionElementForecast value, $Res Function(AirPollutionElementForecast) then) =
+      _$AirPollutionElementForecastCopyWithImpl<$Res, AirPollutionElementForecast>;
   @useResult
   $Res call({MainPollution main, AirPollutionComponents components, int dt});
 
@@ -46,8 +42,7 @@ abstract class $AirPollutionElementForecastCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AirPollutionElementForecastCopyWithImpl<$Res,
-        $Val extends AirPollutionElementForecast>
+class _$AirPollutionElementForecastCopyWithImpl<$Res, $Val extends AirPollutionElementForecast>
     implements $AirPollutionElementForecastCopyWith<$Res> {
   _$AirPollutionElementForecastCopyWithImpl(this._value, this._then);
 
@@ -97,11 +92,9 @@ class _$AirPollutionElementForecastCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$AirPollutionElementForecast$ImplCopyWith<$Res>
-    implements $AirPollutionElementForecastCopyWith<$Res> {
+abstract class _$$AirPollutionElementForecast$ImplCopyWith<$Res> implements $AirPollutionElementForecastCopyWith<$Res> {
   factory _$$AirPollutionElementForecast$ImplCopyWith(
-          _$AirPollutionElementForecast$Impl value,
-          $Res Function(_$AirPollutionElementForecast$Impl) then) =
+          _$AirPollutionElementForecast$Impl value, $Res Function(_$AirPollutionElementForecast$Impl) then) =
       __$$AirPollutionElementForecast$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -115,12 +108,10 @@ abstract class _$$AirPollutionElementForecast$ImplCopyWith<$Res>
 
 /// @nodoc
 class __$$AirPollutionElementForecast$ImplCopyWithImpl<$Res>
-    extends _$AirPollutionElementForecastCopyWithImpl<$Res,
-        _$AirPollutionElementForecast$Impl>
+    extends _$AirPollutionElementForecastCopyWithImpl<$Res, _$AirPollutionElementForecast$Impl>
     implements _$$AirPollutionElementForecast$ImplCopyWith<$Res> {
   __$$AirPollutionElementForecast$ImplCopyWithImpl(
-      _$AirPollutionElementForecast$Impl _value,
-      $Res Function(_$AirPollutionElementForecast$Impl) _then)
+      _$AirPollutionElementForecast$Impl _value, $Res Function(_$AirPollutionElementForecast$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -149,13 +140,10 @@ class __$$AirPollutionElementForecast$ImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AirPollutionElementForecast$Impl
-    implements AirPollutionElementForecast$ {
-  const _$AirPollutionElementForecast$Impl(
-      {required this.main, required this.components, this.dt = 0});
+class _$AirPollutionElementForecast$Impl implements AirPollutionElementForecast$ {
+  const _$AirPollutionElementForecast$Impl({required this.main, required this.components, this.dt = 0});
 
-  factory _$AirPollutionElementForecast$Impl.fromJson(
-          Map<String, dynamic> json) =>
+  factory _$AirPollutionElementForecast$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AirPollutionElementForecast$ImplFromJson(json);
 
   @override
@@ -177,8 +165,7 @@ class _$AirPollutionElementForecast$Impl
         (other.runtimeType == runtimeType &&
             other is _$AirPollutionElementForecast$Impl &&
             (identical(other.main, main) || other.main == main) &&
-            (identical(other.components, components) ||
-                other.components == components) &&
+            (identical(other.components, components) || other.components == components) &&
             (identical(other.dt, dt) || other.dt == dt));
   }
 
@@ -189,10 +176,8 @@ class _$AirPollutionElementForecast$Impl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirPollutionElementForecast$ImplCopyWith<
-          _$AirPollutionElementForecast$Impl>
-      get copyWith => __$$AirPollutionElementForecast$ImplCopyWithImpl<
-          _$AirPollutionElementForecast$Impl>(this, _$identity);
+  _$$AirPollutionElementForecast$ImplCopyWith<_$AirPollutionElementForecast$Impl> get copyWith =>
+      __$$AirPollutionElementForecast$ImplCopyWithImpl<_$AirPollutionElementForecast$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -202,8 +187,7 @@ class _$AirPollutionElementForecast$Impl
   }
 }
 
-abstract class AirPollutionElementForecast$
-    implements AirPollutionElementForecast {
+abstract class AirPollutionElementForecast$ implements AirPollutionElementForecast {
   const factory AirPollutionElementForecast$(
       {required final MainPollution main,
       required final AirPollutionComponents components,
@@ -220,7 +204,6 @@ abstract class AirPollutionElementForecast$
   int get dt;
   @override
   @JsonKey(ignore: true)
-  _$$AirPollutionElementForecast$ImplCopyWith<
-          _$AirPollutionElementForecast$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AirPollutionElementForecast$ImplCopyWith<_$AirPollutionElementForecast$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

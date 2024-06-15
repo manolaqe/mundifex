@@ -32,16 +32,13 @@ mixin _$Snow {
 
 /// @nodoc
 abstract class $SnowCopyWith<$Res> {
-  factory $SnowCopyWith(Snow value, $Res Function(Snow) then) =
-      _$SnowCopyWithImpl<$Res, Snow>;
+  factory $SnowCopyWith(Snow value, $Res Function(Snow) then) = _$SnowCopyWithImpl<$Res, Snow>;
   @useResult
-  $Res call(
-      {@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
+  $Res call({@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
 }
 
 /// @nodoc
-class _$SnowCopyWithImpl<$Res, $Val extends Snow>
-    implements $SnowCopyWith<$Res> {
+class _$SnowCopyWithImpl<$Res, $Val extends Snow> implements $SnowCopyWith<$Res> {
   _$SnowCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -70,22 +67,16 @@ class _$SnowCopyWithImpl<$Res, $Val extends Snow>
 
 /// @nodoc
 abstract class _$$Snow$ImplCopyWith<$Res> implements $SnowCopyWith<$Res> {
-  factory _$$Snow$ImplCopyWith(
-          _$Snow$Impl value, $Res Function(_$Snow$Impl) then) =
-      __$$Snow$ImplCopyWithImpl<$Res>;
+  factory _$$Snow$ImplCopyWith(_$Snow$Impl value, $Res Function(_$Snow$Impl) then) = __$$Snow$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
+  $Res call({@JsonKey(name: '1h') double the1H, @JsonKey(name: '3h') double the3H});
 }
 
 /// @nodoc
-class __$$Snow$ImplCopyWithImpl<$Res>
-    extends _$SnowCopyWithImpl<$Res, _$Snow$Impl>
+class __$$Snow$ImplCopyWithImpl<$Res> extends _$SnowCopyWithImpl<$Res, _$Snow$Impl>
     implements _$$Snow$ImplCopyWith<$Res> {
-  __$$Snow$ImplCopyWithImpl(
-      _$Snow$Impl _value, $Res Function(_$Snow$Impl) _then)
-      : super(_value, _then);
+  __$$Snow$ImplCopyWithImpl(_$Snow$Impl _value, $Res Function(_$Snow$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -109,12 +100,9 @@ class __$$Snow$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$Snow$Impl implements Snow$ {
-  const _$Snow$Impl(
-      {@JsonKey(name: '1h') this.the1H = 0,
-      @JsonKey(name: '3h') this.the3H = 0});
+  const _$Snow$Impl({@JsonKey(name: '1h') this.the1H = 0, @JsonKey(name: '3h') this.the3H = 0});
 
-  factory _$Snow$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Snow$ImplFromJson(json);
+  factory _$Snow$Impl.fromJson(Map<String, dynamic> json) => _$$Snow$ImplFromJson(json);
 
   @override
   @JsonKey(name: '1h')
@@ -144,8 +132,7 @@ class _$Snow$Impl implements Snow$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Snow$ImplCopyWith<_$Snow$Impl> get copyWith =>
-      __$$Snow$ImplCopyWithImpl<_$Snow$Impl>(this, _$identity);
+  _$$Snow$ImplCopyWith<_$Snow$Impl> get copyWith => __$$Snow$ImplCopyWithImpl<_$Snow$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -156,9 +143,7 @@ class _$Snow$Impl implements Snow$ {
 }
 
 abstract class Snow$ implements Snow {
-  const factory Snow$(
-      {@JsonKey(name: '1h') final double the1H,
-      @JsonKey(name: '3h') final double the3H}) = _$Snow$Impl;
+  const factory Snow$({@JsonKey(name: '1h') final double the1H, @JsonKey(name: '3h') final double the3H}) = _$Snow$Impl;
 
   factory Snow$.fromJson(Map<String, dynamic> json) = _$Snow$Impl.fromJson;
 
@@ -170,6 +155,5 @@ abstract class Snow$ implements Snow {
   double get the3H;
   @override
   @JsonKey(ignore: true)
-  _$$Snow$ImplCopyWith<_$Snow$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Snow$ImplCopyWith<_$Snow$Impl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-AirPollutionComponents _$AirPollutionComponentsFromJson(
-    Map<String, dynamic> json) {
+AirPollutionComponents _$AirPollutionComponentsFromJson(Map<String, dynamic> json) {
   return AirPollutionComponents$.fromJson(json);
 }
 
@@ -32,30 +31,19 @@ mixin _$AirPollutionComponents {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AirPollutionComponentsCopyWith<AirPollutionComponents> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AirPollutionComponentsCopyWith<AirPollutionComponents> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AirPollutionComponentsCopyWith<$Res> {
-  factory $AirPollutionComponentsCopyWith(AirPollutionComponents value,
-          $Res Function(AirPollutionComponents) then) =
+  factory $AirPollutionComponentsCopyWith(AirPollutionComponents value, $Res Function(AirPollutionComponents) then) =
       _$AirPollutionComponentsCopyWithImpl<$Res, AirPollutionComponents>;
   @useResult
-  $Res call(
-      {double co,
-      double no,
-      double no2,
-      double o3,
-      double so2,
-      double pm2_5,
-      double pm10,
-      double nh3});
+  $Res call({double co, double no, double no2, double o3, double so2, double pm2_5, double pm10, double nh3});
 }
 
 /// @nodoc
-class _$AirPollutionComponentsCopyWithImpl<$Res,
-        $Val extends AirPollutionComponents>
+class _$AirPollutionComponentsCopyWithImpl<$Res, $Val extends AirPollutionComponents>
     implements $AirPollutionComponentsCopyWith<$Res> {
   _$AirPollutionComponentsCopyWithImpl(this._value, this._then);
 
@@ -114,33 +102,21 @@ class _$AirPollutionComponentsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$AirPollutionComponents$ImplCopyWith<$Res>
-    implements $AirPollutionComponentsCopyWith<$Res> {
+abstract class _$$AirPollutionComponents$ImplCopyWith<$Res> implements $AirPollutionComponentsCopyWith<$Res> {
   factory _$$AirPollutionComponents$ImplCopyWith(
-          _$AirPollutionComponents$Impl value,
-          $Res Function(_$AirPollutionComponents$Impl) then) =
+          _$AirPollutionComponents$Impl value, $Res Function(_$AirPollutionComponents$Impl) then) =
       __$$AirPollutionComponents$ImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {double co,
-      double no,
-      double no2,
-      double o3,
-      double so2,
-      double pm2_5,
-      double pm10,
-      double nh3});
+  $Res call({double co, double no, double no2, double o3, double so2, double pm2_5, double pm10, double nh3});
 }
 
 /// @nodoc
 class __$$AirPollutionComponents$ImplCopyWithImpl<$Res>
-    extends _$AirPollutionComponentsCopyWithImpl<$Res,
-        _$AirPollutionComponents$Impl>
+    extends _$AirPollutionComponentsCopyWithImpl<$Res, _$AirPollutionComponents$Impl>
     implements _$$AirPollutionComponents$ImplCopyWith<$Res> {
   __$$AirPollutionComponents$ImplCopyWithImpl(
-      _$AirPollutionComponents$Impl _value,
-      $Res Function(_$AirPollutionComponents$Impl) _then)
+      _$AirPollutionComponents$Impl _value, $Res Function(_$AirPollutionComponents$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -196,14 +172,7 @@ class __$$AirPollutionComponents$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AirPollutionComponents$Impl implements AirPollutionComponents$ {
   const _$AirPollutionComponents$Impl(
-      {this.co = 0,
-      this.no = 0,
-      this.no2 = 0,
-      this.o3 = 0,
-      this.so2 = 0,
-      this.pm2_5 = 0,
-      this.pm10 = 0,
-      this.nh3 = 0});
+      {this.co = 0, this.no = 0, this.no2 = 0, this.o3 = 0, this.so2 = 0, this.pm2_5 = 0, this.pm10 = 0, this.nh3 = 0});
 
   factory _$AirPollutionComponents$Impl.fromJson(Map<String, dynamic> json) =>
       _$$AirPollutionComponents$ImplFromJson(json);
@@ -255,15 +224,13 @@ class _$AirPollutionComponents$Impl implements AirPollutionComponents$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, co, no, no2, o3, so2, pm2_5, pm10, nh3);
+  int get hashCode => Object.hash(runtimeType, co, no, no2, o3, so2, pm2_5, pm10, nh3);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirPollutionComponents$ImplCopyWith<_$AirPollutionComponents$Impl>
-      get copyWith => __$$AirPollutionComponents$ImplCopyWithImpl<
-          _$AirPollutionComponents$Impl>(this, _$identity);
+  _$$AirPollutionComponents$ImplCopyWith<_$AirPollutionComponents$Impl> get copyWith =>
+      __$$AirPollutionComponents$ImplCopyWithImpl<_$AirPollutionComponents$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -284,8 +251,7 @@ abstract class AirPollutionComponents$ implements AirPollutionComponents {
       final double pm10,
       final double nh3}) = _$AirPollutionComponents$Impl;
 
-  factory AirPollutionComponents$.fromJson(Map<String, dynamic> json) =
-      _$AirPollutionComponents$Impl.fromJson;
+  factory AirPollutionComponents$.fromJson(Map<String, dynamic> json) = _$AirPollutionComponents$Impl.fromJson;
 
   @override
   double get co;
@@ -305,6 +271,6 @@ abstract class AirPollutionComponents$ implements AirPollutionComponents {
   double get nh3;
   @override
   @JsonKey(ignore: true)
-  _$$AirPollutionComponents$ImplCopyWith<_$AirPollutionComponents$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AirPollutionComponents$ImplCopyWith<_$AirPollutionComponents$Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

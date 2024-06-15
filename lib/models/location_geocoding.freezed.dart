@@ -25,14 +25,12 @@ mixin _$LocationGeocoding {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LocationGeocodingCopyWith<LocationGeocoding> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LocationGeocodingCopyWith<LocationGeocoding> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocationGeocodingCopyWith<$Res> {
-  factory $LocationGeocodingCopyWith(
-          LocationGeocoding value, $Res Function(LocationGeocoding) then) =
+  factory $LocationGeocodingCopyWith(LocationGeocoding value, $Res Function(LocationGeocoding) then) =
       _$LocationGeocodingCopyWithImpl<$Res, LocationGeocoding>;
   @useResult
   $Res call({double lat, double lon});
@@ -68,10 +66,9 @@ class _$LocationGeocodingCopyWithImpl<$Res, $Val extends LocationGeocoding>
 }
 
 /// @nodoc
-abstract class _$$LocationGeocoding$ImplCopyWith<$Res>
-    implements $LocationGeocodingCopyWith<$Res> {
-  factory _$$LocationGeocoding$ImplCopyWith(_$LocationGeocoding$Impl value,
-          $Res Function(_$LocationGeocoding$Impl) then) =
+abstract class _$$LocationGeocoding$ImplCopyWith<$Res> implements $LocationGeocodingCopyWith<$Res> {
+  factory _$$LocationGeocoding$ImplCopyWith(
+          _$LocationGeocoding$Impl value, $Res Function(_$LocationGeocoding$Impl) then) =
       __$$LocationGeocoding$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -82,8 +79,7 @@ abstract class _$$LocationGeocoding$ImplCopyWith<$Res>
 class __$$LocationGeocoding$ImplCopyWithImpl<$Res>
     extends _$LocationGeocodingCopyWithImpl<$Res, _$LocationGeocoding$Impl>
     implements _$$LocationGeocoding$ImplCopyWith<$Res> {
-  __$$LocationGeocoding$ImplCopyWithImpl(_$LocationGeocoding$Impl _value,
-      $Res Function(_$LocationGeocoding$Impl) _then)
+  __$$LocationGeocoding$ImplCopyWithImpl(_$LocationGeocoding$Impl _value, $Res Function(_$LocationGeocoding$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,8 +106,7 @@ class __$$LocationGeocoding$ImplCopyWithImpl<$Res>
 class _$LocationGeocoding$Impl implements LocationGeocoding$ {
   const _$LocationGeocoding$Impl({required this.lat, required this.lon});
 
-  factory _$LocationGeocoding$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$LocationGeocoding$ImplFromJson(json);
+  factory _$LocationGeocoding$Impl.fromJson(Map<String, dynamic> json) => _$$LocationGeocoding$ImplFromJson(json);
 
   @override
   final double lat;
@@ -140,8 +135,7 @@ class _$LocationGeocoding$Impl implements LocationGeocoding$ {
   @override
   @pragma('vm:prefer-inline')
   _$$LocationGeocoding$ImplCopyWith<_$LocationGeocoding$Impl> get copyWith =>
-      __$$LocationGeocoding$ImplCopyWithImpl<_$LocationGeocoding$Impl>(
-          this, _$identity);
+      __$$LocationGeocoding$ImplCopyWithImpl<_$LocationGeocoding$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -152,12 +146,9 @@ class _$LocationGeocoding$Impl implements LocationGeocoding$ {
 }
 
 abstract class LocationGeocoding$ implements LocationGeocoding {
-  const factory LocationGeocoding$(
-      {required final double lat,
-      required final double lon}) = _$LocationGeocoding$Impl;
+  const factory LocationGeocoding$({required final double lat, required final double lon}) = _$LocationGeocoding$Impl;
 
-  factory LocationGeocoding$.fromJson(Map<String, dynamic> json) =
-      _$LocationGeocoding$Impl.fromJson;
+  factory LocationGeocoding$.fromJson(Map<String, dynamic> json) = _$LocationGeocoding$Impl.fromJson;
 
   @override
   double get lat;
@@ -165,6 +156,5 @@ abstract class LocationGeocoding$ implements LocationGeocoding {
   double get lon;
   @override
   @JsonKey(ignore: true)
-  _$$LocationGeocoding$ImplCopyWith<_$LocationGeocoding$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LocationGeocoding$ImplCopyWith<_$LocationGeocoding$Impl> get copyWith => throw _privateConstructorUsedError;
 }

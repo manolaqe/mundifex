@@ -64,8 +64,7 @@ mixin _$GetFlowSegmentData {
 
 /// @nodoc
 abstract class $GetFlowSegmentDataCopyWith<$Res> {
-  factory $GetFlowSegmentDataCopyWith(
-          GetFlowSegmentData value, $Res Function(GetFlowSegmentData) then) =
+  factory $GetFlowSegmentDataCopyWith(GetFlowSegmentData value, $Res Function(GetFlowSegmentData) then) =
       _$GetFlowSegmentDataCopyWithImpl<$Res, GetFlowSegmentData>;
 }
 
@@ -83,19 +82,16 @@ class _$GetFlowSegmentDataCopyWithImpl<$Res, $Val extends GetFlowSegmentData>
 /// @nodoc
 abstract class _$$GetFlowSegmentDataStartImplCopyWith<$Res> {
   factory _$$GetFlowSegmentDataStartImplCopyWith(
-          _$GetFlowSegmentDataStartImpl value,
-          $Res Function(_$GetFlowSegmentDataStartImpl) then) =
+          _$GetFlowSegmentDataStartImpl value, $Res Function(_$GetFlowSegmentDataStartImpl) then) =
       __$$GetFlowSegmentDataStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetFlowSegmentDataStartImplCopyWithImpl<$Res>
-    extends _$GetFlowSegmentDataCopyWithImpl<$Res,
-        _$GetFlowSegmentDataStartImpl>
+    extends _$GetFlowSegmentDataCopyWithImpl<$Res, _$GetFlowSegmentDataStartImpl>
     implements _$$GetFlowSegmentDataStartImplCopyWith<$Res> {
   __$$GetFlowSegmentDataStartImplCopyWithImpl(
-      _$GetFlowSegmentDataStartImpl _value,
-      $Res Function(_$GetFlowSegmentDataStartImpl) _then)
+      _$GetFlowSegmentDataStartImpl _value, $Res Function(_$GetFlowSegmentDataStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -111,9 +107,7 @@ class _$GetFlowSegmentDataStartImpl implements GetFlowSegmentDataStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetFlowSegmentDataStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetFlowSegmentDataStartImpl);
   }
 
   @override
@@ -195,8 +189,7 @@ abstract class GetFlowSegmentDataStart implements GetFlowSegmentData {
 /// @nodoc
 abstract class _$$GetFlowSegmentDataSuccessfulImplCopyWith<$Res> {
   factory _$$GetFlowSegmentDataSuccessfulImplCopyWith(
-          _$GetFlowSegmentDataSuccessfulImpl value,
-          $Res Function(_$GetFlowSegmentDataSuccessfulImpl) then) =
+          _$GetFlowSegmentDataSuccessfulImpl value, $Res Function(_$GetFlowSegmentDataSuccessfulImpl) then) =
       __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({FlowSegmentData flowSegmentData});
@@ -206,12 +199,10 @@ abstract class _$$GetFlowSegmentDataSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetFlowSegmentDataCopyWithImpl<$Res,
-        _$GetFlowSegmentDataSuccessfulImpl>
+    extends _$GetFlowSegmentDataCopyWithImpl<$Res, _$GetFlowSegmentDataSuccessfulImpl>
     implements _$$GetFlowSegmentDataSuccessfulImplCopyWith<$Res> {
   __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl(
-      _$GetFlowSegmentDataSuccessfulImpl _value,
-      $Res Function(_$GetFlowSegmentDataSuccessfulImpl) _then)
+      _$GetFlowSegmentDataSuccessfulImpl _value, $Res Function(_$GetFlowSegmentDataSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -238,8 +229,7 @@ class __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetFlowSegmentDataSuccessfulImpl
-    implements GetFlowSegmentDataSuccessful {
+class _$GetFlowSegmentDataSuccessfulImpl implements GetFlowSegmentDataSuccessful {
   const _$GetFlowSegmentDataSuccessfulImpl(this.flowSegmentData);
 
   @override
@@ -255,8 +245,7 @@ class _$GetFlowSegmentDataSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetFlowSegmentDataSuccessfulImpl &&
-            (identical(other.flowSegmentData, flowSegmentData) ||
-                other.flowSegmentData == flowSegmentData));
+            (identical(other.flowSegmentData, flowSegmentData) || other.flowSegmentData == flowSegmentData));
   }
 
   @override
@@ -265,10 +254,8 @@ class _$GetFlowSegmentDataSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetFlowSegmentDataSuccessfulImplCopyWith<
-          _$GetFlowSegmentDataSuccessfulImpl>
-      get copyWith => __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl<
-          _$GetFlowSegmentDataSuccessfulImpl>(this, _$identity);
+  _$$GetFlowSegmentDataSuccessfulImplCopyWith<_$GetFlowSegmentDataSuccessfulImpl> get copyWith =>
+      __$$GetFlowSegmentDataSuccessfulImplCopyWithImpl<_$GetFlowSegmentDataSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -340,22 +327,19 @@ class _$GetFlowSegmentDataSuccessfulImpl
 }
 
 abstract class GetFlowSegmentDataSuccessful implements GetFlowSegmentData {
-  const factory GetFlowSegmentDataSuccessful(
-          final FlowSegmentData flowSegmentData) =
+  const factory GetFlowSegmentDataSuccessful(final FlowSegmentData flowSegmentData) =
       _$GetFlowSegmentDataSuccessfulImpl;
 
   FlowSegmentData get flowSegmentData;
   @JsonKey(ignore: true)
-  _$$GetFlowSegmentDataSuccessfulImplCopyWith<
-          _$GetFlowSegmentDataSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetFlowSegmentDataSuccessfulImplCopyWith<_$GetFlowSegmentDataSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetFlowSegmentDataErrorImplCopyWith<$Res> {
   factory _$$GetFlowSegmentDataErrorImplCopyWith(
-          _$GetFlowSegmentDataErrorImpl value,
-          $Res Function(_$GetFlowSegmentDataErrorImpl) then) =
+          _$GetFlowSegmentDataErrorImpl value, $Res Function(_$GetFlowSegmentDataErrorImpl) then) =
       __$$GetFlowSegmentDataErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -363,12 +347,10 @@ abstract class _$$GetFlowSegmentDataErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetFlowSegmentDataErrorImplCopyWithImpl<$Res>
-    extends _$GetFlowSegmentDataCopyWithImpl<$Res,
-        _$GetFlowSegmentDataErrorImpl>
+    extends _$GetFlowSegmentDataCopyWithImpl<$Res, _$GetFlowSegmentDataErrorImpl>
     implements _$$GetFlowSegmentDataErrorImplCopyWith<$Res> {
   __$$GetFlowSegmentDataErrorImplCopyWithImpl(
-      _$GetFlowSegmentDataErrorImpl _value,
-      $Res Function(_$GetFlowSegmentDataErrorImpl) _then)
+      _$GetFlowSegmentDataErrorImpl _value, $Res Function(_$GetFlowSegmentDataErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -408,20 +390,17 @@ class _$GetFlowSegmentDataErrorImpl implements GetFlowSegmentDataError {
         (other.runtimeType == runtimeType &&
             other is _$GetFlowSegmentDataErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetFlowSegmentDataErrorImplCopyWith<_$GetFlowSegmentDataErrorImpl>
-      get copyWith => __$$GetFlowSegmentDataErrorImplCopyWithImpl<
-          _$GetFlowSegmentDataErrorImpl>(this, _$identity);
+  _$$GetFlowSegmentDataErrorImplCopyWith<_$GetFlowSegmentDataErrorImpl> get copyWith =>
+      __$$GetFlowSegmentDataErrorImplCopyWithImpl<_$GetFlowSegmentDataErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -492,15 +471,13 @@ class _$GetFlowSegmentDataErrorImpl implements GetFlowSegmentDataError {
   }
 }
 
-abstract class GetFlowSegmentDataError
-    implements GetFlowSegmentData, ErrorAction {
-  const factory GetFlowSegmentDataError(
-          final Object error, final StackTrace stackTrace) =
+abstract class GetFlowSegmentDataError implements GetFlowSegmentData, ErrorAction {
+  const factory GetFlowSegmentDataError(final Object error, final StackTrace stackTrace) =
       _$GetFlowSegmentDataErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetFlowSegmentDataErrorImplCopyWith<_$GetFlowSegmentDataErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetFlowSegmentDataErrorImplCopyWith<_$GetFlowSegmentDataErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

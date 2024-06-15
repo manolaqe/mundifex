@@ -28,21 +28,18 @@ mixin _$ForecastElement {
   int get visibility => throw _privateConstructorUsedError;
   double get pop => throw _privateConstructorUsedError;
   Rain? get rain => throw _privateConstructorUsedError;
-  Snow? get snow =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  Snow? get snow => throw _privateConstructorUsedError; // ignore: invalid_annotation_target
   @JsonKey(name: 'dt_txt')
   String get dtTxt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ForecastElementCopyWith<ForecastElement> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ForecastElementCopyWith<ForecastElement> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ForecastElementCopyWith<$Res> {
-  factory $ForecastElementCopyWith(
-          ForecastElement value, $Res Function(ForecastElement) then) =
+  factory $ForecastElementCopyWith(ForecastElement value, $Res Function(ForecastElement) then) =
       _$ForecastElementCopyWithImpl<$Res, ForecastElement>;
   @useResult
   $Res call(
@@ -65,8 +62,7 @@ abstract class $ForecastElementCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ForecastElementCopyWithImpl<$Res, $Val extends ForecastElement>
-    implements $ForecastElementCopyWith<$Res> {
+class _$ForecastElementCopyWithImpl<$Res, $Val extends ForecastElement> implements $ForecastElementCopyWith<$Res> {
   _$ForecastElementCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -186,10 +182,8 @@ class _$ForecastElementCopyWithImpl<$Res, $Val extends ForecastElement>
 }
 
 /// @nodoc
-abstract class _$$ForecastElement$ImplCopyWith<$Res>
-    implements $ForecastElementCopyWith<$Res> {
-  factory _$$ForecastElement$ImplCopyWith(_$ForecastElement$Impl value,
-          $Res Function(_$ForecastElement$Impl) then) =
+abstract class _$$ForecastElement$ImplCopyWith<$Res> implements $ForecastElementCopyWith<$Res> {
+  factory _$$ForecastElement$ImplCopyWith(_$ForecastElement$Impl value, $Res Function(_$ForecastElement$Impl) then) =
       __$$ForecastElement$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -218,11 +212,9 @@ abstract class _$$ForecastElement$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ForecastElement$ImplCopyWithImpl<$Res>
-    extends _$ForecastElementCopyWithImpl<$Res, _$ForecastElement$Impl>
+class __$$ForecastElement$ImplCopyWithImpl<$Res> extends _$ForecastElementCopyWithImpl<$Res, _$ForecastElement$Impl>
     implements _$$ForecastElement$ImplCopyWith<$Res> {
-  __$$ForecastElement$ImplCopyWithImpl(_$ForecastElement$Impl _value,
-      $Res Function(_$ForecastElement$Impl) _then)
+  __$$ForecastElement$ImplCopyWithImpl(_$ForecastElement$Impl _value, $Res Function(_$ForecastElement$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -300,8 +292,7 @@ class _$ForecastElement$Impl implements ForecastElement$ {
       @JsonKey(name: 'dt_txt') this.dtTxt = ''})
       : _weather = weather;
 
-  factory _$ForecastElement$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$ForecastElement$ImplFromJson(json);
+  factory _$ForecastElement$Impl.fromJson(Map<String, dynamic> json) => _$$ForecastElement$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -351,8 +342,7 @@ class _$ForecastElement$Impl implements ForecastElement$ {
             const DeepCollectionEquality().equals(other._weather, _weather) &&
             (identical(other.clouds, clouds) || other.clouds == clouds) &&
             (identical(other.wind, wind) || other.wind == wind) &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility) &&
+            (identical(other.visibility, visibility) || other.visibility == visibility) &&
             (identical(other.pop, pop) || other.pop == pop) &&
             (identical(other.rain, rain) || other.rain == rain) &&
             (identical(other.snow, snow) || other.snow == snow) &&
@@ -361,25 +351,14 @@ class _$ForecastElement$Impl implements ForecastElement$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      dt,
-      main,
-      const DeepCollectionEquality().hash(_weather),
-      clouds,
-      wind,
-      visibility,
-      pop,
-      rain,
-      snow,
-      dtTxt);
+  int get hashCode => Object.hash(runtimeType, dt, main, const DeepCollectionEquality().hash(_weather), clouds, wind,
+      visibility, pop, rain, snow, dtTxt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ForecastElement$ImplCopyWith<_$ForecastElement$Impl> get copyWith =>
-      __$$ForecastElement$ImplCopyWithImpl<_$ForecastElement$Impl>(
-          this, _$identity);
+      __$$ForecastElement$ImplCopyWithImpl<_$ForecastElement$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -402,8 +381,7 @@ abstract class ForecastElement$ implements ForecastElement {
       final Snow? snow,
       @JsonKey(name: 'dt_txt') final String dtTxt}) = _$ForecastElement$Impl;
 
-  factory ForecastElement$.fromJson(Map<String, dynamic> json) =
-      _$ForecastElement$Impl.fromJson;
+  factory ForecastElement$.fromJson(Map<String, dynamic> json) = _$ForecastElement$Impl.fromJson;
 
   @override
   int get dt;
@@ -428,6 +406,5 @@ abstract class ForecastElement$ implements ForecastElement {
   String get dtTxt;
   @override
   @JsonKey(ignore: true)
-  _$$ForecastElement$ImplCopyWith<_$ForecastElement$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ForecastElement$ImplCopyWith<_$ForecastElement$Impl> get copyWith => throw _privateConstructorUsedError;
 }

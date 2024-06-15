@@ -64,14 +64,12 @@ mixin _$GetLocation {
 
 /// @nodoc
 abstract class $GetLocationCopyWith<$Res> {
-  factory $GetLocationCopyWith(
-          GetLocation value, $Res Function(GetLocation) then) =
+  factory $GetLocationCopyWith(GetLocation value, $Res Function(GetLocation) then) =
       _$GetLocationCopyWithImpl<$Res, GetLocation>;
 }
 
 /// @nodoc
-class _$GetLocationCopyWithImpl<$Res, $Val extends GetLocation>
-    implements $GetLocationCopyWith<$Res> {
+class _$GetLocationCopyWithImpl<$Res, $Val extends GetLocation> implements $GetLocationCopyWith<$Res> {
   _$GetLocationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetLocationCopyWithImpl<$Res, $Val extends GetLocation>
 
 /// @nodoc
 abstract class _$$GetLocationStartImplCopyWith<$Res> {
-  factory _$$GetLocationStartImplCopyWith(_$GetLocationStartImpl value,
-          $Res Function(_$GetLocationStartImpl) then) =
+  factory _$$GetLocationStartImplCopyWith(_$GetLocationStartImpl value, $Res Function(_$GetLocationStartImpl) then) =
       __$$GetLocationStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetLocationStartImplCopyWithImpl<$Res>
-    extends _$GetLocationCopyWithImpl<$Res, _$GetLocationStartImpl>
+class __$$GetLocationStartImplCopyWithImpl<$Res> extends _$GetLocationCopyWithImpl<$Res, _$GetLocationStartImpl>
     implements _$$GetLocationStartImplCopyWith<$Res> {
-  __$$GetLocationStartImplCopyWithImpl(_$GetLocationStartImpl _value,
-      $Res Function(_$GetLocationStartImpl) _then)
+  __$$GetLocationStartImplCopyWithImpl(_$GetLocationStartImpl _value, $Res Function(_$GetLocationStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetLocationStartImpl implements GetLocationStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetLocationStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetLocationStartImpl);
   }
 
   @override
@@ -191,8 +185,7 @@ abstract class GetLocationStart implements GetLocation {
 /// @nodoc
 abstract class _$$GetLocationSuccessfulImplCopyWith<$Res> {
   factory _$$GetLocationSuccessfulImplCopyWith(
-          _$GetLocationSuccessfulImpl value,
-          $Res Function(_$GetLocationSuccessfulImpl) then) =
+          _$GetLocationSuccessfulImpl value, $Res Function(_$GetLocationSuccessfulImpl) then) =
       __$$GetLocationSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LocationData locationData});
@@ -204,8 +197,8 @@ abstract class _$$GetLocationSuccessfulImplCopyWith<$Res> {
 class __$$GetLocationSuccessfulImplCopyWithImpl<$Res>
     extends _$GetLocationCopyWithImpl<$Res, _$GetLocationSuccessfulImpl>
     implements _$$GetLocationSuccessfulImplCopyWith<$Res> {
-  __$$GetLocationSuccessfulImplCopyWithImpl(_$GetLocationSuccessfulImpl _value,
-      $Res Function(_$GetLocationSuccessfulImpl) _then)
+  __$$GetLocationSuccessfulImplCopyWithImpl(
+      _$GetLocationSuccessfulImpl _value, $Res Function(_$GetLocationSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -248,8 +241,7 @@ class _$GetLocationSuccessfulImpl implements GetLocationSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetLocationSuccessfulImpl &&
-            (identical(other.locationData, locationData) ||
-                other.locationData == locationData));
+            (identical(other.locationData, locationData) || other.locationData == locationData));
   }
 
   @override
@@ -258,9 +250,8 @@ class _$GetLocationSuccessfulImpl implements GetLocationSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetLocationSuccessfulImplCopyWith<_$GetLocationSuccessfulImpl>
-      get copyWith => __$$GetLocationSuccessfulImplCopyWithImpl<
-          _$GetLocationSuccessfulImpl>(this, _$identity);
+  _$$GetLocationSuccessfulImplCopyWith<_$GetLocationSuccessfulImpl> get copyWith =>
+      __$$GetLocationSuccessfulImplCopyWithImpl<_$GetLocationSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -332,30 +323,25 @@ class _$GetLocationSuccessfulImpl implements GetLocationSuccessful {
 }
 
 abstract class GetLocationSuccessful implements GetLocation {
-  const factory GetLocationSuccessful(final LocationData locationData) =
-      _$GetLocationSuccessfulImpl;
+  const factory GetLocationSuccessful(final LocationData locationData) = _$GetLocationSuccessfulImpl;
 
   LocationData get locationData;
   @JsonKey(ignore: true)
-  _$$GetLocationSuccessfulImplCopyWith<_$GetLocationSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetLocationSuccessfulImplCopyWith<_$GetLocationSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetLocationErrorImplCopyWith<$Res> {
-  factory _$$GetLocationErrorImplCopyWith(_$GetLocationErrorImpl value,
-          $Res Function(_$GetLocationErrorImpl) then) =
+  factory _$$GetLocationErrorImplCopyWith(_$GetLocationErrorImpl value, $Res Function(_$GetLocationErrorImpl) then) =
       __$$GetLocationErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetLocationErrorImplCopyWithImpl<$Res>
-    extends _$GetLocationCopyWithImpl<$Res, _$GetLocationErrorImpl>
+class __$$GetLocationErrorImplCopyWithImpl<$Res> extends _$GetLocationCopyWithImpl<$Res, _$GetLocationErrorImpl>
     implements _$$GetLocationErrorImplCopyWith<$Res> {
-  __$$GetLocationErrorImplCopyWithImpl(_$GetLocationErrorImpl _value,
-      $Res Function(_$GetLocationErrorImpl) _then)
+  __$$GetLocationErrorImplCopyWithImpl(_$GetLocationErrorImpl _value, $Res Function(_$GetLocationErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -395,20 +381,17 @@ class _$GetLocationErrorImpl implements GetLocationError {
         (other.runtimeType == runtimeType &&
             other is _$GetLocationErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetLocationErrorImplCopyWith<_$GetLocationErrorImpl> get copyWith =>
-      __$$GetLocationErrorImplCopyWithImpl<_$GetLocationErrorImpl>(
-          this, _$identity);
+      __$$GetLocationErrorImplCopyWithImpl<_$GetLocationErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -480,12 +463,10 @@ class _$GetLocationErrorImpl implements GetLocationError {
 }
 
 abstract class GetLocationError implements GetLocation, ErrorAction {
-  const factory GetLocationError(
-      final Object error, final StackTrace stackTrace) = _$GetLocationErrorImpl;
+  const factory GetLocationError(final Object error, final StackTrace stackTrace) = _$GetLocationErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetLocationErrorImplCopyWith<_$GetLocationErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetLocationErrorImplCopyWith<_$GetLocationErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

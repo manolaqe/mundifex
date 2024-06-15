@@ -64,14 +64,12 @@ mixin _$AddDislike {
 
 /// @nodoc
 abstract class $AddDislikeCopyWith<$Res> {
-  factory $AddDislikeCopyWith(
-          AddDislike value, $Res Function(AddDislike) then) =
+  factory $AddDislikeCopyWith(AddDislike value, $Res Function(AddDislike) then) =
       _$AddDislikeCopyWithImpl<$Res, AddDislike>;
 }
 
 /// @nodoc
-class _$AddDislikeCopyWithImpl<$Res, $Val extends AddDislike>
-    implements $AddDislikeCopyWith<$Res> {
+class _$AddDislikeCopyWithImpl<$Res, $Val extends AddDislike> implements $AddDislikeCopyWith<$Res> {
   _$AddDislikeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,19 +80,16 @@ class _$AddDislikeCopyWithImpl<$Res, $Val extends AddDislike>
 
 /// @nodoc
 abstract class _$$AddDislikeStartImplCopyWith<$Res> {
-  factory _$$AddDislikeStartImplCopyWith(_$AddDislikeStartImpl value,
-          $Res Function(_$AddDislikeStartImpl) then) =
+  factory _$$AddDislikeStartImplCopyWith(_$AddDislikeStartImpl value, $Res Function(_$AddDislikeStartImpl) then) =
       __$$AddDislikeStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String selectedPostId});
 }
 
 /// @nodoc
-class __$$AddDislikeStartImplCopyWithImpl<$Res>
-    extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeStartImpl>
+class __$$AddDislikeStartImplCopyWithImpl<$Res> extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeStartImpl>
     implements _$$AddDislikeStartImplCopyWith<$Res> {
-  __$$AddDislikeStartImplCopyWithImpl(
-      _$AddDislikeStartImpl _value, $Res Function(_$AddDislikeStartImpl) _then)
+  __$$AddDislikeStartImplCopyWithImpl(_$AddDislikeStartImpl _value, $Res Function(_$AddDislikeStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,8 +124,7 @@ class _$AddDislikeStartImpl implements AddDislikeStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddDislikeStartImpl &&
-            (identical(other.selectedPostId, selectedPostId) ||
-                other.selectedPostId == selectedPostId));
+            (identical(other.selectedPostId, selectedPostId) || other.selectedPostId == selectedPostId));
   }
 
   @override
@@ -140,8 +134,7 @@ class _$AddDislikeStartImpl implements AddDislikeStart {
   @override
   @pragma('vm:prefer-inline')
   _$$AddDislikeStartImplCopyWith<_$AddDislikeStartImpl> get copyWith =>
-      __$$AddDislikeStartImplCopyWithImpl<_$AddDislikeStartImpl>(
-          this, _$identity);
+      __$$AddDislikeStartImplCopyWithImpl<_$AddDislikeStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -213,19 +206,17 @@ class _$AddDislikeStartImpl implements AddDislikeStart {
 }
 
 abstract class AddDislikeStart implements AddDislike {
-  const factory AddDislikeStart({required final String selectedPostId}) =
-      _$AddDislikeStartImpl;
+  const factory AddDislikeStart({required final String selectedPostId}) = _$AddDislikeStartImpl;
 
   String get selectedPostId;
   @JsonKey(ignore: true)
-  _$$AddDislikeStartImplCopyWith<_$AddDislikeStartImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddDislikeStartImplCopyWith<_$AddDislikeStartImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddDislikeSuccessfulImplCopyWith<$Res> {
-  factory _$$AddDislikeSuccessfulImplCopyWith(_$AddDislikeSuccessfulImpl value,
-          $Res Function(_$AddDislikeSuccessfulImpl) then) =
+  factory _$$AddDislikeSuccessfulImplCopyWith(
+          _$AddDislikeSuccessfulImpl value, $Res Function(_$AddDislikeSuccessfulImpl) then) =
       __$$AddDislikeSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Post post});
@@ -234,11 +225,10 @@ abstract class _$$AddDislikeSuccessfulImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AddDislikeSuccessfulImplCopyWithImpl<$Res>
-    extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeSuccessfulImpl>
+class __$$AddDislikeSuccessfulImplCopyWithImpl<$Res> extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeSuccessfulImpl>
     implements _$$AddDislikeSuccessfulImplCopyWith<$Res> {
-  __$$AddDislikeSuccessfulImplCopyWithImpl(_$AddDislikeSuccessfulImpl _value,
-      $Res Function(_$AddDislikeSuccessfulImpl) _then)
+  __$$AddDislikeSuccessfulImplCopyWithImpl(
+      _$AddDislikeSuccessfulImpl _value, $Res Function(_$AddDislikeSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -290,10 +280,8 @@ class _$AddDislikeSuccessfulImpl implements AddDislikeSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddDislikeSuccessfulImplCopyWith<_$AddDislikeSuccessfulImpl>
-      get copyWith =>
-          __$$AddDislikeSuccessfulImplCopyWithImpl<_$AddDislikeSuccessfulImpl>(
-              this, _$identity);
+  _$$AddDislikeSuccessfulImplCopyWith<_$AddDislikeSuccessfulImpl> get copyWith =>
+      __$$AddDislikeSuccessfulImplCopyWithImpl<_$AddDislikeSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -365,30 +353,25 @@ class _$AddDislikeSuccessfulImpl implements AddDislikeSuccessful {
 }
 
 abstract class AddDislikeSuccessful implements AddDislike {
-  const factory AddDislikeSuccessful(final Post post) =
-      _$AddDislikeSuccessfulImpl;
+  const factory AddDislikeSuccessful(final Post post) = _$AddDislikeSuccessfulImpl;
 
   Post get post;
   @JsonKey(ignore: true)
-  _$$AddDislikeSuccessfulImplCopyWith<_$AddDislikeSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AddDislikeSuccessfulImplCopyWith<_$AddDislikeSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AddDislikeErrorImplCopyWith<$Res> {
-  factory _$$AddDislikeErrorImplCopyWith(_$AddDislikeErrorImpl value,
-          $Res Function(_$AddDislikeErrorImpl) then) =
+  factory _$$AddDislikeErrorImplCopyWith(_$AddDislikeErrorImpl value, $Res Function(_$AddDislikeErrorImpl) then) =
       __$$AddDislikeErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$AddDislikeErrorImplCopyWithImpl<$Res>
-    extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeErrorImpl>
+class __$$AddDislikeErrorImplCopyWithImpl<$Res> extends _$AddDislikeCopyWithImpl<$Res, _$AddDislikeErrorImpl>
     implements _$$AddDislikeErrorImplCopyWith<$Res> {
-  __$$AddDislikeErrorImplCopyWithImpl(
-      _$AddDislikeErrorImpl _value, $Res Function(_$AddDislikeErrorImpl) _then)
+  __$$AddDislikeErrorImplCopyWithImpl(_$AddDislikeErrorImpl _value, $Res Function(_$AddDislikeErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -428,20 +411,17 @@ class _$AddDislikeErrorImpl implements AddDislikeError {
         (other.runtimeType == runtimeType &&
             other is _$AddDislikeErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddDislikeErrorImplCopyWith<_$AddDislikeErrorImpl> get copyWith =>
-      __$$AddDislikeErrorImplCopyWithImpl<_$AddDislikeErrorImpl>(
-          this, _$identity);
+      __$$AddDislikeErrorImplCopyWithImpl<_$AddDislikeErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -513,12 +493,10 @@ class _$AddDislikeErrorImpl implements AddDislikeError {
 }
 
 abstract class AddDislikeError implements AddDislike, ErrorAction {
-  const factory AddDislikeError(
-      final Object error, final StackTrace stackTrace) = _$AddDislikeErrorImpl;
+  const factory AddDislikeError(final Object error, final StackTrace stackTrace) = _$AddDislikeErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$AddDislikeErrorImplCopyWith<_$AddDislikeErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddDislikeErrorImplCopyWith<_$AddDislikeErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

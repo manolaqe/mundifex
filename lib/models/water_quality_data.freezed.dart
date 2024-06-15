@@ -27,22 +27,19 @@ mixin _$WaterQualityData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WaterQualityDataCopyWith<WaterQualityData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $WaterQualityDataCopyWith<WaterQualityData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WaterQualityDataCopyWith<$Res> {
-  factory $WaterQualityDataCopyWith(
-          WaterQualityData value, $Res Function(WaterQualityData) then) =
+  factory $WaterQualityDataCopyWith(WaterQualityData value, $Res Function(WaterQualityData) then) =
       _$WaterQualityDataCopyWithImpl<$Res, WaterQualityData>;
   @useResult
   $Res call({String id, String sector, String clor, String ph});
 }
 
 /// @nodoc
-class _$WaterQualityDataCopyWithImpl<$Res, $Val extends WaterQualityData>
-    implements $WaterQualityDataCopyWith<$Res> {
+class _$WaterQualityDataCopyWithImpl<$Res, $Val extends WaterQualityData> implements $WaterQualityDataCopyWith<$Res> {
   _$WaterQualityDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -80,10 +77,8 @@ class _$WaterQualityDataCopyWithImpl<$Res, $Val extends WaterQualityData>
 }
 
 /// @nodoc
-abstract class _$$WaterQualityData$ImplCopyWith<$Res>
-    implements $WaterQualityDataCopyWith<$Res> {
-  factory _$$WaterQualityData$ImplCopyWith(_$WaterQualityData$Impl value,
-          $Res Function(_$WaterQualityData$Impl) then) =
+abstract class _$$WaterQualityData$ImplCopyWith<$Res> implements $WaterQualityDataCopyWith<$Res> {
+  factory _$$WaterQualityData$ImplCopyWith(_$WaterQualityData$Impl value, $Res Function(_$WaterQualityData$Impl) then) =
       __$$WaterQualityData$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -91,11 +86,9 @@ abstract class _$$WaterQualityData$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$WaterQualityData$ImplCopyWithImpl<$Res>
-    extends _$WaterQualityDataCopyWithImpl<$Res, _$WaterQualityData$Impl>
+class __$$WaterQualityData$ImplCopyWithImpl<$Res> extends _$WaterQualityDataCopyWithImpl<$Res, _$WaterQualityData$Impl>
     implements _$$WaterQualityData$ImplCopyWith<$Res> {
-  __$$WaterQualityData$ImplCopyWithImpl(_$WaterQualityData$Impl _value,
-      $Res Function(_$WaterQualityData$Impl) _then)
+  __$$WaterQualityData$ImplCopyWithImpl(_$WaterQualityData$Impl _value, $Res Function(_$WaterQualityData$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -130,11 +123,9 @@ class __$$WaterQualityData$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$WaterQualityData$Impl implements WaterQualityData$ {
-  const _$WaterQualityData$Impl(
-      {this.id = '', this.sector = '', this.clor = '', this.ph = ''});
+  const _$WaterQualityData$Impl({this.id = '', this.sector = '', this.clor = '', this.ph = ''});
 
-  factory _$WaterQualityData$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$WaterQualityData$ImplFromJson(json);
+  factory _$WaterQualityData$Impl.fromJson(Map<String, dynamic> json) => _$$WaterQualityData$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -173,8 +164,7 @@ class _$WaterQualityData$Impl implements WaterQualityData$ {
   @override
   @pragma('vm:prefer-inline')
   _$$WaterQualityData$ImplCopyWith<_$WaterQualityData$Impl> get copyWith =>
-      __$$WaterQualityData$ImplCopyWithImpl<_$WaterQualityData$Impl>(
-          this, _$identity);
+      __$$WaterQualityData$ImplCopyWithImpl<_$WaterQualityData$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -185,14 +175,10 @@ class _$WaterQualityData$Impl implements WaterQualityData$ {
 }
 
 abstract class WaterQualityData$ implements WaterQualityData {
-  const factory WaterQualityData$(
-      {final String id,
-      final String sector,
-      final String clor,
-      final String ph}) = _$WaterQualityData$Impl;
+  const factory WaterQualityData$({final String id, final String sector, final String clor, final String ph}) =
+      _$WaterQualityData$Impl;
 
-  factory WaterQualityData$.fromJson(Map<String, dynamic> json) =
-      _$WaterQualityData$Impl.fromJson;
+  factory WaterQualityData$.fromJson(Map<String, dynamic> json) = _$WaterQualityData$Impl.fromJson;
 
   @override
   String get id;
@@ -204,6 +190,5 @@ abstract class WaterQualityData$ implements WaterQualityData {
   String get ph;
   @override
   @JsonKey(ignore: true)
-  _$$WaterQualityData$ImplCopyWith<_$WaterQualityData$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$WaterQualityData$ImplCopyWith<_$WaterQualityData$Impl> get copyWith => throw _privateConstructorUsedError;
 }

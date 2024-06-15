@@ -32,15 +32,13 @@ mixin _$Weather {
 
 /// @nodoc
 abstract class $WeatherCopyWith<$Res> {
-  factory $WeatherCopyWith(Weather value, $Res Function(Weather) then) =
-      _$WeatherCopyWithImpl<$Res, Weather>;
+  factory $WeatherCopyWith(Weather value, $Res Function(Weather) then) = _$WeatherCopyWithImpl<$Res, Weather>;
   @useResult
   $Res call({int id, String main, String description, String icon});
 }
 
 /// @nodoc
-class _$WeatherCopyWithImpl<$Res, $Val extends Weather>
-    implements $WeatherCopyWith<$Res> {
+class _$WeatherCopyWithImpl<$Res, $Val extends Weather> implements $WeatherCopyWith<$Res> {
   _$WeatherCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -79,8 +77,7 @@ class _$WeatherCopyWithImpl<$Res, $Val extends Weather>
 
 /// @nodoc
 abstract class _$$Weather$ImplCopyWith<$Res> implements $WeatherCopyWith<$Res> {
-  factory _$$Weather$ImplCopyWith(
-          _$Weather$Impl value, $Res Function(_$Weather$Impl) then) =
+  factory _$$Weather$ImplCopyWith(_$Weather$Impl value, $Res Function(_$Weather$Impl) then) =
       __$$Weather$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -88,12 +85,9 @@ abstract class _$$Weather$ImplCopyWith<$Res> implements $WeatherCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Weather$ImplCopyWithImpl<$Res>
-    extends _$WeatherCopyWithImpl<$Res, _$Weather$Impl>
+class __$$Weather$ImplCopyWithImpl<$Res> extends _$WeatherCopyWithImpl<$Res, _$Weather$Impl>
     implements _$$Weather$ImplCopyWith<$Res> {
-  __$$Weather$ImplCopyWithImpl(
-      _$Weather$Impl _value, $Res Function(_$Weather$Impl) _then)
-      : super(_value, _then);
+  __$$Weather$ImplCopyWithImpl(_$Weather$Impl _value, $Res Function(_$Weather$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -127,11 +121,9 @@ class __$$Weather$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$Weather$Impl implements Weather$ {
-  const _$Weather$Impl(
-      {this.id = 0, this.main = '', this.description = '', this.icon = ''});
+  const _$Weather$Impl({this.id = 0, this.main = '', this.description = '', this.icon = ''});
 
-  factory _$Weather$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Weather$ImplFromJson(json);
+  factory _$Weather$Impl.fromJson(Map<String, dynamic> json) => _$$Weather$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -158,8 +150,7 @@ class _$Weather$Impl implements Weather$ {
             other is _$Weather$Impl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.main, main) || other.main == main) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.description, description) || other.description == description) &&
             (identical(other.icon, icon) || other.icon == icon));
   }
 
@@ -182,14 +173,10 @@ class _$Weather$Impl implements Weather$ {
 }
 
 abstract class Weather$ implements Weather {
-  const factory Weather$(
-      {final int id,
-      final String main,
-      final String description,
-      final String icon}) = _$Weather$Impl;
+  const factory Weather$({final int id, final String main, final String description, final String icon}) =
+      _$Weather$Impl;
 
-  factory Weather$.fromJson(Map<String, dynamic> json) =
-      _$Weather$Impl.fromJson;
+  factory Weather$.fromJson(Map<String, dynamic> json) = _$Weather$Impl.fromJson;
 
   @override
   int get id;
@@ -201,6 +188,5 @@ abstract class Weather$ implements Weather {
   String get icon;
   @override
   @JsonKey(ignore: true)
-  _$$Weather$ImplCopyWith<_$Weather$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Weather$ImplCopyWith<_$Weather$Impl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -64,13 +64,11 @@ mixin _$GetPosts {
 
 /// @nodoc
 abstract class $GetPostsCopyWith<$Res> {
-  factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) =
-      _$GetPostsCopyWithImpl<$Res, GetPosts>;
+  factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) = _$GetPostsCopyWithImpl<$Res, GetPosts>;
 }
 
 /// @nodoc
-class _$GetPostsCopyWithImpl<$Res, $Val extends GetPosts>
-    implements $GetPostsCopyWith<$Res> {
+class _$GetPostsCopyWithImpl<$Res, $Val extends GetPosts> implements $GetPostsCopyWith<$Res> {
   _$GetPostsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -81,17 +79,14 @@ class _$GetPostsCopyWithImpl<$Res, $Val extends GetPosts>
 
 /// @nodoc
 abstract class _$$GetPostsStartImplCopyWith<$Res> {
-  factory _$$GetPostsStartImplCopyWith(
-          _$GetPostsStartImpl value, $Res Function(_$GetPostsStartImpl) then) =
+  factory _$$GetPostsStartImplCopyWith(_$GetPostsStartImpl value, $Res Function(_$GetPostsStartImpl) then) =
       __$$GetPostsStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetPostsStartImplCopyWithImpl<$Res>
-    extends _$GetPostsCopyWithImpl<$Res, _$GetPostsStartImpl>
+class __$$GetPostsStartImplCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res, _$GetPostsStartImpl>
     implements _$$GetPostsStartImplCopyWith<$Res> {
-  __$$GetPostsStartImplCopyWithImpl(
-      _$GetPostsStartImpl _value, $Res Function(_$GetPostsStartImpl) _then)
+  __$$GetPostsStartImplCopyWithImpl(_$GetPostsStartImpl _value, $Res Function(_$GetPostsStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -107,8 +102,7 @@ class _$GetPostsStartImpl implements GetPostsStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPostsStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetPostsStartImpl);
   }
 
   @override
@@ -189,19 +183,17 @@ abstract class GetPostsStart implements GetPosts {
 
 /// @nodoc
 abstract class _$$GetPostsSuccessfulImplCopyWith<$Res> {
-  factory _$$GetPostsSuccessfulImplCopyWith(_$GetPostsSuccessfulImpl value,
-          $Res Function(_$GetPostsSuccessfulImpl) then) =
+  factory _$$GetPostsSuccessfulImplCopyWith(
+          _$GetPostsSuccessfulImpl value, $Res Function(_$GetPostsSuccessfulImpl) then) =
       __$$GetPostsSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Post> posts});
 }
 
 /// @nodoc
-class __$$GetPostsSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetPostsCopyWithImpl<$Res, _$GetPostsSuccessfulImpl>
+class __$$GetPostsSuccessfulImplCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res, _$GetPostsSuccessfulImpl>
     implements _$$GetPostsSuccessfulImplCopyWith<$Res> {
-  __$$GetPostsSuccessfulImplCopyWithImpl(_$GetPostsSuccessfulImpl _value,
-      $Res Function(_$GetPostsSuccessfulImpl) _then)
+  __$$GetPostsSuccessfulImplCopyWithImpl(_$GetPostsSuccessfulImpl _value, $Res Function(_$GetPostsSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -245,15 +237,13 @@ class _$GetPostsSuccessfulImpl implements GetPostsSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetPostsSuccessfulImplCopyWith<_$GetPostsSuccessfulImpl> get copyWith =>
-      __$$GetPostsSuccessfulImplCopyWithImpl<_$GetPostsSuccessfulImpl>(
-          this, _$identity);
+      __$$GetPostsSuccessfulImplCopyWithImpl<_$GetPostsSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -325,30 +315,25 @@ class _$GetPostsSuccessfulImpl implements GetPostsSuccessful {
 }
 
 abstract class GetPostsSuccessful implements GetPosts {
-  const factory GetPostsSuccessful(final List<Post> posts) =
-      _$GetPostsSuccessfulImpl;
+  const factory GetPostsSuccessful(final List<Post> posts) = _$GetPostsSuccessfulImpl;
 
   List<Post> get posts;
   @JsonKey(ignore: true)
-  _$$GetPostsSuccessfulImplCopyWith<_$GetPostsSuccessfulImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetPostsSuccessfulImplCopyWith<_$GetPostsSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetPostsErrorImplCopyWith<$Res> {
-  factory _$$GetPostsErrorImplCopyWith(
-          _$GetPostsErrorImpl value, $Res Function(_$GetPostsErrorImpl) then) =
+  factory _$$GetPostsErrorImplCopyWith(_$GetPostsErrorImpl value, $Res Function(_$GetPostsErrorImpl) then) =
       __$$GetPostsErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetPostsErrorImplCopyWithImpl<$Res>
-    extends _$GetPostsCopyWithImpl<$Res, _$GetPostsErrorImpl>
+class __$$GetPostsErrorImplCopyWithImpl<$Res> extends _$GetPostsCopyWithImpl<$Res, _$GetPostsErrorImpl>
     implements _$$GetPostsErrorImplCopyWith<$Res> {
-  __$$GetPostsErrorImplCopyWithImpl(
-      _$GetPostsErrorImpl _value, $Res Function(_$GetPostsErrorImpl) _then)
+  __$$GetPostsErrorImplCopyWithImpl(_$GetPostsErrorImpl _value, $Res Function(_$GetPostsErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -388,13 +373,11 @@ class _$GetPostsErrorImpl implements GetPostsError {
         (other.runtimeType == runtimeType &&
             other is _$GetPostsErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -472,12 +455,10 @@ class _$GetPostsErrorImpl implements GetPostsError {
 }
 
 abstract class GetPostsError implements GetPosts, ErrorAction {
-  const factory GetPostsError(final Object error, final StackTrace stackTrace) =
-      _$GetPostsErrorImpl;
+  const factory GetPostsError(final Object error, final StackTrace stackTrace) = _$GetPostsErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetPostsErrorImplCopyWith<_$GetPostsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetPostsErrorImplCopyWith<_$GetPostsErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

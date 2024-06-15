@@ -25,14 +25,12 @@ mixin _$AddressCoordinates {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressCoordinatesCopyWith<AddressCoordinates> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressCoordinatesCopyWith<AddressCoordinates> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressCoordinatesCopyWith<$Res> {
-  factory $AddressCoordinatesCopyWith(
-          AddressCoordinates value, $Res Function(AddressCoordinates) then) =
+  factory $AddressCoordinatesCopyWith(AddressCoordinates value, $Res Function(AddressCoordinates) then) =
       _$AddressCoordinatesCopyWithImpl<$Res, AddressCoordinates>;
   @useResult
   $Res call({double lat, double lng});
@@ -68,10 +66,9 @@ class _$AddressCoordinatesCopyWithImpl<$Res, $Val extends AddressCoordinates>
 }
 
 /// @nodoc
-abstract class _$$AddressCoordinates$ImplCopyWith<$Res>
-    implements $AddressCoordinatesCopyWith<$Res> {
-  factory _$$AddressCoordinates$ImplCopyWith(_$AddressCoordinates$Impl value,
-          $Res Function(_$AddressCoordinates$Impl) then) =
+abstract class _$$AddressCoordinates$ImplCopyWith<$Res> implements $AddressCoordinatesCopyWith<$Res> {
+  factory _$$AddressCoordinates$ImplCopyWith(
+          _$AddressCoordinates$Impl value, $Res Function(_$AddressCoordinates$Impl) then) =
       __$$AddressCoordinates$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -82,8 +79,8 @@ abstract class _$$AddressCoordinates$ImplCopyWith<$Res>
 class __$$AddressCoordinates$ImplCopyWithImpl<$Res>
     extends _$AddressCoordinatesCopyWithImpl<$Res, _$AddressCoordinates$Impl>
     implements _$$AddressCoordinates$ImplCopyWith<$Res> {
-  __$$AddressCoordinates$ImplCopyWithImpl(_$AddressCoordinates$Impl _value,
-      $Res Function(_$AddressCoordinates$Impl) _then)
+  __$$AddressCoordinates$ImplCopyWithImpl(
+      _$AddressCoordinates$Impl _value, $Res Function(_$AddressCoordinates$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,8 +107,7 @@ class __$$AddressCoordinates$ImplCopyWithImpl<$Res>
 class _$AddressCoordinates$Impl implements AddressCoordinates$ {
   const _$AddressCoordinates$Impl({this.lat = 0.0, this.lng = 0.0});
 
-  factory _$AddressCoordinates$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AddressCoordinates$ImplFromJson(json);
+  factory _$AddressCoordinates$Impl.fromJson(Map<String, dynamic> json) => _$$AddressCoordinates$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -142,8 +138,7 @@ class _$AddressCoordinates$Impl implements AddressCoordinates$ {
   @override
   @pragma('vm:prefer-inline')
   _$$AddressCoordinates$ImplCopyWith<_$AddressCoordinates$Impl> get copyWith =>
-      __$$AddressCoordinates$ImplCopyWithImpl<_$AddressCoordinates$Impl>(
-          this, _$identity);
+      __$$AddressCoordinates$ImplCopyWithImpl<_$AddressCoordinates$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -154,11 +149,9 @@ class _$AddressCoordinates$Impl implements AddressCoordinates$ {
 }
 
 abstract class AddressCoordinates$ implements AddressCoordinates {
-  const factory AddressCoordinates$({final double lat, final double lng}) =
-      _$AddressCoordinates$Impl;
+  const factory AddressCoordinates$({final double lat, final double lng}) = _$AddressCoordinates$Impl;
 
-  factory AddressCoordinates$.fromJson(Map<String, dynamic> json) =
-      _$AddressCoordinates$Impl.fromJson;
+  factory AddressCoordinates$.fromJson(Map<String, dynamic> json) = _$AddressCoordinates$Impl.fromJson;
 
   @override
   double get lat;
@@ -166,6 +159,5 @@ abstract class AddressCoordinates$ implements AddressCoordinates {
   double get lng;
   @override
   @JsonKey(ignore: true)
-  _$$AddressCoordinates$ImplCopyWith<_$AddressCoordinates$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddressCoordinates$ImplCopyWith<_$AddressCoordinates$Impl> get copyWith => throw _privateConstructorUsedError;
 }

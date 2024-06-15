@@ -6,8 +6,7 @@ part of 'air_pollution_components.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AirPollutionComponents$Impl _$$AirPollutionComponents$ImplFromJson(
-        Map<String, dynamic> json) =>
+_$AirPollutionComponents$Impl _$$AirPollutionComponents$ImplFromJson(Map<String, dynamic> json) =>
     _$AirPollutionComponents$Impl(
       co: (json['co'] as num?)?.toDouble() ?? 0,
       no: (json['no'] as num?)?.toDouble() ?? 0,
@@ -19,9 +18,7 @@ _$AirPollutionComponents$Impl _$$AirPollutionComponents$ImplFromJson(
       nh3: (json['nh3'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$AirPollutionComponents$ImplToJson(
-        _$AirPollutionComponents$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AirPollutionComponents$ImplToJson(_$AirPollutionComponents$Impl instance) => <String, dynamic>{
       'co': instance.co,
       'no': instance.no,
       'no2': instance.no2,

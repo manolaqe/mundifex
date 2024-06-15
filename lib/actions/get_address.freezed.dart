@@ -64,14 +64,12 @@ mixin _$GetAddress {
 
 /// @nodoc
 abstract class $GetAddressCopyWith<$Res> {
-  factory $GetAddressCopyWith(
-          GetAddress value, $Res Function(GetAddress) then) =
+  factory $GetAddressCopyWith(GetAddress value, $Res Function(GetAddress) then) =
       _$GetAddressCopyWithImpl<$Res, GetAddress>;
 }
 
 /// @nodoc
-class _$GetAddressCopyWithImpl<$Res, $Val extends GetAddress>
-    implements $GetAddressCopyWith<$Res> {
+class _$GetAddressCopyWithImpl<$Res, $Val extends GetAddress> implements $GetAddressCopyWith<$Res> {
   _$GetAddressCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,17 +80,14 @@ class _$GetAddressCopyWithImpl<$Res, $Val extends GetAddress>
 
 /// @nodoc
 abstract class _$$GetAddressStartImplCopyWith<$Res> {
-  factory _$$GetAddressStartImplCopyWith(_$GetAddressStartImpl value,
-          $Res Function(_$GetAddressStartImpl) then) =
+  factory _$$GetAddressStartImplCopyWith(_$GetAddressStartImpl value, $Res Function(_$GetAddressStartImpl) then) =
       __$$GetAddressStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAddressStartImplCopyWithImpl<$Res>
-    extends _$GetAddressCopyWithImpl<$Res, _$GetAddressStartImpl>
+class __$$GetAddressStartImplCopyWithImpl<$Res> extends _$GetAddressCopyWithImpl<$Res, _$GetAddressStartImpl>
     implements _$$GetAddressStartImplCopyWith<$Res> {
-  __$$GetAddressStartImplCopyWithImpl(
-      _$GetAddressStartImpl _value, $Res Function(_$GetAddressStartImpl) _then)
+  __$$GetAddressStartImplCopyWithImpl(_$GetAddressStartImpl _value, $Res Function(_$GetAddressStartImpl) _then)
       : super(_value, _then);
 }
 
@@ -108,8 +103,7 @@ class _$GetAddressStartImpl implements GetAddressStart {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAddressStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetAddressStartImpl);
   }
 
   @override
@@ -190,8 +184,8 @@ abstract class GetAddressStart implements GetAddress {
 
 /// @nodoc
 abstract class _$$GetAddressSuccessfulImplCopyWith<$Res> {
-  factory _$$GetAddressSuccessfulImplCopyWith(_$GetAddressSuccessfulImpl value,
-          $Res Function(_$GetAddressSuccessfulImpl) then) =
+  factory _$$GetAddressSuccessfulImplCopyWith(
+          _$GetAddressSuccessfulImpl value, $Res Function(_$GetAddressSuccessfulImpl) then) =
       __$$GetAddressSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AddressData addressData});
@@ -200,11 +194,10 @@ abstract class _$$GetAddressSuccessfulImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GetAddressSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetAddressCopyWithImpl<$Res, _$GetAddressSuccessfulImpl>
+class __$$GetAddressSuccessfulImplCopyWithImpl<$Res> extends _$GetAddressCopyWithImpl<$Res, _$GetAddressSuccessfulImpl>
     implements _$$GetAddressSuccessfulImplCopyWith<$Res> {
-  __$$GetAddressSuccessfulImplCopyWithImpl(_$GetAddressSuccessfulImpl _value,
-      $Res Function(_$GetAddressSuccessfulImpl) _then)
+  __$$GetAddressSuccessfulImplCopyWithImpl(
+      _$GetAddressSuccessfulImpl _value, $Res Function(_$GetAddressSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -247,8 +240,7 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAddressSuccessfulImpl &&
-            (identical(other.addressData, addressData) ||
-                other.addressData == addressData));
+            (identical(other.addressData, addressData) || other.addressData == addressData));
   }
 
   @override
@@ -257,10 +249,8 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAddressSuccessfulImplCopyWith<_$GetAddressSuccessfulImpl>
-      get copyWith =>
-          __$$GetAddressSuccessfulImplCopyWithImpl<_$GetAddressSuccessfulImpl>(
-              this, _$identity);
+  _$$GetAddressSuccessfulImplCopyWith<_$GetAddressSuccessfulImpl> get copyWith =>
+      __$$GetAddressSuccessfulImplCopyWithImpl<_$GetAddressSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -332,30 +322,25 @@ class _$GetAddressSuccessfulImpl implements GetAddressSuccessful {
 }
 
 abstract class GetAddressSuccessful implements GetAddress {
-  const factory GetAddressSuccessful(final AddressData addressData) =
-      _$GetAddressSuccessfulImpl;
+  const factory GetAddressSuccessful(final AddressData addressData) = _$GetAddressSuccessfulImpl;
 
   AddressData get addressData;
   @JsonKey(ignore: true)
-  _$$GetAddressSuccessfulImplCopyWith<_$GetAddressSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAddressSuccessfulImplCopyWith<_$GetAddressSuccessfulImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetAddressErrorImplCopyWith<$Res> {
-  factory _$$GetAddressErrorImplCopyWith(_$GetAddressErrorImpl value,
-          $Res Function(_$GetAddressErrorImpl) then) =
+  factory _$$GetAddressErrorImplCopyWith(_$GetAddressErrorImpl value, $Res Function(_$GetAddressErrorImpl) then) =
       __$$GetAddressErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetAddressErrorImplCopyWithImpl<$Res>
-    extends _$GetAddressCopyWithImpl<$Res, _$GetAddressErrorImpl>
+class __$$GetAddressErrorImplCopyWithImpl<$Res> extends _$GetAddressCopyWithImpl<$Res, _$GetAddressErrorImpl>
     implements _$$GetAddressErrorImplCopyWith<$Res> {
-  __$$GetAddressErrorImplCopyWithImpl(
-      _$GetAddressErrorImpl _value, $Res Function(_$GetAddressErrorImpl) _then)
+  __$$GetAddressErrorImplCopyWithImpl(_$GetAddressErrorImpl _value, $Res Function(_$GetAddressErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -395,20 +380,17 @@ class _$GetAddressErrorImpl implements GetAddressError {
         (other.runtimeType == runtimeType &&
             other is _$GetAddressErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAddressErrorImplCopyWith<_$GetAddressErrorImpl> get copyWith =>
-      __$$GetAddressErrorImplCopyWithImpl<_$GetAddressErrorImpl>(
-          this, _$identity);
+      __$$GetAddressErrorImplCopyWithImpl<_$GetAddressErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -480,12 +462,10 @@ class _$GetAddressErrorImpl implements GetAddressError {
 }
 
 abstract class GetAddressError implements GetAddress, ErrorAction {
-  const factory GetAddressError(
-      final Object error, final StackTrace stackTrace) = _$GetAddressErrorImpl;
+  const factory GetAddressError(final Object error, final StackTrace stackTrace) = _$GetAddressErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetAddressErrorImplCopyWith<_$GetAddressErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetAddressErrorImplCopyWith<_$GetAddressErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -25,14 +25,12 @@ mixin _$AirPollutionElement {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AirPollutionElementCopyWith<AirPollutionElement> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AirPollutionElementCopyWith<AirPollutionElement> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AirPollutionElementCopyWith<$Res> {
-  factory $AirPollutionElementCopyWith(
-          AirPollutionElement value, $Res Function(AirPollutionElement) then) =
+  factory $AirPollutionElementCopyWith(AirPollutionElement value, $Res Function(AirPollutionElement) then) =
       _$AirPollutionElementCopyWithImpl<$Res, AirPollutionElement>;
   @useResult
   $Res call({MainPollution main, AirPollutionComponents components});
@@ -87,10 +85,9 @@ class _$AirPollutionElementCopyWithImpl<$Res, $Val extends AirPollutionElement>
 }
 
 /// @nodoc
-abstract class _$$AirPollutionElement$ImplCopyWith<$Res>
-    implements $AirPollutionElementCopyWith<$Res> {
-  factory _$$AirPollutionElement$ImplCopyWith(_$AirPollutionElement$Impl value,
-          $Res Function(_$AirPollutionElement$Impl) then) =
+abstract class _$$AirPollutionElement$ImplCopyWith<$Res> implements $AirPollutionElementCopyWith<$Res> {
+  factory _$$AirPollutionElement$ImplCopyWith(
+          _$AirPollutionElement$Impl value, $Res Function(_$AirPollutionElement$Impl) then) =
       __$$AirPollutionElement$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -106,8 +103,8 @@ abstract class _$$AirPollutionElement$ImplCopyWith<$Res>
 class __$$AirPollutionElement$ImplCopyWithImpl<$Res>
     extends _$AirPollutionElementCopyWithImpl<$Res, _$AirPollutionElement$Impl>
     implements _$$AirPollutionElement$ImplCopyWith<$Res> {
-  __$$AirPollutionElement$ImplCopyWithImpl(_$AirPollutionElement$Impl _value,
-      $Res Function(_$AirPollutionElement$Impl) _then)
+  __$$AirPollutionElement$ImplCopyWithImpl(
+      _$AirPollutionElement$Impl _value, $Res Function(_$AirPollutionElement$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,11 +129,9 @@ class __$$AirPollutionElement$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AirPollutionElement$Impl implements AirPollutionElement$ {
-  const _$AirPollutionElement$Impl(
-      {required this.main, required this.components});
+  const _$AirPollutionElement$Impl({required this.main, required this.components});
 
-  factory _$AirPollutionElement$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AirPollutionElement$ImplFromJson(json);
+  factory _$AirPollutionElement$Impl.fromJson(Map<String, dynamic> json) => _$$AirPollutionElement$ImplFromJson(json);
 
   @override
   final MainPollution main;
@@ -154,8 +149,7 @@ class _$AirPollutionElement$Impl implements AirPollutionElement$ {
         (other.runtimeType == runtimeType &&
             other is _$AirPollutionElement$Impl &&
             (identical(other.main, main) || other.main == main) &&
-            (identical(other.components, components) ||
-                other.components == components));
+            (identical(other.components, components) || other.components == components));
   }
 
   @JsonKey(ignore: true)
@@ -165,10 +159,8 @@ class _$AirPollutionElement$Impl implements AirPollutionElement$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirPollutionElement$ImplCopyWith<_$AirPollutionElement$Impl>
-      get copyWith =>
-          __$$AirPollutionElement$ImplCopyWithImpl<_$AirPollutionElement$Impl>(
-              this, _$identity);
+  _$$AirPollutionElement$ImplCopyWith<_$AirPollutionElement$Impl> get copyWith =>
+      __$$AirPollutionElement$ImplCopyWithImpl<_$AirPollutionElement$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -180,12 +172,10 @@ class _$AirPollutionElement$Impl implements AirPollutionElement$ {
 
 abstract class AirPollutionElement$ implements AirPollutionElement {
   const factory AirPollutionElement$(
-          {required final MainPollution main,
-          required final AirPollutionComponents components}) =
-      _$AirPollutionElement$Impl;
+      {required final MainPollution main,
+      required final AirPollutionComponents components}) = _$AirPollutionElement$Impl;
 
-  factory AirPollutionElement$.fromJson(Map<String, dynamic> json) =
-      _$AirPollutionElement$Impl.fromJson;
+  factory AirPollutionElement$.fromJson(Map<String, dynamic> json) = _$AirPollutionElement$Impl.fromJson;
 
   @override
   MainPollution get main;
@@ -193,6 +183,5 @@ abstract class AirPollutionElement$ implements AirPollutionElement {
   AirPollutionComponents get components;
   @override
   @JsonKey(ignore: true)
-  _$$AirPollutionElement$ImplCopyWith<_$AirPollutionElement$Impl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AirPollutionElement$ImplCopyWith<_$AirPollutionElement$Impl> get copyWith => throw _privateConstructorUsedError;
 }

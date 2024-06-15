@@ -17,8 +17,7 @@ _$City$Impl _$$City$ImplFromJson(Map<String, dynamic> json) => _$City$Impl(
       sunset: (json['sunset'] as num?)?.toInt() ?? 0,
     );
 
-Map<String, dynamic> _$$City$ImplToJson(_$City$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$City$ImplToJson(_$City$Impl instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'coord': instance.coord,

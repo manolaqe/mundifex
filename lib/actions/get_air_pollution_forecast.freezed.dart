@@ -19,24 +19,21 @@ mixin _$GetAirPollutionForecast {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(AirPollutionDataForecast airPollutionDataForecast)
-        successful,
+    required TResult Function(AirPollutionDataForecast airPollutionDataForecast) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) =>
@@ -44,8 +41,7 @@ mixin _$GetAirPollutionForecast {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetAirPollutionForecastStart value) $default, {
-    required TResult Function(GetAirPollutionForecastSuccessful value)
-        successful,
+    required TResult Function(GetAirPollutionForecastSuccessful value) successful,
     required TResult Function(GetAirPollutionForecastError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,14 +64,12 @@ mixin _$GetAirPollutionForecast {
 
 /// @nodoc
 abstract class $GetAirPollutionForecastCopyWith<$Res> {
-  factory $GetAirPollutionForecastCopyWith(GetAirPollutionForecast value,
-          $Res Function(GetAirPollutionForecast) then) =
+  factory $GetAirPollutionForecastCopyWith(GetAirPollutionForecast value, $Res Function(GetAirPollutionForecast) then) =
       _$GetAirPollutionForecastCopyWithImpl<$Res, GetAirPollutionForecast>;
 }
 
 /// @nodoc
-class _$GetAirPollutionForecastCopyWithImpl<$Res,
-        $Val extends GetAirPollutionForecast>
+class _$GetAirPollutionForecastCopyWithImpl<$Res, $Val extends GetAirPollutionForecast>
     implements $GetAirPollutionForecastCopyWith<$Res> {
   _$GetAirPollutionForecastCopyWithImpl(this._value, this._then);
 
@@ -88,26 +82,22 @@ class _$GetAirPollutionForecastCopyWithImpl<$Res,
 /// @nodoc
 abstract class _$$GetAirPollutionForecastStartImplCopyWith<$Res> {
   factory _$$GetAirPollutionForecastStartImplCopyWith(
-          _$GetAirPollutionForecastStartImpl value,
-          $Res Function(_$GetAirPollutionForecastStartImpl) then) =
+          _$GetAirPollutionForecastStartImpl value, $Res Function(_$GetAirPollutionForecastStartImpl) then) =
       __$$GetAirPollutionForecastStartImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$GetAirPollutionForecastStartImplCopyWithImpl<$Res>
-    extends _$GetAirPollutionForecastCopyWithImpl<$Res,
-        _$GetAirPollutionForecastStartImpl>
+    extends _$GetAirPollutionForecastCopyWithImpl<$Res, _$GetAirPollutionForecastStartImpl>
     implements _$$GetAirPollutionForecastStartImplCopyWith<$Res> {
   __$$GetAirPollutionForecastStartImplCopyWithImpl(
-      _$GetAirPollutionForecastStartImpl _value,
-      $Res Function(_$GetAirPollutionForecastStartImpl) _then)
+      _$GetAirPollutionForecastStartImpl _value, $Res Function(_$GetAirPollutionForecastStartImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAirPollutionForecastStartImpl
-    implements GetAirPollutionForecastStart {
+class _$GetAirPollutionForecastStartImpl implements GetAirPollutionForecastStart {
   const _$GetAirPollutionForecastStartImpl();
 
   @override
@@ -117,9 +107,7 @@ class _$GetAirPollutionForecastStartImpl
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAirPollutionForecastStartImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetAirPollutionForecastStartImpl);
   }
 
   @override
@@ -129,8 +117,7 @@ class _$GetAirPollutionForecastStartImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(AirPollutionDataForecast airPollutionDataForecast)
-        successful,
+    required TResult Function(AirPollutionDataForecast airPollutionDataForecast) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return $default();
@@ -140,8 +127,7 @@ class _$GetAirPollutionForecastStartImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return $default?.call();
@@ -151,8 +137,7 @@ class _$GetAirPollutionForecastStartImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -166,8 +151,7 @@ class _$GetAirPollutionForecastStartImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetAirPollutionForecastStart value) $default, {
-    required TResult Function(GetAirPollutionForecastSuccessful value)
-        successful,
+    required TResult Function(GetAirPollutionForecastSuccessful value) successful,
     required TResult Function(GetAirPollutionForecastError value) error,
   }) {
     return $default(this);
@@ -199,15 +183,13 @@ class _$GetAirPollutionForecastStartImpl
 }
 
 abstract class GetAirPollutionForecastStart implements GetAirPollutionForecast {
-  const factory GetAirPollutionForecastStart() =
-      _$GetAirPollutionForecastStartImpl;
+  const factory GetAirPollutionForecastStart() = _$GetAirPollutionForecastStartImpl;
 }
 
 /// @nodoc
 abstract class _$$GetAirPollutionForecastSuccessfulImplCopyWith<$Res> {
   factory _$$GetAirPollutionForecastSuccessfulImplCopyWith(
-          _$GetAirPollutionForecastSuccessfulImpl value,
-          $Res Function(_$GetAirPollutionForecastSuccessfulImpl) then) =
+          _$GetAirPollutionForecastSuccessfulImpl value, $Res Function(_$GetAirPollutionForecastSuccessfulImpl) then) =
       __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AirPollutionDataForecast airPollutionDataForecast});
@@ -217,12 +199,10 @@ abstract class _$$GetAirPollutionForecastSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<$Res>
-    extends _$GetAirPollutionForecastCopyWithImpl<$Res,
-        _$GetAirPollutionForecastSuccessfulImpl>
+    extends _$GetAirPollutionForecastCopyWithImpl<$Res, _$GetAirPollutionForecastSuccessfulImpl>
     implements _$$GetAirPollutionForecastSuccessfulImplCopyWith<$Res> {
   __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl(
-      _$GetAirPollutionForecastSuccessfulImpl _value,
-      $Res Function(_$GetAirPollutionForecastSuccessfulImpl) _then)
+      _$GetAirPollutionForecastSuccessfulImpl _value, $Res Function(_$GetAirPollutionForecastSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -241,8 +221,7 @@ class __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $AirPollutionDataForecastCopyWith<$Res> get airPollutionDataForecast {
-    return $AirPollutionDataForecastCopyWith<$Res>(
-        _value.airPollutionDataForecast, (value) {
+    return $AirPollutionDataForecastCopyWith<$Res>(_value.airPollutionDataForecast, (value) {
       return _then(_value.copyWith(airPollutionDataForecast: value));
     });
   }
@@ -250,8 +229,7 @@ class __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAirPollutionForecastSuccessfulImpl
-    implements GetAirPollutionForecastSuccessful {
+class _$GetAirPollutionForecastSuccessfulImpl implements GetAirPollutionForecastSuccessful {
   const _$GetAirPollutionForecastSuccessfulImpl(this.airPollutionDataForecast);
 
   @override
@@ -267,8 +245,7 @@ class _$GetAirPollutionForecastSuccessfulImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAirPollutionForecastSuccessfulImpl &&
-            (identical(
-                    other.airPollutionDataForecast, airPollutionDataForecast) ||
+            (identical(other.airPollutionDataForecast, airPollutionDataForecast) ||
                 other.airPollutionDataForecast == airPollutionDataForecast));
   }
 
@@ -278,17 +255,14 @@ class _$GetAirPollutionForecastSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAirPollutionForecastSuccessfulImplCopyWith<
-          _$GetAirPollutionForecastSuccessfulImpl>
-      get copyWith => __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<
-          _$GetAirPollutionForecastSuccessfulImpl>(this, _$identity);
+  _$$GetAirPollutionForecastSuccessfulImplCopyWith<_$GetAirPollutionForecastSuccessfulImpl> get copyWith =>
+      __$$GetAirPollutionForecastSuccessfulImplCopyWithImpl<_$GetAirPollutionForecastSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(AirPollutionDataForecast airPollutionDataForecast)
-        successful,
+    required TResult Function(AirPollutionDataForecast airPollutionDataForecast) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return successful(airPollutionDataForecast);
@@ -298,8 +272,7 @@ class _$GetAirPollutionForecastSuccessfulImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return successful?.call(airPollutionDataForecast);
@@ -309,8 +282,7 @@ class _$GetAirPollutionForecastSuccessfulImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -324,8 +296,7 @@ class _$GetAirPollutionForecastSuccessfulImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetAirPollutionForecastStart value) $default, {
-    required TResult Function(GetAirPollutionForecastSuccessful value)
-        successful,
+    required TResult Function(GetAirPollutionForecastSuccessful value) successful,
     required TResult Function(GetAirPollutionForecastError value) error,
   }) {
     return successful(this);
@@ -356,24 +327,20 @@ class _$GetAirPollutionForecastSuccessfulImpl
   }
 }
 
-abstract class GetAirPollutionForecastSuccessful
-    implements GetAirPollutionForecast {
-  const factory GetAirPollutionForecastSuccessful(
-          final AirPollutionDataForecast airPollutionDataForecast) =
+abstract class GetAirPollutionForecastSuccessful implements GetAirPollutionForecast {
+  const factory GetAirPollutionForecastSuccessful(final AirPollutionDataForecast airPollutionDataForecast) =
       _$GetAirPollutionForecastSuccessfulImpl;
 
   AirPollutionDataForecast get airPollutionDataForecast;
   @JsonKey(ignore: true)
-  _$$GetAirPollutionForecastSuccessfulImplCopyWith<
-          _$GetAirPollutionForecastSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAirPollutionForecastSuccessfulImplCopyWith<_$GetAirPollutionForecastSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetAirPollutionForecastErrorImplCopyWith<$Res> {
   factory _$$GetAirPollutionForecastErrorImplCopyWith(
-          _$GetAirPollutionForecastErrorImpl value,
-          $Res Function(_$GetAirPollutionForecastErrorImpl) then) =
+          _$GetAirPollutionForecastErrorImpl value, $Res Function(_$GetAirPollutionForecastErrorImpl) then) =
       __$$GetAirPollutionForecastErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -381,12 +348,10 @@ abstract class _$$GetAirPollutionForecastErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$GetAirPollutionForecastErrorImplCopyWithImpl<$Res>
-    extends _$GetAirPollutionForecastCopyWithImpl<$Res,
-        _$GetAirPollutionForecastErrorImpl>
+    extends _$GetAirPollutionForecastCopyWithImpl<$Res, _$GetAirPollutionForecastErrorImpl>
     implements _$$GetAirPollutionForecastErrorImplCopyWith<$Res> {
   __$$GetAirPollutionForecastErrorImplCopyWithImpl(
-      _$GetAirPollutionForecastErrorImpl _value,
-      $Res Function(_$GetAirPollutionForecastErrorImpl) _then)
+      _$GetAirPollutionForecastErrorImpl _value, $Res Function(_$GetAirPollutionForecastErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -407,8 +372,7 @@ class __$$GetAirPollutionForecastErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAirPollutionForecastErrorImpl
-    implements GetAirPollutionForecastError {
+class _$GetAirPollutionForecastErrorImpl implements GetAirPollutionForecastError {
   const _$GetAirPollutionForecastErrorImpl(this.error, this.stackTrace);
 
   @override
@@ -427,28 +391,23 @@ class _$GetAirPollutionForecastErrorImpl
         (other.runtimeType == runtimeType &&
             other is _$GetAirPollutionForecastErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAirPollutionForecastErrorImplCopyWith<
-          _$GetAirPollutionForecastErrorImpl>
-      get copyWith => __$$GetAirPollutionForecastErrorImplCopyWithImpl<
-          _$GetAirPollutionForecastErrorImpl>(this, _$identity);
+  _$$GetAirPollutionForecastErrorImplCopyWith<_$GetAirPollutionForecastErrorImpl> get copyWith =>
+      __$$GetAirPollutionForecastErrorImplCopyWithImpl<_$GetAirPollutionForecastErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(AirPollutionDataForecast airPollutionDataForecast)
-        successful,
+    required TResult Function(AirPollutionDataForecast airPollutionDataForecast) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
     return error(this.error, stackTrace);
@@ -458,8 +417,7 @@ class _$GetAirPollutionForecastErrorImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult? Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
     return error?.call(this.error, stackTrace);
@@ -469,8 +427,7 @@ class _$GetAirPollutionForecastErrorImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(AirPollutionDataForecast airPollutionDataForecast)?
-        successful,
+    TResult Function(AirPollutionDataForecast airPollutionDataForecast)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
   }) {
@@ -484,8 +441,7 @@ class _$GetAirPollutionForecastErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(GetAirPollutionForecastStart value) $default, {
-    required TResult Function(GetAirPollutionForecastSuccessful value)
-        successful,
+    required TResult Function(GetAirPollutionForecastSuccessful value) successful,
     required TResult Function(GetAirPollutionForecastError value) error,
   }) {
     return error(this);
@@ -516,16 +472,13 @@ class _$GetAirPollutionForecastErrorImpl
   }
 }
 
-abstract class GetAirPollutionForecastError
-    implements GetAirPollutionForecast, ErrorAction {
-  const factory GetAirPollutionForecastError(
-          final Object error, final StackTrace stackTrace) =
+abstract class GetAirPollutionForecastError implements GetAirPollutionForecast, ErrorAction {
+  const factory GetAirPollutionForecastError(final Object error, final StackTrace stackTrace) =
       _$GetAirPollutionForecastErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetAirPollutionForecastErrorImplCopyWith<
-          _$GetAirPollutionForecastErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GetAirPollutionForecastErrorImplCopyWith<_$GetAirPollutionForecastErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

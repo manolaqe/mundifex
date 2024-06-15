@@ -31,15 +31,13 @@ mixin _$Wind {
 
 /// @nodoc
 abstract class $WindCopyWith<$Res> {
-  factory $WindCopyWith(Wind value, $Res Function(Wind) then) =
-      _$WindCopyWithImpl<$Res, Wind>;
+  factory $WindCopyWith(Wind value, $Res Function(Wind) then) = _$WindCopyWithImpl<$Res, Wind>;
   @useResult
   $Res call({double speed, int deg, double gust});
 }
 
 /// @nodoc
-class _$WindCopyWithImpl<$Res, $Val extends Wind>
-    implements $WindCopyWith<$Res> {
+class _$WindCopyWithImpl<$Res, $Val extends Wind> implements $WindCopyWith<$Res> {
   _$WindCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -73,21 +71,16 @@ class _$WindCopyWithImpl<$Res, $Val extends Wind>
 
 /// @nodoc
 abstract class _$$Wind$ImplCopyWith<$Res> implements $WindCopyWith<$Res> {
-  factory _$$Wind$ImplCopyWith(
-          _$Wind$Impl value, $Res Function(_$Wind$Impl) then) =
-      __$$Wind$ImplCopyWithImpl<$Res>;
+  factory _$$Wind$ImplCopyWith(_$Wind$Impl value, $Res Function(_$Wind$Impl) then) = __$$Wind$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double speed, int deg, double gust});
 }
 
 /// @nodoc
-class __$$Wind$ImplCopyWithImpl<$Res>
-    extends _$WindCopyWithImpl<$Res, _$Wind$Impl>
+class __$$Wind$ImplCopyWithImpl<$Res> extends _$WindCopyWithImpl<$Res, _$Wind$Impl>
     implements _$$Wind$ImplCopyWith<$Res> {
-  __$$Wind$ImplCopyWithImpl(
-      _$Wind$Impl _value, $Res Function(_$Wind$Impl) _then)
-      : super(_value, _then);
+  __$$Wind$ImplCopyWithImpl(_$Wind$Impl _value, $Res Function(_$Wind$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -118,8 +111,7 @@ class __$$Wind$ImplCopyWithImpl<$Res>
 class _$Wind$Impl implements Wind$ {
   const _$Wind$Impl({this.speed = 0, this.deg = 0, this.gust = 0});
 
-  factory _$Wind$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Wind$ImplFromJson(json);
+  factory _$Wind$Impl.fromJson(Map<String, dynamic> json) => _$$Wind$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -153,8 +145,7 @@ class _$Wind$Impl implements Wind$ {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Wind$ImplCopyWith<_$Wind$Impl> get copyWith =>
-      __$$Wind$ImplCopyWithImpl<_$Wind$Impl>(this, _$identity);
+  _$$Wind$ImplCopyWith<_$Wind$Impl> get copyWith => __$$Wind$ImplCopyWithImpl<_$Wind$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -165,8 +156,7 @@ class _$Wind$Impl implements Wind$ {
 }
 
 abstract class Wind$ implements Wind {
-  const factory Wind$({final double speed, final int deg, final double gust}) =
-      _$Wind$Impl;
+  const factory Wind$({final double speed, final int deg, final double gust}) = _$Wind$Impl;
 
   factory Wind$.fromJson(Map<String, dynamic> json) = _$Wind$Impl.fromJson;
 
@@ -178,6 +168,5 @@ abstract class Wind$ implements Wind {
   double get gust;
   @override
   @JsonKey(ignore: true)
-  _$$Wind$ImplCopyWith<_$Wind$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Wind$ImplCopyWith<_$Wind$Impl> get copyWith => throw _privateConstructorUsedError;
 }

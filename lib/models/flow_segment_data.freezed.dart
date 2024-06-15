@@ -30,14 +30,12 @@ mixin _$FlowSegmentData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FlowSegmentDataCopyWith<FlowSegmentData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FlowSegmentDataCopyWith<FlowSegmentData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FlowSegmentDataCopyWith<$Res> {
-  factory $FlowSegmentDataCopyWith(
-          FlowSegmentData value, $Res Function(FlowSegmentData) then) =
+  factory $FlowSegmentDataCopyWith(FlowSegmentData value, $Res Function(FlowSegmentData) then) =
       _$FlowSegmentDataCopyWithImpl<$Res, FlowSegmentData>;
   @useResult
   $Res call(
@@ -51,8 +49,7 @@ abstract class $FlowSegmentDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FlowSegmentDataCopyWithImpl<$Res, $Val extends FlowSegmentData>
-    implements $FlowSegmentDataCopyWith<$Res> {
+class _$FlowSegmentDataCopyWithImpl<$Res, $Val extends FlowSegmentData> implements $FlowSegmentDataCopyWith<$Res> {
   _$FlowSegmentDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -105,10 +102,8 @@ class _$FlowSegmentDataCopyWithImpl<$Res, $Val extends FlowSegmentData>
 }
 
 /// @nodoc
-abstract class _$$FlowSegmentData$ImplCopyWith<$Res>
-    implements $FlowSegmentDataCopyWith<$Res> {
-  factory _$$FlowSegmentData$ImplCopyWith(_$FlowSegmentData$Impl value,
-          $Res Function(_$FlowSegmentData$Impl) then) =
+abstract class _$$FlowSegmentData$ImplCopyWith<$Res> implements $FlowSegmentDataCopyWith<$Res> {
+  factory _$$FlowSegmentData$ImplCopyWith(_$FlowSegmentData$Impl value, $Res Function(_$FlowSegmentData$Impl) then) =
       __$$FlowSegmentData$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -123,11 +118,9 @@ abstract class _$$FlowSegmentData$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlowSegmentData$ImplCopyWithImpl<$Res>
-    extends _$FlowSegmentDataCopyWithImpl<$Res, _$FlowSegmentData$Impl>
+class __$$FlowSegmentData$ImplCopyWithImpl<$Res> extends _$FlowSegmentDataCopyWithImpl<$Res, _$FlowSegmentData$Impl>
     implements _$$FlowSegmentData$ImplCopyWith<$Res> {
-  __$$FlowSegmentData$ImplCopyWithImpl(_$FlowSegmentData$Impl _value,
-      $Res Function(_$FlowSegmentData$Impl) _then)
+  __$$FlowSegmentData$ImplCopyWithImpl(_$FlowSegmentData$Impl _value, $Res Function(_$FlowSegmentData$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -186,8 +179,7 @@ class _$FlowSegmentData$Impl implements FlowSegmentData$ {
       this.confidence = 0,
       this.roadClosure = false});
 
-  factory _$FlowSegmentData$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$FlowSegmentData$ImplFromJson(json);
+  factory _$FlowSegmentData$Impl.fromJson(Map<String, dynamic> json) => _$$FlowSegmentData$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -222,31 +214,25 @@ class _$FlowSegmentData$Impl implements FlowSegmentData$ {
         (other.runtimeType == runtimeType &&
             other is _$FlowSegmentData$Impl &&
             (identical(other.frc, frc) || other.frc == frc) &&
-            (identical(other.currentSpeed, currentSpeed) ||
-                other.currentSpeed == currentSpeed) &&
-            (identical(other.freeFlowSpeed, freeFlowSpeed) ||
-                other.freeFlowSpeed == freeFlowSpeed) &&
-            (identical(other.currentTravelTime, currentTravelTime) ||
-                other.currentTravelTime == currentTravelTime) &&
+            (identical(other.currentSpeed, currentSpeed) || other.currentSpeed == currentSpeed) &&
+            (identical(other.freeFlowSpeed, freeFlowSpeed) || other.freeFlowSpeed == freeFlowSpeed) &&
+            (identical(other.currentTravelTime, currentTravelTime) || other.currentTravelTime == currentTravelTime) &&
             (identical(other.freeFlowTravelTime, freeFlowTravelTime) ||
                 other.freeFlowTravelTime == freeFlowTravelTime) &&
-            (identical(other.confidence, confidence) ||
-                other.confidence == confidence) &&
-            (identical(other.roadClosure, roadClosure) ||
-                other.roadClosure == roadClosure));
+            (identical(other.confidence, confidence) || other.confidence == confidence) &&
+            (identical(other.roadClosure, roadClosure) || other.roadClosure == roadClosure));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, frc, currentSpeed, freeFlowSpeed,
-      currentTravelTime, freeFlowTravelTime, confidence, roadClosure);
+  int get hashCode => Object.hash(
+      runtimeType, frc, currentSpeed, freeFlowSpeed, currentTravelTime, freeFlowTravelTime, confidence, roadClosure);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlowSegmentData$ImplCopyWith<_$FlowSegmentData$Impl> get copyWith =>
-      __$$FlowSegmentData$ImplCopyWithImpl<_$FlowSegmentData$Impl>(
-          this, _$identity);
+      __$$FlowSegmentData$ImplCopyWithImpl<_$FlowSegmentData$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -266,8 +252,7 @@ abstract class FlowSegmentData$ implements FlowSegmentData {
       final double confidence,
       final bool roadClosure}) = _$FlowSegmentData$Impl;
 
-  factory FlowSegmentData$.fromJson(Map<String, dynamic> json) =
-      _$FlowSegmentData$Impl.fromJson;
+  factory FlowSegmentData$.fromJson(Map<String, dynamic> json) = _$FlowSegmentData$Impl.fromJson;
 
   @override
   String get frc;
@@ -285,6 +270,5 @@ abstract class FlowSegmentData$ implements FlowSegmentData {
   bool get roadClosure;
   @override
   @JsonKey(ignore: true)
-  _$$FlowSegmentData$ImplCopyWith<_$FlowSegmentData$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FlowSegmentData$ImplCopyWith<_$FlowSegmentData$Impl> get copyWith => throw _privateConstructorUsedError;
 }

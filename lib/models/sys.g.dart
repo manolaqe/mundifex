@@ -14,8 +14,7 @@ _$Sys$Impl _$$Sys$ImplFromJson(Map<String, dynamic> json) => _$Sys$Impl(
       sunset: (json['sunset'] as num?)?.toInt() ?? 0,
     );
 
-Map<String, dynamic> _$$Sys$ImplToJson(_$Sys$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Sys$ImplToJson(_$Sys$Impl instance) => <String, dynamic>{
       'type': instance.type,
       'id': instance.id,
       'country': instance.country,

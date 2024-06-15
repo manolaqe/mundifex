@@ -25,22 +25,19 @@ mixin _$AddressData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressDataCopyWith<AddressData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressDataCopyWith<AddressData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressDataCopyWith<$Res> {
-  factory $AddressDataCopyWith(
-          AddressData value, $Res Function(AddressData) then) =
+  factory $AddressDataCopyWith(AddressData value, $Res Function(AddressData) then) =
       _$AddressDataCopyWithImpl<$Res, AddressData>;
   @useResult
   $Res call({List<AddressResult> results, String status});
 }
 
 /// @nodoc
-class _$AddressDataCopyWithImpl<$Res, $Val extends AddressData>
-    implements $AddressDataCopyWith<$Res> {
+class _$AddressDataCopyWithImpl<$Res, $Val extends AddressData> implements $AddressDataCopyWith<$Res> {
   _$AddressDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -68,10 +65,8 @@ class _$AddressDataCopyWithImpl<$Res, $Val extends AddressData>
 }
 
 /// @nodoc
-abstract class _$$AddressData$ImplCopyWith<$Res>
-    implements $AddressDataCopyWith<$Res> {
-  factory _$$AddressData$ImplCopyWith(
-          _$AddressData$Impl value, $Res Function(_$AddressData$Impl) then) =
+abstract class _$$AddressData$ImplCopyWith<$Res> implements $AddressDataCopyWith<$Res> {
+  factory _$$AddressData$ImplCopyWith(_$AddressData$Impl value, $Res Function(_$AddressData$Impl) then) =
       __$$AddressData$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -79,11 +74,9 @@ abstract class _$$AddressData$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AddressData$ImplCopyWithImpl<$Res>
-    extends _$AddressDataCopyWithImpl<$Res, _$AddressData$Impl>
+class __$$AddressData$ImplCopyWithImpl<$Res> extends _$AddressDataCopyWithImpl<$Res, _$AddressData$Impl>
     implements _$$AddressData$ImplCopyWith<$Res> {
-  __$$AddressData$ImplCopyWithImpl(
-      _$AddressData$Impl _value, $Res Function(_$AddressData$Impl) _then)
+  __$$AddressData$ImplCopyWithImpl(_$AddressData$Impl _value, $Res Function(_$AddressData$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,13 +101,10 @@ class __$$AddressData$ImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AddressData$Impl implements AddressData$ {
-  const _$AddressData$Impl(
-      {final List<AddressResult> results = const <AddressResult>[],
-      this.status = ''})
+  const _$AddressData$Impl({final List<AddressResult> results = const <AddressResult>[], this.status = ''})
       : _results = results;
 
-  factory _$AddressData$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AddressData$ImplFromJson(json);
+  factory _$AddressData$Impl.fromJson(Map<String, dynamic> json) => _$$AddressData$ImplFromJson(json);
 
   final List<AddressResult> _results;
   @override
@@ -145,8 +135,7 @@ class _$AddressData$Impl implements AddressData$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_results), status);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_results), status);
 
   @JsonKey(ignore: true)
   @override
@@ -163,12 +152,9 @@ class _$AddressData$Impl implements AddressData$ {
 }
 
 abstract class AddressData$ implements AddressData {
-  const factory AddressData$(
-      {final List<AddressResult> results,
-      final String status}) = _$AddressData$Impl;
+  const factory AddressData$({final List<AddressResult> results, final String status}) = _$AddressData$Impl;
 
-  factory AddressData$.fromJson(Map<String, dynamic> json) =
-      _$AddressData$Impl.fromJson;
+  factory AddressData$.fromJson(Map<String, dynamic> json) = _$AddressData$Impl.fromJson;
 
   @override
   List<AddressResult> get results;
@@ -176,6 +162,5 @@ abstract class AddressData$ implements AddressData {
   String get status;
   @override
   @JsonKey(ignore: true)
-  _$$AddressData$ImplCopyWith<_$AddressData$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddressData$ImplCopyWith<_$AddressData$Impl> get copyWith => throw _privateConstructorUsedError;
 }

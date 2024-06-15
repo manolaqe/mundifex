@@ -24,22 +24,19 @@ mixin _$MainPollution {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MainPollutionCopyWith<MainPollution> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MainPollutionCopyWith<MainPollution> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MainPollutionCopyWith<$Res> {
-  factory $MainPollutionCopyWith(
-          MainPollution value, $Res Function(MainPollution) then) =
+  factory $MainPollutionCopyWith(MainPollution value, $Res Function(MainPollution) then) =
       _$MainPollutionCopyWithImpl<$Res, MainPollution>;
   @useResult
   $Res call({int aqi});
 }
 
 /// @nodoc
-class _$MainPollutionCopyWithImpl<$Res, $Val extends MainPollution>
-    implements $MainPollutionCopyWith<$Res> {
+class _$MainPollutionCopyWithImpl<$Res, $Val extends MainPollution> implements $MainPollutionCopyWith<$Res> {
   _$MainPollutionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -62,10 +59,8 @@ class _$MainPollutionCopyWithImpl<$Res, $Val extends MainPollution>
 }
 
 /// @nodoc
-abstract class _$$MainPollution$ImplCopyWith<$Res>
-    implements $MainPollutionCopyWith<$Res> {
-  factory _$$MainPollution$ImplCopyWith(_$MainPollution$Impl value,
-          $Res Function(_$MainPollution$Impl) then) =
+abstract class _$$MainPollution$ImplCopyWith<$Res> implements $MainPollutionCopyWith<$Res> {
+  factory _$$MainPollution$ImplCopyWith(_$MainPollution$Impl value, $Res Function(_$MainPollution$Impl) then) =
       __$$MainPollution$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -73,11 +68,9 @@ abstract class _$$MainPollution$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MainPollution$ImplCopyWithImpl<$Res>
-    extends _$MainPollutionCopyWithImpl<$Res, _$MainPollution$Impl>
+class __$$MainPollution$ImplCopyWithImpl<$Res> extends _$MainPollutionCopyWithImpl<$Res, _$MainPollution$Impl>
     implements _$$MainPollution$ImplCopyWith<$Res> {
-  __$$MainPollution$ImplCopyWithImpl(
-      _$MainPollution$Impl _value, $Res Function(_$MainPollution$Impl) _then)
+  __$$MainPollution$ImplCopyWithImpl(_$MainPollution$Impl _value, $Res Function(_$MainPollution$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,8 +92,7 @@ class __$$MainPollution$ImplCopyWithImpl<$Res>
 class _$MainPollution$Impl implements MainPollution$ {
   const _$MainPollution$Impl({this.aqi = 0});
 
-  factory _$MainPollution$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$MainPollution$ImplFromJson(json);
+  factory _$MainPollution$Impl.fromJson(Map<String, dynamic> json) => _$$MainPollution$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -127,8 +119,7 @@ class _$MainPollution$Impl implements MainPollution$ {
   @override
   @pragma('vm:prefer-inline')
   _$$MainPollution$ImplCopyWith<_$MainPollution$Impl> get copyWith =>
-      __$$MainPollution$ImplCopyWithImpl<_$MainPollution$Impl>(
-          this, _$identity);
+      __$$MainPollution$ImplCopyWithImpl<_$MainPollution$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -141,13 +132,11 @@ class _$MainPollution$Impl implements MainPollution$ {
 abstract class MainPollution$ implements MainPollution {
   const factory MainPollution$({final int aqi}) = _$MainPollution$Impl;
 
-  factory MainPollution$.fromJson(Map<String, dynamic> json) =
-      _$MainPollution$Impl.fromJson;
+  factory MainPollution$.fromJson(Map<String, dynamic> json) = _$MainPollution$Impl.fromJson;
 
   @override
   int get aqi;
   @override
   @JsonKey(ignore: true)
-  _$$MainPollution$ImplCopyWith<_$MainPollution$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MainPollution$ImplCopyWith<_$MainPollution$Impl> get copyWith => throw _privateConstructorUsedError;
 }

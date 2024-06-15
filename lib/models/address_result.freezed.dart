@@ -21,8 +21,7 @@ AddressResult _$AddressResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AddressResult {
   @JsonKey(name: 'address_components')
-  List<AddressComponent> get addressComponents =>
-      throw _privateConstructorUsedError;
+  List<AddressComponent> get addressComponents => throw _privateConstructorUsedError;
   @JsonKey(name: 'formatted_address')
   String get formattedAddress => throw _privateConstructorUsedError;
   Geometry get geometry => throw _privateConstructorUsedError;
@@ -32,19 +31,16 @@ mixin _$AddressResult {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressResultCopyWith<AddressResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressResultCopyWith<AddressResult> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressResultCopyWith<$Res> {
-  factory $AddressResultCopyWith(
-          AddressResult value, $Res Function(AddressResult) then) =
+  factory $AddressResultCopyWith(AddressResult value, $Res Function(AddressResult) then) =
       _$AddressResultCopyWithImpl<$Res, AddressResult>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'address_components')
-      List<AddressComponent> addressComponents,
+      {@JsonKey(name: 'address_components') List<AddressComponent> addressComponents,
       @JsonKey(name: 'formatted_address') String formattedAddress,
       Geometry geometry,
       @JsonKey(name: 'place_id') String placeId,
@@ -54,8 +50,7 @@ abstract class $AddressResultCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddressResultCopyWithImpl<$Res, $Val extends AddressResult>
-    implements $AddressResultCopyWith<$Res> {
+class _$AddressResultCopyWithImpl<$Res, $Val extends AddressResult> implements $AddressResultCopyWith<$Res> {
   _$AddressResultCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -106,16 +101,13 @@ class _$AddressResultCopyWithImpl<$Res, $Val extends AddressResult>
 }
 
 /// @nodoc
-abstract class _$$AddressResult$ImplCopyWith<$Res>
-    implements $AddressResultCopyWith<$Res> {
-  factory _$$AddressResult$ImplCopyWith(_$AddressResult$Impl value,
-          $Res Function(_$AddressResult$Impl) then) =
+abstract class _$$AddressResult$ImplCopyWith<$Res> implements $AddressResultCopyWith<$Res> {
+  factory _$$AddressResult$ImplCopyWith(_$AddressResult$Impl value, $Res Function(_$AddressResult$Impl) then) =
       __$$AddressResult$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'address_components')
-      List<AddressComponent> addressComponents,
+      {@JsonKey(name: 'address_components') List<AddressComponent> addressComponents,
       @JsonKey(name: 'formatted_address') String formattedAddress,
       Geometry geometry,
       @JsonKey(name: 'place_id') String placeId,
@@ -126,11 +118,9 @@ abstract class _$$AddressResult$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AddressResult$ImplCopyWithImpl<$Res>
-    extends _$AddressResultCopyWithImpl<$Res, _$AddressResult$Impl>
+class __$$AddressResult$ImplCopyWithImpl<$Res> extends _$AddressResultCopyWithImpl<$Res, _$AddressResult$Impl>
     implements _$$AddressResult$ImplCopyWith<$Res> {
-  __$$AddressResult$ImplCopyWithImpl(
-      _$AddressResult$Impl _value, $Res Function(_$AddressResult$Impl) _then)
+  __$$AddressResult$ImplCopyWithImpl(_$AddressResult$Impl _value, $Res Function(_$AddressResult$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -171,9 +161,7 @@ class __$$AddressResult$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AddressResult$Impl implements AddressResult$ {
   const _$AddressResult$Impl(
-      {@JsonKey(name: 'address_components')
-      final List<AddressComponent> addressComponents =
-          const <AddressComponent>[],
+      {@JsonKey(name: 'address_components') final List<AddressComponent> addressComponents = const <AddressComponent>[],
       @JsonKey(name: 'formatted_address') this.formattedAddress = '',
       required this.geometry,
       @JsonKey(name: 'place_id') this.placeId = '',
@@ -181,15 +169,13 @@ class _$AddressResult$Impl implements AddressResult$ {
       : _addressComponents = addressComponents,
         _types = types;
 
-  factory _$AddressResult$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AddressResult$ImplFromJson(json);
+  factory _$AddressResult$Impl.fromJson(Map<String, dynamic> json) => _$$AddressResult$ImplFromJson(json);
 
   final List<AddressComponent> _addressComponents;
   @override
   @JsonKey(name: 'address_components')
   List<AddressComponent> get addressComponents {
-    if (_addressComponents is EqualUnmodifiableListView)
-      return _addressComponents;
+    if (_addressComponents is EqualUnmodifiableListView) return _addressComponents;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_addressComponents);
   }
@@ -221,32 +207,23 @@ class _$AddressResult$Impl implements AddressResult$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddressResult$Impl &&
-            const DeepCollectionEquality()
-                .equals(other._addressComponents, _addressComponents) &&
-            (identical(other.formattedAddress, formattedAddress) ||
-                other.formattedAddress == formattedAddress) &&
-            (identical(other.geometry, geometry) ||
-                other.geometry == geometry) &&
+            const DeepCollectionEquality().equals(other._addressComponents, _addressComponents) &&
+            (identical(other.formattedAddress, formattedAddress) || other.formattedAddress == formattedAddress) &&
+            (identical(other.geometry, geometry) || other.geometry == geometry) &&
             (identical(other.placeId, placeId) || other.placeId == placeId) &&
             const DeepCollectionEquality().equals(other._types, _types));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_addressComponents),
-      formattedAddress,
-      geometry,
-      placeId,
-      const DeepCollectionEquality().hash(_types));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_addressComponents),
+      formattedAddress, geometry, placeId, const DeepCollectionEquality().hash(_types));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddressResult$ImplCopyWith<_$AddressResult$Impl> get copyWith =>
-      __$$AddressResult$ImplCopyWithImpl<_$AddressResult$Impl>(
-          this, _$identity);
+      __$$AddressResult$ImplCopyWithImpl<_$AddressResult$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -258,15 +235,13 @@ class _$AddressResult$Impl implements AddressResult$ {
 
 abstract class AddressResult$ implements AddressResult {
   const factory AddressResult$(
-      {@JsonKey(name: 'address_components')
-      final List<AddressComponent> addressComponents,
+      {@JsonKey(name: 'address_components') final List<AddressComponent> addressComponents,
       @JsonKey(name: 'formatted_address') final String formattedAddress,
       required final Geometry geometry,
       @JsonKey(name: 'place_id') final String placeId,
       final List<String> types}) = _$AddressResult$Impl;
 
-  factory AddressResult$.fromJson(Map<String, dynamic> json) =
-      _$AddressResult$Impl.fromJson;
+  factory AddressResult$.fromJson(Map<String, dynamic> json) = _$AddressResult$Impl.fromJson;
 
   @override
   @JsonKey(name: 'address_components')
@@ -283,6 +258,5 @@ abstract class AddressResult$ implements AddressResult {
   List<String> get types;
   @override
   @JsonKey(ignore: true)
-  _$$AddressResult$ImplCopyWith<_$AddressResult$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddressResult$ImplCopyWith<_$AddressResult$Impl> get copyWith => throw _privateConstructorUsedError;
 }

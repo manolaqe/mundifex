@@ -18,24 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignInEmailPassword {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -67,8 +64,7 @@ mixin _$SignInEmailPassword {
 
 /// @nodoc
 abstract class $SignInEmailPasswordCopyWith<$Res> {
-  factory $SignInEmailPasswordCopyWith(
-          SignInEmailPassword value, $Res Function(SignInEmailPassword) then) =
+  factory $SignInEmailPasswordCopyWith(SignInEmailPassword value, $Res Function(SignInEmailPassword) then) =
       _$SignInEmailPasswordCopyWithImpl<$Res, SignInEmailPassword>;
 }
 
@@ -86,8 +82,7 @@ class _$SignInEmailPasswordCopyWithImpl<$Res, $Val extends SignInEmailPassword>
 /// @nodoc
 abstract class _$$SignInEmailPasswordStartImplCopyWith<$Res> {
   factory _$$SignInEmailPasswordStartImplCopyWith(
-          _$SignInEmailPasswordStartImpl value,
-          $Res Function(_$SignInEmailPasswordStartImpl) then) =
+          _$SignInEmailPasswordStartImpl value, $Res Function(_$SignInEmailPasswordStartImpl) then) =
       __$$SignInEmailPasswordStartImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email, String password, ActionResult result});
@@ -95,12 +90,10 @@ abstract class _$$SignInEmailPasswordStartImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInEmailPasswordStartImplCopyWithImpl<$Res>
-    extends _$SignInEmailPasswordCopyWithImpl<$Res,
-        _$SignInEmailPasswordStartImpl>
+    extends _$SignInEmailPasswordCopyWithImpl<$Res, _$SignInEmailPasswordStartImpl>
     implements _$$SignInEmailPasswordStartImplCopyWith<$Res> {
   __$$SignInEmailPasswordStartImplCopyWithImpl(
-      _$SignInEmailPasswordStartImpl _value,
-      $Res Function(_$SignInEmailPasswordStartImpl) _then)
+      _$SignInEmailPasswordStartImpl _value, $Res Function(_$SignInEmailPasswordStartImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -130,8 +123,7 @@ class __$$SignInEmailPasswordStartImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignInEmailPasswordStartImpl implements SignInEmailPasswordStart {
-  const _$SignInEmailPasswordStartImpl(
-      {required this.email, required this.password, required this.result});
+  const _$SignInEmailPasswordStartImpl({required this.email, required this.password, required this.result});
 
   @override
   final String email;
@@ -151,8 +143,7 @@ class _$SignInEmailPasswordStartImpl implements SignInEmailPasswordStart {
         (other.runtimeType == runtimeType &&
             other is _$SignInEmailPasswordStartImpl &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
+            (identical(other.password, password) || other.password == password) &&
             (identical(other.result, result) || other.result == result));
   }
 
@@ -162,15 +153,13 @@ class _$SignInEmailPasswordStartImpl implements SignInEmailPasswordStart {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInEmailPasswordStartImplCopyWith<_$SignInEmailPasswordStartImpl>
-      get copyWith => __$$SignInEmailPasswordStartImplCopyWithImpl<
-          _$SignInEmailPasswordStartImpl>(this, _$identity);
+  _$$SignInEmailPasswordStartImplCopyWith<_$SignInEmailPasswordStartImpl> get copyWith =>
+      __$$SignInEmailPasswordStartImplCopyWithImpl<_$SignInEmailPasswordStartImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -180,8 +169,7 @@ class _$SignInEmailPasswordStartImpl implements SignInEmailPasswordStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -191,8 +179,7 @@ class _$SignInEmailPasswordStartImpl implements SignInEmailPasswordStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -248,15 +235,14 @@ abstract class SignInEmailPasswordStart implements SignInEmailPassword {
   String get password;
   ActionResult get result;
   @JsonKey(ignore: true)
-  _$$SignInEmailPasswordStartImplCopyWith<_$SignInEmailPasswordStartImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SignInEmailPasswordStartImplCopyWith<_$SignInEmailPasswordStartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInEmailPasswordSuccessfulImplCopyWith<$Res> {
   factory _$$SignInEmailPasswordSuccessfulImplCopyWith(
-          _$SignInEmailPasswordSuccessfulImpl value,
-          $Res Function(_$SignInEmailPasswordSuccessfulImpl) then) =
+          _$SignInEmailPasswordSuccessfulImpl value, $Res Function(_$SignInEmailPasswordSuccessfulImpl) then) =
       __$$SignInEmailPasswordSuccessfulImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AppUser user});
@@ -266,12 +252,10 @@ abstract class _$$SignInEmailPasswordSuccessfulImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInEmailPasswordSuccessfulImplCopyWithImpl<$Res>
-    extends _$SignInEmailPasswordCopyWithImpl<$Res,
-        _$SignInEmailPasswordSuccessfulImpl>
+    extends _$SignInEmailPasswordCopyWithImpl<$Res, _$SignInEmailPasswordSuccessfulImpl>
     implements _$$SignInEmailPasswordSuccessfulImplCopyWith<$Res> {
   __$$SignInEmailPasswordSuccessfulImplCopyWithImpl(
-      _$SignInEmailPasswordSuccessfulImpl _value,
-      $Res Function(_$SignInEmailPasswordSuccessfulImpl) _then)
+      _$SignInEmailPasswordSuccessfulImpl _value, $Res Function(_$SignInEmailPasswordSuccessfulImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -298,8 +282,7 @@ class __$$SignInEmailPasswordSuccessfulImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignInEmailPasswordSuccessfulImpl
-    implements SignInEmailPasswordSuccessful {
+class _$SignInEmailPasswordSuccessfulImpl implements SignInEmailPasswordSuccessful {
   const _$SignInEmailPasswordSuccessfulImpl(this.user);
 
   @override
@@ -324,16 +307,13 @@ class _$SignInEmailPasswordSuccessfulImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInEmailPasswordSuccessfulImplCopyWith<
-          _$SignInEmailPasswordSuccessfulImpl>
-      get copyWith => __$$SignInEmailPasswordSuccessfulImplCopyWithImpl<
-          _$SignInEmailPasswordSuccessfulImpl>(this, _$identity);
+  _$$SignInEmailPasswordSuccessfulImplCopyWith<_$SignInEmailPasswordSuccessfulImpl> get copyWith =>
+      __$$SignInEmailPasswordSuccessfulImplCopyWithImpl<_$SignInEmailPasswordSuccessfulImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -343,8 +323,7 @@ class _$SignInEmailPasswordSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -354,8 +333,7 @@ class _$SignInEmailPasswordSuccessfulImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -402,21 +380,18 @@ class _$SignInEmailPasswordSuccessfulImpl
 }
 
 abstract class SignInEmailPasswordSuccessful implements SignInEmailPassword {
-  const factory SignInEmailPasswordSuccessful(final AppUser user) =
-      _$SignInEmailPasswordSuccessfulImpl;
+  const factory SignInEmailPasswordSuccessful(final AppUser user) = _$SignInEmailPasswordSuccessfulImpl;
 
   AppUser get user;
   @JsonKey(ignore: true)
-  _$$SignInEmailPasswordSuccessfulImplCopyWith<
-          _$SignInEmailPasswordSuccessfulImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SignInEmailPasswordSuccessfulImplCopyWith<_$SignInEmailPasswordSuccessfulImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SignInEmailPasswordErrorImplCopyWith<$Res> {
   factory _$$SignInEmailPasswordErrorImplCopyWith(
-          _$SignInEmailPasswordErrorImpl value,
-          $Res Function(_$SignInEmailPasswordErrorImpl) then) =
+          _$SignInEmailPasswordErrorImpl value, $Res Function(_$SignInEmailPasswordErrorImpl) then) =
       __$$SignInEmailPasswordErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
@@ -424,12 +399,10 @@ abstract class _$$SignInEmailPasswordErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInEmailPasswordErrorImplCopyWithImpl<$Res>
-    extends _$SignInEmailPasswordCopyWithImpl<$Res,
-        _$SignInEmailPasswordErrorImpl>
+    extends _$SignInEmailPasswordCopyWithImpl<$Res, _$SignInEmailPasswordErrorImpl>
     implements _$$SignInEmailPasswordErrorImplCopyWith<$Res> {
   __$$SignInEmailPasswordErrorImplCopyWithImpl(
-      _$SignInEmailPasswordErrorImpl _value,
-      $Res Function(_$SignInEmailPasswordErrorImpl) _then)
+      _$SignInEmailPasswordErrorImpl _value, $Res Function(_$SignInEmailPasswordErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -469,26 +442,22 @@ class _$SignInEmailPasswordErrorImpl implements SignInEmailPasswordError {
         (other.runtimeType == runtimeType &&
             other is _$SignInEmailPasswordErrorImpl &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) ||
-                other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignInEmailPasswordErrorImplCopyWith<_$SignInEmailPasswordErrorImpl>
-      get copyWith => __$$SignInEmailPasswordErrorImplCopyWithImpl<
-          _$SignInEmailPasswordErrorImpl>(this, _$identity);
+  _$$SignInEmailPasswordErrorImplCopyWith<_$SignInEmailPasswordErrorImpl> get copyWith =>
+      __$$SignInEmailPasswordErrorImplCopyWithImpl<_$SignInEmailPasswordErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)
-        $default, {
+    TResult Function(String email, String password, ActionResult result) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error, StackTrace stackTrace) error,
   }) {
@@ -498,8 +467,7 @@ class _$SignInEmailPasswordErrorImpl implements SignInEmailPasswordError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult? Function(String email, String password, ActionResult result)? $default, {
     TResult? Function(AppUser user)? successful,
     TResult? Function(Object error, StackTrace stackTrace)? error,
   }) {
@@ -509,8 +477,7 @@ class _$SignInEmailPasswordErrorImpl implements SignInEmailPasswordError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String email, String password, ActionResult result)?
-        $default, {
+    TResult Function(String email, String password, ActionResult result)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error, StackTrace stackTrace)? error,
     required TResult orElse(),
@@ -556,15 +523,13 @@ class _$SignInEmailPasswordErrorImpl implements SignInEmailPasswordError {
   }
 }
 
-abstract class SignInEmailPasswordError
-    implements SignInEmailPassword, ErrorAction {
-  const factory SignInEmailPasswordError(
-          final Object error, final StackTrace stackTrace) =
+abstract class SignInEmailPasswordError implements SignInEmailPassword, ErrorAction {
+  const factory SignInEmailPasswordError(final Object error, final StackTrace stackTrace) =
       _$SignInEmailPasswordErrorImpl;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$SignInEmailPasswordErrorImplCopyWith<_$SignInEmailPasswordErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SignInEmailPasswordErrorImplCopyWith<_$SignInEmailPasswordErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

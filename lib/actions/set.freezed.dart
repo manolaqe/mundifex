@@ -19,22 +19,19 @@ mixin _$SetSelectedPost {
   String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetSelectedPostCopyWith<SetSelectedPost> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SetSelectedPostCopyWith<SetSelectedPost> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetSelectedPostCopyWith<$Res> {
-  factory $SetSelectedPostCopyWith(
-          SetSelectedPost value, $Res Function(SetSelectedPost) then) =
+  factory $SetSelectedPostCopyWith(SetSelectedPost value, $Res Function(SetSelectedPost) then) =
       _$SetSelectedPostCopyWithImpl<$Res, SetSelectedPost>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class _$SetSelectedPostCopyWithImpl<$Res, $Val extends SetSelectedPost>
-    implements $SetSelectedPostCopyWith<$Res> {
+class _$SetSelectedPostCopyWithImpl<$Res, $Val extends SetSelectedPost> implements $SetSelectedPostCopyWith<$Res> {
   _$SetSelectedPostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -57,10 +54,8 @@ class _$SetSelectedPostCopyWithImpl<$Res, $Val extends SetSelectedPost>
 }
 
 /// @nodoc
-abstract class _$$SetSelectedPost$ImplCopyWith<$Res>
-    implements $SetSelectedPostCopyWith<$Res> {
-  factory _$$SetSelectedPost$ImplCopyWith(_$SetSelectedPost$Impl value,
-          $Res Function(_$SetSelectedPost$Impl) then) =
+abstract class _$$SetSelectedPost$ImplCopyWith<$Res> implements $SetSelectedPostCopyWith<$Res> {
+  factory _$$SetSelectedPost$ImplCopyWith(_$SetSelectedPost$Impl value, $Res Function(_$SetSelectedPost$Impl) then) =
       __$$SetSelectedPost$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -68,11 +63,9 @@ abstract class _$$SetSelectedPost$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SetSelectedPost$ImplCopyWithImpl<$Res>
-    extends _$SetSelectedPostCopyWithImpl<$Res, _$SetSelectedPost$Impl>
+class __$$SetSelectedPost$ImplCopyWithImpl<$Res> extends _$SetSelectedPostCopyWithImpl<$Res, _$SetSelectedPost$Impl>
     implements _$$SetSelectedPost$ImplCopyWith<$Res> {
-  __$$SetSelectedPost$ImplCopyWithImpl(_$SetSelectedPost$Impl _value,
-      $Res Function(_$SetSelectedPost$Impl) _then)
+  __$$SetSelectedPost$ImplCopyWithImpl(_$SetSelectedPost$Impl _value, $Res Function(_$SetSelectedPost$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -117,8 +110,7 @@ class _$SetSelectedPost$Impl implements SetSelectedPost$ {
   @override
   @pragma('vm:prefer-inline')
   _$$SetSelectedPost$ImplCopyWith<_$SetSelectedPost$Impl> get copyWith =>
-      __$$SetSelectedPost$ImplCopyWithImpl<_$SetSelectedPost$Impl>(
-          this, _$identity);
+      __$$SetSelectedPost$ImplCopyWithImpl<_$SetSelectedPost$Impl>(this, _$identity);
 }
 
 abstract class SetSelectedPost$ implements SetSelectedPost {
@@ -128,6 +120,5 @@ abstract class SetSelectedPost$ implements SetSelectedPost {
   String get id;
   @override
   @JsonKey(ignore: true)
-  _$$SetSelectedPost$ImplCopyWith<_$SetSelectedPost$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetSelectedPost$ImplCopyWith<_$SetSelectedPost$Impl> get copyWith => throw _privateConstructorUsedError;
 }

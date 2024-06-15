@@ -17,8 +17,7 @@ _$Main$Impl _$$Main$ImplFromJson(Map<String, dynamic> json) => _$Main$Impl(
       grndLevel: (json['grnd_level'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$Main$ImplToJson(_$Main$Impl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Main$ImplToJson(_$Main$Impl instance) => <String, dynamic>{
       'temp': instance.temp,
       'feels_like': instance.feelsLike,
       'temp_min': instance.tempMin,

@@ -26,14 +26,12 @@ mixin _$AirPollutionData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AirPollutionDataCopyWith<AirPollutionData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AirPollutionDataCopyWith<AirPollutionData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AirPollutionDataCopyWith<$Res> {
-  factory $AirPollutionDataCopyWith(
-          AirPollutionData value, $Res Function(AirPollutionData) then) =
+  factory $AirPollutionDataCopyWith(AirPollutionData value, $Res Function(AirPollutionData) then) =
       _$AirPollutionDataCopyWithImpl<$Res, AirPollutionData>;
   @useResult
   $Res call({Coord coord, List<AirPollutionElement> list, int dt});
@@ -42,8 +40,7 @@ abstract class $AirPollutionDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AirPollutionDataCopyWithImpl<$Res, $Val extends AirPollutionData>
-    implements $AirPollutionDataCopyWith<$Res> {
+class _$AirPollutionDataCopyWithImpl<$Res, $Val extends AirPollutionData> implements $AirPollutionDataCopyWith<$Res> {
   _$AirPollutionDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -84,10 +81,8 @@ class _$AirPollutionDataCopyWithImpl<$Res, $Val extends AirPollutionData>
 }
 
 /// @nodoc
-abstract class _$$AirPollutionData$ImplCopyWith<$Res>
-    implements $AirPollutionDataCopyWith<$Res> {
-  factory _$$AirPollutionData$ImplCopyWith(_$AirPollutionData$Impl value,
-          $Res Function(_$AirPollutionData$Impl) then) =
+abstract class _$$AirPollutionData$ImplCopyWith<$Res> implements $AirPollutionDataCopyWith<$Res> {
+  factory _$$AirPollutionData$ImplCopyWith(_$AirPollutionData$Impl value, $Res Function(_$AirPollutionData$Impl) then) =
       __$$AirPollutionData$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -98,11 +93,9 @@ abstract class _$$AirPollutionData$ImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AirPollutionData$ImplCopyWithImpl<$Res>
-    extends _$AirPollutionDataCopyWithImpl<$Res, _$AirPollutionData$Impl>
+class __$$AirPollutionData$ImplCopyWithImpl<$Res> extends _$AirPollutionDataCopyWithImpl<$Res, _$AirPollutionData$Impl>
     implements _$$AirPollutionData$ImplCopyWith<$Res> {
-  __$$AirPollutionData$ImplCopyWithImpl(_$AirPollutionData$Impl _value,
-      $Res Function(_$AirPollutionData$Impl) _then)
+  __$$AirPollutionData$ImplCopyWithImpl(_$AirPollutionData$Impl _value, $Res Function(_$AirPollutionData$Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,13 +126,10 @@ class __$$AirPollutionData$ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AirPollutionData$Impl implements AirPollutionData$ {
   const _$AirPollutionData$Impl(
-      {required this.coord,
-      final List<AirPollutionElement> list = const <AirPollutionElement>[],
-      this.dt = 0})
+      {required this.coord, final List<AirPollutionElement> list = const <AirPollutionElement>[], this.dt = 0})
       : _list = list;
 
-  factory _$AirPollutionData$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$AirPollutionData$ImplFromJson(json);
+  factory _$AirPollutionData$Impl.fromJson(Map<String, dynamic> json) => _$$AirPollutionData$ImplFromJson(json);
 
   @override
   final Coord coord;
@@ -173,15 +163,13 @@ class _$AirPollutionData$Impl implements AirPollutionData$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, coord, const DeepCollectionEquality().hash(_list), dt);
+  int get hashCode => Object.hash(runtimeType, coord, const DeepCollectionEquality().hash(_list), dt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AirPollutionData$ImplCopyWith<_$AirPollutionData$Impl> get copyWith =>
-      __$$AirPollutionData$ImplCopyWithImpl<_$AirPollutionData$Impl>(
-          this, _$identity);
+      __$$AirPollutionData$ImplCopyWithImpl<_$AirPollutionData$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -192,13 +180,10 @@ class _$AirPollutionData$Impl implements AirPollutionData$ {
 }
 
 abstract class AirPollutionData$ implements AirPollutionData {
-  const factory AirPollutionData$(
-      {required final Coord coord,
-      final List<AirPollutionElement> list,
-      final int dt}) = _$AirPollutionData$Impl;
+  const factory AirPollutionData$({required final Coord coord, final List<AirPollutionElement> list, final int dt}) =
+      _$AirPollutionData$Impl;
 
-  factory AirPollutionData$.fromJson(Map<String, dynamic> json) =
-      _$AirPollutionData$Impl.fromJson;
+  factory AirPollutionData$.fromJson(Map<String, dynamic> json) = _$AirPollutionData$Impl.fromJson;
 
   @override
   Coord get coord;
@@ -208,6 +193,5 @@ abstract class AirPollutionData$ implements AirPollutionData {
   int get dt;
   @override
   @JsonKey(ignore: true)
-  _$$AirPollutionData$ImplCopyWith<_$AirPollutionData$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AirPollutionData$ImplCopyWith<_$AirPollutionData$Impl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -33,8 +33,7 @@ mixin _$Sys {
 
 /// @nodoc
 abstract class $SysCopyWith<$Res> {
-  factory $SysCopyWith(Sys value, $Res Function(Sys) then) =
-      _$SysCopyWithImpl<$Res, Sys>;
+  factory $SysCopyWith(Sys value, $Res Function(Sys) then) = _$SysCopyWithImpl<$Res, Sys>;
   @useResult
   $Res call({int type, int id, String country, int sunrise, int sunset});
 }
@@ -84,19 +83,15 @@ class _$SysCopyWithImpl<$Res, $Val extends Sys> implements $SysCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$Sys$ImplCopyWith<$Res> implements $SysCopyWith<$Res> {
-  factory _$$Sys$ImplCopyWith(
-          _$Sys$Impl value, $Res Function(_$Sys$Impl) then) =
-      __$$Sys$ImplCopyWithImpl<$Res>;
+  factory _$$Sys$ImplCopyWith(_$Sys$Impl value, $Res Function(_$Sys$Impl) then) = __$$Sys$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int type, int id, String country, int sunrise, int sunset});
 }
 
 /// @nodoc
-class __$$Sys$ImplCopyWithImpl<$Res> extends _$SysCopyWithImpl<$Res, _$Sys$Impl>
-    implements _$$Sys$ImplCopyWith<$Res> {
-  __$$Sys$ImplCopyWithImpl(_$Sys$Impl _value, $Res Function(_$Sys$Impl) _then)
-      : super(_value, _then);
+class __$$Sys$ImplCopyWithImpl<$Res> extends _$SysCopyWithImpl<$Res, _$Sys$Impl> implements _$$Sys$ImplCopyWith<$Res> {
+  __$$Sys$ImplCopyWithImpl(_$Sys$Impl _value, $Res Function(_$Sys$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -135,15 +130,9 @@ class __$$Sys$ImplCopyWithImpl<$Res> extends _$SysCopyWithImpl<$Res, _$Sys$Impl>
 /// @nodoc
 @JsonSerializable()
 class _$Sys$Impl implements Sys$ {
-  const _$Sys$Impl(
-      {this.type = 0,
-      this.id = 0,
-      this.country = '',
-      this.sunrise = 0,
-      this.sunset = 0});
+  const _$Sys$Impl({this.type = 0, this.id = 0, this.country = '', this.sunrise = 0, this.sunset = 0});
 
-  factory _$Sys$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Sys$ImplFromJson(json);
+  factory _$Sys$Impl.fromJson(Map<String, dynamic> json) => _$$Sys$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -180,14 +169,12 @@ class _$Sys$Impl implements Sys$ {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, type, id, country, sunrise, sunset);
+  int get hashCode => Object.hash(runtimeType, type, id, country, sunrise, sunset);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Sys$ImplCopyWith<_$Sys$Impl> get copyWith =>
-      __$$Sys$ImplCopyWithImpl<_$Sys$Impl>(this, _$identity);
+  _$$Sys$ImplCopyWith<_$Sys$Impl> get copyWith => __$$Sys$ImplCopyWithImpl<_$Sys$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -198,12 +185,8 @@ class _$Sys$Impl implements Sys$ {
 }
 
 abstract class Sys$ implements Sys {
-  const factory Sys$(
-      {final int type,
-      final int id,
-      final String country,
-      final int sunrise,
-      final int sunset}) = _$Sys$Impl;
+  const factory Sys$({final int type, final int id, final String country, final int sunrise, final int sunset}) =
+      _$Sys$Impl;
 
   factory Sys$.fromJson(Map<String, dynamic> json) = _$Sys$Impl.fromJson;
 
@@ -219,6 +202,5 @@ abstract class Sys$ implements Sys {
   int get sunset;
   @override
   @JsonKey(ignore: true)
-  _$$Sys$ImplCopyWith<_$Sys$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Sys$ImplCopyWith<_$Sys$Impl> get copyWith => throw _privateConstructorUsedError;
 }

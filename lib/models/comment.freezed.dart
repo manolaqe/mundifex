@@ -30,15 +30,13 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
-      _$CommentCopyWithImpl<$Res, Comment>;
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
   $Res call({String userId, String value});
 }
 
 /// @nodoc
-class _$CommentCopyWithImpl<$Res, $Val extends Comment>
-    implements $CommentCopyWith<$Res> {
+class _$CommentCopyWithImpl<$Res, $Val extends Comment> implements $CommentCopyWith<$Res> {
   _$CommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -67,8 +65,7 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment>
 
 /// @nodoc
 abstract class _$$Comment$ImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$$Comment$ImplCopyWith(
-          _$Comment$Impl value, $Res Function(_$Comment$Impl) then) =
+  factory _$$Comment$ImplCopyWith(_$Comment$Impl value, $Res Function(_$Comment$Impl) then) =
       __$$Comment$ImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -76,12 +73,9 @@ abstract class _$$Comment$ImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Comment$ImplCopyWithImpl<$Res>
-    extends _$CommentCopyWithImpl<$Res, _$Comment$Impl>
+class __$$Comment$ImplCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res, _$Comment$Impl>
     implements _$$Comment$ImplCopyWith<$Res> {
-  __$$Comment$ImplCopyWithImpl(
-      _$Comment$Impl _value, $Res Function(_$Comment$Impl) _then)
-      : super(_value, _then);
+  __$$Comment$ImplCopyWithImpl(_$Comment$Impl _value, $Res Function(_$Comment$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -107,8 +101,7 @@ class __$$Comment$ImplCopyWithImpl<$Res>
 class _$Comment$Impl implements Comment$ {
   const _$Comment$Impl({this.userId = '', this.value = ''});
 
-  factory _$Comment$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Comment$ImplFromJson(json);
+  factory _$Comment$Impl.fromJson(Map<String, dynamic> json) => _$$Comment$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -150,11 +143,9 @@ class _$Comment$Impl implements Comment$ {
 }
 
 abstract class Comment$ implements Comment {
-  const factory Comment$({final String userId, final String value}) =
-      _$Comment$Impl;
+  const factory Comment$({final String userId, final String value}) = _$Comment$Impl;
 
-  factory Comment$.fromJson(Map<String, dynamic> json) =
-      _$Comment$Impl.fromJson;
+  factory Comment$.fromJson(Map<String, dynamic> json) = _$Comment$Impl.fromJson;
 
   @override
   String get userId;
@@ -162,6 +153,5 @@ abstract class Comment$ implements Comment {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$Comment$ImplCopyWith<_$Comment$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Comment$ImplCopyWith<_$Comment$Impl> get copyWith => throw _privateConstructorUsedError;
 }

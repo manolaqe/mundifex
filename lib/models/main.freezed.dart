@@ -41,8 +41,7 @@ mixin _$Main {
 
 /// @nodoc
 abstract class $MainCopyWith<$Res> {
-  factory $MainCopyWith(Main value, $Res Function(Main) then) =
-      _$MainCopyWithImpl<$Res, Main>;
+  factory $MainCopyWith(Main value, $Res Function(Main) then) = _$MainCopyWithImpl<$Res, Main>;
   @useResult
   $Res call(
       {double temp,
@@ -56,8 +55,7 @@ abstract class $MainCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MainCopyWithImpl<$Res, $Val extends Main>
-    implements $MainCopyWith<$Res> {
+class _$MainCopyWithImpl<$Res, $Val extends Main> implements $MainCopyWith<$Res> {
   _$MainCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -116,9 +114,7 @@ class _$MainCopyWithImpl<$Res, $Val extends Main>
 
 /// @nodoc
 abstract class _$$Main$ImplCopyWith<$Res> implements $MainCopyWith<$Res> {
-  factory _$$Main$ImplCopyWith(
-          _$Main$Impl value, $Res Function(_$Main$Impl) then) =
-      __$$Main$ImplCopyWithImpl<$Res>;
+  factory _$$Main$ImplCopyWith(_$Main$Impl value, $Res Function(_$Main$Impl) then) = __$$Main$ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -133,12 +129,9 @@ abstract class _$$Main$ImplCopyWith<$Res> implements $MainCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$Main$ImplCopyWithImpl<$Res>
-    extends _$MainCopyWithImpl<$Res, _$Main$Impl>
+class __$$Main$ImplCopyWithImpl<$Res> extends _$MainCopyWithImpl<$Res, _$Main$Impl>
     implements _$$Main$ImplCopyWith<$Res> {
-  __$$Main$ImplCopyWithImpl(
-      _$Main$Impl _value, $Res Function(_$Main$Impl) _then)
-      : super(_value, _then);
+  __$$Main$ImplCopyWithImpl(_$Main$Impl _value, $Res Function(_$Main$Impl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -202,8 +195,7 @@ class _$Main$Impl implements Main$ {
       @JsonKey(name: 'sea_level') this.seaLevel = 0,
       @JsonKey(name: 'grnd_level') this.grndLevel = 0});
 
-  factory _$Main$Impl.fromJson(Map<String, dynamic> json) =>
-      _$$Main$ImplFromJson(json);
+  factory _$Main$Impl.fromJson(Map<String, dynamic> json) => _$$Main$ImplFromJson(json);
 
   @override
   @JsonKey()
@@ -241,30 +233,24 @@ class _$Main$Impl implements Main$ {
         (other.runtimeType == runtimeType &&
             other is _$Main$Impl &&
             (identical(other.temp, temp) || other.temp == temp) &&
-            (identical(other.feelsLike, feelsLike) ||
-                other.feelsLike == feelsLike) &&
+            (identical(other.feelsLike, feelsLike) || other.feelsLike == feelsLike) &&
             (identical(other.tempMin, tempMin) || other.tempMin == tempMin) &&
             (identical(other.tempMax, tempMax) || other.tempMax == tempMax) &&
-            (identical(other.pressure, pressure) ||
-                other.pressure == pressure) &&
-            (identical(other.humidity, humidity) ||
-                other.humidity == humidity) &&
-            (identical(other.seaLevel, seaLevel) ||
-                other.seaLevel == seaLevel) &&
-            (identical(other.grndLevel, grndLevel) ||
-                other.grndLevel == grndLevel));
+            (identical(other.pressure, pressure) || other.pressure == pressure) &&
+            (identical(other.humidity, humidity) || other.humidity == humidity) &&
+            (identical(other.seaLevel, seaLevel) || other.seaLevel == seaLevel) &&
+            (identical(other.grndLevel, grndLevel) || other.grndLevel == grndLevel));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, temp, feelsLike, tempMin,
-      tempMax, pressure, humidity, seaLevel, grndLevel);
+  int get hashCode =>
+      Object.hash(runtimeType, temp, feelsLike, tempMin, tempMax, pressure, humidity, seaLevel, grndLevel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$Main$ImplCopyWith<_$Main$Impl> get copyWith =>
-      __$$Main$ImplCopyWithImpl<_$Main$Impl>(this, _$identity);
+  _$$Main$ImplCopyWith<_$Main$Impl> get copyWith => __$$Main$ImplCopyWithImpl<_$Main$Impl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -310,6 +296,5 @@ abstract class Main$ implements Main {
   double get grndLevel;
   @override
   @JsonKey(ignore: true)
-  _$$Main$ImplCopyWith<_$Main$Impl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$Main$ImplCopyWith<_$Main$Impl> get copyWith => throw _privateConstructorUsedError;
 }
