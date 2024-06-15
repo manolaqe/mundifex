@@ -111,7 +111,6 @@ class PostsWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Row(
                       children: <Widget>[

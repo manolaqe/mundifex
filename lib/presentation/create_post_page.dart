@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:interactive_slider/interactive_slider.dart';
 import 'package:redux/redux.dart';
 
 import '../actions/create_post.dart';
@@ -14,12 +14,12 @@ import '../models/app_user.dart';
 import 'containers/app_user_container.dart';
 import 'containers/users_container.dart';
 import 'extensions.dart';
-import 'package:interactive_slider/interactive_slider.dart';
 
 class CreatePostPage extends StatefulWidget {
   const CreatePostPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CreatePostPageState createState() => _CreatePostPageState();
 }
 
@@ -132,9 +132,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                                 unfocusedHeight: 30,
                                 focusedHeight: 40,
                                 gradient: const LinearGradient(
-                                  colors: [Colors.red, Colors.yellow, Colors.green],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
+                                  colors: <Color>[Colors.red, Colors.yellow, Colors.green],
                                 ),
                               ),
                               const SizedBox(height: 16),
@@ -147,14 +145,11 @@ class _CreatePostPageState extends State<CreatePostPage> {
                               ),
                               InteractiveSlider(
                                 controller: cleanSliderController,
-                                padding: const EdgeInsets.all(0),
+                                padding: EdgeInsets.zero,
                                 unfocusedHeight: 30,
                                 focusedHeight: 40,
                                 startIcon: const Text('Clean'),
                                 endIcon: const Text('Dirty'),
-                                onProgressUpdated: (double value) {
-                                  print(cleanSliderController.value);
-                                },
                               ),
                               const SizedBox(height: 16),
                               const Text(
@@ -166,7 +161,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                               ),
                               InteractiveSlider(
                                 controller: noiseSliderController,
-                                padding: const EdgeInsets.all(0),
+                                padding: EdgeInsets.zero,
                                 unfocusedHeight: 30,
                                 focusedHeight: 40,
                                 startIcon: const Text('Quiet'),

@@ -13,7 +13,7 @@ class AirQualityApi {
     final String url =
         'https://api.airvisual.com/v2/nearest_city?lat=${_locationData.lat}&lon=${_locationData.lon}&key=2fbc3070-d3d7-46fd-9ad1-06e5781e4230';
 
-    final response = await http.get(Uri.parse(url));
+    final http.Response response = await http.get(Uri.parse(url));
 
     if (response.statusCode != 200) {
       throw Exception('Failed to load data');

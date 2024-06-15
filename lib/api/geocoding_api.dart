@@ -11,7 +11,7 @@ class GeocodingApi {
 
   Future<AddressData> getAddress(LocationData locationData) async {
     final String url =
-        'https://maps.googleapis.com/maps/api/geocode/json?latlng=${locationData.lat},${locationData.lon}&key=${apiKey}';
+        'https://maps.googleapis.com/maps/api/geocode/json?latlng=${locationData.lat},${locationData.lon}&key=$apiKey';
 
     final http.Response response = await http.get(Uri.parse(url));
 

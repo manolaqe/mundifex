@@ -11,7 +11,7 @@ class TomtomApi {
 
   Future<FlowSegmentData> getFlowSegmentData(LocationData locationData) async {
     final String url =
-        'https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/10/json?point=${locationData.lat}%2C${locationData.lon}&unit=KMPH&openLr=false&key=${apiKey}';
+        'https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/10/json?point=${locationData.lat}%2C${locationData.lon}&unit=KMPH&openLr=false&key=$apiKey';
 
     final http.Response response = await http.get(Uri.parse(url));
 

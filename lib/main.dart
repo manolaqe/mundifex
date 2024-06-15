@@ -184,7 +184,7 @@ class ScrollableApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         theme: ThemeData(
-          colorScheme: ColorScheme.dark(primary: Colors.blueGrey),
+          colorScheme: const ColorScheme.dark(primary: Colors.blueGrey),
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,

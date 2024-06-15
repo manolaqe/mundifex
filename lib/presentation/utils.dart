@@ -40,7 +40,7 @@ class Utils {
       aqiValues.add(_calculateComponentAQI(co, 'co'));
     }
 
-    return aqiValues.isNotEmpty ? aqiValues.reduce((a, b) => a > b ? a : b).round() : 0;
+    return aqiValues.isNotEmpty ? aqiValues.reduce((double a, double b) => a > b ? a : b).round() : 0;
   }
 
   static int computeAQI(AirPollutionData airPollutionData) {
@@ -51,7 +51,7 @@ class Utils {
     final double so2 = airPollutionData.list[0].components.so2;
     final double co = airPollutionData.list[0].components.co;
 
-    final List<double> aqiValues = [];
+    final List<double> aqiValues = <double>[];
 
     if (pm25 > 0) {
       aqiValues.add(_calculateComponentAQI(pm25, 'pm25'));
@@ -72,7 +72,7 @@ class Utils {
       aqiValues.add(_calculateComponentAQI(co, 'co'));
     }
 
-    return aqiValues.isNotEmpty ? aqiValues.reduce((a, b) => a > b ? a : b).round() : 0;
+    return aqiValues.isNotEmpty ? aqiValues.reduce((double a, double b) => a > b ? a : b).round() : 0;
   }
 
   static double _calculateComponentAQI(double value, String component) {
