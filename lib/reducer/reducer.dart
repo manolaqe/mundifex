@@ -3,6 +3,7 @@ import 'package:redux/redux.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
+import '../actions/get_air_pollution_forecast.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_flow_segment_data.dart';
 import '../actions/get_forecast_weather.dart';
@@ -53,6 +54,9 @@ AppState reducer(AppState state, dynamic action) {
     TypedReducer<AppState, GetPostsSuccessful>(_getPostsSuccessful).call,
     TypedReducer<AppState, GetPostsError>(_getPostsError).call,
     TypedReducer<AppState, SetSelectedPost>(_setSelectedPost).call,
+    TypedReducer<AppState, GetAirPollutionForecastStart>(_getAirPollutionForecastStart).call,
+    TypedReducer<AppState, GetAirPollutionForecastSuccessful>(_getAirPollutionForecastSuccessful).call,
+    TypedReducer<AppState, GetAirPollutionForecastError>(_getAirPollutionForecastError).call,
   ])(state, action);
 }
 
@@ -133,6 +137,18 @@ AppState _getAirPollutionSuccessful(AppState state, GetAirPollutionSuccessful ac
 }
 
 AppState _getAirPollutionError(AppState state, GetAirPollutionError action) {
+  return state.copyWith(isLoading: false);
+}
+
+AppState _getAirPollutionForecastStart(AppState state, GetAirPollutionForecastStart action) {
+  return state.copyWith(isLoading: true);
+}
+
+AppState _getAirPollutionForecastSuccessful(AppState state, GetAirPollutionForecastSuccessful action) {
+  return state.copyWith(isLoading: false, airPollutionDataForecast: action.airPollutionDataForecast);
+}
+
+AppState _getAirPollutionForecastError(AppState state, GetAirPollutionForecastError action) {
   return state.copyWith(isLoading: false);
 }
 

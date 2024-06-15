@@ -147,11 +147,28 @@ Future<void> showNotification(AirPollutionData airPollutionData) async {
     priority: Priority.high,
     icon: 'notification_icon',
   );
+
+  String body = '';
+
+  switch (airPollutionData.list.first.main.aqi) {
+    case 1:
+      body = 'Great air quality - suitable for outdoor activities. Click here to see more details.';
+    case 2:
+      body = 'Fairly good air quality - suitable for outdoor activities. Click here to see more details.';
+    case 3:
+      body = 'Moderate levels of pollution, be cautious. Click here to see more details.';
+    case 4:
+      body = 'Poor air quality - limit outdoor activities. Click here to see more details.';
+    case 5:
+      body = 'Very poor air quality - avoid outdoor activities. Click here to see more details.';
+    default:
+      body = 'Unknown air quality';
+  }
   const NotificationDetails platformChannelSpecifics = NotificationDetails(android: androidPlatformChannelSpecifics);
   await flutterLocalNotificationsPlugin.show(
     0,
     'AQI level: ${Utils.computeAQI(airPollutionData)}',
-    'Click to see data about the pollution levels in your area',
+    body,
     platformChannelSpecifics,
   );
 }

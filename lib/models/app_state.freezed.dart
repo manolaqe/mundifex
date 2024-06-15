@@ -26,6 +26,8 @@ mixin _$AppState {
   LocationData? get locationData => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   AirPollutionData? get airPollutionData => throw _privateConstructorUsedError;
+  AirPollutionDataForecast? get airPollutionDataForecast =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic>? get airTrafficData =>
       throw _privateConstructorUsedError;
   CurrentWeather? get weatherData => throw _privateConstructorUsedError;
@@ -54,6 +56,7 @@ abstract class $AppStateCopyWith<$Res> {
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
+      AirPollutionDataForecast? airPollutionDataForecast,
       Map<String, dynamic>? airTrafficData,
       CurrentWeather? weatherData,
       AddressData? addressData,
@@ -65,6 +68,7 @@ abstract class $AppStateCopyWith<$Res> {
   $AppUserCopyWith<$Res>? get user;
   $LocationDataCopyWith<$Res>? get locationData;
   $AirPollutionDataCopyWith<$Res>? get airPollutionData;
+  $AirPollutionDataForecastCopyWith<$Res>? get airPollutionDataForecast;
   $CurrentWeatherCopyWith<$Res>? get weatherData;
   $AddressDataCopyWith<$Res>? get addressData;
   $FlowSegmentDataCopyWith<$Res>? get flowSegmentData;
@@ -90,6 +94,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
+    Object? airPollutionDataForecast = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
     Object? addressData = freezed,
@@ -123,6 +128,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.airPollutionData
           : airPollutionData // ignore: cast_nullable_to_non_nullable
               as AirPollutionData?,
+      airPollutionDataForecast: freezed == airPollutionDataForecast
+          ? _value.airPollutionDataForecast
+          : airPollutionDataForecast // ignore: cast_nullable_to_non_nullable
+              as AirPollutionDataForecast?,
       airTrafficData: freezed == airTrafficData
           ? _value.airTrafficData
           : airTrafficData // ignore: cast_nullable_to_non_nullable
@@ -192,6 +201,19 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
 
   @override
   @pragma('vm:prefer-inline')
+  $AirPollutionDataForecastCopyWith<$Res>? get airPollutionDataForecast {
+    if (_value.airPollutionDataForecast == null) {
+      return null;
+    }
+
+    return $AirPollutionDataForecastCopyWith<$Res>(
+        _value.airPollutionDataForecast!, (value) {
+      return _then(_value.copyWith(airPollutionDataForecast: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $CurrentWeatherCopyWith<$Res>? get weatherData {
     if (_value.weatherData == null) {
       return null;
@@ -254,6 +276,7 @@ abstract class _$$AppState$ImplCopyWith<$Res>
       LocationData? locationData,
       bool isLoading,
       AirPollutionData? airPollutionData,
+      AirPollutionDataForecast? airPollutionDataForecast,
       Map<String, dynamic>? airTrafficData,
       CurrentWeather? weatherData,
       AddressData? addressData,
@@ -268,6 +291,8 @@ abstract class _$$AppState$ImplCopyWith<$Res>
   $LocationDataCopyWith<$Res>? get locationData;
   @override
   $AirPollutionDataCopyWith<$Res>? get airPollutionData;
+  @override
+  $AirPollutionDataForecastCopyWith<$Res>? get airPollutionDataForecast;
   @override
   $CurrentWeatherCopyWith<$Res>? get weatherData;
   @override
@@ -295,6 +320,7 @@ class __$$AppState$ImplCopyWithImpl<$Res>
     Object? locationData = freezed,
     Object? isLoading = null,
     Object? airPollutionData = freezed,
+    Object? airPollutionDataForecast = freezed,
     Object? airTrafficData = freezed,
     Object? weatherData = freezed,
     Object? addressData = freezed,
@@ -328,6 +354,10 @@ class __$$AppState$ImplCopyWithImpl<$Res>
           ? _value.airPollutionData
           : airPollutionData // ignore: cast_nullable_to_non_nullable
               as AirPollutionData?,
+      airPollutionDataForecast: freezed == airPollutionDataForecast
+          ? _value.airPollutionDataForecast
+          : airPollutionDataForecast // ignore: cast_nullable_to_non_nullable
+              as AirPollutionDataForecast?,
       airTrafficData: freezed == airTrafficData
           ? _value._airTrafficData
           : airTrafficData // ignore: cast_nullable_to_non_nullable
@@ -370,6 +400,7 @@ class _$AppState$Impl implements AppState$ {
       this.locationData,
       this.isLoading = false,
       this.airPollutionData,
+      this.airPollutionDataForecast,
       final Map<String, dynamic>? airTrafficData,
       this.weatherData,
       this.addressData,
@@ -404,6 +435,8 @@ class _$AppState$Impl implements AppState$ {
   final bool isLoading;
   @override
   final AirPollutionData? airPollutionData;
+  @override
+  final AirPollutionDataForecast? airPollutionDataForecast;
   final Map<String, dynamic>? _airTrafficData;
   @override
   Map<String, dynamic>? get airTrafficData {
@@ -443,7 +476,7 @@ class _$AppState$Impl implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(user: $user, selectedPostId: $selectedPostId, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData, forecastWeather: $forecastWeather, posts: $posts)';
+    return 'AppState(user: $user, selectedPostId: $selectedPostId, users: $users, locationData: $locationData, isLoading: $isLoading, airPollutionData: $airPollutionData, airPollutionDataForecast: $airPollutionDataForecast, airTrafficData: $airTrafficData, weatherData: $weatherData, addressData: $addressData, flowSegmentData: $flowSegmentData, waterQualityData: $waterQualityData, forecastWeather: $forecastWeather, posts: $posts)';
   }
 
   @override
@@ -461,6 +494,9 @@ class _$AppState$Impl implements AppState$ {
                 other.isLoading == isLoading) &&
             (identical(other.airPollutionData, airPollutionData) ||
                 other.airPollutionData == airPollutionData) &&
+            (identical(
+                    other.airPollutionDataForecast, airPollutionDataForecast) ||
+                other.airPollutionDataForecast == airPollutionDataForecast) &&
             const DeepCollectionEquality()
                 .equals(other._airTrafficData, _airTrafficData) &&
             (identical(other.weatherData, weatherData) ||
@@ -486,6 +522,7 @@ class _$AppState$Impl implements AppState$ {
       locationData,
       isLoading,
       airPollutionData,
+      airPollutionDataForecast,
       const DeepCollectionEquality().hash(_airTrafficData),
       weatherData,
       addressData,
@@ -516,6 +553,7 @@ abstract class AppState$ implements AppState {
       final LocationData? locationData,
       final bool isLoading,
       final AirPollutionData? airPollutionData,
+      final AirPollutionDataForecast? airPollutionDataForecast,
       final Map<String, dynamic>? airTrafficData,
       final CurrentWeather? weatherData,
       final AddressData? addressData,
@@ -539,6 +577,8 @@ abstract class AppState$ implements AppState {
   bool get isLoading;
   @override
   AirPollutionData? get airPollutionData;
+  @override
+  AirPollutionDataForecast? get airPollutionDataForecast;
   @override
   Map<String, dynamic>? get airTrafficData;
   @override

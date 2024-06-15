@@ -39,142 +39,156 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(onRefresh: () async {
-      context.store.dispatch(const GetLocation());
-      context.store.dispatch(const GetUsers());
-      context.store.dispatch(const GetPosts());
-      await context.store.onChange.firstWhere((AppState state) => !state.isLoading);
-    }, child: WeatherContainer(builder: (BuildContext context, CurrentWeather? weatherData) {
-      return LocationContainer(
-        builder: (BuildContext context, LocationData? locationData) {
-          if (locationData == null) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return AddressContainer(
-            builder: (BuildContext context, AddressData? addressData) {
-              if (addressData == null) {
+    return RefreshIndicator(
+      onRefresh: () async {
+        context.store.dispatch(const GetLocation());
+        context.store.dispatch(const GetUsers());
+        context.store.dispatch(const GetPosts());
+        await context.store.onChange.firstWhere((AppState state) => !state.isLoading);
+      },
+      child: WeatherContainer(
+        builder: (BuildContext context, CurrentWeather? weatherData) {
+          return LocationContainer(
+            builder: (BuildContext context, LocationData? locationData) {
+              if (locationData == null) {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
-              return FlowSegmentDataContainer(
-                builder: (BuildContext context, FlowSegmentData? flowSegmentData) {
-                  if (flowSegmentData == null) {
+              return AddressContainer(
+                builder: (BuildContext context, AddressData? addressData) {
+                  if (addressData == null) {
                     return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }
-                  return AirPollutionContainer(
-                    builder: (BuildContext context, AirPollutionData? airPollutionData) {
-                      if (airPollutionData == null) {
+                  return FlowSegmentDataContainer(
+                    builder: (BuildContext context, FlowSegmentData? flowSegmentData) {
+                      if (flowSegmentData == null) {
                         return const Center(
                           child: CircularProgressIndicator(),
                         );
                       }
-                      return WaterQualityContainer(
-                        builder: (BuildContext context, List<WaterQualityData>? waterQualityData) {
-                          if (waterQualityData == null) {
+                      return AirPollutionContainer(
+                        builder: (BuildContext context, AirPollutionData? airPollutionData) {
+                          if (airPollutionData == null) {
                             return const Center(
                               child: CircularProgressIndicator(),
                             );
                           }
-                          return StoreConnector<AppState, List<Post>>(
-                              converter: (Store<AppState> store) => store.state.posts,
-                              onInit: (Store<AppState> store) => store.dispatch(const GetPosts()),
-                              builder: (BuildContext context, List<Post>? posts) {
-                                if (posts == null) {
-                                  return const Center(
-                                    child: CircularProgressIndicator(),
-                                  );
-                                }
-                                return AppUserContainer(builder: (BuildContext context, AppUser? user) {
-                                  return UsersContainer(builder: (BuildContext context, Map<String, AppUser>? users) {
-                                    if (users == null) {
-                                      return const Center(
-                                        child: CircularProgressIndicator(),
-                                      );
-                                    }
-                                    return IsLoadingContainer(
-                                      builder: (BuildContext context, bool isLoading) {
-                                        if (weatherData == null) {
-                                          return const Center(
-                                            child: CircularProgressIndicator(),
-                                          );
-                                        }
+                          return WaterQualityContainer(
+                            builder: (BuildContext context, List<WaterQualityData>? waterQualityData) {
+                              if (waterQualityData == null) {
+                                return const Center(
+                                  child: CircularProgressIndicator(),
+                                );
+                              }
+                              return StoreConnector<AppState, List<Post>>(
+                                converter: (Store<AppState> store) => store.state.posts,
+                                onInit: (Store<AppState> store) => store.dispatch(const GetPosts()),
+                                builder: (BuildContext context, List<Post>? posts) {
+                                  if (posts == null) {
+                                    return const Center(
+                                      child: CircularProgressIndicator(),
+                                    );
+                                  }
+                                  return AppUserContainer(
+                                    builder: (BuildContext context, AppUser? user) {
+                                      return UsersContainer(
+                                        builder: (BuildContext context, Map<String, AppUser>? users) {
+                                          if (users == null) {
+                                            return const Center(
+                                              child: CircularProgressIndicator(),
+                                            );
+                                          }
+                                          return IsLoadingContainer(
+                                            builder: (BuildContext context, bool isLoading) {
+                                              if (weatherData == null) {
+                                                return const Center(
+                                                  child: CircularProgressIndicator(),
+                                                );
+                                              }
 
-                                        return Scaffold(
-                                          appBar: AppBar(
-                                            title: const Text('Mundifex'),
-                                            actions: <Widget>[
-                                              GestureDetector(
-                                                onTap: () {
-                                                  if (user == null) {
-                                                    Navigator.pushNamed(context, '/sign_in');
-                                                  } else {
-                                                    Navigator.pushNamed(context, '/profile');
-                                                  }
-                                                },
-                                                child: const Padding(
-                                                    padding: EdgeInsets.all(10),
-                                                    child: UserAvatar(
-                                                      radius: 20,
-                                                    )),
-                                              )
-                                            ],
-                                          ),
-                                          floatingActionButton: FloatingActionButton(
-                                            onPressed: () {
-                                              Navigator.pushNamed(
-                                                context,
-                                                '/create_post',
-                                              );
-                                            },
-                                            child: const Icon(Icons.add),
-                                          ),
-                                          body: Column(
-                                            children: <Widget>[
-                                              Expanded(
-                                                child: CustomScrollView(
-                                                  slivers: <Widget>[
-                                                    SliverToBoxAdapter(
-                                                      child: GestureDetector(
-                                                        onTap: () {
-                                                          Navigator.pushNamed(
-                                                            context,
-                                                            '/forecast_page',
-                                                          );
-                                                        },
-                                                        child: InfoCard(
-                                                          locationData: locationData,
-                                                          currentWeather: weatherData,
-                                                          addressData: addressData,
-                                                          airPollutionData: airPollutionData,
-                                                          flowSegmentData: flowSegmentData,
-                                                          waterQualityData: waterQualityData,
-                                                        ),
+                                              return Scaffold(
+                                                appBar: AppBar(
+                                                  title: const Text('Mundifex'),
+                                                  actions: <Widget>[
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        if (user == null) {
+                                                          Navigator.pushNamed(context, '/sign_in');
+                                                        } else {
+                                                          Navigator.pushNamed(context, '/profile');
+                                                        }
+                                                      },
+                                                      child: const Padding(
+                                                          padding: EdgeInsets.all(10),
+                                                          child: UserAvatar(
+                                                            radius: 20,
+                                                          )),
+                                                    )
+                                                  ],
+                                                ),
+                                                floatingActionButton: FloatingActionButton(
+                                                  onPressed: () {
+                                                    Navigator.pushNamed(
+                                                      context,
+                                                      '/create_post',
+                                                    );
+                                                  },
+                                                  child: const Icon(Icons.add),
+                                                ),
+                                                body: Column(
+                                                  children: <Widget>[
+                                                    Expanded(
+                                                      child: CustomScrollView(
+                                                        slivers: <Widget>[
+                                                          SliverToBoxAdapter(
+                                                            child: GestureDetector(
+                                                              onTap: () {
+                                                                Navigator.pushNamed(
+                                                                  context,
+                                                                  '/forecast_page',
+                                                                );
+                                                              },
+                                                              child: InfoCard(
+                                                                locationData: locationData,
+                                                                currentWeather: weatherData,
+                                                                addressData: addressData,
+                                                                airPollutionData: airPollutionData,
+                                                                flowSegmentData: flowSegmentData,
+                                                                waterQualityData: waterQualityData,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          SliverToBoxAdapter(
+                                                            child: UsersPerception(
+                                                              posts: posts,
+                                                            ),
+                                                          ),
+                                                          SliverToBoxAdapter(
+                                                            child: PostsWidget(
+                                                              posts: posts,
+                                                              users: users,
+                                                              user: user,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
-                                                    ),
-                                                    SliverToBoxAdapter(
-                                                      child: UsersPerception(
-                                                        posts: posts,
-                                                      ),
-                                                    ),
-                                                    SliverToBoxAdapter(
-                                                      child: PostsWidget(posts: posts, users: users, user: user),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  });
-                                });
-                              });
+                                              );
+                                            },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            },
+                          );
                         },
                       );
                     },
@@ -184,7 +198,7 @@ class _HomePageState extends State<HomePage> {
             },
           );
         },
-      );
-    }));
+      ),
+    );
   }
 }

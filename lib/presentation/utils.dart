@@ -4,12 +4,45 @@ import 'package:flutter/material.dart';
 
 import '../models/address_component.dart';
 import '../models/address_data.dart';
+import '../models/air_pollution_components.dart';
 import '../models/air_pollution_data.dart';
 import '../models/location_data.dart';
 import '../models/post.dart';
 import '../models/water_quality_data.dart';
 
 class Utils {
+  static int computeAQIComponents(AirPollutionComponents airPollutionComponents) {
+    final double pm25 = airPollutionComponents.pm2_5;
+    final double pm10 = airPollutionComponents.pm10;
+    final double no2 = airPollutionComponents.no2;
+    final double o3 = airPollutionComponents.o3;
+    final double so2 = airPollutionComponents.so2;
+    final double co = airPollutionComponents.co;
+
+    final List<double> aqiValues = <double>[];
+
+    if (pm25 > 0) {
+      aqiValues.add(_calculateComponentAQI(pm25, 'pm25'));
+    }
+    if (pm10 > 0) {
+      aqiValues.add(_calculateComponentAQI(pm10, 'pm10'));
+    }
+    if (no2 > 0) {
+      aqiValues.add(_calculateComponentAQI(no2, 'no2'));
+    }
+    if (o3 > 0) {
+      aqiValues.add(_calculateComponentAQI(o3, 'o3'));
+    }
+    if (so2 > 0) {
+      aqiValues.add(_calculateComponentAQI(so2, 'so2'));
+    }
+    if (co > 0) {
+      aqiValues.add(_calculateComponentAQI(co, 'co'));
+    }
+
+    return aqiValues.isNotEmpty ? aqiValues.reduce((a, b) => a > b ? a : b).round() : 0;
+  }
+
   static int computeAQI(AirPollutionData airPollutionData) {
     final double pm25 = airPollutionData.list[0].components.pm2_5;
     final double pm10 = airPollutionData.list[0].components.pm10;
@@ -18,7 +51,7 @@ class Utils {
     final double so2 = airPollutionData.list[0].components.so2;
     final double co = airPollutionData.list[0].components.co;
 
-    List<double> aqiValues = [];
+    final List<double> aqiValues = [];
 
     if (pm25 > 0) {
       aqiValues.add(_calculateComponentAQI(pm25, 'pm25'));

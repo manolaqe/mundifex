@@ -10,6 +10,7 @@ import '../actions/create_post.dart';
 import '../actions/create_user.dart';
 import '../actions/get_address.dart';
 import '../actions/get_air_pollution.dart';
+import '../actions/get_air_pollution_forecast.dart';
 import '../actions/get_current_user.dart';
 import '../actions/get_flow_segment_data.dart';
 import '../actions/get_forecast_weather.dart';
@@ -32,6 +33,7 @@ import '../api/open_weather_api.dart';
 import '../api/tomtom_api.dart';
 import '../models/address_data.dart';
 import '../models/air_pollution_data.dart';
+import '../models/air_pollution_data_forecast.dart';
 import '../models/app_state.dart';
 import '../models/app_user.dart';
 import '../models/comment.dart';
@@ -60,6 +62,7 @@ class AppEpics extends EpicClass<AppState> {
       TypedEpic<AppState, GetWaterQualityStart>(_getWaterQualityStart).call,
       TypedEpic<AppState, GetFlowSegmentDataStart>(_getFlowSegmentDataStart).call,
       TypedEpic<AppState, GetAirPollutionStart>(_getAirPollutionStart).call,
+      TypedEpic<AppState, GetAirPollutionForecastStart>(_getAirPollutionForecastStart).call,
       TypedEpic<AppState, GetAddressStart>(_getAddressStart).call,
       TypedEpic<AppState, GetLocationStart>(_getLocationStart).call,
       TypedEpic<AppState, GetWeatherStart>(_getWeatherStart).call,
@@ -169,6 +172,7 @@ class AppEpics extends EpicClass<AppState> {
         const GetFlowSegmentDataStart(),
         const GetForecastWeatherStart(),
         const GetPostsStart(),
+        const GetAirPollutionForecastStart(),
       ];
     }).onErrorReturnWith((Object error, StackTrace stackTrace) => GetLocation.error(error, stackTrace));
   }
@@ -201,6 +205,18 @@ class AppEpics extends EpicClass<AppState> {
           .asyncMap((_) => openWeatherApi.getAirPollutionData(locationData: store.state.locationData!))
           .map((AirPollutionData airPollutionData) => GetAirPollution.successful(airPollutionData))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAirPollution.error(error, stackTrace));
+    });
+  }
+
+  Stream<AppAction> _getAirPollutionForecastStart(
+      Stream<GetAirPollutionForecastStart> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((GetAirPollutionForecastStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => openWeatherApi.getAirPollutionDataForecast(locationData: store.state.locationData!))
+          .map((AirPollutionDataForecast airPollutionDataForecast) =>
+              GetAirPollutionForecast.successful(airPollutionDataForecast))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetAirPollutionForecast.error(error, stackTrace));
     });
   }
 

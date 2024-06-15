@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 import '../models/air_pollution_data.dart';
+import '../models/air_pollution_data_forecast.dart';
 import '../models/current_weather.dart';
 import '../models/forecast_weather.dart';
 import '../models/location_data.dart';
@@ -72,6 +73,26 @@ class OpenWeatherApi {
     final Map<String, dynamic> json = jsonDecode(response.body) as Map<String, dynamic>;
 
     return AirPollutionData.fromJson(json);
+  }
+
+  Future<AirPollutionDataForecast> getAirPollutionDataForecast({
+    required LocationData locationData,
+  }) async {
+    final Uri uri = Uri.parse('$_baseUrl/air_pollution/forecast');
+
+    final Response response = await _client.get(
+      uri.replace(
+        queryParameters: <String, String>{
+          'lat': '${locationData.lat}',
+          'lon': '${locationData.lon}',
+          'appId': appId,
+        },
+      ),
+    );
+
+    final Map<String, dynamic> json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    return AirPollutionDataForecast.fromJson(json);
   }
 
   Future<LocationData> getCoordinates({
