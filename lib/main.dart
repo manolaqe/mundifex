@@ -198,7 +198,6 @@ class ScrollableApp extends StatelessWidget {
           '/comments': (BuildContext context) => const CommentsPage(),
           '/create_post': (BuildContext context) => const CreatePostPage(),
           '/profile': (BuildContext context) => const ProfilePage(),
-          // '/movie': (BuildContext context) => const MoviePage(),
         },
       ),
     );
